@@ -50,9 +50,9 @@ const AssessmentModal = ({ open, onOpenChange }: AssessmentModalProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="bg-background border-border sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-serif text-2xl font-normal">Request an Assessment</DialogTitle>
+          <DialogTitle className="font-serif text-2xl font-normal">Request a Structural Audit</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            A structured review of method maturity and transferability.
+            A focused review of your current method, documentation, and delivery model.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
