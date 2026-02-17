@@ -23,7 +23,7 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
       size="sm"
       className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm text-xs tracking-wide"
     >
-      Request Assessment
+      Request a Structural Audit
     </Button>
   </nav>
 );
@@ -42,26 +42,28 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 
     <div className="relative z-10 text-center flex flex-col items-center">
       <FadeIn>
-        <img src={certainlyLogo} alt="Certainly" className="h-5 mb-12" />
+        <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-12">
+          Institutional Architecture for Intellectual Property
+        </p>
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
-          Authority must be structured to endure.
+          Design the Architecture of Authority.
         </h1>
       </FadeIn>
       <FadeIn delay={400}>
         <p className="max-w-2xl text-muted-foreground leading-relaxed text-base sm:text-lg mb-12">
-          Certainly is an architectural firm for intellectual property.<br />
-          We formalize expertise into institutional systems.
+          If your results depend on you, your authority is fragile.<br />
+          Certainly formalizes expertise into transferable systems, credentials, and institutional frameworks.
         </p>
       </FadeIn>
       <FadeIn delay={600}>
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <Button
             onClick={onRequestAssessment}
             className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
           >
-            Request an Assessment
+            Request a Structural Audit
           </Button>
           <Button
             variant="outline"
@@ -71,113 +73,165 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
             View the Architecture
           </Button>
         </div>
-      </FadeIn>
-      <FadeIn delay={800}>
-        <Divider />
-        <p className="text-xs text-muted-foreground tracking-wide mt-6">
-          Method Architecture. Authority Design. Systems of Trust Infrastructure.
+        <p className="text-xs text-muted-foreground tracking-wide italic">
+          Private engagements for founders, standards bodies, and institutional leaders.
         </p>
       </FadeIn>
     </div>
   </section>
 );
 
-/* ─── SECTION I — STRUCTURAL RISK ─── */
+/* ─── MODULE I — STRUCTURAL RISK ─── */
 const StructuralRisk = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
         <SectionMarker numeral="I" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-10">Structural Risk</h2>
-        <ul className="space-y-4 text-base text-muted-foreground mb-12">
-          <li className="flex items-start gap-3"><span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />Founder dependence</li>
-          <li className="flex items-start gap-3"><span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />Informal process</li>
-          <li className="flex items-start gap-3"><span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />Inconsistent delivery</li>
-          <li className="flex items-start gap-3"><span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />Undefined standards</li>
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-8">
+          Unstructured Expertise Cannot Endure.
+        </h2>
+        <div className="space-y-4 text-base text-muted-foreground mb-10">
+          <p>Most expertise lives in conversation.</p>
+          <p>
+            It adapts. It shifts. It performs well in the hands of its originator. But it lacks defined principles,
+            shared vocabulary, measurable standards, and transfer mechanisms.
+          </p>
+          <p>This creates structural risk:</p>
+        </div>
+        <ul className="space-y-4 text-base text-muted-foreground mb-10">
+          {[
+            "Founder dependence",
+            "Inconsistent delivery",
+            "IP dilution",
+            "Revenue fragility",
+            "Inability to credential",
+            "Inability to scale",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />
+              {item}
+            </li>
+          ))}
         </ul>
-        <blockquote className="font-serif text-2xl sm:text-3xl italic leading-snug mb-12">
-          "If your results depend on you, your authority is fragile."
-        </blockquote>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="symptoms" className="border-border">
-            <AccordionTrigger className="text-sm tracking-wide text-muted-foreground hover:no-underline">
-              Symptoms of Structural Risk
-            </AccordionTrigger>
-            <AccordionContent>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>IP dilution across delivery channels</li>
-                <li>Revenue fragility tied to founder availability</li>
-                <li>Inability to transfer method without interpretation loss</li>
-                <li>Quality variance across practitioners</li>
-              </ul>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <p className="text-base text-muted-foreground">Performance is not a system.</p>
+        <p className="text-base text-foreground font-serif italic mt-1">And systems are what endure.</p>
       </div>
     </FadeIn>
   </section>
 );
 
-/* ─── SECTION II — THE ARCHITECTURE ─── */
-const expandedCopy = [
-  "We map the reasoning, sequencing, and decision-making behind your results. This is not an interview. It is a structural extraction of the logic that produces outcomes.",
-  "Raw expertise is reorganized into standards, decision criteria, and structured sequences. The architecture becomes independent of personality.",
-  "The organized method is expressed as a transferable, licensable, certifiable system. Ready for deployment at scale.",
-];
-
-const Architecture = () => (
-  <section id="architecture" className="px-6 py-32 max-w-5xl mx-auto">
+/* ─── MODULE II — WHAT WE ACTUALLY DO ─── */
+const WhatWeDo = () => (
+  <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="II" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">
-        Capture. Organize. Package.
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-10">
+        We Do Not "Package" Methods.<br />We Architect Them.
       </h2>
+      <div className="space-y-4 text-base text-muted-foreground max-w-3xl">
+        <p>Certainly operates as an architectural firm for intellectual property.</p>
+        <p>
+          We extract the true structure of your work, formalize it into defined components, and design the institutional
+          systems required for it to function independently of you.
+        </p>
+        <p className="text-foreground font-serif italic mt-6">The outcome is not documentation. It is infrastructure.</p>
+      </div>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        { num: "01", title: "Capture", desc: "Extract the logic." },
-        { num: "02", title: "Organize", desc: "Define the standards." },
-        { num: "03", title: "Package", desc: "Express the system." },
-      ].map((col, i) => (
-        <FadeIn key={col.num} delay={200 * i}>
-          <div className="border border-border rounded-sm bg-surface p-6 hover:border-accent/30 transition-colors h-full">
-            <Collapsible>
-              <div className="space-y-4">
-                <span className="text-accent text-sm font-sans tracking-widest">{col.num}</span>
-                <h3 className="font-serif text-xl">{col.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{col.desc}</p>
-                <CollapsibleTrigger className="text-xs text-accent tracking-wide hover:opacity-70 transition-opacity cursor-pointer">
-                  Expand
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-2 pt-3 border-t border-border">
-                    {expandedCopy[i]}
-                  </p>
-                </CollapsibleContent>
-              </div>
-            </Collapsible>
-          </div>
+  </section>
+);
+
+/* ─── MODULE III — THE ARCHITECTURE ─── */
+const phases = [
+  {
+    num: "I",
+    title: "Extraction",
+    intro: "We identify the underlying logic of your results.",
+    bullets: ["Core principles", "Decision rules", "Patterns of execution", "Implicit frameworks", "Non-obvious constraints"],
+    closing: "Most expertise is intuitive. We make it explicit.",
+  },
+  {
+    num: "II",
+    title: "Formalization",
+    intro: "We define the system.",
+    bullets: ["Named constructs", "Structured models", "Defined sequences", "Clear boundaries", "Shared language"],
+    closing: "If it cannot be named, it cannot be taught.",
+  },
+  {
+    num: "III",
+    title: "Codification",
+    intro: "We build transfer mechanisms.",
+    bullets: ["Curriculum architecture", "Assessment standards", "Credential pathways", "Licensing models", "Governance frameworks"],
+    closing: "This is where authority becomes replicable.",
+  },
+  {
+    num: "IV",
+    title: "Institutionalization",
+    intro: "We design the structure that allows the system to endure.",
+    bullets: ["Operational model", "Revenue architecture", "Partner ecosystem", "Certification lifecycle", "Standards governance"],
+    closing: "This is where a method becomes an asset.",
+  },
+];
+
+const ArchitectureSection = () => (
+  <section id="architecture" className="px-6 py-32 max-w-5xl mx-auto">
+    <FadeIn>
+      <SectionMarker numeral="III" />
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">The Architecture Process</h2>
+    </FadeIn>
+    <div className="space-y-6">
+      {phases.map((phase, i) => (
+        <FadeIn key={phase.num} delay={150 * i}>
+          <Collapsible>
+            <div className="border border-border rounded-sm bg-surface p-6 md:p-8">
+              <CollapsibleTrigger className="w-full text-left cursor-pointer group">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-accent text-sm tracking-widest font-sans">{phase.num}.</span>
+                  <h3 className="font-serif text-xl">{phase.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2 ml-8">{phase.intro}</p>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <div className="ml-8 mt-4 pt-4 border-t border-border">
+                  <ul className="space-y-2 mb-4">
+                    {phase.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-foreground font-serif italic">{phase.closing}</p>
+                </div>
+              </CollapsibleContent>
+            </div>
+          </Collapsible>
         </FadeIn>
       ))}
     </div>
   </section>
 );
 
-/* ─── SECTION III — THE ARTIFACT ─── */
-const Artifact = () => (
+/* ─── MODULE IV — WHAT EMERGES ─── */
+const WhatEmerges = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
-        <SectionMarker numeral="III" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-10">The Artifact</h2>
-        <ul className="space-y-4 mb-8">
+        <SectionMarker numeral="IV" />
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-8">What Emerges Is an Asset.</h2>
+        <div className="space-y-4 text-base text-muted-foreground mb-10">
+          <p>The result of this architecture is not a course.</p>
+          <p>It is a defensible system.</p>
+          <p className="mt-4">You leave with:</p>
+        </div>
+        <ul className="space-y-4 mb-10">
           {[
-            "Codified principles",
-            "Defined constructs",
+            "A defined intellectual framework",
             "Structured curriculum",
-            "Credential pathways",
-            "Governance framework",
-            "Licensing model",
+            "Measurable standards",
+            "Transferable credential pathway",
+            "Governance model",
+            "Licensing or distribution strategy",
+            "Revenue infrastructure",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm text-foreground">
               <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" />
@@ -185,39 +239,64 @@ const Artifact = () => (
             </li>
           ))}
         </ul>
-        <p className="text-sm italic text-muted-foreground mb-8">Not documentation. Architecture.</p>
-        <Collapsible>
-          <CollapsibleTrigger className="text-xs text-accent tracking-wide hover:opacity-70 transition-opacity cursor-pointer">
-            View Sample Artifacts
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <p className="text-sm text-muted-foreground leading-relaxed mt-3 pt-3 border-t border-border">
-              Method maps. Decision trees. Evaluation rubrics. Vocabulary glossaries. Packaging specifications. Each designed for transfer without interpretation loss.
-            </p>
-          </CollapsibleContent>
-        </Collapsible>
+        <p className="text-base text-muted-foreground">Your expertise no longer depends on your presence.</p>
+        <p className="text-base text-foreground font-serif italic mt-1">It functions as a system.</p>
       </div>
     </FadeIn>
   </section>
 );
 
-/* ─── SECTION IV — APPLICATION ─── */
-const Application = () => (
+/* ─── MODULE V — APPLICATIONS ─── */
+const Applications = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <SectionMarker numeral="IV" />
+      <SectionMarker numeral="V" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">Selected Applications</h2>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {[
-        { name: "DRVN", summary: "Founder-led coaching logic formalized into certifiable professional standard. Method operates across three markets without founder involvement." },
-        { name: "SEAM", summary: "Principle-based philosophy structured into scored evaluation framework and accredited pathway. Authority transferred from individual to institution." },
-        { name: "VARDEN", summary: "Apprenticeship-dependent craft codified into structured methodology with licensing potential. Consistency achieved across twelve practitioners." },
+        { name: "Founder-Led Consulting Firm", summary: "From personalized delivery to structured certification and licensing." },
+        { name: "Standards Organization", summary: "From informal accreditation to formalized credential architecture." },
+        { name: "Performance Method", summary: "From results-based reputation to measurable system and assessment model." },
+        { name: "Advisory Practice", summary: "From proprietary insight to transferable institutional framework." },
       ].map((c, i) => (
         <FadeIn key={c.name} delay={200 * i}>
           <div className="border border-border rounded-sm bg-card p-6 h-full">
-            <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{c.name}</p>
+            <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans uppercase">{c.name}</p>
             <p className="text-sm text-muted-foreground leading-relaxed">{c.summary}</p>
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+    <FadeIn delay={800}>
+      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
+        The structure differs. The architecture remains consistent.
+      </p>
+    </FadeIn>
+  </section>
+);
+
+/* ─── MODULE VI — PROOF OF STRUCTURE ─── */
+const ProofOfStructure = () => (
+  <section className="px-6 py-32 max-w-5xl mx-auto">
+    <FadeIn>
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-6">Architecture Is Visible.</h2>
+      <p className="text-base text-muted-foreground mb-16">
+        Below are examples of structural artifacts produced through our process.
+      </p>
+    </FadeIn>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {[
+        "Method blueprint diagram",
+        "Credential pathway map",
+        "Governance flow model",
+        "Curriculum architecture chart",
+        "Revenue model structure",
+        "Licensing hierarchy",
+      ].map((label, i) => (
+        <FadeIn key={label} delay={100 * i}>
+          <div className="border border-border rounded-sm bg-surface p-6 flex items-center justify-center min-h-[100px]">
+            <p className="text-xs tracking-[0.15em] text-muted-foreground text-center uppercase">{label}</p>
           </div>
         </FadeIn>
       ))}
@@ -225,34 +304,54 @@ const Application = () => (
   </section>
 );
 
-/* ─── SECTION V — ENGAGEMENT ─── */
+/* ─── MODULE VII — ENGAGEMENT ─── */
 const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <SectionMarker numeral="V" />
+      <SectionMarker numeral="VI" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">Engagement</h2>
     </FadeIn>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <FadeIn delay={200}>
-        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full">
-          <h3 className="font-serif text-xl mb-4">Assessment</h3>
+        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full flex flex-col">
+          <p className="text-xs tracking-[0.2em] text-accent mb-2 font-sans">STEP 1</p>
+          <h3 className="font-serif text-xl mb-4">Structural Audit</h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A structured review of method maturity and transferability.
+            A focused review of your current method, documentation, and delivery model.
           </p>
+          <p className="text-xs text-muted-foreground tracking-wide uppercase mb-3">You receive:</p>
+          <ul className="space-y-2 mb-8 flex-1">
+            {["Structural gap analysis", "Risk identification", "Codification readiness assessment", "Architecture roadmap"].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
           <Button
             onClick={onRequestAssessment}
             className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-6 text-sm tracking-wide"
           >
-            Request Assessment
+            Request Audit
           </Button>
         </div>
       </FadeIn>
       <FadeIn delay={400}>
-        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full">
-          <h3 className="font-serif text-xl mb-4">Architecture</h3>
+        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full flex flex-col">
+          <p className="text-xs tracking-[0.2em] text-accent mb-2 font-sans">STEP 2</p>
+          <h3 className="font-serif text-xl mb-4">Architecture Intensive</h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A focused engagement to design the transferable system.
+            A structured design engagement to formalize and build your system.
           </p>
+          <p className="text-xs text-muted-foreground tracking-wide uppercase mb-3">Scope includes:</p>
+          <ul className="space-y-2 mb-8 flex-1">
+            {["Framework extraction", "System definition", "Credential architecture", "Transfer design", "Institutional model"].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
           <Button
             variant="outline"
             onClick={onRequestAssessment}
@@ -265,13 +364,13 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
     </div>
     <FadeIn delay={500}>
       <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
-        Scope is determined after assessment.
+        Private engagements only.
       </p>
     </FadeIn>
   </section>
 );
 
-/* ─── FAQ ─── */
+/* ─── MODULE VIII — FAQ ─── */
 const FAQ = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
@@ -282,11 +381,10 @@ const FAQ = () => (
       <div className="border border-border rounded-sm bg-card">
         <Accordion type="single" collapsible>
           {[
-            { q: "Is certification the only output?", a: "No. Certification is one possible output. The architecture may result in licensing, internal standards, or structured training — determined by method and market." },
-            { q: "What if the method is still evolving?", a: "Evolution does not preclude structure. We capture the current state and design architecture to accommodate iteration. Structure accelerates refinement." },
-            { q: "How is specificity maintained?", a: "The architecture is derived from your specific logic. Not templates. Every structure reflects the unique reasoning and sequence behind your results." },
-            { q: "Who owns the IP?", a: "You do. Entirely. Certainly designs the architecture. Ownership remains with the client." },
-            { q: "How does this differ from documentation?", a: "Documentation describes. Architecture structures. The output is a system designed for transfer, validation, and scale." },
+            { q: "Do we need existing documentation?", a: "No. Most expertise begins informal. We extract from lived execution." },
+            { q: "What if our method is evolving?", a: "Architecture does not freeze evolution. It defines structure for it." },
+            { q: "Who owns the IP?", a: "You retain ownership. We design the system." },
+            { q: "Is this for early-stage founders?", a: "No. This is for leaders whose work already produces results." },
           ].map((item, i) => (
             <AccordionItem key={i} value={`faq-${i}`} className="border-border px-6 md:px-8">
               <AccordionTrigger className="text-sm text-foreground hover:no-underline tracking-wide font-sans font-normal">
@@ -303,18 +401,19 @@ const FAQ = () => (
   </section>
 );
 
-/* ─── CLOSING ─── */
+/* ─── MODULE IX — CLOSING ─── */
 const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="px-6 py-32 text-center max-w-3xl mx-auto">
     <FadeIn>
-      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal italic leading-tight mb-12">
-        What is not structured cannot endure.
+      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight mb-6">
+        What Is Not Structured Cannot Endure.
       </h2>
+      <p className="text-base text-muted-foreground mb-12">Authority requires architecture.</p>
       <Button
         onClick={onRequestAssessment}
         className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
       >
-        Request an Assessment
+        Request a Structural Audit
       </Button>
     </FadeIn>
     <FadeIn delay={400}>
@@ -340,15 +439,19 @@ const Index = () => {
         <StructuralRisk />
       </div>
       <Divider />
-      <Architecture />
+      <WhatWeDo />
       <Divider />
       <div className="bg-surface">
-        <Artifact />
+        <ArchitectureSection />
       </div>
       <Divider />
+      <WhatEmerges />
+      <Divider />
       <div className="bg-surface">
-        <Application />
+        <Applications />
       </div>
+      <Divider />
+      <ProofOfStructure />
       <Divider />
       <Engagement onRequestAssessment={() => setAssessmentOpen(true)} />
       <FAQ />
