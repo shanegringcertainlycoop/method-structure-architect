@@ -9,7 +9,7 @@
     --background: 0 0% 4%;        /* #0A0A0A */
     --foreground: 0 0% 91%;       /* #E8E8E8 */
 
-    --card: 0 0% 7%;              /* #111111 */
+    --card: 0 0% 10%;             /* #1A1A1A */
     --card-foreground: 0 0% 91%;
 
     --popover: 0 0% 7%;
@@ -30,7 +30,11 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 91%;
 
-    --border: 0 0% 12%;           /* #1E1E1E */
+    --border: 0 0% 15%;           /* #262626 */
+
+    --surface: 0 0% 9%;           /* #171717 */
+    --highlight: 48 90% 55%;      /* Gold/yellow CTAs */
+    --highlight-foreground: 0 0% 4%;
     --input: 0 0% 15%;
     --ring: 27 34% 36%;
 
