@@ -1,76 +1,114 @@
 
-# Reduce Wordiness -- Add Visual Space, Interaction, and Progressive Reveals
+# Complete Copy Overhaul -- New Site Architecture
 
-## Problem
-The page reads like a long essay. Every module dumps all its content at once with dense paragraphs and bullet lists. There is no breathing room, no imagery beyond the hero bust, and no interactivity beyond the Architecture collapsibles and FAQ accordion.
+## Overview
 
-## Strategy
-Cut body copy significantly. Replace explanation with visual weight, whitespace, and interaction. Keep the same module structure but make each one feel like a designed moment rather than a text block.
-
----
-
-## Changes by Module
-
-### Hero (no major changes)
-Already clean. Keep as-is.
-
-### Module I -- Structural Risk
-- **Cut** the explanatory paragraph ("It adapts. It shifts..."). Replace with a single line: "It lacks structure."
-- **Convert** the 6-item bullet list into a **staggered reveal grid** (3x2) where each risk item fades in sequentially on scroll, styled as minimal cards with just the label
-- **Remove** the closing paragraph. Keep only the italic closing line.
-
-### Module II -- What We Actually Do
-- **Cut** the second paragraph entirely (the long "We extract..." sentence)
-- Keep only: headline, one-line description, italic closing
-- **Add a full-width image placeholder** (aspect-ratio 21:9 container with a subtle border) below the text for future imagery
-
-### Module III -- Architecture Process
-- Already interactive (collapsibles) -- good
-- **Cut bullet lists from 5 items to 3** per phase for tighter reading
-- **Add a horizontal step indicator** above the collapsibles showing I-II-III-IV as connected dots so the user sees the full journey at a glance
-
-### Module IV -- What Emerges
-- **Convert** the 7-item checklist into a **two-column grid** of compact items instead of a vertical list
-- **Cut** the intro lines ("The result...is not a course. It is a defensible system.") to just the second sentence
-- **Remove** the "You leave with:" lead-in -- let the grid speak for itself
-
-### Module V -- Applications
-- Keep as-is (already compact cards)
-
-### Module VI -- Proof of Structure
-- **Increase card height** to `min-h-[160px]` to create more visual presence
-- **Add a subtle hover effect** (border-accent/30 transition) so they feel interactive
-- These are placeholder spaces for future diagrams -- make them feel intentional
-
-### Module VII -- Engagement
-- **Cut** the "You receive:" / "Scope includes:" labels and bullet lists
-- Replace with a **hover-to-reveal** pattern: card shows title + one-line description by default, bullet details appear on hover/click
-- This halves the visible text while keeping all info accessible
-
-### Module VIII -- FAQ
-- Already interactive (accordion) -- keep as-is
-
-### Module IX -- Closing
-- Keep as-is (already minimal)
-
----
-
-## New Component: StaggerGrid
-A reusable component for the Structural Risk items that reveals children one-by-one as the section scrolls into view, using the existing FadeIn with incremental delays.
-
-## New Component: RevealCard
-A card that shows a title by default and reveals bullet content on hover (desktop) or tap (mobile). Used in the Engagement section.
-
----
+Full replacement of all section copy and structure. The site shifts from "Institutional Architecture for IP" to "Method Architecture & Advisory" with a new section flow and the introduction of the Method Lifecycle as the visual anchor.
 
 ## Files to Modify
-1. **src/pages/Index.tsx** -- All module copy cuts, new grid layouts, hover reveals
-2. **src/components/RevealCard.tsx** -- New component for hover-to-reveal engagement cards
-3. No new dependencies needed -- uses existing Tailwind transitions and FadeIn
+
+1. **src/pages/Index.tsx** -- Full rewrite of all sections
+2. **src/components/AssessmentModal.tsx** -- Update title/description to "Method Audit"
+
+---
+
+## Section-by-Section Changes
+
+### Nav
+- CTA: "Request a Method Audit"
+
+### Hero
+- Overline: "Method Architecture & Advisory"
+- Headline: three lines -- "Reveal Your Method. / Build the Structure. / Steward the System."
+- Subhead: new paragraph about partnering with founders/institutions
+- Primary CTA: "Request a Method Audit"
+- Secondary CTA: "See the Method Lifecycle(TM)" (scrolls to lifecycle section)
+- Microline: "Selective long-term advisory engagements."
+
+### Section I -- The Problem (replaces Structural Risk)
+- Remove SectionMarker numeral, use "I" marker
+- Headline: "Most Methods Stall Before They Scale."
+- Short line: "You already have results."
+- "But:" followed by 6 risk items as staggered grid cards (same pattern):
+  - "Your framework lives in conversations."
+  - "You explain it differently each time."
+  - "Clients depend on you, not a system."
+  - "Marketing feels imprecise."
+  - "Certification feels premature."
+  - "Technology feels disconnected."
+- Closing: "Your expertise works. It simply lacks structure."
+- Authority line (italic serif): "What Is Not Structured Cannot Endure."
+
+### Section II -- The Method Lifecycle (replaces old Architecture section)
+- New visual anchor section with id="lifecycle" (for hero scroll target)
+- Horizontal step indicator: Method -> Structure -> Scale -> Stewardship
+- 4 collapsible phases with updated copy:
+  1. **Method** -- "Your proprietary approach..." / bullets: "The way you think", "The way you deliver results" / closing: "Often powerful. Rarely documented."
+  2. **Structure** -- "We extract and formalize it." / bullets: "Named constructs", "Defined principles", "Clear language", "Documented IP", "Standards and sequencing" / closing: "Structure transforms intuition into clarity."
+  3. **Scale** -- "Once structured, your method can support:" / bullets: "Certification programs", "Licensing models", "Curriculum and programming", "Marketing precision", "Technology platforms" / closing: "Scale without structure creates noise. Scale with structure creates authority."
+  4. **Stewardship** -- "This is where most firms fail." / intro: "A method is not static. It must evolve with discipline." / bullets: "Maintain coherence", "Protect standards", "Guide expansion", "Align certification and tech decisions", "Prevent drift" / closing: "This is long-term advisory. Not a one-time project."
+
+### Section III -- What We Actually Do (updated copy)
+- Headline: "We Serve as Structural Partner."
+- Two negation lines: "We do not sell templates." / "We do not sell content production."
+- "We work alongside you to:" with 4 bullet items
+- Closing: "Engagement begins with consulting. It often becomes advisory."
+- Keep the AspectRatio image placeholder
+
+### Section IV -- The Outcome (replaces What Emerges)
+- Headline: "The Outcome"
+- 7-item checklist (updated items):
+  - "A defined intellectual framework"
+  - "Structured curriculum architecture"
+  - "Clear models and language"
+  - "Assessment and standards (if applicable)"
+  - "Certification or licensing blueprint"
+  - "A documented IP foundation"
+  - "A long-term structural roadmap"
+- Closing lines: "Your expertise becomes independent of your presence. Performance becomes system. System becomes asset."
+
+### Section V -- Who This Is For (replaces Applications)
+- Headline: "For Leaders Already Producing Results."
+- "This is for:" followed by 5 cards:
+  - "Founder-led consulting firms"
+  - "Standards organizations"
+  - "Advisory practices with proprietary frameworks"
+  - "Performance methodologies ready to scale"
+  - "Institutional leaders stewarding intellectual capital"
+- Closing: "Not for early-stage creators. You must already have proof. We provide discipline."
+
+### Section VI -- Engagement Model (replaces old Engagement)
+- Headline: "How We Work"
+- 3 RevealCards (instead of 2):
+  - Phase I -- Method Audit: "A structured review of your existing framework and scale ambitions."
+  - Phase II -- Architecture Engagement: "Focused work to extract, formalize, and document your system."
+  - Phase III -- Advisory Partnership: "Ongoing architectural oversight as your method expands into certification, marketing, and technology."
+- Closing: "Most engagements evolve into long-term advisory relationships."
+
+### Remove: Proof of Structure section and FAQ section
+These are dropped from the new copy. The page becomes tighter.
+
+### Final Section (Closing)
+- Headline: "What Is Not Structured Cannot Endure."
+- Subhead: "Authority requires discipline." (was "architecture")
+- CTA: "Request a Method Audit"
+- Footer tagline updated to match new language
+
+### AssessmentModal
+- Title: "Request a Method Audit"
+- Description: "A structured review of your existing framework and scale ambitions."
+
+---
+
+## Page Layout Order (new)
+
+Nav, Hero, The Problem, Method Lifecycle, What We Do, The Outcome, Who This Is For, Engagement, Closing
 
 ## Technical Notes
-- StaggerGrid is just a wrapper using FadeIn with mapped delays (no new component needed, just restructured JSX)
-- RevealCard uses a simple `group` + `group-hover:opacity-100` Tailwind pattern for desktop, with a click-to-toggle state for mobile
-- Proof of Structure cards get `hover:border-accent/30 transition-colors` added
-- Architecture bullet lists trimmed from 5 to 3 items each
-- Image placeholder in "What We Do" uses AspectRatio component (already installed) with a dashed border
+
+- Proof of Structure and FAQ sections removed entirely
+- Lifecycle section uses `id="lifecycle"` instead of `id="architecture"` for scroll target
+- Step indicator labels change: Extraction/Formalization/Codification/Institutionalization become Method/Structure/Scale/Stewardship
+- Section V uses a single-column list of 5 items instead of 2x2 grid (these are audience descriptors, not case studies)
+- Engagement section changes from 2 RevealCards to 3 (adding Advisory Partnership phase)
+- All "Structural Audit" CTAs become "Method Audit"
