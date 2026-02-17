@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import RevealCard from "@/components/RevealCard";
 import AssessmentModal from "@/components/AssessmentModal";
 import romanBust from "@/assets/roman-bust-hero.png";
 import certainlyLogo from "@/assets/certainly-logo.png";
@@ -39,7 +41,6 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
         style={{ mixBlendMode: "luminosity" }}
       />
     </div>
-
     <div className="relative z-10 text-center flex flex-col items-center">
       <FadeIn>
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-12">
@@ -82,39 +83,36 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 );
 
 /* ─── MODULE I — STRUCTURAL RISK ─── */
+const riskItems = [
+  "Founder dependence",
+  "Inconsistent delivery",
+  "IP dilution",
+  "Revenue fragility",
+  "Inability to credential",
+  "Inability to scale",
+];
+
 const StructuralRisk = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
         <SectionMarker numeral="I" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-8">
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
           Unstructured Expertise Cannot Endure.
         </h2>
-        <div className="space-y-4 text-base text-muted-foreground mb-10">
-          <p>Most expertise lives in conversation.</p>
-          <p>
-            It adapts. It shifts. It performs well in the hands of its originator. But it lacks defined principles,
-            shared vocabulary, measurable standards, and transfer mechanisms.
-          </p>
-          <p>This creates structural risk:</p>
-        </div>
-        <ul className="space-y-4 text-base text-muted-foreground mb-10">
-          {[
-            "Founder dependence",
-            "Inconsistent delivery",
-            "IP dilution",
-            "Revenue fragility",
-            "Inability to credential",
-            "Inability to scale",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <span className="w-1 h-1 rounded-full bg-accent mt-2.5 shrink-0" />
-              {item}
-            </li>
+        <p className="text-base text-muted-foreground mb-10">
+          Most expertise lives in conversation. It lacks structure.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
+          {riskItems.map((item, i) => (
+            <FadeIn key={item} delay={150 * i}>
+              <div className="border border-border rounded-sm bg-surface px-4 py-5 text-center">
+                <p className="text-sm text-muted-foreground">{item}</p>
+              </div>
+            </FadeIn>
           ))}
-        </ul>
-        <p className="text-base text-muted-foreground">Performance is not a system.</p>
-        <p className="text-base text-foreground font-serif italic mt-1">And systems are what endure.</p>
+        </div>
+        <p className="text-base text-foreground font-serif italic">And systems are what endure.</p>
       </div>
     </FadeIn>
   </section>
@@ -125,16 +123,21 @@ const WhatWeDo = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="II" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-10">
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
         We Do Not "Package" Methods.<br />We Architect Them.
       </h2>
-      <div className="space-y-4 text-base text-muted-foreground max-w-3xl">
-        <p>Certainly operates as an architectural firm for intellectual property.</p>
-        <p>
-          We extract the true structure of your work, formalize it into defined components, and design the institutional
-          systems required for it to function independently of you.
-        </p>
-        <p className="text-foreground font-serif italic mt-6">The outcome is not documentation. It is infrastructure.</p>
+      <p className="text-base text-muted-foreground max-w-3xl mb-4">
+        Certainly operates as an architectural firm for intellectual property.
+      </p>
+      <p className="text-foreground font-serif italic mb-12">The outcome is not documentation. It is infrastructure.</p>
+    </FadeIn>
+    <FadeIn delay={300}>
+      <div className="w-full border border-dashed border-border rounded-sm overflow-hidden">
+        <AspectRatio ratio={21 / 9}>
+          <div className="w-full h-full bg-surface flex items-center justify-center">
+            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground/40">Visual artifact</p>
+          </div>
+        </AspectRatio>
       </div>
     </FadeIn>
   </section>
@@ -146,28 +149,28 @@ const phases = [
     num: "I",
     title: "Extraction",
     intro: "We identify the underlying logic of your results.",
-    bullets: ["Core principles", "Decision rules", "Patterns of execution", "Implicit frameworks", "Non-obvious constraints"],
+    bullets: ["Core principles", "Decision rules", "Implicit frameworks"],
     closing: "Most expertise is intuitive. We make it explicit.",
   },
   {
     num: "II",
     title: "Formalization",
     intro: "We define the system.",
-    bullets: ["Named constructs", "Structured models", "Defined sequences", "Clear boundaries", "Shared language"],
+    bullets: ["Named constructs", "Defined sequences", "Shared language"],
     closing: "If it cannot be named, it cannot be taught.",
   },
   {
     num: "III",
     title: "Codification",
     intro: "We build transfer mechanisms.",
-    bullets: ["Curriculum architecture", "Assessment standards", "Credential pathways", "Licensing models", "Governance frameworks"],
+    bullets: ["Curriculum architecture", "Credential pathways", "Governance frameworks"],
     closing: "This is where authority becomes replicable.",
   },
   {
     num: "IV",
     title: "Institutionalization",
     intro: "We design the structure that allows the system to endure.",
-    bullets: ["Operational model", "Revenue architecture", "Partner ecosystem", "Certification lifecycle", "Standards governance"],
+    bullets: ["Revenue architecture", "Certification lifecycle", "Standards governance"],
     closing: "This is where a method becomes an asset.",
   },
 ];
@@ -176,9 +179,29 @@ const ArchitectureSection = () => (
   <section id="architecture" className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="III" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">The Architecture Process</h2>
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-12">The Architecture Process</h2>
     </FadeIn>
-    <div className="space-y-6">
+
+    {/* Step indicator */}
+    <FadeIn delay={100}>
+      <div className="flex items-center justify-center gap-0 mb-16">
+        {phases.map((phase, i) => (
+          <div key={phase.num} className="flex items-center">
+            <div className="flex flex-col items-center">
+              <div className="w-8 h-8 rounded-full border border-accent/40 flex items-center justify-center">
+                <span className="text-xs text-accent font-serif">{phase.num}</span>
+              </div>
+              <span className="text-[10px] text-muted-foreground mt-2 tracking-wider">{phase.title}</span>
+            </div>
+            {i < phases.length - 1 && (
+              <div className="w-10 sm:w-16 h-px bg-border mx-2 -mt-5" />
+            )}
+          </div>
+        ))}
+      </div>
+    </FadeIn>
+
+    <div className="space-y-4">
       {phases.map((phase, i) => (
         <FadeIn key={phase.num} delay={150 * i}>
           <Collapsible>
@@ -212,35 +235,34 @@ const ArchitectureSection = () => (
 );
 
 /* ─── MODULE IV — WHAT EMERGES ─── */
+const emergesItems = [
+  "A defined intellectual framework",
+  "Structured curriculum",
+  "Measurable standards",
+  "Transferable credential pathway",
+  "Governance model",
+  "Licensing or distribution strategy",
+  "Revenue infrastructure",
+];
+
 const WhatEmerges = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
         <SectionMarker numeral="IV" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-8">What Emerges Is an Asset.</h2>
-        <div className="space-y-4 text-base text-muted-foreground mb-10">
-          <p>The result of this architecture is not a course.</p>
-          <p>It is a defensible system.</p>
-          <p className="mt-4">You leave with:</p>
-        </div>
-        <ul className="space-y-4 mb-10">
-          {[
-            "A defined intellectual framework",
-            "Structured curriculum",
-            "Measurable standards",
-            "Transferable credential pathway",
-            "Governance model",
-            "Licensing or distribution strategy",
-            "Revenue infrastructure",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm text-foreground">
-              <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-              {item}
-            </li>
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">What Emerges Is an Asset.</h2>
+        <p className="text-base text-muted-foreground mb-10">It is a defensible system.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+          {emergesItems.map((item, i) => (
+            <FadeIn key={item} delay={100 * i}>
+              <div className="flex items-start gap-3 text-sm text-foreground py-2">
+                <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                {item}
+              </div>
+            </FadeIn>
           ))}
-        </ul>
-        <p className="text-base text-muted-foreground">Your expertise no longer depends on your presence.</p>
-        <p className="text-base text-foreground font-serif italic mt-1">It functions as a system.</p>
+        </div>
+        <p className="text-base text-foreground font-serif italic">It functions as a system.</p>
       </div>
     </FadeIn>
   </section>
@@ -295,7 +317,7 @@ const ProofOfStructure = () => (
         "Licensing hierarchy",
       ].map((label, i) => (
         <FadeIn key={label} delay={100 * i}>
-          <div className="border border-border rounded-sm bg-surface p-6 flex items-center justify-center min-h-[100px]">
+          <div className="border border-border rounded-sm bg-surface p-6 flex items-center justify-center min-h-[160px] hover:border-accent/30 transition-colors cursor-pointer">
             <p className="text-xs tracking-[0.15em] text-muted-foreground text-center uppercase">{label}</p>
           </div>
         </FadeIn>
@@ -313,14 +335,20 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
     </FadeIn>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <FadeIn delay={200}>
-        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full flex flex-col">
-          <p className="text-xs tracking-[0.2em] text-accent mb-2 font-sans">STEP 1</p>
-          <h3 className="font-serif text-xl mb-4">Structural Audit</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A focused review of your current method, documentation, and delivery model.
-          </p>
-          <p className="text-xs text-muted-foreground tracking-wide uppercase mb-3">You receive:</p>
-          <ul className="space-y-2 mb-8 flex-1">
+        <RevealCard
+          step="STEP 1"
+          title="Structural Audit"
+          description="A focused review of your current method, documentation, and delivery model."
+          cta={
+            <Button
+              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-6 text-sm tracking-wide"
+            >
+              Request Audit
+            </Button>
+          }
+        >
+          <ul className="space-y-2 mb-4">
             {["Structural gap analysis", "Risk identification", "Codification readiness assessment", "Architecture roadmap"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
@@ -328,23 +356,24 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
               </li>
             ))}
           </ul>
-          <Button
-            onClick={onRequestAssessment}
-            className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-6 text-sm tracking-wide"
-          >
-            Request Audit
-          </Button>
-        </div>
+        </RevealCard>
       </FadeIn>
       <FadeIn delay={400}>
-        <div className="border border-border rounded-sm bg-surface p-8 hover:border-accent/30 transition-colors h-full flex flex-col">
-          <p className="text-xs tracking-[0.2em] text-accent mb-2 font-sans">STEP 2</p>
-          <h3 className="font-serif text-xl mb-4">Architecture Intensive</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            A structured design engagement to formalize and build your system.
-          </p>
-          <p className="text-xs text-muted-foreground tracking-wide uppercase mb-3">Scope includes:</p>
-          <ul className="space-y-2 mb-8 flex-1">
+        <RevealCard
+          step="STEP 2"
+          title="Architecture Intensive"
+          description="A structured design engagement to formalize and build your system."
+          cta={
+            <Button
+              variant="outline"
+              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
+              className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
+            >
+              Discuss Architecture
+            </Button>
+          }
+        >
+          <ul className="space-y-2 mb-4">
             {["Framework extraction", "System definition", "Credential architecture", "Transfer design", "Institutional model"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
@@ -352,20 +381,11 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
               </li>
             ))}
           </ul>
-          <Button
-            variant="outline"
-            onClick={onRequestAssessment}
-            className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
-          >
-            Discuss Architecture
-          </Button>
-        </div>
+        </RevealCard>
       </FadeIn>
     </div>
     <FadeIn delay={500}>
-      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
-        Private engagements only.
-      </p>
+      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">Private engagements only.</p>
     </FadeIn>
   </section>
 );
