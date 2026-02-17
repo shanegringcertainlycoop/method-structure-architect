@@ -5,6 +5,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import romanBust from "@/assets/roman-bust.png";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
@@ -14,41 +15,53 @@ const SectionMarker = ({ numeral, className = "" }: { numeral: string; className
 
 /* ─── HERO ─── */
 const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-    <FadeIn>
-      <p className="font-serif text-accent tracking-[0.3em] text-sm mb-12">CERTAINLY</p>
-    </FadeIn>
-    <FadeIn delay={200}>
-      <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
-        Turn Your Method Into an Asset.
-      </h1>
-    </FadeIn>
-    <FadeIn delay={400}>
-      <p className="max-w-2xl text-muted-foreground leading-relaxed text-base sm:text-lg mb-12">
-        If your results depend on you, they are not yet structured.<br />
-        Certainly designs the architecture that transforms expertise into transferable authority.
-      </p>
-    </FadeIn>
-    <FadeIn delay={600}>
-      <div className="flex flex-col sm:flex-row gap-4 mb-16">
-        <Button onClick={onRequestAssessment} className="rounded-sm px-8 py-3 text-sm tracking-wide">
-          Request an Assessment
-        </Button>
-        <Button
-          variant="outline"
-          className="rounded-sm px-8 py-3 text-sm tracking-wide border-foreground text-foreground hover:bg-foreground hover:text-primary-foreground"
-          onClick={() => document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" })}
-        >
-          View the Framework
-        </Button>
-      </div>
-    </FadeIn>
-    <FadeIn delay={800}>
-      <Divider />
-      <p className="text-xs text-muted-foreground tracking-wide mt-6">
-        Architecture for authority. Designed for transfer, validation, and scale.
-      </p>
-    </FadeIn>
+  <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    {/* Bust image — artistic right-offset placement */}
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] max-w-lg opacity-20 pointer-events-none select-none">
+      <img
+        src={romanBust}
+        alt=""
+        className="w-full h-auto object-contain grayscale"
+        style={{ mixBlendMode: "luminosity" }}
+      />
+    </div>
+
+    <div className="relative z-10 text-center flex flex-col items-center">
+      <FadeIn>
+        <p className="font-serif text-accent tracking-[0.3em] text-sm mb-12">CERTAINLY</p>
+      </FadeIn>
+      <FadeIn delay={200}>
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
+          Turn Your Method Into an Asset.
+        </h1>
+      </FadeIn>
+      <FadeIn delay={400}>
+        <p className="max-w-2xl text-muted-foreground leading-relaxed text-base sm:text-lg mb-12">
+          If your results depend on you, they are not yet structured.<br />
+          Certainly designs the architecture that transforms expertise into transferable authority.
+        </p>
+      </FadeIn>
+      <FadeIn delay={600}>
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <Button onClick={onRequestAssessment} className="rounded-sm px-8 py-3 text-sm tracking-wide">
+            Request an Assessment
+          </Button>
+          <Button
+            variant="outline"
+            className="rounded-sm px-8 py-3 text-sm tracking-wide border-muted-foreground text-foreground hover:bg-foreground hover:text-background"
+            onClick={() => document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            View the Framework
+          </Button>
+        </div>
+      </FadeIn>
+      <FadeIn delay={800}>
+        <Divider />
+        <p className="text-xs text-muted-foreground tracking-wide mt-6">
+          Architecture for authority. Designed for transfer, validation, and scale.
+        </p>
+      </FadeIn>
+    </div>
   </section>
 );
 
@@ -295,15 +308,21 @@ const Index = () => {
     <div className="bg-background text-foreground min-h-screen">
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
-      <TransferProblem />
+      <div className="bg-card">
+        <TransferProblem />
+      </div>
       <Divider />
       <Architecture />
       <Divider />
-      <Asset />
+      <div className="bg-card">
+        <Asset />
+      </div>
       <Divider />
       <Engagement onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
-      <Proof />
+      <div className="bg-card">
+        <Proof />
+      </div>
       <FAQ />
       <Closing onRequestAssessment={() => setAssessmentOpen(true)} />
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
