@@ -7,6 +7,7 @@ import RevealCard from "@/components/RevealCard";
 import AssessmentModal from "@/components/AssessmentModal";
 import romanBust from "@/assets/roman-bust-hero.png";
 import certainlyLogo from "@/assets/certainly-logo.png";
+import structuralPartner from "@/assets/structural-partner.avif";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
@@ -222,24 +223,35 @@ const MethodLifecycle = () => (
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
 const WhatWeDo = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <SectionMarker numeral="III" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
-        We Serve as Structural Partner.
-      </h2>
-      <p className="text-base text-muted-foreground mb-2">We do not sell templates.</p>
-      <p className="text-base text-muted-foreground mb-8">We do not sell content production.</p>
-      <p className="text-base text-foreground mb-4">We work alongside you to:</p>
-      <ul className="space-y-3 mb-8">
-        {["Reveal your method", "Document it clearly", "Design its architecture", "Guide its expansion"].map((item) => (
-          <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-            {item}
-          </li>
-        ))}
-      </ul>
-      <p className="text-foreground font-serif italic text-lg">Engagement begins with consulting. It often becomes advisory.</p>
-    </FadeIn>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <FadeIn>
+        <SectionMarker numeral="III" />
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
+          We Serve as Structural Partner.
+        </h2>
+        <p className="text-base text-muted-foreground mb-2">We do not sell templates.</p>
+        <p className="text-base text-muted-foreground mb-8">We do not sell content production.</p>
+        <p className="text-base text-foreground mb-4">We work alongside you to:</p>
+        <ul className="space-y-3 mb-8">
+          {["Reveal your method", "Document it clearly", "Design its architecture", "Guide its expansion"].map((item) => (
+            <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="text-foreground font-serif italic text-lg">Engagement begins with consulting. It often becomes advisory.</p>
+      </FadeIn>
+      <FadeIn delay={300}>
+        <div className="w-full overflow-hidden rounded-sm border border-border">
+          <img
+            src={structuralPartner}
+            alt="Structural methodology"
+            className="w-full h-full object-cover grayscale"
+          />
+        </div>
+      </FadeIn>
+    </div>
   </section>
 );
 
