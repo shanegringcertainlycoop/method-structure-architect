@@ -6,6 +6,7 @@ import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import romanBust from "@/assets/roman-bust-hero.png";
+import certainlyLogo from "@/assets/certainly-logo.png";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
@@ -16,7 +17,7 @@ const SectionMarker = ({ numeral, className = "" }: { numeral: string; className
 /* ─── NAV ─── */
 const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <span className="font-serif text-accent tracking-[0.3em] text-sm">CERTAINLY</span>
+    <img src={certainlyLogo} alt="Certainly" className="h-4" />
     <Button
       onClick={onRequestAssessment}
       size="sm"
@@ -41,7 +42,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 
     <div className="relative z-10 text-center flex flex-col items-center">
       <FadeIn>
-        <p className="font-serif text-accent tracking-[0.3em] text-sm mb-12">CERTAINLY</p>
+        <img src={certainlyLogo} alt="Certainly" className="h-5 mb-12" />
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
@@ -319,7 +320,7 @@ const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
     <FadeIn delay={400}>
       <Divider />
       <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-        <p className="font-serif tracking-[0.2em] text-accent text-sm">CERTAINLY</p>
+        <img src={certainlyLogo} alt="Certainly" className="h-4" />
         <p className="mt-4 sm:mt-0">Architecture for authority.</p>
       </footer>
     </FadeIn>
