@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import RevealCard from "@/components/RevealCard";
@@ -32,7 +31,7 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 /* ─── HERO ─── */
 const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
-    <div className="absolute inset-0 flex items-end justify-end opacity-20 pointer-events-none select-none overflow-hidden">
+    <div className="absolute inset-0 flex items-end justify-end opacity-[0.12] pointer-events-none select-none overflow-hidden">
       <img
         src={romanBust}
         alt=""
@@ -54,7 +53,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
         </h1>
       </FadeIn>
       <FadeIn delay={400}>
-        <p className="max-w-2xl text-muted-foreground leading-relaxed text-base sm:text-lg mb-12">
+        <p className="max-w-2xl text-muted-foreground leading-[1.9] text-lg sm:text-xl mb-14">
           Certainly partners with founders and institutions to extract, document, and guide the evolution of their proprietary method — so it can scale through certification, technology, and disciplined growth.
         </p>
       </FadeIn>
@@ -62,13 +61,13 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <Button
             onClick={onRequestAssessment}
-            className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-10 py-4 text-base tracking-wide h-auto"
           >
             Request a Method Audit
           </Button>
           <Button
             variant="outline"
-            className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
+            className="rounded-sm px-10 py-4 text-base tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
             onClick={() => document.getElementById("lifecycle")?.scrollIntoView({ behavior: "smooth" })}
           >
             See the Method Lifecycle™
@@ -95,25 +94,25 @@ const problemItems = [
 const TheProblem = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <div className="border border-border rounded-sm bg-card p-8 md:p-12">
+      <div className="border border-border rounded-sm bg-card p-10 md:p-16">
         <SectionMarker numeral="I" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
           Most Methods Stall Before They Scale.
         </h2>
-        <p className="text-base text-muted-foreground mb-4">You already have results.</p>
-        <p className="text-base text-foreground mb-8">But:</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
+        <p className="text-lg text-muted-foreground mb-2">You already have results.</p>
+        <p className="text-lg text-foreground mb-10 font-medium">But:</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {problemItems.map((item, i) => (
             <FadeIn key={item} delay={150 * i}>
-              <div className="border border-border rounded-sm bg-surface px-4 py-5 text-center">
-                <p className="text-sm text-muted-foreground">{item}</p>
+              <div className="border border-border rounded-sm bg-background px-5 py-6 text-center">
+                <p className="text-base text-foreground/80">{item}</p>
               </div>
             </FadeIn>
           ))}
         </div>
-        <p className="text-base text-foreground mb-2">Your expertise works.</p>
-        <p className="text-base text-foreground mb-8">It simply lacks structure.</p>
-        <p className="text-base text-foreground font-serif italic">What Is Not Structured Cannot Endure.</p>
+        <p className="text-lg text-foreground mb-2">Your expertise works.</p>
+        <p className="text-lg text-foreground mb-10">It simply lacks structure.</p>
+        <p className="text-xl text-foreground font-serif italic">What Is Not Structured Cannot Endure.</p>
       </div>
     </FadeIn>
   </section>
@@ -162,54 +161,54 @@ const MethodLifecycle = () => (
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-12">The Method Lifecycle™</h2>
     </FadeIn>
 
-    {/* Step indicator */}
+    {/* Step indicator — large, high-contrast */}
     <FadeIn delay={100}>
-      <div className="flex items-center justify-center gap-0 mb-16">
+      <div className="flex items-center justify-center gap-0 mb-20">
         {stepLabels.map((label, i) => (
           <div key={label} className="flex items-center">
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 rounded-full border border-accent/40 flex items-center justify-center">
-                <span className="text-xs text-accent font-serif">{i + 1}</span>
+              <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center">
+                <span className="text-base text-accent font-serif font-semibold">{i + 1}</span>
               </div>
-              <span className="text-[10px] text-muted-foreground mt-2 tracking-wider">{label}</span>
+              <span className="text-xs text-foreground mt-3 tracking-wider font-medium">{label}</span>
             </div>
             {i < stepLabels.length - 1 && (
-              <div className="w-10 sm:w-16 h-px bg-border mx-2 -mt-5" />
+              <div className="w-12 sm:w-20 h-px bg-accent/40 mx-3 -mt-5" />
             )}
           </div>
         ))}
       </div>
     </FadeIn>
 
-    <div className="space-y-4">
+    <div className="space-y-5">
       {lifecyclePhases.map((phase, i) => (
         <FadeIn key={phase.num} delay={150 * i}>
           <Collapsible>
-            <div className="border border-border rounded-sm bg-surface p-6 md:p-8">
+            <div className="border border-border rounded-sm bg-card p-7 md:p-10">
               <CollapsibleTrigger className="w-full text-left cursor-pointer group">
                 <div className="flex items-baseline gap-4">
-                  <span className="text-accent text-sm tracking-widest font-sans">{phase.num}.</span>
-                  <h3 className="font-serif text-xl">{phase.title}</h3>
+                  <span className="text-accent text-lg tracking-widest font-sans font-semibold">{phase.num}.</span>
+                  <h3 className="font-serif text-2xl text-foreground">{phase.title}</h3>
                 </div>
-                <p className="text-sm text-muted-foreground mt-2 ml-8">{phase.intro}</p>
+                <p className="text-base text-muted-foreground mt-3 ml-10">{phase.intro}</p>
               </CollapsibleTrigger>
               <CollapsibleContent>
-                <div className="ml-8 mt-4 pt-4 border-t border-border">
+                <div className="ml-10 mt-6 pt-6 border-t border-border">
                   {"secondIntro" in phase && phase.secondIntro && (
-                    <p className="text-sm text-muted-foreground mb-4">{phase.secondIntro}</p>
+                    <p className="text-base text-muted-foreground mb-4">{phase.secondIntro}</p>
                   )}
                   {"bulletIntro" in phase && phase.bulletIntro && (
-                    <p className="text-sm text-muted-foreground mb-2">{phase.bulletIntro}</p>
+                    <p className="text-base text-muted-foreground mb-3">{phase.bulletIntro}</p>
                   )}
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-3 mb-6">
                     {phase.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                      <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                         {b}
                       </li>
                     ))}
                   </ul>
-                  <p className="text-sm text-foreground font-serif italic">{phase.closing}</p>
+                  <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
                 </div>
               </CollapsibleContent>
             </div>
@@ -231,24 +230,15 @@ const WhatWeDo = () => (
       <p className="text-base text-muted-foreground mb-2">We do not sell templates.</p>
       <p className="text-base text-muted-foreground mb-8">We do not sell content production.</p>
       <p className="text-base text-foreground mb-4">We work alongside you to:</p>
-      <ul className="space-y-2 mb-8">
+      <ul className="space-y-3 mb-8">
         {["Reveal your method", "Document it clearly", "Design its architecture", "Guide its expansion"].map((item) => (
-          <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-            <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+          <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
             {item}
           </li>
         ))}
       </ul>
-      <p className="text-foreground font-serif italic mb-12">Engagement begins with consulting. It often becomes advisory.</p>
-    </FadeIn>
-    <FadeIn delay={300}>
-      <div className="w-full border border-dashed border-border rounded-sm overflow-hidden">
-        <AspectRatio ratio={21 / 9}>
-          <div className="w-full h-full bg-surface flex items-center justify-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground/40">Visual artifact</p>
-          </div>
-        </AspectRatio>
-      </div>
+      <p className="text-foreground font-serif italic text-lg">Engagement begins with consulting. It often becomes advisory.</p>
     </FadeIn>
   </section>
 );
@@ -267,23 +257,23 @@ const outcomeItems = [
 const TheOutcome = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <div className="border border-border rounded-sm bg-card p-8 md:p-12">
+      <div className="border border-border rounded-sm bg-card p-10 md:p-16">
         <SectionMarker numeral="IV" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">The Outcome</h2>
-        <p className="text-base text-muted-foreground mb-10">You leave with:</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-6">The Outcome</h2>
+        <p className="text-lg text-muted-foreground mb-12">You leave with:</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
           {outcomeItems.map((item, i) => (
             <FadeIn key={item} delay={100 * i}>
-              <div className="flex items-start gap-3 text-sm text-foreground py-2">
-                <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+              <div className="flex items-start gap-4 text-base text-foreground py-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" strokeWidth={2.5} />
                 {item}
               </div>
             </FadeIn>
           ))}
         </div>
-        <p className="text-base text-foreground mb-2">Your expertise becomes independent of your presence.</p>
-        <p className="text-base text-foreground mb-2">Performance becomes system.</p>
-        <p className="text-base text-foreground font-serif italic">System becomes asset.</p>
+        <p className="text-lg text-foreground mb-2">Your expertise becomes independent of your presence.</p>
+        <p className="text-lg text-foreground mb-2">Performance becomes system.</p>
+        <p className="text-xl text-foreground font-serif italic">System becomes asset.</p>
       </div>
     </FadeIn>
   </section>
@@ -305,21 +295,21 @@ const WhoThisIsFor = () => (
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
         For Leaders Already Producing Results.
       </h2>
-      <p className="text-base text-foreground mb-8">This is for:</p>
+      <p className="text-lg text-foreground mb-8">This is for:</p>
     </FadeIn>
     <div className="space-y-3 mb-12">
       {audienceItems.map((item, i) => (
         <FadeIn key={item} delay={150 * i}>
-          <div className="border border-border rounded-sm bg-card p-5">
-            <p className="text-sm text-foreground">{item}</p>
+          <div className="border border-border rounded-sm bg-card p-6">
+            <p className="text-base text-foreground">{item}</p>
           </div>
         </FadeIn>
       ))}
     </div>
     <FadeIn delay={800}>
       <p className="text-base text-muted-foreground mb-2">Not for early-stage creators.</p>
-      <p className="text-base text-foreground mb-2">You must already have proof.</p>
-      <p className="text-base text-foreground font-serif italic">We provide discipline.</p>
+      <p className="text-lg text-foreground mb-2">You must already have proof.</p>
+      <p className="text-lg text-foreground font-serif italic">We provide discipline.</p>
     </FadeIn>
   </section>
 );
@@ -331,7 +321,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
       <SectionMarker numeral="VI" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">How We Work</h2>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       <FadeIn delay={200}>
         <RevealCard
           step="PHASE I"
@@ -340,7 +330,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
           cta={
             <Button
               onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-6 text-sm tracking-wide"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide h-auto"
             >
               Request Audit
             </Button>
@@ -349,7 +339,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
           <ul className="space-y-2 mb-4">
             {["Framework review", "Scale readiness assessment", "Structural gap analysis", "Architecture roadmap"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                 {item}
               </li>
             ))}
@@ -365,7 +355,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
             <Button
               variant="outline"
               onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
+              className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
             >
               Discuss Engagement
             </Button>
@@ -374,7 +364,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
           <ul className="space-y-2 mb-4">
             {["Method extraction", "System formalization", "IP documentation", "Standards design"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                 {item}
               </li>
             ))}
@@ -390,7 +380,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
             <Button
               variant="outline"
               onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
+              className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
             >
               Inquire
             </Button>
@@ -399,7 +389,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
           <ul className="space-y-2 mb-4">
             {["Coherence maintenance", "Standards protection", "Expansion guidance", "Technology alignment"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                 {item}
               </li>
             ))}
@@ -408,7 +398,7 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
       </FadeIn>
     </div>
     <FadeIn delay={700}>
-      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
+      <p className="text-sm text-muted-foreground tracking-wide mt-12 italic">
         Most engagements evolve into long-term advisory relationships.
       </p>
     </FadeIn>
@@ -417,15 +407,15 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
 
 /* ─── CLOSING ─── */
 const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <section className="px-6 py-32 text-center max-w-3xl mx-auto">
+  <section className="px-6 py-40 text-center max-w-3xl mx-auto">
     <FadeIn>
-      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight mb-6">
+      <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-8 text-foreground">
         What Is Not Structured Cannot Endure.
       </h2>
-      <p className="text-base text-muted-foreground mb-12">Authority requires discipline.</p>
+      <p className="text-lg text-muted-foreground mb-14">Authority requires discipline.</p>
       <Button
         onClick={onRequestAssessment}
-        className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
+        className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
       >
         Request a Method Audit
       </Button>
