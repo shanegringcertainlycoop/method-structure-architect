@@ -1,99 +1,92 @@
 
-# Brand Language Revision -- Institutional Redesign
+# Full Copy Revision -- Expanded Site Architecture
 
 ## Overview
 
-Applying the full brand document to reshape the site from a "premium consulting" feel into something that reads like a structural charter. The changes touch color tokens, typography weight, copy, layout structure, and imagery treatment.
+Complete rewrite of all page copy across 10 modules, replacing the current 6-section structure. This is a copy-only change -- no color or component architecture modifications needed.
 
-## 1. Color System Update
+## Changes to `src/pages/Index.tsx`
 
-Current palette is close but needs adjustment per the brand spec:
+### Hero Section
+- Overline: "Institutional Architecture for Intellectual Property"
+- Headline: "Design the Architecture of Authority."
+- Subhead: two-line format with "If your results depend on you..." and "Certainly formalizes expertise..."
+- Primary CTA: "Request a Structural Audit" (replaces "Request an Assessment")
+- Secondary CTA: "View the Architecture" (kept)
+- Microline: "Private engagements for founders, standards bodies, and institutional leaders."
 
-| Token | Current | New | Hex |
-|-------|---------|-----|-----|
-| background | 0 0% 4% | 0 0% 4% | #0B0B0B (keep) |
-| surface | 0 0% 9% | 0 0% 8% | #141414 (Carbon) |
-| card | 0 0% 10% | 0 0% 11% | #1C1C1C (Charcoal) |
-| foreground | 0 0% 91% | 40 6% 96% | #F4F4F4 (Warm White) |
-| muted-foreground | 0 0% 42% | 30 2% 66% | #A8A8A8 (Stone Grey) |
-| accent | 27 34% 36% | 43 47% 54% | #C8A54B (Muted Marble Gold) |
-| highlight | 48 90% 55% | 43 47% 54% | #C8A54B (same as accent -- unify gold) |
+### Module I -- Structural Risk (currently Section I)
+- Headline: "Unstructured Expertise Cannot Endure."
+- New body paragraph about expertise living in conversation
+- Expanded bullet list: adds "IP dilution", "Revenue fragility", "Inability to credential", "Inability to scale"
+- Closing lines: "Performance is not a system. And systems are what endure."
+- Remove accordion (symptoms are now inline)
 
-Rules enforced: no gradients, no glows, no heavy shadows, matte finish only.
+### Module II -- What We Actually Do (NEW section)
+- Section marker: II
+- Headline: "We Do Not 'Package' Methods. We Architect Them."
+- Body about operating as architectural firm for IP
+- Closing: "The outcome is not documentation. It is infrastructure."
 
-## 2. Copy Rewrite (Index.tsx)
+### Module III -- The Architecture (currently Section II, heavily expanded)
+- Section marker: III
+- Headline: "The Architecture Process"
+- Replace 3-column card grid with 4 structured phases (Extraction, Formalization, Codification, Institutionalization)
+- Each phase has a sub-headline, bullet list, and closing declarative line
+- Uses collapsible or inline layout for the 4 phases
 
-Every piece of copy revised to match the declarative, minimal, structural tone. Short sentences. No fluff. No rhetorical drama.
+### Module IV -- What Emerges (replaces current Artifact section)
+- Section marker: IV
+- Headline: "What Emerges Is an Asset."
+- Body: "The result of this architecture is not a course. It is a defensible system."
+- Expanded checklist: 7 items including "Revenue infrastructure"
+- Closing: "Your expertise no longer depends on your presence. It functions as a system."
 
-**Hero:**
-- Tagline: "Authority must be structured to endure."
-- Sub: "Certainly is an architectural firm for intellectual property. We formalize expertise into institutional systems."
-- CTA: "Request an Assessment" / "View the Architecture"
+### Module V -- Applications (currently Section IV, updated copy)
+- Section marker: V
+- 4 cards instead of 3 (add "Advisory Practice")
+- New descriptions matching provided copy
+- Microline: "The structure differs. The architecture remains consistent."
 
-**Section I -- The Structural Risk:**
-- Reframed from "Transfer Problem" to "Structural Risk"
-- Bullets become: "Founder dependence. Informal process. Inconsistent delivery. Undefined standards."
-- Quote: "If your results depend on you, your authority is fragile."
-- Accordion: "Symptoms of Structural Risk" listing IP dilution, revenue fragility, inability to transfer
+### Module VI -- Proof of Structure (NEW section)
+- Headline: "Architecture Is Visible."
+- Intro: "Below are examples of structural artifacts produced through our process."
+- Grid of 6 artifact type labels (method blueprint, credential pathway map, etc.)
+- No heavy text -- let labels signal seriousness
 
-**Section II -- The Architecture:**
-- Steps relabeled: Capture / Organize / Package (kept)
-- Copy tightened: "Extract the logic." / "Define the standards." / "Express the system."
-- Expanded copy rewritten to be declarative, not descriptive
+### Module VII -- Engagement (currently Section V, expanded)
+- Section marker: VI
+- Two-step model: "Structural Audit" and "Architecture Intensive"
+- Audit card lists deliverables (gap analysis, risk identification, readiness assessment, roadmap)
+- Architecture card lists scope items
+- "Private engagements only." note
+- CTAs: "Request Audit" / "Discuss Architecture"
 
-**Section III -- The Artifact:**
-- Retitled from "The Output Is an Asset" to "The Artifact"
-- List items: Codified principles, Defined constructs, Structured curriculum, Credential pathways, Governance framework, Licensing model
-- Tagline: "Not documentation. Architecture."
+### Module VIII -- Common Questions (updated FAQ copy)
+- 4 questions replacing current 5
+- New copy per the provided text
 
-**Section IV -- Engagement:**
-- Two cards: "Assessment" and "Architecture"
-- Assessment: "A structured review of method maturity and transferability."
-- Architecture: "A focused engagement to design the transferable system."
-- Footer note: "Scope is determined after assessment."
+### Module IX -- Final Declaration (Closing)
+- Headline: "What Is Not Structured Cannot Endure."
+- Closing line: "Authority requires architecture."
+- CTA: "Request a Structural Audit"
 
-**Section V -- Application:**
-- Retitled from "Selected Applications" to "Selected Applications" (kept, matches section model)
-- Case study copy tightened to structural language
+### Nav Bar
+- CTA text: "Request a Structural Audit"
 
-**FAQ:**
-- Copy adjusted for declarative tone (remove any soft/warm phrasing)
+### Page Layout Order
+Nav, Hero, Structural Risk, What We Do, Architecture, What Emerges, Applications, Proof of Structure, Engagement, FAQ, Closing
 
-**Closing:**
-- Quote: "What is not structured cannot endure."
-- Single CTA button
-
-## 3. Section Structure
-
-Following the brand section model: Thesis, Structural Risk, Architecture, Artifact, Application, Engagement. The current page already follows this roughly -- reorder slightly so Engagement comes after Application.
-
-## 4. Imagery Treatment
-
-- Roman bust stays at 20% opacity, cropped, side-positioned (already implemented)
-- Ensure grayscale + luminosity blend mode (already done)
-- No dramatic lighting, no gold-plated effects
-
-## 5. Layout Refinements
-
-- Remove the large ghosted "C." typographic element in closing (too decorative)
-- Ensure consistent grid alignment across all sections
-- Whitespace is intentional, not empty -- tighten where sections feel loose
-- Module cards: matte borders, no shadow, no hover glow effects. Hover changes border opacity only.
-
-## 6. Modal Update
-
-- Submit button uses muted gold accent instead of default primary
-- Copy stays institutional: "Request an Assessment" title, "A structured review of method maturity and transferability." description
+## Changes to `src/components/AssessmentModal.tsx`
+- Title: "Request a Structural Audit" (from "Request an Assessment")
+- Description: "A focused review of your current method, documentation, and delivery model."
 
 ## Files to Modify
-
-1. **src/index.css** -- Update CSS variables to match revised color system
-2. **src/pages/Index.tsx** -- Full copy rewrite, section reordering, layout refinements
-3. **tailwind.config.ts** -- Unify highlight/accent colors
+1. **src/pages/Index.tsx** -- Full rewrite of all section components and page layout
+2. **src/components/AssessmentModal.tsx** -- Update title and description copy
 
 ## Technical Notes
-
-- CSS variable changes in `src/index.css`: update `--foreground`, `--surface`, `--card`, `--muted-foreground`, `--accent`, `--highlight` to new HSL values
-- In `tailwind.config.ts`: point `highlight.DEFAULT` to `hsl(var(--accent))` to unify the gold
-- In `src/pages/Index.tsx`: rewrite all string literals, remove the ghosted "C." element, reorder Engagement after Proof, update hover classes from `hover:border-accent/40` to `hover:border-accent/30` for subtlety
-- Modal submit button class updated to use `bg-accent text-background`
+- New sections (WhatWeDo, ProofOfStructure) added as components following existing pattern
+- Architecture section restructured from 3-column Collapsible cards to 4-phase layout using Collapsible for each phase
+- Applications grid changes from `md:grid-cols-3` to `md:grid-cols-2` for 4 cards
+- All CTA text updated from "Assessment" to "Structural Audit" throughout
