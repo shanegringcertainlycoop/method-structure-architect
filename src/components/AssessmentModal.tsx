@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface AssessmentModalProps {
   open: boolean;
@@ -21,9 +22,20 @@ const AssessmentModal = ({ open, onOpenChange }: AssessmentModalProps) => {
     if (!form.name.trim() || !form.email.trim()) return;
 
     setLoading(true);
-    // TODO: Replace with Supabase insert once Cloud is enabled
-    await new Promise((r) => setTimeout(r, 800));
+
+    const { error } = await supabase.from("assessment_requests").insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      company: form.company.trim() || null,
+      description: form.description.trim() || null,
+    });
+
     setLoading(false);
+
+    if (error) {
+      toast({ title: "Submission Failed", description: "Please try again.", variant: "destructive" });
+      return;
+    }
 
     toast({
       title: "Request Received",
