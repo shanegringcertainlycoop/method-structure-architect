@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import RevealCard from "@/components/RevealCard";
 import AssessmentModal from "@/components/AssessmentModal";
+import ProofSection from "@/components/ProofSection";
 import romanBust from "@/assets/roman-bust-hero.png";
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
@@ -306,7 +307,7 @@ const audienceItems = [
 const WhoThisIsFor = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <SectionMarker numeral="V" />
+      <SectionMarker numeral="VI" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
         For Leaders Already Producing Results.
       </h2>
@@ -333,7 +334,7 @@ const WhoThisIsFor = () => (
 const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <SectionMarker numeral="VI" />
+      <SectionMarker numeral="VII" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">How We Work</h2>
     </FadeIn>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -471,6 +472,8 @@ const Index = () => {
       <WhatWeDo />
       <Divider />
       <TheOutcome />
+      <Divider />
+      <ProofSection />
       <Divider />
       <div className="bg-surface">
         <WhoThisIsFor />
