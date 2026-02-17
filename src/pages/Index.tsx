@@ -30,11 +30,11 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 /* ─── HERO ─── */
 const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] max-w-lg opacity-20 pointer-events-none select-none">
+    <div className="absolute inset-0 flex items-end justify-end opacity-20 pointer-events-none select-none overflow-hidden">
       <img
         src={romanBust}
         alt=""
-        className="w-full h-auto object-contain grayscale"
+        className="w-full h-full object-contain object-right-bottom grayscale"
         style={{ mixBlendMode: "luminosity" }}
       />
     </div>
