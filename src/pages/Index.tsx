@@ -5,7 +5,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
-import romanBust from "@/assets/roman-bust.png";
+import romanBust from "@/assets/roman-bust-hero.png";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
