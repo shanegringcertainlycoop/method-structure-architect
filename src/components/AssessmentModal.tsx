@@ -72,7 +72,7 @@ const AssessmentModal = ({ open, onOpenChange }: AssessmentModalProps) => {
             <Label htmlFor="description" className="text-xs tracking-wide uppercase text-muted-foreground">Brief Description</Label>
             <Textarea id="description" maxLength={1000} rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="bg-background border-border rounded-sm resize-none" />
           </div>
-          <Button type="submit" disabled={loading} className="w-full rounded-sm">
+          <Button type="submit" disabled={loading} className="w-full rounded-sm bg-accent text-accent-foreground hover:bg-accent/90">
             {loading ? "Submitting…" : "Submit Request"}
           </Button>
         </form>
