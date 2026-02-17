@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Check } from "lucide-react";
@@ -25,7 +24,7 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
       size="sm"
       className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm text-xs tracking-wide"
     >
-      Request a Structural Audit
+      Request a Method Audit
     </Button>
   </nav>
 );
@@ -44,18 +43,19 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
     <div className="relative z-10 text-center flex flex-col items-center">
       <FadeIn>
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-12">
-          Institutional Architecture for Intellectual Property
+          Method Architecture &amp; Advisory
         </p>
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
-          Design the Architecture of Authority.
+          Reveal Your Method.<br />
+          Build the Structure.<br />
+          Steward the System.
         </h1>
       </FadeIn>
       <FadeIn delay={400}>
         <p className="max-w-2xl text-muted-foreground leading-relaxed text-base sm:text-lg mb-12">
-          If your results depend on you, your authority is fragile.<br />
-          Certainly formalizes expertise into transferable systems, credentials, and institutional frameworks.
+          Certainly partners with founders and institutions to extract, document, and guide the evolution of their proprietary method — so it can scale through certification, technology, and disciplined growth.
         </p>
       </FadeIn>
       <FadeIn delay={600}>
@@ -64,47 +64,46 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
             onClick={onRequestAssessment}
             className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
           >
-            Request a Structural Audit
+            Request a Method Audit
           </Button>
           <Button
             variant="outline"
             className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
-            onClick={() => document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("lifecycle")?.scrollIntoView({ behavior: "smooth" })}
           >
-            View the Architecture
+            See the Method Lifecycle™
           </Button>
         </div>
         <p className="text-xs text-muted-foreground tracking-wide italic">
-          Private engagements for founders, standards bodies, and institutional leaders.
+          Selective long-term advisory engagements.
         </p>
       </FadeIn>
     </div>
   </section>
 );
 
-/* ─── MODULE I — STRUCTURAL RISK ─── */
-const riskItems = [
-  "Founder dependence",
-  "Inconsistent delivery",
-  "IP dilution",
-  "Revenue fragility",
-  "Inability to credential",
-  "Inability to scale",
+/* ─── SECTION I — THE PROBLEM ─── */
+const problemItems = [
+  "Your framework lives in conversations.",
+  "You explain it differently each time.",
+  "Clients depend on you, not a system.",
+  "Marketing feels imprecise.",
+  "Certification feels premature.",
+  "Technology feels disconnected.",
 ];
 
-const StructuralRisk = () => (
+const TheProblem = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
         <SectionMarker numeral="I" />
         <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
-          Unstructured Expertise Cannot Endure.
+          Most Methods Stall Before They Scale.
         </h2>
-        <p className="text-base text-muted-foreground mb-10">
-          Most expertise lives in conversation. It lacks structure.
-        </p>
+        <p className="text-base text-muted-foreground mb-4">You already have results.</p>
+        <p className="text-base text-foreground mb-8">But:</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
-          {riskItems.map((item, i) => (
+          {problemItems.map((item, i) => (
             <FadeIn key={item} delay={150 * i}>
               <div className="border border-border rounded-sm bg-surface px-4 py-5 text-center">
                 <p className="text-sm text-muted-foreground">{item}</p>
@@ -112,88 +111,69 @@ const StructuralRisk = () => (
             </FadeIn>
           ))}
         </div>
-        <p className="text-base text-foreground font-serif italic">And systems are what endure.</p>
+        <p className="text-base text-foreground mb-2">Your expertise works.</p>
+        <p className="text-base text-foreground mb-8">It simply lacks structure.</p>
+        <p className="text-base text-foreground font-serif italic">What Is Not Structured Cannot Endure.</p>
       </div>
     </FadeIn>
   </section>
 );
 
-/* ─── MODULE II — WHAT WE ACTUALLY DO ─── */
-const WhatWeDo = () => (
-  <section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <SectionMarker numeral="II" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
-        We Do Not "Package" Methods.<br />We Architect Them.
-      </h2>
-      <p className="text-base text-muted-foreground max-w-3xl mb-4">
-        Certainly operates as an architectural firm for intellectual property.
-      </p>
-      <p className="text-foreground font-serif italic mb-12">The outcome is not documentation. It is infrastructure.</p>
-    </FadeIn>
-    <FadeIn delay={300}>
-      <div className="w-full border border-dashed border-border rounded-sm overflow-hidden">
-        <AspectRatio ratio={21 / 9}>
-          <div className="w-full h-full bg-surface flex items-center justify-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground/40">Visual artifact</p>
-          </div>
-        </AspectRatio>
-      </div>
-    </FadeIn>
-  </section>
-);
-
-/* ─── MODULE III — THE ARCHITECTURE ─── */
-const phases = [
+/* ─── SECTION II — THE METHOD LIFECYCLE™ ─── */
+const lifecyclePhases = [
   {
-    num: "I",
-    title: "Extraction",
-    intro: "We identify the underlying logic of your results.",
-    bullets: ["Core principles", "Decision rules", "Implicit frameworks"],
-    closing: "Most expertise is intuitive. We make it explicit.",
+    num: "1",
+    title: "Method",
+    intro: "Your proprietary approach.",
+    bullets: ["The way you think", "The way you deliver results"],
+    closing: "Often powerful. Rarely documented.",
   },
   {
-    num: "II",
-    title: "Formalization",
-    intro: "We define the system.",
-    bullets: ["Named constructs", "Defined sequences", "Shared language"],
-    closing: "If it cannot be named, it cannot be taught.",
+    num: "2",
+    title: "Structure",
+    intro: "We extract and formalize it.",
+    bullets: ["Named constructs", "Defined principles", "Clear language", "Documented IP", "Standards and sequencing"],
+    closing: "Structure transforms intuition into clarity.",
   },
   {
-    num: "III",
-    title: "Codification",
-    intro: "We build transfer mechanisms.",
-    bullets: ["Curriculum architecture", "Credential pathways", "Governance frameworks"],
-    closing: "This is where authority becomes replicable.",
+    num: "3",
+    title: "Scale",
+    intro: "Once structured, your method can support:",
+    bullets: ["Certification programs", "Licensing models", "Curriculum and programming", "Marketing precision", "Technology platforms"],
+    closing: "Scale without structure creates noise. Scale with structure creates authority.",
   },
   {
-    num: "IV",
-    title: "Institutionalization",
-    intro: "We design the structure that allows the system to endure.",
-    bullets: ["Revenue architecture", "Certification lifecycle", "Standards governance"],
-    closing: "This is where a method becomes an asset.",
+    num: "4",
+    title: "Stewardship",
+    intro: "This is where most firms fail.",
+    secondIntro: "A method is not static. It must evolve with discipline.",
+    bulletIntro: "Certainly remains involved to:",
+    bullets: ["Maintain coherence", "Protect standards", "Guide expansion", "Align certification and tech decisions", "Prevent drift"],
+    closing: "This is long-term advisory. Not a one-time project.",
   },
 ];
 
-const ArchitectureSection = () => (
-  <section id="architecture" className="px-6 py-32 max-w-5xl mx-auto">
+const stepLabels = ["Method", "Structure", "Scale", "Stewardship"];
+
+const MethodLifecycle = () => (
+  <section id="lifecycle" className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <SectionMarker numeral="III" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-12">The Architecture Process</h2>
+      <SectionMarker numeral="II" />
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-12">The Method Lifecycle™</h2>
     </FadeIn>
 
     {/* Step indicator */}
     <FadeIn delay={100}>
       <div className="flex items-center justify-center gap-0 mb-16">
-        {phases.map((phase, i) => (
-          <div key={phase.num} className="flex items-center">
+        {stepLabels.map((label, i) => (
+          <div key={label} className="flex items-center">
             <div className="flex flex-col items-center">
               <div className="w-8 h-8 rounded-full border border-accent/40 flex items-center justify-center">
-                <span className="text-xs text-accent font-serif">{phase.num}</span>
+                <span className="text-xs text-accent font-serif">{i + 1}</span>
               </div>
-              <span className="text-[10px] text-muted-foreground mt-2 tracking-wider">{phase.title}</span>
+              <span className="text-[10px] text-muted-foreground mt-2 tracking-wider">{label}</span>
             </div>
-            {i < phases.length - 1 && (
+            {i < stepLabels.length - 1 && (
               <div className="w-10 sm:w-16 h-px bg-border mx-2 -mt-5" />
             )}
           </div>
@@ -202,7 +182,7 @@ const ArchitectureSection = () => (
     </FadeIn>
 
     <div className="space-y-4">
-      {phases.map((phase, i) => (
+      {lifecyclePhases.map((phase, i) => (
         <FadeIn key={phase.num} delay={150 * i}>
           <Collapsible>
             <div className="border border-border rounded-sm bg-surface p-6 md:p-8">
@@ -215,6 +195,12 @@ const ArchitectureSection = () => (
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <div className="ml-8 mt-4 pt-4 border-t border-border">
+                  {"secondIntro" in phase && phase.secondIntro && (
+                    <p className="text-sm text-muted-foreground mb-4">{phase.secondIntro}</p>
+                  )}
+                  {"bulletIntro" in phase && phase.bulletIntro && (
+                    <p className="text-sm text-muted-foreground mb-2">{phase.bulletIntro}</p>
+                  )}
                   <ul className="space-y-2 mb-4">
                     {phase.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -234,26 +220,59 @@ const ArchitectureSection = () => (
   </section>
 );
 
-/* ─── MODULE IV — WHAT EMERGES ─── */
-const emergesItems = [
+/* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
+const WhatWeDo = () => (
+  <section className="px-6 py-32 max-w-5xl mx-auto">
+    <FadeIn>
+      <SectionMarker numeral="III" />
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
+        We Serve as Structural Partner.
+      </h2>
+      <p className="text-base text-muted-foreground mb-2">We do not sell templates.</p>
+      <p className="text-base text-muted-foreground mb-8">We do not sell content production.</p>
+      <p className="text-base text-foreground mb-4">We work alongside you to:</p>
+      <ul className="space-y-2 mb-8">
+        {["Reveal your method", "Document it clearly", "Design its architecture", "Guide its expansion"].map((item) => (
+          <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+            <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
+      <p className="text-foreground font-serif italic mb-12">Engagement begins with consulting. It often becomes advisory.</p>
+    </FadeIn>
+    <FadeIn delay={300}>
+      <div className="w-full border border-dashed border-border rounded-sm overflow-hidden">
+        <AspectRatio ratio={21 / 9}>
+          <div className="w-full h-full bg-surface flex items-center justify-center">
+            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground/40">Visual artifact</p>
+          </div>
+        </AspectRatio>
+      </div>
+    </FadeIn>
+  </section>
+);
+
+/* ─── SECTION IV — THE OUTCOME ─── */
+const outcomeItems = [
   "A defined intellectual framework",
-  "Structured curriculum",
-  "Measurable standards",
-  "Transferable credential pathway",
-  "Governance model",
-  "Licensing or distribution strategy",
-  "Revenue infrastructure",
+  "Structured curriculum architecture",
+  "Clear models and language",
+  "Assessment and standards (if applicable)",
+  "Certification or licensing blueprint",
+  "A documented IP foundation",
+  "A long-term structural roadmap",
 ];
 
-const WhatEmerges = () => (
+const TheOutcome = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <div className="border border-border rounded-sm bg-card p-8 md:p-12">
         <SectionMarker numeral="IV" />
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">What Emerges Is an Asset.</h2>
-        <p className="text-base text-muted-foreground mb-10">It is a defensible system.</p>
+        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">The Outcome</h2>
+        <p className="text-base text-muted-foreground mb-10">You leave with:</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-          {emergesItems.map((item, i) => (
+          {outcomeItems.map((item, i) => (
             <FadeIn key={item} delay={100 * i}>
               <div className="flex items-start gap-3 text-sm text-foreground py-2">
                 <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" />
@@ -262,83 +281,62 @@ const WhatEmerges = () => (
             </FadeIn>
           ))}
         </div>
-        <p className="text-base text-foreground font-serif italic">It functions as a system.</p>
+        <p className="text-base text-foreground mb-2">Your expertise becomes independent of your presence.</p>
+        <p className="text-base text-foreground mb-2">Performance becomes system.</p>
+        <p className="text-base text-foreground font-serif italic">System becomes asset.</p>
       </div>
     </FadeIn>
   </section>
 );
 
-/* ─── MODULE V — APPLICATIONS ─── */
-const Applications = () => (
+/* ─── SECTION V — WHO THIS IS FOR ─── */
+const audienceItems = [
+  "Founder-led consulting firms",
+  "Standards organizations",
+  "Advisory practices with proprietary frameworks",
+  "Performance methodologies ready to scale",
+  "Institutional leaders stewarding intellectual capital",
+];
+
+const WhoThisIsFor = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="V" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">Selected Applications</h2>
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
+        For Leaders Already Producing Results.
+      </h2>
+      <p className="text-base text-foreground mb-8">This is for:</p>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {[
-        { name: "Founder-Led Consulting Firm", summary: "From personalized delivery to structured certification and licensing." },
-        { name: "Standards Organization", summary: "From informal accreditation to formalized credential architecture." },
-        { name: "Performance Method", summary: "From results-based reputation to measurable system and assessment model." },
-        { name: "Advisory Practice", summary: "From proprietary insight to transferable institutional framework." },
-      ].map((c, i) => (
-        <FadeIn key={c.name} delay={200 * i}>
-          <div className="border border-border rounded-sm bg-card p-6 h-full">
-            <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans uppercase">{c.name}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">{c.summary}</p>
+    <div className="space-y-3 mb-12">
+      {audienceItems.map((item, i) => (
+        <FadeIn key={item} delay={150 * i}>
+          <div className="border border-border rounded-sm bg-card p-5">
+            <p className="text-sm text-foreground">{item}</p>
           </div>
         </FadeIn>
       ))}
     </div>
     <FadeIn delay={800}>
-      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
-        The structure differs. The architecture remains consistent.
-      </p>
+      <p className="text-base text-muted-foreground mb-2">Not for early-stage creators.</p>
+      <p className="text-base text-foreground mb-2">You must already have proof.</p>
+      <p className="text-base text-foreground font-serif italic">We provide discipline.</p>
     </FadeIn>
   </section>
 );
 
-/* ─── MODULE VI — PROOF OF STRUCTURE ─── */
-const ProofOfStructure = () => (
-  <section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-6">Architecture Is Visible.</h2>
-      <p className="text-base text-muted-foreground mb-16">
-        Below are examples of structural artifacts produced through our process.
-      </p>
-    </FadeIn>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {[
-        "Method blueprint diagram",
-        "Credential pathway map",
-        "Governance flow model",
-        "Curriculum architecture chart",
-        "Revenue model structure",
-        "Licensing hierarchy",
-      ].map((label, i) => (
-        <FadeIn key={label} delay={100 * i}>
-          <div className="border border-border rounded-sm bg-surface p-6 flex items-center justify-center min-h-[160px] hover:border-accent/30 transition-colors cursor-pointer">
-            <p className="text-xs tracking-[0.15em] text-muted-foreground text-center uppercase">{label}</p>
-          </div>
-        </FadeIn>
-      ))}
-    </div>
-  </section>
-);
-
-/* ─── MODULE VII — ENGAGEMENT ─── */
-const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
+/* ─── SECTION VI — ENGAGEMENT MODEL ─── */
+const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="VI" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">Engagement</h2>
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">How We Work</h2>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <FadeIn delay={200}>
         <RevealCard
-          step="STEP 1"
-          title="Structural Audit"
-          description="A focused review of your current method, documentation, and delivery model."
+          step="PHASE I"
+          title="Method Audit"
+          description="A structured review of your existing framework and scale ambitions."
           cta={
             <Button
               onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
@@ -349,7 +347,7 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
           }
         >
           <ul className="space-y-2 mb-4">
-            {["Structural gap analysis", "Risk identification", "Codification readiness assessment", "Architecture roadmap"].map((item) => (
+            {["Framework review", "Scale readiness assessment", "Structural gap analysis", "Architecture roadmap"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
                 {item}
@@ -360,21 +358,46 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
       </FadeIn>
       <FadeIn delay={400}>
         <RevealCard
-          step="STEP 2"
-          title="Architecture Intensive"
-          description="A structured design engagement to formalize and build your system."
+          step="PHASE II"
+          title="Architecture Engagement"
+          description="Focused work to extract, formalize, and document your system."
           cta={
             <Button
               variant="outline"
               onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
               className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
             >
-              Discuss Architecture
+              Discuss Engagement
             </Button>
           }
         >
           <ul className="space-y-2 mb-4">
-            {["Framework extraction", "System definition", "Credential architecture", "Transfer design", "Institutional model"].map((item) => (
+            {["Method extraction", "System formalization", "IP documentation", "Standards design"].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </RevealCard>
+      </FadeIn>
+      <FadeIn delay={600}>
+        <RevealCard
+          step="PHASE III"
+          title="Advisory Partnership"
+          description="Ongoing architectural oversight as your method expands into certification, marketing, and technology."
+          cta={
+            <Button
+              variant="outline"
+              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
+              className="rounded-sm px-6 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background"
+            >
+              Inquire
+            </Button>
+          }
+        >
+          <ul className="space-y-2 mb-4">
+            {["Coherence maintenance", "Standards protection", "Expansion guidance", "Technology alignment"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
                 {item}
@@ -384,63 +407,34 @@ const Engagement = ({ onRequestAssessment }: { onRequestAssessment: () => void }
         </RevealCard>
       </FadeIn>
     </div>
-    <FadeIn delay={500}>
-      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">Private engagements only.</p>
+    <FadeIn delay={700}>
+      <p className="text-xs text-muted-foreground tracking-wide mt-12 italic">
+        Most engagements evolve into long-term advisory relationships.
+      </p>
     </FadeIn>
   </section>
 );
 
-/* ─── MODULE VIII — FAQ ─── */
-const FAQ = () => (
-  <section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <Divider />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-16 mb-10">Common Questions</h2>
-    </FadeIn>
-    <FadeIn delay={200}>
-      <div className="border border-border rounded-sm bg-card">
-        <Accordion type="single" collapsible>
-          {[
-            { q: "Do we need existing documentation?", a: "No. Most expertise begins informal. We extract from lived execution." },
-            { q: "What if our method is evolving?", a: "Architecture does not freeze evolution. It defines structure for it." },
-            { q: "Who owns the IP?", a: "You retain ownership. We design the system." },
-            { q: "Is this for early-stage founders?", a: "No. This is for leaders whose work already produces results." },
-          ].map((item, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="border-border px-6 md:px-8">
-              <AccordionTrigger className="text-sm text-foreground hover:no-underline tracking-wide font-sans font-normal">
-                {item.q}
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-    </FadeIn>
-  </section>
-);
-
-/* ─── MODULE IX — CLOSING ─── */
+/* ─── CLOSING ─── */
 const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="px-6 py-32 text-center max-w-3xl mx-auto">
     <FadeIn>
       <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight mb-6">
         What Is Not Structured Cannot Endure.
       </h2>
-      <p className="text-base text-muted-foreground mb-12">Authority requires architecture.</p>
+      <p className="text-base text-muted-foreground mb-12">Authority requires discipline.</p>
       <Button
         onClick={onRequestAssessment}
         className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide"
       >
-        Request a Structural Audit
+        Request a Method Audit
       </Button>
     </FadeIn>
     <FadeIn delay={400}>
       <Divider />
       <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
         <img src={certainlyLogo} alt="Certainly" className="h-4" />
-        <p className="mt-4 sm:mt-0">Architecture for authority.</p>
+        <p className="mt-4 sm:mt-0">Method architecture for disciplined growth.</p>
       </footer>
     </FadeIn>
   </section>
@@ -456,25 +450,22 @@ const Index = () => {
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
       <div className="bg-surface">
-        <StructuralRisk />
+        <TheProblem />
+      </div>
+      <Divider />
+      <div className="bg-surface">
+        <MethodLifecycle />
       </div>
       <Divider />
       <WhatWeDo />
       <Divider />
-      <div className="bg-surface">
-        <ArchitectureSection />
-      </div>
-      <Divider />
-      <WhatEmerges />
+      <TheOutcome />
       <Divider />
       <div className="bg-surface">
-        <Applications />
+        <WhoThisIsFor />
       </div>
       <Divider />
-      <ProofOfStructure />
-      <Divider />
-      <Engagement onRequestAssessment={() => setAssessmentOpen(true)} />
-      <FAQ />
+      <EngagementModel onRequestAssessment={() => setAssessmentOpen(true)} />
       <Closing onRequestAssessment={() => setAssessmentOpen(true)} />
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
