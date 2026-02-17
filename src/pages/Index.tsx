@@ -19,7 +19,7 @@ const SectionMarker = ({ numeral, className = "" }: { numeral: string; className
 /* ─── NAV ─── */
 const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <img src={certainlyLogo} alt="Certainly" className="h-4" />
+    <img src={certainlyLogo} alt="Certainly" className="h-8" />
     <Button
       onClick={onRequestAssessment}
       size="sm"
