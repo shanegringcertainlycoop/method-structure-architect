@@ -8,6 +8,7 @@ import AssessmentModal from "@/components/AssessmentModal";
 import romanBust from "@/assets/roman-bust-hero.png";
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
+import closingBg from "@/assets/closing-bg.avif";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
@@ -419,26 +420,32 @@ const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => v
 
 /* ─── CLOSING ─── */
 const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <section className="px-6 py-40 text-center max-w-3xl mx-auto">
-    <FadeIn>
-      <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-8 text-foreground">
-        What Is Not Structured Cannot Endure.
-      </h2>
-      <p className="text-lg text-muted-foreground mb-14">Authority requires discipline.</p>
-      <Button
-        onClick={onRequestAssessment}
-        className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
-      >
-        Request a Method Audit
-      </Button>
-    </FadeIn>
-    <FadeIn delay={400}>
-      <Divider />
-      <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-        <img src={certainlyLogo} alt="Certainly" className="h-4" />
-        <p className="mt-4 sm:mt-0">Method architecture for disciplined growth.</p>
-      </footer>
-    </FadeIn>
+  <section className="relative px-6 py-40 text-center overflow-hidden">
+    <div className="absolute inset-0">
+      <img src={closingBg} alt="" className="w-full h-full object-cover grayscale opacity-20" />
+      <div className="absolute inset-0 bg-background/70" />
+    </div>
+    <div className="relative z-10 max-w-3xl mx-auto">
+      <FadeIn>
+        <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-8 text-foreground">
+          What Is Not Structured Cannot Endure.
+        </h2>
+        <p className="text-lg text-muted-foreground mb-14">Authority requires discipline.</p>
+        <Button
+          onClick={onRequestAssessment}
+          className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
+        >
+          Request a Method Audit
+        </Button>
+      </FadeIn>
+      <FadeIn delay={400}>
+        <Divider />
+        <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
+          <img src={certainlyLogo} alt="Certainly" className="h-4" />
+          <p className="mt-4 sm:mt-0">Method architecture for disciplined growth.</p>
+        </footer>
+      </FadeIn>
+    </div>
   </section>
 );
 
