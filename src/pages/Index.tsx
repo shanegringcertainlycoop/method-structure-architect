@@ -8,6 +8,7 @@ import AssessmentModal from "@/components/AssessmentModal";
 import romanBust from "@/assets/roman-bust-hero.png";
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
+import romanColumns from "@/assets/roman-columns.png";
 import closingBg from "@/assets/closing-bg.avif";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
@@ -244,11 +245,12 @@ const WhatWeDo = () => (
         <p className="text-foreground font-serif italic text-lg">Engagement begins with consulting. It often becomes advisory.</p>
       </FadeIn>
       <FadeIn delay={300}>
-        <div className="w-full overflow-hidden rounded-sm border border-border">
+        <div className="w-full overflow-hidden rounded-sm">
           <img
-            src={structuralPartner}
-            alt="Structural methodology"
-            className="w-full h-full object-cover grayscale"
+            src={romanColumns}
+            alt="Roman columns"
+            className="w-full h-full object-contain grayscale opacity-20"
+            style={{ mixBlendMode: "luminosity" }}
           />
         </div>
       </FadeIn>
