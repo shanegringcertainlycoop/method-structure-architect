@@ -50,30 +50,26 @@ const ProofSection = () => {
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
-      <FadeIn>
-        <span className="font-serif text-accent text-sm tracking-widest">V</span>
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-16 text-foreground">
-          Structural Discipline Performs.
-        </h2>
-      </FadeIn>
-
       <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-0 lg:gap-12 items-start">
         {/* LEFT — Vertical Tabs (horizontal on mobile) */}
         <FadeIn>
-          <div className="flex lg:flex-col gap-0 mb-8 lg:mb-0">
-            {proofTabs.map((t, i) => (
-              <button
-                key={t.tabLabel}
-                onClick={() => setActiveTab(i)}
-                className={`text-left text-sm tracking-wide px-4 py-4 transition-colors border-b lg:border-b lg:border-l-2 lg:border-b-0 flex-1 lg:flex-none ${
-                  activeTab === i
-                    ? "border-accent text-foreground font-medium"
-                    : "border-border text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {t.tabLabel}
-              </button>
-            ))}
+          <div className="flex flex-col">
+            <span className="font-serif text-accent text-xs tracking-widest mb-6 hidden lg:block">V</span>
+            <div className="flex lg:flex-col gap-0 mb-8 lg:mb-0">
+              {proofTabs.map((t, i) => (
+                <button
+                  key={t.tabLabel}
+                  onClick={() => setActiveTab(i)}
+                  className={`text-left text-base tracking-wide px-4 py-5 transition-colors border-b lg:border-b-0 lg:border-l-[3px] flex-1 lg:flex-none ${
+                    activeTab === i
+                      ? "border-accent text-foreground font-medium"
+                      : "border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t.tabLabel}
+                </button>
+              ))}
+            </div>
           </div>
         </FadeIn>
 
