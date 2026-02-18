@@ -98,7 +98,7 @@ const problemItems = [
 const TheProblem = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
-      <div className="border border-border rounded-lg bg-card p-10 md:p-16 noise-overlay">
+      <div className="border border-border rounded-lg bg-card p-10 md:p-16">
         <SectionMarker numeral="I" />
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
           Most Methods Stall Before They Scale.
@@ -461,7 +461,7 @@ const Index = () => {
       <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
-      <div className="bg-surface">
+      <div className="bg-surface noise-overlay">
         <TheProblem />
       </div>
       <Divider />
