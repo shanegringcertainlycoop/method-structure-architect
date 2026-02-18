@@ -1,103 +1,120 @@
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
-interface CaseStudy {
-  id: string;
-  logo?: string;
-  image?: string;
-  client: string;
-  headline: string;
-  body: string;
-}
+/* ─── PLACEHOLDER DATA — replace with real data later ─── */
+const tabs = ["Comparison View", "Outcomes"];
 
-const caseStudies: CaseStudy[] = [
+const barData = [
+  { label: "Certainly", value: 92, highlight: true },
+  { label: "Firm B", value: 68 },
+  { label: "Firm C", value: 54 },
+  { label: "Firm D", value: 47 },
+  { label: "Firm E", value: 31 },
+];
+
+const textBlocks = [
   {
-    id: "study-1",
-    client: "Client One",
-    headline: "From Founder Intuition to Certified Framework",
-    body: "A performance methodology practiced for 15 years was extracted, structured, and formalized into a licensable system — enabling certification across three markets within 18 months.",
+    headline: "Structured from day one.",
+    body: "Placeholder description. Replace with real proof copy about methodology strength.",
   },
   {
-    id: "study-2",
-    client: "Client Two",
-    headline: "Scaling Advisory Without Losing Precision",
-    body: "An institutional advisory practice documented its proprietary assessment model, creating clear standards that allowed trained associates to deliver with the same rigor as the founding partner.",
+    headline: "Built to endure.",
+    body: "Placeholder description. Replace with real proof copy about system resilience.",
   },
   {
-    id: "study-3",
-    client: "Client Three",
-    headline: "Method Architecture for Technology Alignment",
-    body: "A standards organization restructured its curriculum architecture, aligning its intellectual framework with a new technology platform — without compromising methodological integrity.",
+    headline: "Disciplined expansion.",
+    body: "Placeholder description. Replace with real proof copy about controlled growth.",
   },
 ];
 
+/* ─── BAR CHART ─── */
+const BarChart = () => (
+  <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
+    {barData.map((bar) => {
+      const heightPct = `${bar.value}%`;
+      return (
+        <div key={bar.label} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
+          <span className="text-sm font-medium text-foreground">{bar.value}%</span>
+          <div
+            className="w-full rounded-t-sm transition-all duration-700"
+            style={{
+              height: heightPct,
+              background: bar.highlight
+                ? "linear-gradient(180deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.4) 100%)"
+                : "hsl(var(--muted) / 0.4)",
+              border: bar.highlight ? "none" : "1px solid hsl(var(--border))",
+            }}
+          />
+          <span className="text-xs text-muted-foreground tracking-wide text-center mt-1">
+            {bar.label}
+          </span>
+        </div>
+      );
+    })}
+  </div>
+);
+
+/* ─── MAIN SECTION ─── */
 const ProofSection = () => {
-  const [active, setActive] = useState(0);
-  const study = caseStudies[active];
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="px-6 py-32 max-w-5xl mx-auto">
-      <FadeIn>
-        <span className="font-serif text-accent text-sm tracking-widest">V</span>
-        <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">
-          Proof of Structure.
-        </h2>
-      </FadeIn>
-
-      {/* Tabs */}
-      <FadeIn delay={100}>
-        <div className="flex gap-2 mb-12 border-b border-border">
-          {caseStudies.map((s, i) => (
-            <button
-              key={s.id}
-              onClick={() => setActive(i)}
-              className={`px-6 py-3 text-sm tracking-wide transition-colors relative ${
-                active === i
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {s.logo ? (
-                <img src={s.logo} alt={s.client} className="h-5 grayscale brightness-200" />
-              ) : (
-                <span className="font-medium">{s.client}</span>
-              )}
-              {active === i && (
-                <span className="absolute bottom-0 left-0 right-0 h-px bg-accent" />
-              )}
-            </button>
-          ))}
-        </div>
-      </FadeIn>
-
-      {/* Active study */}
-      <FadeIn key={study.id}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image slot */}
-          <div className="w-full aspect-[4/3] rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden">
-            {study.image ? (
-              <img
-                src={study.image}
-                alt={study.headline}
-                className="w-full h-full object-cover grayscale opacity-60"
-                style={{ mixBlendMode: "luminosity" }}
-              />
-            ) : (
-              <span className="text-muted-foreground text-sm tracking-wide">Image Placeholder</span>
-            )}
+    <section className="px-6 py-32 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* LEFT — Bar Chart */}
+        <FadeIn>
+          <div className="w-full">
+            <BarChart />
+            <p className="text-xs text-muted-foreground mt-6 italic">
+              Placeholder footnote. Replace with data source context.
+            </p>
           </div>
+        </FadeIn>
 
-          {/* Copy */}
+        {/* RIGHT — Copy */}
+        <FadeIn delay={200}>
           <div>
-            {study.logo && (
-              <img src={study.logo} alt={study.client} className="h-6 mb-6 grayscale brightness-200" />
-            )}
-            <h3 className="font-serif text-2xl mb-4 text-foreground">{study.headline}</h3>
-            <p className="text-base text-muted-foreground leading-relaxed mb-6">{study.body}</p>
-            <p className="text-xs tracking-widest text-accent uppercase">{study.client}</p>
+            <span className="font-serif text-accent text-sm tracking-widest">V</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
+              Proof of Structure.
+            </h2>
+
+            {/* Tabs */}
+            <div className="flex mb-10 bg-card rounded-sm border border-border overflow-hidden">
+              {tabs.map((tab, i) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(i)}
+                  className={`flex-1 px-5 py-3 text-sm tracking-wide transition-colors ${
+                    activeTab === i
+                      ? "bg-foreground text-background font-medium"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Text Blocks */}
+            <div className="space-y-0">
+              {textBlocks.map((block, i) => (
+                <div key={i}>
+                  {i > 0 && <div className="w-full h-px bg-border" />}
+                  <div className="py-6">
+                    <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-2">
+                      {block.headline}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {block.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </section>
   );
 };
