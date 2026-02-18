@@ -1,4 +1,4 @@
-import { useState, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface RevealCardProps {
   step: string;
@@ -9,24 +9,13 @@ interface RevealCardProps {
 }
 
 const RevealCard = ({ step, title, description, children, cta }: RevealCardProps) => {
-  const [revealed, setRevealed] = useState(false);
-
   return (
-    <div
-      className="group border border-border rounded-sm bg-card p-8 hover:border-accent/30 transition-all duration-300 h-full flex flex-col cursor-pointer"
-      onClick={() => setRevealed(!revealed)}
-    >
+    <div className="border border-border rounded-sm bg-card p-8 h-full flex flex-col">
       <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{step}</p>
       <h3 className="font-serif text-2xl mb-4 text-foreground">{title}</h3>
       <p className="text-base text-muted-foreground leading-relaxed mb-6">{description}</p>
 
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-out flex-1 ${
-          revealed ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0 md:group-hover:max-h-[300px] md:group-hover:opacity-100"
-        }`}
-      >
-        {children}
-      </div>
+      <div className="flex-1">{children}</div>
 
       <div className="mt-auto pt-4">{cta}</div>
     </div>
