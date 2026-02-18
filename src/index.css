@@ -69,6 +69,13 @@
   }
 }
 
+.btn-accent-gradient {
+  background: linear-gradient(180deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.4) 100%);
+}
+.btn-accent-gradient:hover {
+  background: linear-gradient(180deg, hsl(var(--accent) / 0.9) 0%, hsl(var(--accent) / 0.35) 100%);
+}
+
 .noise-overlay {
   position: relative;
 }
