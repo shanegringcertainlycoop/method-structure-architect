@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import RevealCard from "@/components/RevealCard";
 import AssessmentModal from "@/components/AssessmentModal";
 import ProofSection from "@/components/ProofSection";
+import ClientHighlights from "@/components/ClientHighlights";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
@@ -473,6 +474,8 @@ const Index = () => {
       <TheOutcome />
       <Divider />
       <ProofSection />
+      <Divider />
+      <ClientHighlights />
       <Divider />
       <div className="bg-surface">
         <WhoThisIsFor />
