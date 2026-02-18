@@ -466,11 +466,11 @@ const Index = () => {
         <TheProblem />
       </div>
       <Divider />
+      <WhatWeDo />
+      <Divider />
       <div className="bg-surface">
         <MethodLifecycle />
       </div>
-      <Divider />
-      <WhatWeDo />
       <Divider />
       <TheOutcome />
       <Divider />
