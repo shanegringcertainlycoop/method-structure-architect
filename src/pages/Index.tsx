@@ -35,7 +35,7 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 /* ─── HERO ─── */
 const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
-    <div className="absolute inset-0 flex items-end justify-end opacity-[0.12] pointer-events-none select-none overflow-hidden">
+    <div className="absolute inset-0 flex items-end justify-end opacity-[0.25] pointer-events-none select-none overflow-hidden">
       <img
         src={romanBust}
         alt=""
