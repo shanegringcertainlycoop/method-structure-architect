@@ -54,6 +54,7 @@ const ProofSection = () => {
         {/* LEFT — Content */}
         <FadeIn key={activeTab} delay={100}>
           <div>
+            <span className="font-serif text-accent text-xs tracking-widest mb-4 block">V</span>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">
               {tab.thesis}
             </h3>
@@ -100,13 +101,12 @@ const ProofSection = () => {
         {/* RIGHT — Vertical Tabs (horizontal on mobile) */}
         <FadeIn>
           <div className="flex flex-col">
-            <span className="font-serif text-accent text-xs tracking-widest mb-6 hidden lg:block">V</span>
             <div className="flex lg:flex-col gap-0 mt-8 lg:mt-0">
               {proofTabs.map((t, i) => (
                 <button
                   key={t.tabLabel}
                   onClick={() => setActiveTab(i)}
-                  className={`text-left text-base tracking-wide px-4 py-5 transition-colors border-b lg:border-b-0 lg:border-r-[3px] flex-1 lg:flex-none ${
+                  className={`text-left text-base tracking-wide px-4 py-5 transition-colors border-b lg:border-b-0 lg:border-l-[3px] flex-1 lg:flex-none ${
                     activeTab === i
                       ? "border-accent text-foreground font-medium"
                       : "border-border text-muted-foreground hover:text-foreground"
