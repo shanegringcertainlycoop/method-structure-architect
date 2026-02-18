@@ -1,29 +1,42 @@
 
+## Redesign: Structural Discipline Performs (Proof Section)
 
-## Update "How We Work" Section
+Replace the current placeholder two-column layout with a new data-driven module featuring vertical tabs on the left and a large chart + thesis on the right.
 
-Replace the current three-phase engagement model with the new four-phase structural layout using the provided copy.
+### Layout
 
-### Changes
+- **Left column**: Three vertically stacked tab buttons, styled as a slim sidebar with bottom-border separators
+- **Right column**: The active tab's content -- bold serif headline (thesis), a two-bar horizontal chart, a 2-3 sentence summary, and a linked citation
 
-**File: `src/pages/Index.tsx`**
+### Data (3 Tabs)
 
-1. Update the section numeral from "VII" to match current sequence
-2. Replace the heading with "How We Work" and add the subtitle "Our engagements follow four structural movements."
-3. Replace the 3-column RevealCard grid with a 4-phase layout, each containing:
-   - Roman numeral + title
-   - Introductory line
-   - Bullet list of services/activities
-   - Closing italic statement
-4. Use a 2x2 grid on desktop (`grid-cols-1 md:grid-cols-2`) for the four phases instead of the current 3-column layout
-5. Remove the RevealCard component usage and the "Request Audit" / "Discuss Engagement" / "Inquire" CTAs
-6. Remove the trailing italic note about long-term advisory relationships
-7. Fix the typo "Certificaiton" to "Certification" in the content (or keep as-provided -- will keep as-provided since it's user copy)
+**Tab 1 -- Strategic Success**
+- Thesis: "Structure Increases Strategic Success"
+- Chart: 77% (High governance, gold) vs 54% (Low governance, charcoal)
+- Citation: PMI Pulse of the Profession, 2020
+
+**Tab 2 -- Capital Waste**
+- Thesis: "Lack of Structure Destroys Capital"
+- Chart: 9-10% waste (High governance, gold) vs 30%+ waste (Low governance, charcoal)
+- Citation: PMI Pulse of the Profession, 2018
+
+**Tab 3 -- Training Profitability**
+- Thesis: "Formalized Training Improves Profitability"
+- Chart: Two stacked bars -- +24% higher profit margins, 218% higher income per employee
+- Citation: ATD State of the Industry
 
 ### Technical Details
 
-- The `RevealCard` component import can be removed from `Index.tsx` since it will no longer be used
-- Each phase card will use the existing card styling pattern (`border border-border rounded-sm bg-card p-8`)
-- Bullet items will use the accent dot pattern already established elsewhere on the page
-- The `onRequestAssessment` prop can be removed from the `EngagementModel` component since there are no more CTA buttons
+**File: `src/components/ProofSection.tsx`** (full rewrite)
 
+1. Replace all placeholder data with a `proofTabs` array containing the three tabs, each with: `tabLabel`, `thesis`, `bars` (array of `{label, value, highlight, displayValue}`), `summary`, `citationText`, `citationUrl`
+2. Left column: Vertical tab list using `flex-col` with bottom borders, active state indicated by accent left-border and white text
+3. Right column: 
+   - Section numeral and "Structural Discipline Performs." heading above the chart area
+   - Bold serif thesis headline for the active tab
+   - Horizontal bar chart (bars rendered as `width` percentage with gold gradient for highlighted bars, charcoal for others)
+   - Summary paragraph in muted text
+   - Citation as an external link in accent color
+4. On mobile: tabs stack horizontally above content (single column layout)
+5. Uses existing `FadeIn` component for scroll animation
+6. Bar chart uses CSS-based horizontal bars (no recharts dependency needed) for simplicity and consistency with the minimal aesthetic
