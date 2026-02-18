@@ -6,7 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import RevealCard from "@/components/RevealCard";
 import AssessmentModal from "@/components/AssessmentModal";
 import ProofSection from "@/components/ProofSection";
-import romanBust from "@/assets/roman-bust-hero.png";
+// romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
 import romanColumns from "@/assets/roman-columns.png";
@@ -37,7 +37,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
     <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
       <img
-        src={romanBust}
+        src="/images/roman-bust-hero.png"
         alt=""
         className="absolute right-0 bottom-0 w-[70%] h-full object-contain object-right-bottom grayscale brightness-150 opacity-25"
       />
