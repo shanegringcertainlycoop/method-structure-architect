@@ -3,29 +3,35 @@ import FadeIn from "@/components/FadeIn";
 
 interface CaseStudy {
   id: string;
-  client: string;
+  label: string;
   headline: string;
   body: string;
 }
 
 const caseStudies: CaseStudy[] = [
   {
-    id: "study-1",
-    client: "Client One",
-    headline: "From Founder Intuition to Certified Framework",
-    body: "A performance methodology practiced for 15 years was extracted, structured, and formalized into a licensable system — enabling certification across three markets within 18 months.",
+    id: "drvn",
+    label: "DRVN",
+    headline: "From Founder-Led App to Governed Professional Ecosystem",
+    body: "A high-performing training methodology serving hundreds of thousands of app users risked dilution beyond the founder. We engineered a certified operating system — governance, assessment, and business infrastructure — launching with 70+ professional waitlist and formalizing a 12-unit curriculum within the first year. The result: a scalable professional network built on structure, not personality.",
   },
   {
-    id: "study-2",
-    client: "Client Two",
-    headline: "Scaling Advisory Without Losing Precision",
-    body: "An institutional advisory practice documented its proprietary assessment model, creating clear standards that allowed trained associates to deliver with the same rigor as the founding partner.",
+    id: "well-ap",
+    label: "WELL AP",
+    headline: "From Building Standard to Global Workforce Engine",
+    body: "A 400-page health standard had surging demand but no delivery infrastructure. We helped architected the credential system — assessment, renewal, governance, and global distribution — enabling 20,000+ credentialed professionals across 120+ countries and generating recurring renewal revenue with 200–300 credential sales per month at scale. The standard became a labor market.",
   },
   {
-    id: "study-3",
-    client: "Client Three",
-    headline: "Method Architecture for Technology Alignment",
-    body: "A standards organization restructured its curriculum architecture, aligning its intellectual framework with a new technology platform — without compromising methodological integrity.",
+    id: "iwbi",
+    label: "International WELL Building Institute",
+    headline: "From Static PDF to Global Certification Operating System",
+    body: "A 1,000+ page building standard constrained by manual workflows was transformed into a governed digital platform. The infrastructure now supports 26,000+ projects, 131 countries, 300,000+ users, and $5.1B+ square feet certified — replacing fragmented review processes with a scalable certification OS.",
+  },
+  {
+    id: "usgbc",
+    label: "USGBC ADVANCE",
+    headline: "From Social Equity Vision to National Delivery Infrastructure",
+    body: "An aspirational equity initiative reliant on staff-led workshops became a governed national program. We built a 100+ asset toolkit, trained 424+ community leaders, engaged 2,000+ residents, and supported 8.5M+ square feet of real-world building impact — transforming vision into repeatable infrastructure.",
   },
 ];
 
@@ -44,7 +50,7 @@ const ClientHighlights = () => {
 
       {/* Tabs */}
       <FadeIn delay={100}>
-        <div className="flex gap-0 mb-12 border-b border-border">
+        <div className="flex flex-wrap gap-0 mb-12 border-b border-border">
           {caseStudies.map((s, i) => (
             <button
               key={s.id}
@@ -55,7 +61,7 @@ const ClientHighlights = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span className="font-medium">{s.client}</span>
+              <span className="font-medium">{s.label}</span>
               {active === i && (
                 <span className="absolute bottom-0 left-0 right-0 h-px bg-accent" />
               )}
@@ -76,7 +82,7 @@ const ClientHighlights = () => {
           <div>
             <h3 className="font-serif text-2xl mb-4 text-foreground">{study.headline}</h3>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">{study.body}</p>
-            <p className="text-xs tracking-widest text-accent uppercase">{study.client}</p>
+            <p className="text-xs tracking-widest text-accent uppercase">{study.label}</p>
           </div>
         </div>
       </FadeIn>
