@@ -50,30 +50,8 @@ const ProofSection = () => {
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-0 lg:gap-12 items-start">
-        {/* LEFT — Vertical Tabs (horizontal on mobile) */}
-        <FadeIn>
-          <div className="flex flex-col">
-            <span className="font-serif text-accent text-xs tracking-widest mb-6 hidden lg:block">V</span>
-            <div className="flex lg:flex-col gap-0 mb-8 lg:mb-0">
-              {proofTabs.map((t, i) => (
-                <button
-                  key={t.tabLabel}
-                  onClick={() => setActiveTab(i)}
-                  className={`text-left text-base tracking-wide px-4 py-5 transition-colors border-b lg:border-b-0 lg:border-l-[3px] flex-1 lg:flex-none ${
-                    activeTab === i
-                      ? "border-accent text-foreground font-medium"
-                      : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {t.tabLabel}
-                </button>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* RIGHT — Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-0 lg:gap-12 items-start">
+        {/* LEFT — Content */}
         <FadeIn key={activeTab} delay={100}>
           <div>
             <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">
@@ -116,6 +94,28 @@ const ProofSection = () => {
             >
               {tab.citationText}
             </a>
+          </div>
+        </FadeIn>
+
+        {/* RIGHT — Vertical Tabs (horizontal on mobile) */}
+        <FadeIn>
+          <div className="flex flex-col">
+            <span className="font-serif text-accent text-xs tracking-widest mb-6 hidden lg:block">V</span>
+            <div className="flex lg:flex-col gap-0 mt-8 lg:mt-0">
+              {proofTabs.map((t, i) => (
+                <button
+                  key={t.tabLabel}
+                  onClick={() => setActiveTab(i)}
+                  className={`text-left text-base tracking-wide px-4 py-5 transition-colors border-b lg:border-b-0 lg:border-r-[3px] flex-1 lg:flex-none ${
+                    activeTab === i
+                      ? "border-accent text-foreground font-medium"
+                      : "border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t.tabLabel}
+                </button>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </div>
