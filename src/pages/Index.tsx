@@ -35,11 +35,11 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
 /* ─── HERO ─── */
 const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
-    <div className="absolute inset-0 flex items-end justify-end opacity-[0.25] pointer-events-none select-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
       <img
         src={romanBust}
         alt=""
-        className="w-full h-full object-contain object-right-bottom grayscale brightness-150"
+        className="absolute right-0 bottom-0 w-[70%] h-full object-contain object-right-bottom grayscale brightness-150 opacity-25"
       />
     </div>
     <div className="relative z-10 text-center flex flex-col items-center">
