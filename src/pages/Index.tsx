@@ -26,7 +26,7 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
     <Button
       onClick={onRequestAssessment}
       size="sm"
-      className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm text-xs tracking-wide"
+      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
     >
       Request a Method Audit
     </Button>
@@ -65,7 +65,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <Button
             onClick={onRequestAssessment}
-            className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-10 py-4 text-base tracking-wide h-auto"
+            className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
           >
             Request a Method Audit
           </Button>
@@ -409,7 +409,7 @@ const Closing = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
         <p className="text-lg text-muted-foreground mb-14">Authority requires discipline.</p>
         <Button
           onClick={onRequestAssessment}
-          className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
+          className="btn-accent-gradient text-accent-foreground rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
         >
           Request a Method Audit
         </Button>
