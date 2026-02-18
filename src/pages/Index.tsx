@@ -314,10 +314,11 @@ const WhoThisIsFor = () => (
       </h2>
       <p className="text-lg text-foreground mb-8">This is for:</p>
     </FadeIn>
-    <div className="space-y-3 mb-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-0 mb-12">
       {audienceItems.map((item, i) => (
-        <FadeIn key={item} delay={150 * i}>
-          <div className="border border-border rounded-sm bg-card p-6">
+        <FadeIn key={item} delay={100 * i}>
+          <div className="flex items-center gap-4 py-5 border-b border-border">
+            <span className="text-accent font-serif text-sm tabular-nums">{String(i + 1).padStart(2, "0")}</span>
             <p className="text-base text-foreground">{item}</p>
           </div>
         </FadeIn>
