@@ -39,7 +39,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
       <img
         src="/images/roman-bust-hero.png"
         alt=""
-        className="absolute right-0 bottom-0 w-[70%] h-full object-contain object-right-bottom grayscale brightness-150 opacity-25"
+        className="absolute right-0 bottom-0 w-[85%] h-[110%] object-contain object-right-bottom grayscale brightness-150 opacity-25"
       />
     </div>
     <div className="relative z-10 text-center flex flex-col items-center">
