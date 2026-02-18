@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Check } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import RevealCard from "@/components/RevealCard";
+
 import AssessmentModal from "@/components/AssessmentModal";
 import ProofSection from "@/components/ProofSection";
 import ClientHighlights from "@/components/ClientHighlights";
@@ -333,93 +333,64 @@ const WhoThisIsFor = () => (
 );
 
 /* ─── SECTION VI — ENGAGEMENT MODEL ─── */
-const EngagementModel = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
+const engagementPhases = [
+  {
+    numeral: "I",
+    title: "Diagnose",
+    intro: "Understand how trust works in your business today.",
+    bullets: ["Trust Architecture Review", "Method Audit", "Strategy Sprint", "Certification Readiness Assessment"],
+    closing: "Clarity on what should — or should not — be built.",
+  },
+  {
+    numeral: "II",
+    title: "Preserve",
+    intro: "Capture and formalize what makes your method work.",
+    bullets: ["Method Capture™", "Framework codification", "Curriculum architecture", "Competence definition"],
+    closing: "Your expertise becomes transferable.",
+  },
+  {
+    numeral: "III",
+    title: "Build",
+    intro: "Design the right trust mechanism.",
+    bullets: ["Licensing frameworks", "Curriculum & assessment systems", "Credential brand infrastructure", "120-Day Certificaiton Pilot Launch"],
+    closing: "Trust transfers beyond the founder.",
+  },
+  {
+    numeral: "IV",
+    title: "Steward",
+    intro: "Own and protect the system as it grows.",
+    bullets: ["Fractional Credential Operations™", "Governance", "Operational oversight", "Portfolio strategy"],
+    closing: "Quality does not erode under scale.",
+  },
+];
+
+const EngagementModel = () => (
   <section className="px-6 py-32 max-w-5xl mx-auto">
     <FadeIn>
       <SectionMarker numeral="VII" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-16">How We Work</h2>
+      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
+      <p className="text-lg text-muted-foreground mb-16">Our engagements follow four structural movements.</p>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <FadeIn delay={200}>
-        <RevealCard
-          step="PHASE I"
-          title="Method Audit"
-          description="A structured review of your existing framework and scale ambitions."
-          cta={
-            <Button
-              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm px-8 py-3 text-sm tracking-wide h-auto"
-            >
-              Request Audit
-            </Button>
-          }
-        >
-          <ul className="space-y-2 mb-4">
-            {["Framework review", "Scale readiness assessment", "Structural gap analysis", "Architecture roadmap"].map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </RevealCard>
-      </FadeIn>
-      <FadeIn delay={400}>
-        <RevealCard
-          step="PHASE II"
-          title="Architecture Engagement"
-          description="Focused work to extract, formalize, and document your system."
-          cta={
-            <Button
-              variant="outline"
-              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
-            >
-              Discuss Engagement
-            </Button>
-          }
-        >
-          <ul className="space-y-2 mb-4">
-            {["Method extraction", "System formalization", "IP documentation", "Standards design"].map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </RevealCard>
-      </FadeIn>
-      <FadeIn delay={600}>
-        <RevealCard
-          step="PHASE III"
-          title="Advisory Partnership"
-          description="Ongoing architectural oversight as your method expands into certification, marketing, and technology."
-          cta={
-            <Button
-              variant="outline"
-              onClick={(e) => { e.stopPropagation(); onRequestAssessment(); }}
-              className="rounded-sm px-8 py-3 text-sm tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
-            >
-              Inquire
-            </Button>
-          }
-        >
-          <ul className="space-y-2 mb-4">
-            {["Coherence maintenance", "Standards protection", "Expansion guidance", "Technology alignment"].map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </RevealCard>
-      </FadeIn>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {engagementPhases.map((phase, i) => (
+        <FadeIn key={phase.numeral} delay={150 * i}>
+          <div className="border border-border rounded-sm bg-card p-8 h-full flex flex-col">
+            <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
+            <h3 className="font-serif text-2xl mb-4 text-foreground">{phase.title}</h3>
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
+            <ul className="space-y-3 mb-6 flex-1">
+              {phase.bullets.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
+          </div>
+        </FadeIn>
+      ))}
     </div>
-    <FadeIn delay={700}>
-      <p className="text-sm text-muted-foreground tracking-wide mt-12 italic">
-        Most engagements evolve into long-term advisory relationships.
-      </p>
-    </FadeIn>
   </section>
 );
 
@@ -483,7 +454,7 @@ const Index = () => {
         <WhoThisIsFor />
       </div>
       <Divider />
-      <EngagementModel onRequestAssessment={() => setAssessmentOpen(true)} />
+      <EngagementModel />
       <Closing onRequestAssessment={() => setAssessmentOpen(true)} />
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
