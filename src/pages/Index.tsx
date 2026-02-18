@@ -39,8 +39,7 @@ const Hero = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
       <img
         src={romanBust}
         alt=""
-        className="w-full h-full object-contain object-right-bottom grayscale"
-        style={{ mixBlendMode: "luminosity" }}
+        className="w-full h-full object-contain object-right-bottom grayscale brightness-150"
       />
     </div>
     <div className="relative z-10 text-center flex flex-col items-center">
