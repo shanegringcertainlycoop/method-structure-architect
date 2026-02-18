@@ -109,7 +109,7 @@ const TheProblem = () => (
           {problemItems.map((item, i) => (
             <FadeIn key={item} delay={150 * i}>
               <div className="border border-border rounded-lg bg-background px-5 py-6 text-center">
-                <p className="text-base text-foreground/80">{item}</p>
+                <p className="text-base text-foreground">{item}</p>
               </div>
             </FadeIn>
           ))}
