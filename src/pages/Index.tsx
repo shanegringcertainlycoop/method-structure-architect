@@ -105,11 +105,12 @@ const TheProblem = () => (
         </h2>
         <p className="text-lg text-muted-foreground mb-2">You already have results.</p>
         <p className="text-lg text-foreground mb-10 font-medium">But:</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        <div className="columns-1 sm:columns-2 gap-x-12 mb-12">
           {problemItems.map((item, i) => (
-            <FadeIn key={item} delay={150 * i}>
-              <div className="border border-border rounded-lg bg-background px-5 py-6 text-center">
-                <p className="text-base text-foreground">{item}</p>
+            <FadeIn key={item} delay={100 * i}>
+              <div className="flex items-start gap-4 py-4 border-b border-border break-inside-avoid">
+                <span className="text-accent font-serif text-lg leading-none mt-0.5">—</span>
+                <p className="text-base text-foreground leading-relaxed">{item}</p>
               </div>
             </FadeIn>
           ))}
