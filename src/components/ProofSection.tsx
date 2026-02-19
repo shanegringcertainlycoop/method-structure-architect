@@ -12,45 +12,60 @@ const barData = [
   { label: "Firm E", value: 31 },
 ];
 
-const textBlocks = [
-  {
-    headline: "Structured from day one.",
-    body: "Placeholder description. Replace with real proof copy about methodology strength.",
-  },
-  {
-    headline: "Built to endure.",
-    body: "Placeholder description. Replace with real proof copy about system resilience.",
-  },
-  {
-    headline: "Disciplined expansion.",
-    body: "Placeholder description. Replace with real proof copy about controlled growth.",
-  },
+const tabContent = [
+  [
+    {
+      headline: "Structured from day one.",
+      body: "Placeholder description. Replace with real proof copy about methodology strength.",
+    },
+    {
+      headline: "Built to endure.",
+      body: "Placeholder description. Replace with real proof copy about system resilience.",
+    },
+    {
+      headline: "Disciplined expansion.",
+      body: "Placeholder description. Replace with real proof copy about controlled growth.",
+    },
+  ],
+  [
+    {
+      headline: "Measurable outcomes.",
+      body: "Placeholder description. Replace with real outcome data and proof points.",
+    },
+    {
+      headline: "Sustained performance.",
+      body: "Placeholder description. Replace with real proof copy about long-term results.",
+    },
+    {
+      headline: "Scalable returns.",
+      body: "Placeholder description. Replace with real proof copy about growth metrics.",
+    },
+  ],
 ];
 
-/* ─── BAR CHART ─── */
-const BarChart = () => (
-  <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
-    {barData.map((bar) => {
-      const heightPct = `${bar.value}%`;
-      return (
-        <div key={bar.label} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
-          <span className="text-sm font-medium text-foreground">{bar.value}%</span>
+/* ─── HORIZONTAL BAR CHART ─── */
+const HorizontalBarChart = () => (
+  <div className="flex flex-col gap-4 w-full">
+    {barData.map((bar) => (
+      <div key={bar.label} className="flex items-center gap-4">
+        <span className="text-xs text-muted-foreground tracking-wide w-20 text-right shrink-0">
+          {bar.label}
+        </span>
+        <div className="flex-1 flex items-center gap-3">
           <div
-            className="w-full rounded-t-sm transition-all duration-700"
+            className="h-8 rounded-r-sm transition-all duration-700"
             style={{
-              height: heightPct,
+              width: `${bar.value}%`,
               background: bar.highlight
-                ? "linear-gradient(180deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.4) 100%)"
+                ? "linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.4) 100%)"
                 : "hsl(var(--muted) / 0.4)",
               border: bar.highlight ? "none" : "1px solid hsl(var(--border))",
             }}
           />
-          <span className="text-xs text-muted-foreground tracking-wide text-center mt-1">
-            {bar.label}
-          </span>
+          <span className="text-sm font-medium text-foreground">{bar.value}%</span>
         </div>
-      );
-    })}
+      </div>
+    ))}
   </div>
 );
 
@@ -61,34 +76,33 @@ const ProofSection = () => {
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* LEFT — Bar Chart */}
+        {/* LEFT — Headline + Horizontal Bar Chart + Summary */}
         <FadeIn>
           <div className="w-full">
-            <BarChart />
+            <span className="font-serif text-accent text-sm tracking-widest">V</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-10 text-foreground">
+              Structural Discipline Performs.
+            </h2>
+            <HorizontalBarChart />
             <p className="text-xs text-muted-foreground mt-6 italic">
               Placeholder footnote. Replace with data source context.
             </p>
           </div>
         </FadeIn>
 
-        {/* RIGHT — Copy */}
+        {/* RIGHT — Vertical Tab Navigation + Content */}
         <FadeIn delay={200}>
-          <div>
-            <span className="font-serif text-accent text-sm tracking-widest">V</span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
-              Proof of Structure.
-            </h2>
-
-            {/* Tabs */}
-            <div className="flex mb-10 bg-card rounded-sm border border-border overflow-hidden">
+          <div className="flex gap-0 h-full">
+            {/* Vertical Tabs */}
+            <div className="flex flex-col shrink-0">
               {tabs.map((tab, i) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(i)}
-                  className={`flex-1 px-5 py-3 text-sm tracking-wide transition-colors ${
+                  className={`text-left px-5 py-4 text-sm tracking-wide transition-colors border-l-2 ${
                     activeTab === i
-                      ? "bg-foreground text-background font-medium"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "border-l-accent text-foreground font-medium bg-card"
+                      : "border-l-transparent text-muted-foreground hover:text-foreground hover:border-l-border"
                   }`}
                 >
                   {tab}
@@ -96,21 +110,23 @@ const ProofSection = () => {
               ))}
             </div>
 
-            {/* Text Blocks */}
-            <div className="space-y-0">
-              {textBlocks.map((block, i) => (
-                <div key={i}>
-                  {i > 0 && <div className="w-full h-px bg-border" />}
-                  <div className="py-6">
-                    <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-2">
-                      {block.headline}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {block.body}
-                    </p>
+            {/* Content */}
+            <div className="flex-1 pl-8">
+              <div className="space-y-0">
+                {tabContent[activeTab].map((block, i) => (
+                  <div key={i}>
+                    {i > 0 && <div className="w-full h-px bg-border" />}
+                    <div className="py-6">
+                      <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-2">
+                        {block.headline}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {block.body}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </FadeIn>
