@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 
 import AssessmentModal from "@/components/AssessmentModal";
 import ProofSection from "@/components/ProofSection";
+import TrustDiagnosticSection from "@/components/TrustDiagnosticSection";
 import ClientHighlights from "@/components/ClientHighlights";
 import TransformationSection from "@/components/TransformationSection";
 // romanBust is now served from public folder
@@ -89,105 +90,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 /* ─── SECTION I — TRANSFORMATION (moved to TransformationSection.tsx) ─── */
 
 
-/* ─── SECTION II — THE METHOD LIFECYCLE™ ─── */
-const lifecyclePhases = [
-{
-  num: "1",
-  title: "Method",
-  intro: "Your proprietary approach.",
-  bullets: ["The way you think", "The way you deliver results"],
-  closing: "Often powerful. Rarely documented."
-},
-{
-  num: "2",
-  title: "Structure",
-  intro: "We extract and formalize it.",
-  bullets: ["Named constructs", "Defined principles", "Clear language", "Documented IP", "Standards and sequencing"],
-  closing: "Structure transforms intuition into clarity."
-},
-{
-  num: "3",
-  title: "Scale",
-  intro: "Once structured, your method can support:",
-  bullets: ["Certification programs", "Licensing models", "Curriculum and programming", "Marketing precision", "Technology platforms"],
-  closing: "Scale without structure creates noise. Scale with structure creates authority."
-},
-{
-  num: "4",
-  title: "Stewardship",
-  intro: "This is where most firms fail.",
-  secondIntro: "A method is not static. It must evolve with discipline.",
-  bulletIntro: "Certainly remains involved to:",
-  bullets: ["Maintain coherence", "Protect standards", "Guide expansion", "Align certification and tech decisions", "Prevent drift"],
-  closing: "This is long-term advisory. Not a one-time project."
-}];
 
-
-const stepLabels = ["Method", "Structure", "Scale", "Stewardship"];
-
-const MethodLifecycle = () =>
-<section id="lifecycle" className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <SectionMarker numeral="II" />
-      <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-12">The Method Lifecycle™</h2>
-    </FadeIn>
-
-    {/* Step indicator — large, high-contrast */}
-    <FadeIn delay={100}>
-      <div className="flex items-center justify-center gap-0 mb-20">
-        {stepLabels.map((label, i) =>
-      <div key={label} className="flex items-center">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center">
-                <span className="text-base text-accent font-serif font-semibold">{i + 1}</span>
-              </div>
-              <span className="text-xs text-foreground mt-3 tracking-wider font-medium">{label}</span>
-            </div>
-            {i < stepLabels.length - 1 &&
-        <div className="w-12 sm:w-20 h-px bg-accent/40 mx-3 -mt-5" />
-        }
-          </div>
-      )}
-      </div>
-    </FadeIn>
-
-    <div className="space-y-5">
-      {lifecyclePhases.map((phase, i) =>
-    <FadeIn key={phase.num} delay={150 * i}>
-          <Collapsible>
-            <div className="border border-border rounded-sm bg-card p-7 md:p-10">
-              <CollapsibleTrigger className="w-full text-left cursor-pointer group">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-accent text-lg tracking-widest font-sans font-semibold">{phase.num}.</span>
-                  <h3 className="font-serif text-2xl text-foreground">{phase.title}</h3>
-                </div>
-                <p className="text-base text-muted-foreground mt-3 ml-10">{phase.intro}</p>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <div className="ml-10 mt-6 pt-6 border-t border-border">
-                  {"secondIntro" in phase && phase.secondIntro &&
-              <p className="text-base text-muted-foreground mb-4">{phase.secondIntro}</p>
-              }
-                  {"bulletIntro" in phase && phase.bulletIntro &&
-              <p className="text-base text-muted-foreground mb-3">{phase.bulletIntro}</p>
-              }
-                  <ul className="space-y-3 mb-6">
-                    {phase.bullets.map((b) =>
-                <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                        {b}
-                      </li>
-                )}
-                  </ul>
-                  <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
-                </div>
-              </CollapsibleContent>
-            </div>
-          </Collapsible>
-        </FadeIn>
-    )}
-    </div>
-  </section>;
 
 
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
@@ -392,7 +295,7 @@ const Index = () => {
       <WhatWeDo />
       <Divider />
       <div className="bg-surface">
-        <MethodLifecycle />
+        <TrustDiagnosticSection onRequestAssessment={() => setAssessmentOpen(true)} />
       </div>
       <Divider />
       <ProofSection />
