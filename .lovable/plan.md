@@ -1,29 +1,22 @@
 
 
-## Update "How We Work" Section
+## Add Dollar Values and Delta to the Earnings Chart
 
-Replace the current three-phase engagement model with the new four-phase structural layout using the provided copy.
+Update the second chart ("Verified competence commands higher pay") to display specific dollar values on the bars and a delta indicator showing the difference.
 
-### Changes
+### Changes to `src/components/ProofSection.tsx`
 
-**File: `src/pages/Index.tsx`**
+1. Add `displayValue` to the two bars in the second chart dataset:
+   - "No Credential" bar: `"$672/wk"` (median weekly earnings without credential)
+   - "With Credential" bar: `"$967/wk"` (median weekly earnings with credential)
 
-1. Update the section numeral from "VII" to match current sequence
-2. Replace the heading with "How We Work" and add the subtitle "Our engagements follow four structural movements."
-3. Replace the 3-column RevealCard grid with a 4-phase layout, each containing:
-   - Roman numeral + title
-   - Introductory line
-   - Bullet list of services/activities
-   - Closing italic statement
-4. Use a 2x2 grid on desktop (`grid-cols-1 md:grid-cols-2`) for the four phases instead of the current 3-column layout
-5. Remove the RevealCard component usage and the "Request Audit" / "Discuss Engagement" / "Inquire" CTAs
-6. Remove the trailing italic note about long-term advisory relationships
-7. Fix the typo "Certificaiton" to "Certification" in the content (or keep as-provided -- will keep as-provided since it's user copy)
+2. Add a `delta` property to the second chart dataset: `"+$295/wk (+44%)"`
+
+3. Update the `BarChart` component to accept and render an optional `delta` prop as an accent-colored badge/label positioned at the top-right of the chart area.
 
 ### Technical Details
 
-- The `RevealCard` component import can be removed from `Index.tsx` since it will no longer be used
-- Each phase card will use the existing card styling pattern (`border border-border rounded-sm bg-card p-8`)
-- Bullet items will use the accent dot pattern already established elsewhere on the page
-- The `onRequestAssessment` prop can be removed from the `EngagementModel` component since there are no more CTA buttons
+- The delta values come from the C2ER/BLS data referenced in the footnote ($295 more per week, 44% increase)
+- The `delta` prop will be optional so it only shows when provided
+- Styled with the existing accent color for consistency
 
