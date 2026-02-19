@@ -40,7 +40,7 @@ const textBlocks = [
   },
   {
     headline: "Verifiable standards improve employment outcomes.",
-    body: "Workers with certifications are 13% more likely to be employed than those without, proving the market rewards credentials.",
+    body: "Workers with certifications are 13% more likely to be employed than those without — suggesting the market rewards credentials.",
   },
 ];
 
