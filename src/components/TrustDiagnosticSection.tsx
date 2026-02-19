@@ -63,6 +63,7 @@ interface TrustDiagnosticSectionProps {
 
 const TrustDiagnosticSection = ({ onRequestAssessment }: TrustDiagnosticSectionProps) => {
   const [checked, setChecked] = useState<boolean[]>(new Array(10).fill(false));
+  const [revealed, setRevealed] = useState(false);
 
   const checkedCount = checked.filter(Boolean).length;
   const uncheckedCount = 10 - checkedCount;
@@ -97,99 +98,113 @@ const TrustDiagnosticSection = ({ onRequestAssessment }: TrustDiagnosticSectionP
         <p className="text-lg text-muted-foreground mb-2 max-w-2xl">
           Answer 10 questions. If more than 3 make you uncomfortable, your trust is fragile.
         </p>
-        <p className="text-sm text-muted-foreground mb-16 max-w-2xl">
+        <p className="text-sm text-muted-foreground mb-10 max-w-2xl">
           This is a quick self-check. You'll get a more complete diagnostic in the Trust Architecture™ Review.
         </p>
       </FadeIn>
 
-      {/* Checklist */}
-      <div className="space-y-0">
-        {dimensions.map((dim) => {
-          const dimItems = dim.items.map((label) => {
-            const idx = itemIndex++;
-            return { label, idx };
-          });
-
-          return (
-            <FadeIn key={dim.title}>
-              <div className="border-b border-border py-8 first:pt-0">
-                <h3 className="text-base font-semibold text-foreground mb-5 tracking-wide">
-                  {dim.title}
-                </h3>
-                <div className="space-y-4">
-                  {dimItems.map(({ label, idx }) => (
-                    <label
-                      key={idx}
-                      className="flex items-start gap-4 cursor-pointer group"
-                      htmlFor={`trust-q-${idx}`}
-                    >
-                      <Checkbox
-                        id={`trust-q-${idx}`}
-                        checked={checked[idx]}
-                        onCheckedChange={() => toggle(idx)}
-                        className="mt-0.5 h-5 w-5 rounded-none border-foreground/40 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground data-[state=checked]:text-background"
-                      />
-                      <span className="text-base text-foreground/80 leading-relaxed select-none">
-                        {label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          );
-        })}
-      </div>
-
-      {/* Scoring */}
-      <FadeIn>
-        <div className="mt-16 space-y-6">
-          <div className="flex items-center gap-8 text-sm font-medium text-foreground">
-            <span>Checked: {checkedCount} / 10</span>
-            <span className="text-muted-foreground">Unchecked: {uncheckedCount}</span>
-          </div>
-
-          <Progress
-            value={checkedCount * 10}
-            className="h-2 rounded-none bg-border"
-          />
-
-          {/* Result card */}
-          <div className="border border-foreground/20 bg-background p-8">
-            <h4 className="text-lg font-semibold text-foreground mb-2">{result.title}</h4>
-            <p className="text-base text-muted-foreground leading-relaxed">{result.body}</p>
-          </div>
-        </div>
-      </FadeIn>
-
-      {/* Pivot paragraph */}
-      <FadeIn>
-        <p className="text-lg text-foreground leading-relaxed mt-16 mb-16 max-w-2xl font-serif italic">
-          "Most founders try to solve this with marketing. But if the structure underneath is weak, more visibility accelerates decay. You don't need more exposure. You need architecture."
-        </p>
-      </FadeIn>
-
-      {/* CTAs */}
-      <FadeIn>
-        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+      {/* Reveal trigger */}
+      {!revealed && (
+        <FadeIn>
           <Button
-            onClick={onRequestAssessment}
-            className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
-          >
-            Run the Full Trust Architecture™ Review ($9)
-          </Button>
-          <Button
+            onClick={() => setRevealed(true)}
             variant="outline"
-            className="rounded-sm px-10 py-4 text-base tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
-            onClick={onRequestAssessment}
+            className="rounded-sm px-10 py-4 text-base tracking-wide border-foreground/30 text-foreground hover:bg-foreground hover:text-background h-auto"
           >
-            Book a 15-Minute Diagnostic Call
+            Begin Diagnostic →
           </Button>
+        </FadeIn>
+      )}
+
+      {/* Revealed content */}
+      <div
+        className={`grid transition-all duration-500 ease-out ${
+          revealed ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          {/* Checklist */}
+          <div className="space-y-0 mt-6">
+            {dimensions.map((dim) => {
+              const dimItems = dim.items.map((label) => {
+                const idx = itemIndex++;
+                return { label, idx };
+              });
+
+              return (
+                <div key={dim.title} className="border-b border-border py-8 first:pt-0">
+                  <h3 className="text-base font-semibold text-foreground mb-5 tracking-wide">
+                    {dim.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {dimItems.map(({ label, idx }) => (
+                      <label
+                        key={idx}
+                        className="flex items-start gap-4 cursor-pointer group"
+                        htmlFor={`trust-q-${idx}`}
+                      >
+                        <Checkbox
+                          id={`trust-q-${idx}`}
+                          checked={checked[idx]}
+                          onCheckedChange={() => toggle(idx)}
+                          className="mt-0.5 h-5 w-5 rounded-none border-foreground/40 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground data-[state=checked]:text-background"
+                        />
+                        <span className="text-base text-foreground/80 leading-relaxed select-none">
+                          {label}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Scoring */}
+          <div className="mt-16 space-y-6">
+            <div className="flex items-center gap-8 text-sm font-medium text-foreground">
+              <span>Checked: {checkedCount} / 10</span>
+              <span className="text-muted-foreground">Unchecked: {uncheckedCount}</span>
+            </div>
+
+            <Progress
+              value={checkedCount * 10}
+              className="h-2 rounded-none bg-border"
+            />
+
+            {/* Result card */}
+            <div className="border border-foreground/20 bg-background p-8">
+              <h4 className="text-lg font-semibold text-foreground mb-2">{result.title}</h4>
+              <p className="text-base text-muted-foreground leading-relaxed">{result.body}</p>
+            </div>
+          </div>
+
+          {/* Pivot paragraph */}
+          <p className="text-lg text-foreground leading-relaxed mt-16 mb-16 max-w-2xl font-serif italic">
+            "Most founders try to solve this with marketing. But if the structure underneath is weak, more visibility accelerates decay. You don't need more exposure. You need architecture."
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <Button
+              onClick={onRequestAssessment}
+              className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
+            >
+              Run the Full Trust Architecture™ Review ($9)
+            </Button>
+            <Button
+              variant="outline"
+              className="rounded-sm px-10 py-4 text-base tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
+              onClick={onRequestAssessment}
+            >
+              Book a 15-Minute Diagnostic Call
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground tracking-wide">
+            We respond within 2 business days.
+          </p>
         </div>
-        <p className="text-xs text-muted-foreground tracking-wide">
-          We respond within 2 business days.
-        </p>
-      </FadeIn>
+      </div>
     </section>
   );
 };
