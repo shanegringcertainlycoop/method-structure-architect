@@ -221,29 +221,37 @@ const EngagementModel = () =>
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
       <p className="text-lg text-muted-foreground mb-16">Our engagements follow four structural movements.</p>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {engagementPhases.map((phase, i) =>
-    <FadeIn key={phase.numeral} delay={150 * i}>
-          <div className="border border-border rounded-sm bg-card p-8 flex flex-col h-full">
-            <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
-            <h3 className="font-serif text-2xl mb-1 text-foreground">{phase.title}</h3>
-            <p className="text-xs text-muted-foreground mb-4">{phase.subtitle}</p>
-            <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
-            {"bulletIntro" in phase && phase.bulletIntro &&
-          <p className="text-sm text-muted-foreground mb-3">{phase.bulletIntro}</p>
-          }
-            <ul className="space-y-3 mb-6 flex-1">
-              {phase.bullets.map((b) =>
-          <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                  {b}
-                </li>
-          )}
-            </ul>
-            <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
-          </div>
-        </FadeIn>
-    )}
+    <div className="relative">
+      <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mr-6 pr-6">
+        {engagementPhases.map((phase, i) =>
+      <FadeIn key={phase.numeral} delay={150 * i}>
+            <div className="border border-border rounded-sm bg-card p-8 flex flex-col h-full min-w-[300px] w-[300px] snap-start">
+              <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
+              <h3 className="font-serif text-2xl mb-1 text-foreground">{phase.title}</h3>
+              <p className="text-xs text-muted-foreground mb-4">{phase.subtitle}</p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
+              {"bulletIntro" in phase && phase.bulletIntro &&
+            <p className="text-sm text-muted-foreground mb-3">{phase.bulletIntro}</p>
+            }
+              <ul className="space-y-3 mb-6 flex-1">
+                {phase.bullets.map((b) =>
+            <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                    {b}
+                  </li>
+            )}
+              </ul>
+              <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
+            </div>
+          </FadeIn>
+      )}
+      </div>
+      {/* Scroll hint */}
+      <div className="flex items-center gap-2 mt-6 text-xs text-muted-foreground tracking-wide">
+        <span>Scroll</span>
+        <span className="w-8 h-px bg-muted-foreground/40" />
+        <span>→</span>
+      </div>
     </div>
   </section>;
 
