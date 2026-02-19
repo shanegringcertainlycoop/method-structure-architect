@@ -52,7 +52,7 @@ const lineData = {
 };
 
 const LineChart = ({ delta }: { delta?: string }) => {
-  const w = 420, h = 260, px = 40, py = 30;
+  const w = 420, h = 380, px = 40, py = 30;
   const plotW = w - px * 2, plotH = h - py * 2;
   const n = lineData.labels.length;
 
