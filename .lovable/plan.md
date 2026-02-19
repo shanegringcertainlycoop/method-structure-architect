@@ -1,22 +1,28 @@
 
-# Keep "Before" Visible, Reveal "After" on Scrub
+# Update "How We Work" Section
 
-Currently, the "after" text overlays and hides the "before" text as you scrub. The update will change the layout so the "before" text always remains visible, and the "after" text appears alongside it only as the slider is scrubbed.
+## Copy Updates
 
-## Layout Change
+Replace all four engagement phase cards with the new copy provided, including timeline annotations in titles and restructured bullet points with a "Support could include:" lead-in for the first card.
 
-Each transformation row will become a two-column layout:
-- **Left column**: The "before" text, always visible in muted styling with the em-dash glyph. This never changes.
-- **Right column**: The "after" text with the arrow glyph, revealed progressively via opacity/clip controlled by the slider. At 0%, the right column is invisible. As you scrub toward 100%, it fades/reveals in.
+## Layout Fix: Equal-Height Cards and All 4 Visible
 
-On mobile, the columns will stack vertically (before on top, after below) with the same reveal behavior on the after text.
+Switch from a horizontal scroll layout (`overflow-x-auto` with fixed 300px cards) to a responsive CSS grid (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`) so all four cards are visible at once on desktop. Cards will use `h-full` and flex-column layout to ensure equal heights regardless of content length.
 
 ## Technical Details
 
-**File:** `src/components/TransformationSection.tsx`
+**File:** `src/pages/Index.tsx`
 
-- Change each row from a single overlapping container to a flex/grid two-column layout.
-- Left column: always visible "before" text with `text-muted-foreground` and the `--` glyph.
-- Right column: "after" text with `text-foreground` and the arrow glyph, styled with `opacity` tied to the slider percentage (0 at slider 0, 1 at slider 100), plus a subtle `clipPath` or `transform` reveal from the left.
-- Remove the `absolute inset-0 bg-card` overlay approach since we no longer want to cover the before text.
-- The slider, logo, and BEFORE/AFTER labels remain unchanged.
+1. Update `engagementPhases` data array (lines 279-307):
+   - Card 1: "Diagnose" with "(1-2 weeks)" subtitle, new intro, "Support could include a:" lead-in, 3 bullets, new closing
+   - Card 2: "Preserve" with "(4-8 weeks)" subtitle, updated bullets (no trademark symbol), new closing
+   - Card 3: "Build" with "(8-12 weeks or 120-day pilot)" subtitle, 5 bullets including "120-Day Certification Pilot Launch", new closing
+   - Card 4: "Steward" with "(Ongoing)" subtitle, 5 bullets, new closing
+
+2. Add a `subtitle` field to each phase object for the timeline.
+
+3. Change the card container (line 317) from `flex gap-6 overflow-x-auto` to `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6` so all cards display in a row and the 4th card is always visible.
+
+4. Remove `min-w-[300px] w-[300px] snap-start` from individual cards; replace with `h-full` to let grid handle sizing and ensure equal heights.
+
+5. Render `phase.subtitle` below the title as a small muted-foreground text element, and render `phase.bulletIntro` (if present) above the bullet list.
