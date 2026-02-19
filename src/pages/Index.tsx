@@ -237,40 +237,6 @@ const WhatWeDo = () =>
   </section>;
 
 
-/* ─── SECTION IV — THE OUTCOME ─── */
-const outcomeItems = [
-"A defined intellectual framework",
-"Structured curriculum architecture",
-"Clear models and language",
-"Assessment and standards (if applicable)",
-"Certification or licensing blueprint",
-"A documented IP foundation",
-"A long-term structural roadmap"];
-
-
-const TheOutcome = () =>
-<section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <div className="border border-border rounded-sm bg-card p-10 md:p-16">
-        <SectionMarker numeral="IV" />
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-6">The Outcome</h2>
-        <p className="text-lg text-muted-foreground mb-12">You leave with:</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-          {outcomeItems.map((item, i) =>
-        <FadeIn key={item} delay={100 * i}>
-              <div className="flex items-start gap-4 text-base text-foreground py-3">
-                <Check className="w-5 h-5 text-accent mt-0.5 shrink-0" strokeWidth={2.5} />
-                {item}
-              </div>
-            </FadeIn>
-        )}
-        </div>
-        <p className="text-lg text-foreground mb-2">Your expertise becomes independent of your presence.</p>
-        <p className="text-lg text-foreground mb-2">Performance becomes system.</p>
-        <p className="text-xl text-foreground font-serif italic">System becomes asset.</p>
-      </div>
-    </FadeIn>
-  </section>;
 
 
 /* ─── SECTION V — WHO THIS IS FOR ─── */
@@ -420,8 +386,6 @@ const Index = () => {
       <div className="bg-surface">
         <MethodLifecycle />
       </div>
-      <Divider />
-      <TheOutcome />
       <Divider />
       <ProofSection />
       <Divider />
