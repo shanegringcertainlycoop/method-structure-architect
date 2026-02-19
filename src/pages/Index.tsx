@@ -192,23 +192,23 @@ const MethodLifecycle = () =>
 
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
 const engagementItems = [
-  "Converting implicit judgment into documented decision logic",
-  "Formalizing language into a canonical system others can teach",
-  "Designing curriculum and assessment architecture that defines real competence",
-  "Building communication infrastructure that expresses standards publicly",
-  "Defining governance and enforcement mechanisms that protect quality",
-  "Engineering the appropriate trust mechanism — certification, licensing, or internal standards",
-  "Establishing stewardship structures that prevent drift as you scale",
-];
+"Converting implicit judgment into documented decision logic",
+"Formalizing language into a canonical system others can teach",
+"Designing curriculum and assessment architecture that defines real competence",
+"Building communication infrastructure that expresses standards publicly",
+"Defining governance and enforcement mechanisms that protect quality",
+"Engineering the appropriate trust mechanism — certification, licensing, or internal standards",
+"Establishing stewardship structures that prevent drift as you scale"];
+
 
 const WhatWeDo = () =>
 <section className="relative px-6 py-32 overflow-hidden">
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
       <img
-        src={romanColumns}
-        alt=""
-        className="w-full h-full object-cover grayscale opacity-10"
-        style={{ mixBlendMode: "luminosity" }} />
+      src={romanColumns}
+      alt=""
+      className="w-full h-full object-cover grayscale opacity-10"
+      style={{ mixBlendMode: "luminosity" }} />
     </div>
     <div className="relative z-10 max-w-5xl mx-auto">
       <FadeIn>
@@ -220,7 +220,7 @@ const WhatWeDo = () =>
         <p className="text-base text-muted-foreground mb-8">Not through generic deliverables.</p>
         <p className="text-lg text-foreground mb-2">Through architecture.</p>
         <p className="text-base text-muted-foreground mb-8">The structure that makes your expertise transferable — and durable.</p>
-        <p className="text-base text-foreground mb-4">Engagement involves:</p>
+        <p className="text-base text-foreground mb-4">Engagement could involve:</p>
         <ul className="space-y-3 mb-8">
           {engagementItems.map((item) =>
         <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
