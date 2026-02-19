@@ -60,7 +60,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
       </FadeIn>
       <FadeIn delay={400}>
         <p className="max-w-2xl text-muted-foreground leading-[1.9] text-lg sm:text-xl mb-14">
-          Certainly partners with founders and institutions to extract, document, and guide the evolution of their proprietary method — so it can scale through certification, technology, and disciplined growth.
+          Certainly partners with founders and institutions to extract, document, and guide the evolution of their proprietary method — so it can scale through certification, technology, and/or disciplined growth.
         </p>
       </FadeIn>
       <FadeIn delay={600}>
