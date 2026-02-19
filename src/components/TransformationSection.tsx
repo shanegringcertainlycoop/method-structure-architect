@@ -30,25 +30,19 @@ const TransformationSection = () => {
           </p>
 
           {/* Slider with logo */}
-          <div className="mb-10">
-            <div className="relative pt-8">
-              <div
-                className="absolute top-0 -translate-x-1/2 pointer-events-none transition-[left] duration-75"
-                style={{ left: `${pct}%` }}
-              >
-                <img src={certainlyLogo} alt="Certainly" className="h-5 opacity-60" />
+          <div className="mb-12">
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase shrink-0">Before</span>
+              <div className="relative flex-1">
+                <Slider
+                  value={value}
+                  onValueChange={setValue}
+                  max={100}
+                  step={1}
+                  className="w-full [&_[role=slider]]:bg-accent [&_[role=slider]]:border-accent [&_span[data-orientation=horizontal]>span]:bg-accent"
+                />
               </div>
-              <Slider
-                value={value}
-                onValueChange={setValue}
-                max={100}
-                step={1}
-                className="w-full [&_[role=slider]]:bg-accent [&_[role=slider]]:border-accent [&_span[data-orientation=horizontal]>span]:bg-accent"
-              />
-            </div>
-            <div className="flex justify-between text-xs text-muted-foreground mt-2 tracking-wider">
-              <span>BEFORE</span>
-              <span>AFTER</span>
+              <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase shrink-0">After</span>
             </div>
           </div>
 
