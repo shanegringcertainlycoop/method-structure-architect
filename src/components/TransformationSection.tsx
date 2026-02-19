@@ -4,13 +4,13 @@ import FadeIn from "@/components/FadeIn";
 import certainlyLogo from "@/assets/certainly-logo.png";
 
 const transformations = [
-  { before: "Your framework lives in conversation.", after: "Your framework lives in a documented blueprint." },
-  { before: "You explain it differently each time.", after: "You have a canonical language system." },
-  { before: "Clients depend on you.", after: "Trust transfers to a system that outlives you." },
-  { before: "Marketing feels improvised.", after: "Marketing becomes claim-safe and repeatable." },
-  { before: "Scale feels premature.", after: "Scale becomes engineered with standards and QA." },
-  { before: "Technology feels disconnected.", after: "Technology becomes an expression of the method." },
-  { before: "Quality varies by who delivers.", after: "Quality becomes observable — and auditable." },
+  { before: "Framework in conversation.", after: "Framework in documented blueprint." },
+  { before: "Variable explanations.", after: "Canonical language system." },
+  { before: "Person-dependent trust.", after: "System-bound trust." },
+  { before: "Improvised marketing.", after: "Structured, claim-safe marketing." },
+  { before: "Premature scale.", after: "Engineered scale with standards and QA." },
+  { before: "Disconnected technology.", after: "Method-aligned technology." },
+  { before: "Variable quality.", after: "Observable, auditable quality." },
 ];
 
 const TransformationSection = () => {
@@ -60,7 +60,7 @@ const TransformationSection = () => {
                   {/* Before text (always rendered, visible where after is clipped away) */}
                   <div className="flex items-start gap-3">
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">—</span>
-                    <p className="text-base text-muted-foreground leading-relaxed">{row.before}</p>
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{row.before}</p>
                   </div>
                   {/* After text (clipped by slider value) */}
                   <div
@@ -68,7 +68,7 @@ const TransformationSection = () => {
                     style={{ clipPath: `inset(0 ${100 - pct}% 0 0)` }}
                   >
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">→</span>
-                    <p className="text-base text-foreground leading-relaxed font-medium">{row.after}</p>
+                    <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">{row.after}</p>
                   </div>
                 </div>
               </FadeIn>
