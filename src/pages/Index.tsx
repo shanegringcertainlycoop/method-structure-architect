@@ -202,8 +202,15 @@ const engagementItems = [
 ];
 
 const WhatWeDo = () =>
-<section className="px-6 py-32 max-w-5xl mx-auto">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section className="relative px-6 py-32 overflow-hidden">
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <img
+        src={romanColumns}
+        alt=""
+        className="w-full h-full object-cover grayscale opacity-10"
+        style={{ mixBlendMode: "luminosity" }} />
+    </div>
+    <div className="relative z-10 max-w-5xl mx-auto">
       <FadeIn>
         <SectionMarker numeral="III" />
         <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
@@ -225,16 +232,6 @@ const WhatWeDo = () =>
         <p className="text-base text-muted-foreground mb-2">Most expert businesses scale delivery.</p>
         <p className="text-base text-foreground mb-2">Very few scale authority.</p>
         <p className="text-foreground font-serif italic text-lg">This is design for authority.</p>
-      </FadeIn>
-      <FadeIn delay={300}>
-        <div className="w-full overflow-hidden rounded-sm">
-          <img
-          src={romanColumns}
-          alt="Roman columns"
-          className="w-full h-full object-contain grayscale opacity-20"
-          style={{ mixBlendMode: "luminosity" }} />
-
-        </div>
       </FadeIn>
     </div>
   </section>;
