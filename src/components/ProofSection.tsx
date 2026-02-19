@@ -26,7 +26,7 @@ const chartDataSets = [
       { label: "No Credential", value: 74, highlight: false },
       { label: "With Credential", value: 87, highlight: true },
     ],
-    footnote: "Source: Employment rate comparison, industry-recognized credential holders.",
+    footnote: 'Reference: <a href="https://www.financialprofessionals.org/training-resources/resources/articles/Details/are-certified-professionals-more-likely-to-get-hired" target="_blank" rel="noopener noreferrer">Lumina Foundation / Gallup, 2023</a>',
   },
 ];
 
