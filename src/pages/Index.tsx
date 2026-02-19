@@ -280,32 +280,36 @@ const engagementPhases = [
 {
   numeral: "I",
   title: "Diagnose",
-  intro: "Understand how trust works in your business today.",
-  bullets: ["Trust Architecture Review", "Method Audit", "Strategy Sprint", "Certification Readiness Assessment"],
-  closing: "Clarity on what should — or should not — be built."
+  subtitle: "(1–2 weeks)",
+  intro: "Understand how trust works in your business.",
+  bulletIntro: "Support could include a:",
+  bullets: ["Trust Architecture Review", "Method Audit", "Strategy Sprint"],
+  closing: "Clarity saves months of misdirected build effort."
 },
 {
   numeral: "II",
   title: "Preserve",
-  intro: "Capture and formalize what makes your method work.",
-  bullets: ["Method Capture™", "Framework codification", "Curriculum architecture", "Competence definition"],
+  subtitle: "(4–8 weeks)",
+  intro: "Capture and formalize what makes your method effective.",
+  bullets: ["Method Capture", "Curriculum Architecture", "Competence Definition"],
   closing: "Your expertise becomes transferable."
 },
 {
   numeral: "III",
   title: "Build",
+  subtitle: "(8–12 weeks or 120-day pilot)",
   intro: "Design the right trust mechanism.",
-  bullets: ["Licensing frameworks", "Curriculum & assessment systems", "Credential brand infrastructure", "120-Day Certificaiton Pilot Launch"],
-  closing: "Trust transfers beyond the founder."
+  bullets: ["Licensing Frameworks", "Assessment Systems", "Brand and Messaging", "Digital Infrastructure", "120-Day Certification Pilot Launch"],
+  closing: "This is where structure enters the market."
 },
 {
   numeral: "IV",
   title: "Steward",
-  intro: "Own and protect the system as it grows.",
-  bullets: ["Fractional Credential Operations™", "Governance", "Operational oversight", "Portfolio strategy"],
-  closing: "Quality does not erode under scale."
+  subtitle: "(Ongoing)",
+  intro: "Operational ownership of certification systems.",
+  bullets: ["Governance", "Vendor coordination", "Renewal standards", "Version control", "Quality assurance"],
+  closing: "Structure must be maintained."
 }];
-
 
 const EngagementModel = () =>
 <section className="px-6 py-32 max-w-5xl mx-auto">
@@ -314,13 +318,17 @@ const EngagementModel = () =>
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
       <p className="text-lg text-muted-foreground mb-16">Our engagements follow four structural movements.</p>
     </FadeIn>
-    <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {engagementPhases.map((phase, i) =>
     <FadeIn key={phase.numeral} delay={150 * i}>
-          <div className="border border-border rounded-sm bg-card p-8 flex flex-col min-w-[300px] w-[300px] snap-start">
+          <div className="border border-border rounded-sm bg-card p-8 flex flex-col h-full">
             <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
-            <h3 className="font-serif text-2xl mb-4 text-foreground">{phase.title}</h3>
+            <h3 className="font-serif text-2xl mb-1 text-foreground">{phase.title}</h3>
+            <p className="text-xs text-muted-foreground mb-4">{phase.subtitle}</p>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
+            {"bulletIntro" in phase && phase.bulletIntro &&
+          <p className="text-sm text-muted-foreground mb-3">{phase.bulletIntro}</p>
+          }
             <ul className="space-y-3 mb-6 flex-1">
               {phase.bullets.map((b) =>
           <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
