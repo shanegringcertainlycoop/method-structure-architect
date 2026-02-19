@@ -54,7 +54,9 @@ const GaugeChart = ({ bars, delta }: { bars: { label: string; value: number; hig
   const circumference = 2 * Math.PI * radius;
 
   return (
-    <div className="flex flex-col items-center h-[320px] justify-center">
+    <div className="flex flex-col items-center h-[380px] justify-center">
+      <p className="text-sm font-serif text-foreground mb-2">Employment Rate</p>
+      <p className="text-xs text-muted-foreground mb-6">Percentage of workers currently employed</p>
       {delta && (
         <div className="mb-6">
           <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
@@ -99,6 +101,9 @@ const GaugeChart = ({ bars, delta }: { bars: { label: string; value: number; hig
           );
         })}
       </div>
+      <p className="text-xs text-muted-foreground mt-6 text-center max-w-sm">
+        Certified workers show consistently higher employment rates across industries.
+      </p>
     </div>
   );
 };
