@@ -39,7 +39,7 @@ const textBlocks = [
     body: "Workers with a recognized, job-relevant credential earn an average of $295 more per week than peers without one — a 44% increase in median weekly earnings.",
   },
   {
-    headline: "Verifiable standards improve employment outcomes.",
+    headline: "Proven standards improve employment outcomes.",
     body: "Workers with certifications are 13% more likely to be employed than those without — suggesting the market rewards credentials.",
   },
 ];
