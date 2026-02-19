@@ -1,8 +1,6 @@
-import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
 /* ─── PLACEHOLDER DATA — replace with real data later ─── */
-const tabs = ["Comparison View", "Outcomes"];
 
 const barData = [
   { label: "Certainly", value: 92, highlight: true },
@@ -56,7 +54,6 @@ const BarChart = () => (
 
 /* ─── MAIN SECTION ─── */
 const ProofSection = () => {
-  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
@@ -79,22 +76,6 @@ const ProofSection = () => {
               Proof of Structure.
             </h2>
 
-            {/* Tabs */}
-            <div className="flex mb-10 bg-card rounded-sm border border-border overflow-hidden">
-              {tabs.map((tab, i) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(i)}
-                  className={`flex-1 px-5 py-3 text-sm tracking-wide transition-colors ${
-                    activeTab === i
-                      ? "bg-foreground text-background font-medium"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
 
             {/* Text Blocks */}
             <div className="space-y-0">
