@@ -5,10 +5,10 @@ import FadeIn from "@/components/FadeIn";
 const chartDataSets = [
   {
     bars: [
-      { label: "2023", value: 67, highlight: false, displayValue: "$235B" },
-      { label: "2025", value: 74, highlight: false },
-      { label: "2027", value: 81, highlight: false },
-      { label: "2029", value: 89, highlight: false },
+      { label: "2023", value: 45, highlight: false, displayValue: "$235B" },
+      { label: "2025", value: 55, highlight: false },
+      { label: "2027", value: 65, highlight: false },
+      { label: "2029", value: 75, highlight: false },
       { label: "2032", value: 100, highlight: true, displayValue: "$349B" },
     ],
     footnote: 'Reference: <a href="https://www.mordorintelligence.com/industry-reports/testing-inspection-and-certification-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence, TIC Market Report (2023)</a>',
