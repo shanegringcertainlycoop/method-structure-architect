@@ -112,7 +112,7 @@ const GaugeChart = ({ bars, delta }: { bars: { label: string; value: number; hig
 const BarChart = ({ bars, delta }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[]; delta?: string }) => (
   <div>
     {delta && (
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-center mb-4">
         <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
           {delta}
         </span>
