@@ -194,6 +194,7 @@ const engagementPhases = [
   title: "Preserve",
   subtitle: "(4–8 weeks)",
   intro: "Capture and formalize what makes your method effective.",
+  bulletIntro: "Support could include:",
   bullets: ["Method Capture", "Curriculum Architecture", "Competence Definition"],
   closing: "Your expertise becomes transferable."
 },
@@ -202,6 +203,7 @@ const engagementPhases = [
   title: "Build",
   subtitle: "(8–12 weeks or 120-day pilot)",
   intro: "Design the right trust mechanism.",
+  bulletIntro: "Support could include:",
   bullets: ["Licensing Frameworks", "Assessment Systems", "Brand and Messaging", "Digital Infrastructure", "120-Day Certification Pilot Launch"],
   closing: "This is where structure enters the market."
 },
@@ -210,6 +212,7 @@ const engagementPhases = [
   title: "Steward",
   subtitle: "(Ongoing)",
   intro: "Operational ownership of certification systems.",
+  bulletIntro: "Support could include:",
   bullets: ["Governance", "Vendor coordination", "Renewal standards", "Version control", "Quality assurance"],
   closing: "Structure must be maintained."
 }];
