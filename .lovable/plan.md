@@ -1,34 +1,67 @@
 
-## Redesign Third Chart: Employment Rate Comparison
+# Section I Transformation: Before/After Reveal
 
-Replace the basic bar chart for the third tab with a more visually compelling **radial/donut gauge** comparison showing 68% vs 81% employment rates.
+Replace the current "Most Methods Stall Before They Scale" section with a new interactive before-and-after transformation component. The section will use a horizontal slider (scrub) that reveals the "after" state from the "before" state, reinforcing the brand's structural narrative.
 
-### Data Updates
-- Update the third `chartDataSets` entry with the correct values: 68% (No Credential) and 81% (With Credential)
-- Add `delta: "+13%"` to the third dataset
-- Update the text block body to: "Workers with certifications are 13% more likely to be employed than those without, proving the market rewards credentials."
+## New Section Content
 
-### New Visualization: Dual Radial Gauges
-Instead of two plain bars, render two side-by-side **circular progress rings** (SVG-based, no external library needed):
-- Left ring: "68%" labeled "No Credential" -- muted color
-- Right ring: "81%" labeled "With Credential" -- accent gradient
-- The "+13%" delta badge displayed between or above the rings
+**Headline:** Your Method Works. Now Make It Transferable.
 
-### Technical Details
+**Subheadline:** We design the structure that lets your expertise scale through certification, technology, or institutional governance -- without dilution.
 
-**`src/components/ProofSection.tsx`**:
+**7 transformation rows**, each with a before (left) and after (right) state:
 
-1. Add a `chartType` field to the third dataset: `chartType: "gauge"` to differentiate it from bar charts.
+| Before | After |
+|--------|-------|
+| Your framework lives in conversation. | Your framework lives in a documented blueprint. |
+| You explain it differently each time. | You have a canonical language system. |
+| Clients depend on you. | Trust transfers to a system that outlives you. |
+| Marketing feels improvised. | Marketing becomes claim-safe and repeatable. |
+| Scale feels premature. | Scale becomes engineered with standards and QA. |
+| Technology feels disconnected. | Technology becomes an expression of the method. |
+| Quality varies by who delivers. | Quality becomes observable -- and auditable. |
 
-2. Create a `GaugeChart` component inline:
-   - Two SVG circles (background track + filled arc) side by side
-   - Large percentage text centered in each ring
-   - Labels below each ring
-   - Smooth CSS animation on the stroke-dashoffset for a fill-in effect
-   - Uses existing accent color for the highlighted ring and muted for the other
+**Closing lines:**
+- Your expertise doesn't lack demand.
+- It lacks structure.
 
-3. Update the chart rendering in `ProofSection` to conditionally render `GaugeChart` when `chartType === "gauge"`, otherwise render `BarChart`.
+## Interaction Design
 
-4. Update third `textBlocks` entry body text to: "Workers with certifications are 13% more likely to be employed than those without, proving the market rewards credentials."
+A single horizontal slider controls the reveal for the entire section:
 
-5. Update third `chartDataSets` values to use 68 and 81 with displayValues "68%" and "81%".
+- At 0% (left): all rows show the "before" text in muted-foreground, representing the current unstructured state.
+- As the user drags the slider right, a vertical "reveal line" (accent-colored) sweeps across each row, transitioning text from "before" to "after."
+- Each row is a two-column layout. The slider controls a CSS `clip-path` or `width` overlay so the "after" column is progressively revealed over the "before" column.
+- At 100% (right): all rows show the "after" text in full foreground with a subtle accent highlight.
+
+The slider itself sits below the headline area and above the transformation rows, styled minimally with the accent gold color.
+
+## Technical Approach
+
+### New Component: `TransformationSection.tsx`
+
+- Contains the transformation data array, slider state, and rendering logic.
+- Uses the existing Radix `Slider` component for the scrub control.
+- Each row renders both "before" and "after" text in a relative container. The "after" text is clipped using an inline `clipPath: inset(0 ${100 - sliderValue}% 0 0)` style, layered on top of the "before" text.
+- The slider value (0-100) drives the clip percentage for all rows simultaneously.
+- Wrapped in the existing `FadeIn` component for scroll-triggered entry animation.
+
+### Modifications to `Index.tsx`
+
+- Remove the `problemItems` array and `TheProblem` component.
+- Import and render `TransformationSection` in its place within the page layout.
+- Keep the same wrapper (`bg-surface noise-overlay` div) and surrounding `Divider` components.
+
+### Styling
+
+- The slider track uses `bg-border` with an accent-colored range fill, consistent with the site's gold palette.
+- "Before" text uses `text-muted-foreground` styling.
+- "After" text uses `text-foreground` with a subtle left border accent or highlight.
+- Each row separated by `border-b border-border` for the editorial list feel already established in the site.
+- An arrow glyph or em-dash between before/after text within each row to indicate transformation direction.
+- Section numeral marker "I" retained at the top.
+
+### Mobile Behavior
+
+- On smaller screens, the slider remains full-width.
+- Rows stack naturally since they use a single-column clip reveal (the before/after occupy the same space, not side-by-side columns).
