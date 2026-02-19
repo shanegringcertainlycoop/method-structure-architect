@@ -73,13 +73,6 @@ const LineChart = ({ delta }: { delta?: string }) => {
 
   return (
     <div className="flex flex-col items-center h-[500px] justify-center">
-      {delta && (
-        <div className="mb-4">
-          <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
-            Gap widens to {delta}
-          </span>
-        </div>
-      )}
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-md">
         {/* Grid lines */}
         {[65, 75, 85].map((v) => {
@@ -123,6 +116,13 @@ const LineChart = ({ delta }: { delta?: string }) => {
           <span className="w-4 h-0.5 bg-muted-foreground/40 inline-block border-t border-dashed border-muted-foreground/40" /> No Credential
         </span>
       </div>
+      {delta && (
+        <div className="mt-4">
+          <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
+            Gap widens to {delta}
+          </span>
+        </div>
+      )}
     </div>
   );
 };
