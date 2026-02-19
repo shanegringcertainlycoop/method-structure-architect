@@ -11,7 +11,7 @@ const chartDataSets = [
       { label: "2029", value: 89, highlight: false },
       { label: "2032", value: 100, highlight: true },
     ],
-    footnote: "Source: Global TIC market projections, 2023–2032.",
+    footnote: 'Reference: <a href="https://www.mordorintelligence.com/industry-reports/testing-inspection-and-certification-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence, TIC Market Report (2023)</a>',
   },
   {
     bars: [
@@ -80,9 +80,10 @@ const ProofSection = () => {
         <FadeIn>
           <div className="w-full">
             <BarChart bars={activeChart.bars} />
-            <p className="text-xs text-muted-foreground mt-6 italic">
-              {activeChart.footnote}
-            </p>
+            <p
+              className="text-xs text-muted-foreground mt-6 italic [&_a]:underline [&_a]:hover:text-foreground"
+              dangerouslySetInnerHTML={{ __html: activeChart.footnote }}
+            />
           </div>
         </FadeIn>
 
