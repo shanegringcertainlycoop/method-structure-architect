@@ -23,9 +23,11 @@ const chartDataSets = [
   },
   {
     bars: [
-      { label: "No Credential", value: 74, highlight: false },
-      { label: "With Credential", value: 87, highlight: true },
+      { label: "No Credential", value: 68, highlight: false, displayValue: "68%" },
+      { label: "With Credential", value: 81, highlight: true, displayValue: "81%" },
     ],
+    delta: "+13%",
+    chartType: "gauge" as const,
     footnote: 'Reference: <a href="https://www.financialprofessionals.org/training-resources/resources/articles/Details/are-certified-professionals-more-likely-to-get-hired" target="_blank" rel="noopener noreferrer">Lumina Foundation / Gallup, 2023</a>',
   },
 ];
@@ -41,9 +43,65 @@ const textBlocks = [
   },
   {
     headline: "Verifiable standards improve employment outcomes.",
-    body: "Individuals with industry-recognized credentials are 13% more likely to be employed than those without them.",
+    body: "Workers with certifications are 13% more likely to be employed than those without, proving the market rewards credentials.",
   },
 ];
+
+/* ─── GAUGE CHART ─── */
+const GaugeChart = ({ bars, delta }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[]; delta?: string }) => {
+  const radius = 70;
+  const stroke = 10;
+  const circumference = 2 * Math.PI * radius;
+
+  return (
+    <div className="flex flex-col items-center h-[320px] justify-center">
+      {delta && (
+        <div className="mb-6">
+          <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
+            {delta}
+          </span>
+        </div>
+      )}
+      <div className="flex items-center gap-8 sm:gap-12">
+        {bars.map((bar) => {
+          const offset = circumference - (bar.value / 100) * circumference;
+          return (
+            <div key={bar.label} className="flex flex-col items-center gap-3">
+              <div className="relative">
+                <svg width={radius * 2 + stroke} height={radius * 2 + stroke} className="transform -rotate-90">
+                  <circle
+                    cx={radius + stroke / 2}
+                    cy={radius + stroke / 2}
+                    r={radius}
+                    fill="none"
+                    stroke="hsl(var(--muted) / 0.3)"
+                    strokeWidth={stroke}
+                  />
+                  <circle
+                    cx={radius + stroke / 2}
+                    cy={radius + stroke / 2}
+                    r={radius}
+                    fill="none"
+                    stroke={bar.highlight ? "hsl(var(--accent))" : "hsl(var(--muted-foreground) / 0.5)"}
+                    strokeWidth={stroke}
+                    strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    className="transition-all duration-1000 ease-out"
+                  />
+                </svg>
+                <span className="absolute inset-0 flex items-center justify-center text-2xl font-serif text-foreground rotate-0">
+                  {bar.displayValue}
+                </span>
+              </div>
+              <span className="text-xs text-muted-foreground tracking-wide">{bar.label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 /* ─── BAR CHART ─── */
 const BarChart = ({ bars, delta }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[]; delta?: string }) => (
@@ -91,10 +149,13 @@ const ProofSection = () => {
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* LEFT — Bar Chart */}
+        {/* LEFT — Chart */}
         <FadeIn>
           <div className="w-full">
-            <BarChart bars={activeChart.bars} delta={activeChart.delta} />
+            {'chartType' in activeChart && activeChart.chartType === "gauge"
+              ? <GaugeChart bars={activeChart.bars} delta={activeChart.delta} />
+              : <BarChart bars={activeChart.bars} delta={activeChart.delta} />
+            }
             <p
               className="text-xs text-muted-foreground mt-6 italic [&_a]:underline [&_a]:hover:text-foreground"
               dangerouslySetInnerHTML={{ __html: activeChart.footnote }}
