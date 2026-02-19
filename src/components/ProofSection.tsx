@@ -74,7 +74,7 @@ const LineChart = ({ delta }: { delta?: string }) => {
   return (
     <div className="flex flex-col items-center h-[500px] justify-center">
       {delta && (
-        <div className="mb-4">
+        <div className="mb-2">
           <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
             Gap widens to {delta}
           </span>
