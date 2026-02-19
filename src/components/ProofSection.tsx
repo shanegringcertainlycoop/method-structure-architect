@@ -107,7 +107,7 @@ const ProofSection = () => {
           <div>
             <span className="font-serif text-accent text-sm tracking-widest">V</span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
-              Proof of Structure.
+              Trust &gt; Hype.
             </h2>
 
             {/* Text Blocks as tabs */}
