@@ -12,16 +12,16 @@ const barData = [
 
 const textBlocks = [
   {
-    headline: "Structured from day one.",
-    body: "Placeholder description. Replace with real proof copy about methodology strength.",
+    headline: "Demand for verifiable standards is growing.",
+    body: "The global Testing, Inspection & Certification (TIC) market is projected to grow from $235B in 2023 to $349B by 2032 — reflecting sustained demand for systems that define, measure, and verify performance.",
   },
   {
-    headline: "Built to endure.",
-    body: "Placeholder description. Replace with real proof copy about system resilience.",
+    headline: "Verified competence commands higher pay.",
+    body: "Workers with a recognized, job-relevant credential earn an average of $295 more per week than peers without one — a 44% increase in median weekly earnings.",
   },
   {
-    headline: "Disciplined expansion.",
-    body: "Placeholder description. Replace with real proof copy about controlled growth.",
+    headline: "Verifiable standards improve employment outcomes.",
+    body: "Individuals with industry-recognized credentials are 13% more likely to be employed than those without them.",
   },
 ];
 
