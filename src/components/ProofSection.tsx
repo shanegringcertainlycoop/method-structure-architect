@@ -18,7 +18,7 @@ const chartDataSets = [
       { label: "No Credential", value: 56, highlight: false },
       { label: "With Credential", value: 100, highlight: true },
     ],
-    footnote: "Source: BLS median weekly earnings data, credentialed vs. non-credentialed workers.",
+    footnote: 'Reference: <a href="https://www.c2er.org/2019/07/professional-certifications-and-licenses-increase-earnings-and-reduce-unemployment-new-data-shows/" target="_blank" rel="noopener noreferrer">C2ER (Council for Community &amp; Economic Research)</a>',
   },
   {
     bars: [
