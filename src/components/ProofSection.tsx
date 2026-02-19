@@ -5,8 +5,11 @@ import FadeIn from "@/components/FadeIn";
 const chartDataSets = [
   {
     bars: [
-      { label: "$235B", value: 67, highlight: false },
-      { label: "$349B", value: 100, highlight: true },
+      { label: "2023", value: 67, highlight: false },
+      { label: "2025", value: 74, highlight: false },
+      { label: "2027", value: 81, highlight: false },
+      { label: "2029", value: 89, highlight: false },
+      { label: "2032", value: 100, highlight: true },
     ],
     footnote: "Source: Global TIC market projections, 2023–2032.",
   },
