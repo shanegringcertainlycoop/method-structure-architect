@@ -86,7 +86,7 @@ const TrustDiagnosticSection = ({ onRequestAssessment }: TrustDiagnosticSectionP
   let itemIndex = 0;
 
   return (
-    <section className="px-6 py-32 max-w-4xl mx-auto">
+    <section className="px-6 py-32 max-w-5xl mx-auto">
       {/* Header */}
       <FadeIn>
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4">
