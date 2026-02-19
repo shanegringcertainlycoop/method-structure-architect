@@ -7,6 +7,7 @@ import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import ProofSection from "@/components/ProofSection";
 import ClientHighlights from "@/components/ClientHighlights";
+import TransformationSection from "@/components/TransformationSection";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
@@ -85,42 +86,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
   </section>;
 
 
-/* ─── SECTION I — THE PROBLEM ─── */
-const problemItems = [
-"Your framework lives in conversations.",
-"You explain it differently each time.",
-"Clients depend on you, not a system.",
-"Marketing feels imprecise.",
-"Certification feels premature.",
-"Technology feels disconnected."];
-
-
-const TheProblem = () =>
-<section className="px-6 py-32 max-w-5xl mx-auto">
-    <FadeIn>
-      <div className="border border-border rounded-lg bg-card p-10 md:p-16">
-        <SectionMarker numeral="I" />
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-8 text-foreground">
-          Most Methods Stall Before They Scale.
-        </h2>
-        <p className="text-lg text-muted-foreground mb-2">You already have results.</p>
-        <p className="text-lg text-foreground mb-10 font-medium">But:</p>
-        <div className="columns-1 sm:columns-2 gap-x-12 mb-12">
-          {problemItems.map((item, i) =>
-        <FadeIn key={item} delay={100 * i}>
-              <div className="flex items-start gap-4 py-4 border-b border-border break-inside-avoid">
-                <span className="text-accent font-serif text-lg leading-none mt-0.5">—</span>
-                <p className="text-base text-foreground leading-relaxed">{item}</p>
-              </div>
-            </FadeIn>
-        )}
-        </div>
-        <p className="text-lg text-foreground mb-2">Your expertise works.</p>
-        <p className="text-lg text-foreground mb-10">It simply lacks structure.</p>
-        <p className="text-xl text-foreground font-serif italic">What Is Not Structured Cannot Endure.</p>
-      </div>
-    </FadeIn>
-  </section>;
+/* ─── SECTION I — TRANSFORMATION (moved to TransformationSection.tsx) ─── */
 
 
 /* ─── SECTION II — THE METHOD LIFECYCLE™ ─── */
@@ -435,7 +401,7 @@ const Index = () => {
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
       <div className="bg-surface noise-overlay">
-        <TheProblem />
+        <TransformationSection />
       </div>
       <Divider />
       <WhatWeDo />
