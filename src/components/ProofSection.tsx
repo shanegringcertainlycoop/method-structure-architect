@@ -72,9 +72,7 @@ const LineChart = ({ delta }: { delta?: string }) => {
   const noCredPath = makePath(lineData.withoutCredential);
 
   return (
-    <div className="flex flex-col items-center h-[400px] justify-center">
-      <p className="text-sm font-serif text-foreground mb-1">Employability Over a Career</p>
-      <p className="text-xs text-muted-foreground mb-4">Employment rate by years of experience</p>
+    <div className="flex flex-col items-center h-[500px] justify-center">
       {delta && (
         <div className="mb-4">
           <span className="text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
