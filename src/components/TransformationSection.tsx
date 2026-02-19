@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import FadeIn from "@/components/FadeIn";
+import certainlyLogo from "@/assets/certainly-logo.png";
 
 const transformations = [
   { before: "Your framework lives in conversation.", after: "Your framework lives in a documented blueprint." },
@@ -28,15 +29,23 @@ const TransformationSection = () => {
             We design the structure that lets your expertise scale through certification, technology, or institutional governance — without dilution.
           </p>
 
-          {/* Slider */}
+          {/* Slider with logo */}
           <div className="mb-10">
-            <Slider
-              value={value}
-              onValueChange={setValue}
-              max={100}
-              step={1}
-              className="w-full [&_[role=slider]]:bg-accent [&_[role=slider]]:border-accent [&_span[data-orientation=horizontal]>span]:bg-accent"
-            />
+            <div className="relative pt-8">
+              <div
+                className="absolute top-0 -translate-x-1/2 pointer-events-none transition-[left] duration-75"
+                style={{ left: `${pct}%` }}
+              >
+                <img src={certainlyLogo} alt="Certainly" className="h-5 opacity-60" />
+              </div>
+              <Slider
+                value={value}
+                onValueChange={setValue}
+                max={100}
+                step={1}
+                className="w-full [&_[role=slider]]:bg-accent [&_[role=slider]]:border-accent [&_span[data-orientation=horizontal]>span]:bg-accent"
+              />
+            </div>
             <div className="flex justify-between text-xs text-muted-foreground mt-2 tracking-wider">
               <span>BEFORE</span>
               <span>AFTER</span>
