@@ -15,9 +15,10 @@ const chartDataSets = [
   },
   {
     bars: [
-      { label: "No Credential", value: 56, highlight: false },
-      { label: "With Credential", value: 100, highlight: true },
+      { label: "No Credential", value: 56, highlight: false, displayValue: "$672/wk" },
+      { label: "With Credential", value: 100, highlight: true, displayValue: "$967/wk" },
     ],
+    delta: "+$295/wk (+44%)",
     footnote: 'Reference: <a href="https://www.c2er.org/2019/07/professional-certifications-and-licenses-increase-earnings-and-reduce-unemployment-new-data-shows/" target="_blank" rel="noopener noreferrer">C2ER (Council for Community &amp; Economic Research)</a>',
   },
   {
@@ -45,8 +46,14 @@ const textBlocks = [
 ];
 
 /* ─── BAR CHART ─── */
-const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[] }) => (
-  <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
+const BarChart = ({ bars, delta }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[]; delta?: string }) => (
+  <div className="relative">
+    {delta && (
+      <div className="absolute top-0 right-0 text-xs font-medium tracking-wide text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
+        {delta}
+      </div>
+    )}
+    <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
     {bars.map((bar) => {
       const heightPct = `${bar.value}%`;
       return (
@@ -70,6 +77,7 @@ const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: b
         </div>
       );
     })}
+    </div>
   </div>
 );
 
@@ -84,7 +92,7 @@ const ProofSection = () => {
         {/* LEFT — Bar Chart */}
         <FadeIn>
           <div className="w-full">
-            <BarChart bars={activeChart.bars} />
+            <BarChart bars={activeChart.bars} delta={activeChart.delta} />
             <p
               className="text-xs text-muted-foreground mt-6 italic [&_a]:underline [&_a]:hover:text-foreground"
               dangerouslySetInnerHTML={{ __html: activeChart.footnote }}
