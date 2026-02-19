@@ -5,11 +5,11 @@ import FadeIn from "@/components/FadeIn";
 const chartDataSets = [
   {
     bars: [
-      { label: "2023", value: 67, highlight: false },
+      { label: "2023", value: 67, highlight: false, displayValue: "$235B" },
       { label: "2025", value: 74, highlight: false },
       { label: "2027", value: 81, highlight: false },
       { label: "2029", value: 89, highlight: false },
-      { label: "2032", value: 100, highlight: true },
+      { label: "2032", value: 100, highlight: true, displayValue: "$349B" },
     ],
     footnote: 'Reference: <a href="https://www.mordorintelligence.com/industry-reports/testing-inspection-and-certification-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence, TIC Market Report (2023)</a>',
   },
@@ -45,13 +45,15 @@ const textBlocks = [
 ];
 
 /* ─── BAR CHART ─── */
-const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: boolean }[] }) => (
+const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: boolean; displayValue?: string }[] }) => (
   <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
     {bars.map((bar) => {
       const heightPct = `${bar.value}%`;
       return (
         <div key={bar.label} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
-          <span className="text-sm font-medium text-foreground">{bar.label}</span>
+          {bar.displayValue && (
+            <span className="text-sm font-medium text-foreground">{bar.displayValue}</span>
+          )}
           <div
             className="w-full rounded-t-sm transition-all duration-700"
             style={{
@@ -62,6 +64,9 @@ const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: b
               border: bar.highlight ? "none" : "1px solid hsl(var(--border))",
             }}
           />
+          <span className="text-xs text-muted-foreground tracking-wide text-center mt-1">
+            {bar.label}
+          </span>
         </div>
       );
     })}
