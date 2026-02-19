@@ -371,10 +371,10 @@ const EngagementModel = () => (
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
       <p className="text-lg text-muted-foreground mb-16">Our engagements follow four structural movements.</p>
     </FadeIn>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
       {engagementPhases.map((phase, i) => (
         <FadeIn key={phase.numeral} delay={150 * i}>
-          <div className="border border-border rounded-sm bg-card p-8 h-full flex flex-col">
+          <div className="border border-border rounded-sm bg-card p-8 flex flex-col min-w-[300px] w-[300px] snap-start">
             <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
             <h3 className="font-serif text-2xl mb-4 text-foreground">{phase.title}</h3>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
