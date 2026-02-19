@@ -96,7 +96,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
 const engagementItems = [
 "Converting implicit judgment into documented decision logic",
-"Formalizing language into a canonical system others can teach",
+"Formalizing language into a canonical system others can deliver",
 "Designing curriculum and assessment architecture that defines real competence",
 "Building communication infrastructure that expresses standards publicly",
 "Defining governance and enforcement mechanisms that protect quality",
