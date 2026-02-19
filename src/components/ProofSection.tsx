@@ -118,7 +118,7 @@ const BarChart = ({ bars, delta }: { bars: { label: string; value: number; highl
         </span>
       </div>
     )}
-    <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
+    <div className="flex items-end gap-3 sm:gap-5 h-[400px] w-full">
     {bars.map((bar) => {
       const heightPct = `${bar.value}%`;
       return (
