@@ -191,26 +191,40 @@ const MethodLifecycle = () =>
 
 
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
+const engagementItems = [
+  "Converting implicit judgment into documented decision logic",
+  "Formalizing language into a canonical system others can teach",
+  "Designing curriculum and assessment architecture that defines real competence",
+  "Building communication infrastructure that expresses standards publicly",
+  "Defining governance and enforcement mechanisms that protect quality",
+  "Engineering the appropriate trust mechanism — certification, licensing, or internal standards",
+  "Establishing stewardship structures that prevent drift as you scale",
+];
+
 const WhatWeDo = () =>
 <section className="px-6 py-32 max-w-5xl mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <FadeIn>
         <SectionMarker numeral="III" />
         <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-6">
-          We Serve as Structural Partner.
+          We Help You Institutionalize Authority.
         </h2>
-        <p className="text-base text-muted-foreground mb-2">We do not sell templates.</p>
-        <p className="text-base text-muted-foreground mb-8">We do not sell content production.</p>
-        <p className="text-base text-foreground mb-4">We work alongside you to:</p>
+        <p className="text-base text-muted-foreground mb-2">Not through templates.</p>
+        <p className="text-base text-muted-foreground mb-8">Not through generic deliverables.</p>
+        <p className="text-lg text-foreground mb-2">Through architecture.</p>
+        <p className="text-base text-muted-foreground mb-8">The structure that makes your expertise transferable — and durable.</p>
+        <p className="text-base text-foreground mb-4">Engagement involves:</p>
         <ul className="space-y-3 mb-8">
-          {["Reveal your method", "Document it clearly", "Design its architecture", "Guide its expansion"].map((item) =>
+          {engagementItems.map((item) =>
         <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
               {item}
             </li>
         )}
         </ul>
-        <p className="text-foreground font-serif italic text-lg">Engagement begins with consulting. It often becomes advisory.</p>
+        <p className="text-base text-muted-foreground mb-2">Most expert businesses scale delivery.</p>
+        <p className="text-base text-foreground mb-2">Very few scale authority.</p>
+        <p className="text-foreground font-serif italic text-lg">This is design for authority.</p>
       </FadeIn>
       <FadeIn delay={300}>
         <div className="w-full overflow-hidden rounded-sm">
