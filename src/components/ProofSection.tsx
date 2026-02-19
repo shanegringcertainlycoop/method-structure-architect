@@ -1,13 +1,29 @@
+import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
-/* ─── PLACEHOLDER DATA — replace with real data later ─── */
-
-const barData = [
-  { label: "Certainly", value: 92, highlight: true },
-  { label: "Firm B", value: 68 },
-  { label: "Firm C", value: 54 },
-  { label: "Firm D", value: 47 },
-  { label: "Firm E", value: 31 },
+/* ─── CHART DATA PER TAB ─── */
+const chartDataSets = [
+  {
+    bars: [
+      { label: "$235B", value: 67, highlight: false },
+      { label: "$349B", value: 100, highlight: true },
+    ],
+    footnote: "Source: Global TIC market projections, 2023–2032.",
+  },
+  {
+    bars: [
+      { label: "No Credential", value: 56, highlight: false },
+      { label: "With Credential", value: 100, highlight: true },
+    ],
+    footnote: "Source: BLS median weekly earnings data, credentialed vs. non-credentialed workers.",
+  },
+  {
+    bars: [
+      { label: "No Credential", value: 74, highlight: false },
+      { label: "With Credential", value: 87, highlight: true },
+    ],
+    footnote: "Source: Employment rate comparison, industry-recognized credential holders.",
+  },
 ];
 
 const textBlocks = [
@@ -26,13 +42,13 @@ const textBlocks = [
 ];
 
 /* ─── BAR CHART ─── */
-const BarChart = () => (
+const BarChart = ({ bars }: { bars: { label: string; value: number; highlight: boolean }[] }) => (
   <div className="flex items-end gap-3 sm:gap-5 h-[320px] w-full">
-    {barData.map((bar) => {
+    {bars.map((bar) => {
       const heightPct = `${bar.value}%`;
       return (
         <div key={bar.label} className="flex-1 flex flex-col items-center gap-2 h-full justify-end">
-          <span className="text-sm font-medium text-foreground">{bar.value}%</span>
+          <span className="text-sm font-medium text-foreground">{bar.label}</span>
           <div
             className="w-full rounded-t-sm transition-all duration-700"
             style={{
@@ -43,9 +59,6 @@ const BarChart = () => (
               border: bar.highlight ? "none" : "1px solid hsl(var(--border))",
             }}
           />
-          <span className="text-xs text-muted-foreground tracking-wide text-center mt-1">
-            {bar.label}
-          </span>
         </div>
       );
     })}
@@ -54,6 +67,8 @@ const BarChart = () => (
 
 /* ─── MAIN SECTION ─── */
 const ProofSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeChart = chartDataSets[activeIndex];
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
@@ -61,9 +76,9 @@ const ProofSection = () => {
         {/* LEFT — Bar Chart */}
         <FadeIn>
           <div className="w-full">
-            <BarChart />
+            <BarChart bars={activeChart.bars} />
             <p className="text-xs text-muted-foreground mt-6 italic">
-              Placeholder footnote. Replace with data source context.
+              {activeChart.footnote}
             </p>
           </div>
         </FadeIn>
@@ -76,13 +91,17 @@ const ProofSection = () => {
               Proof of Structure.
             </h2>
 
-
-            {/* Text Blocks */}
+            {/* Text Blocks as tabs */}
             <div className="space-y-0">
               {textBlocks.map((block, i) => (
                 <div key={i}>
                   {i > 0 && <div className="w-full h-px bg-border" />}
-                  <div className="py-6">
+                  <div
+                    className={`py-6 cursor-pointer transition-opacity ${
+                      activeIndex === i ? "opacity-100" : "opacity-50 hover:opacity-75"
+                    }`}
+                    onClick={() => setActiveIndex(i)}
+                  >
                     <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-2">
                       {block.headline}
                     </h3>
