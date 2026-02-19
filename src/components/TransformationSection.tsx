@@ -56,16 +56,16 @@ const TransformationSection = () => {
           <div>
             {transformations.map((row, i) => (
               <FadeIn key={i} delay={80 * i}>
-                <div className="relative py-5 border-b border-border overflow-hidden">
-                  {/* Before text (always rendered, visible where after is clipped away) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 py-5 border-b border-border">
+                  {/* Before text — always visible */}
                   <div className="flex items-start gap-3">
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">—</span>
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{row.before}</p>
                   </div>
-                  {/* After text (clipped by slider value) */}
+                  {/* After text — revealed by slider */}
                   <div
-                    className="absolute inset-0 flex items-start gap-3 py-5 bg-card"
-                    style={{ clipPath: `inset(0 ${100 - pct}% 0 0)` }}
+                    className="flex items-start gap-3 transition-opacity duration-150"
+                    style={{ opacity: pct / 100 }}
                   >
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">→</span>
                     <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">{row.after}</p>
