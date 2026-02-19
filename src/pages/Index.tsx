@@ -231,7 +231,7 @@ const WhatWeDo = () =>
         </ul>
         <p className="text-base text-muted-foreground mb-2">Most expert businesses scale delivery.</p>
         <p className="text-base text-foreground mb-2">Very few scale authority.</p>
-        <p className="text-foreground font-serif italic text-lg">This is design for authority.</p>
+        <p className="text-foreground font-serif italic text-4xl sm:text-5xl mt-12">This is design for authority.</p>
       </FadeIn>
     </div>
   </section>;
