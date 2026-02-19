@@ -148,7 +148,7 @@ const ProofSection = () => {
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
         {/* LEFT — Chart */}
         <FadeIn>
           <div className="w-full">
