@@ -53,9 +53,9 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl mb-8">
-          Reveal Your Method.<br />
+          Capture Your Method.<br />
           Build the Structure.<br />
-          Steward the System.
+          Make It Transferable.
         </h1>
       </FadeIn>
       <FadeIn delay={400}>
