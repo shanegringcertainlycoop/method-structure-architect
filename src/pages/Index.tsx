@@ -80,9 +80,9 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
           <Button
           variant="outline"
           className="rounded-sm px-10 py-4 text-base tracking-wide border-border text-foreground hover:bg-foreground hover:text-background h-auto"
-          onClick={() => document.getElementById("lifecycle")?.scrollIntoView({ behavior: "smooth" })}>
+          onClick={() => window.location.href = "/systems-of-trust"}>
 
-            See the Method Lifecycle™
+            See Systems of Trust™
           </Button>
         </div>
         <p className="text-xs text-muted-foreground tracking-wide italic">
