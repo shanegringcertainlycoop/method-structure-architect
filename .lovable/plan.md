@@ -1,69 +1,106 @@
 
+# New Page: SYSTEMS OF TRUST
 
-# Replace Method Lifecycle with Trust Diagnostic Module
+## Overview
+Create a dedicated `/systems-of-trust` page that presents the Systems of Trust framework as an institutional position paper. The page follows 9 modules as specified, reusing the existing design system (Playfair Display headings, Inter body, black/white palette, gold accent, thin rules, FadeIn animations).
 
-## What Changes
+## Architecture
 
-The "Method Lifecycle" section (Section II) will be removed and replaced with a new interactive "Trust Diagnostic" module -- a 10-question checklist across 5 dimensions with live scoring and dynamic result feedback.
+**New files to create:**
+- `src/pages/SystemsOfTrust.tsx` -- the full page with all 9 modules
 
-## New Component
+**Files to modify:**
+- `src/App.tsx` -- add route `/systems-of-trust`
+- `src/pages/Index.tsx` -- update Nav to include a link to the new page; extract Nav into a shared component or keep inline with a link added
 
-A new file `src/components/TrustDiagnosticSection.tsx` will be created containing:
+---
 
-### Header
-- Eyebrow text: "Trust Diagnostic -- 5 Dimensions"
-- Headline: "Do You Have a System of Trust -- or Just Reputation?"
-- Subhead and reassurance note
+## Module Breakdown
 
-### Interactive Checklist (5 dimensions, 2 checkboxes each)
-1. Source -- Authority
-2. Transfer -- Scalability
-3. Signal -- Market Legibility
-4. Integrity -- Structural Discipline
-5. Risk -- Vulnerability Awareness
+### Module 1 -- Hero
+- Eyebrow: "Systems of Trust" (trademark symbol)
+- Headline: "A Framework for Designing Durable Authority" (serif, large)
+- 4-line opening block (hiring manager / client / regulator / board reliance statements)
+- Thesis line: "Trust in professional contexts follows structure."
+- Clean, centered layout. No CTA. No selling.
 
-Each dimension has a bold title and two clickable checkbox rows. Checkboxes use the existing Radix Checkbox component for accessibility and keyboard navigation. The entire row (label + checkbox) is clickable.
+### Module 2 -- Core Definition
+- Two-column layout (stacks on mobile)
+- Left: declarative definition block ("A System of Trust is the architecture that makes credibility transferable, legible, defensible, and sustainable under scale.")
+- Right: bullet list with accent-colored dots (Where authority is grounded, How credibility moves, How competence becomes visible, What preserves standards, Where vulnerability concentrates)
 
-### Live Scoring
-- "Checked: X / 10" and "Unchecked: Y" counters
-- A monochrome horizontal progress bar (fills based on checked count)
-- A bordered result card that updates dynamically:
-  - 0-2 unchecked: "Strong foundation"
-  - 3-5 unchecked: "Trust is vulnerable"
-  - 6-10 unchecked: "Reputation-dependent"
+### Module 3 -- The Five Dimensions (Primary Framework)
+- Horizontal row of 5 pillars (matching the engagement cards pattern from Index)
+- Each pillar: single-word title, subtitle, 3-4 lines of explanation
+- Source | Transfer | Signal | Integrity | Risk
+- Horizontal scroll on mobile with "Scroll" indicator (reusing existing pattern)
+- Click-to-expand optional detail text per pillar
 
-### Pivot Paragraph
-High-contrast reframe text about architecture vs. marketing.
+### Module 4 -- System Interaction (Diagram)
+- SVG pentagon/ring diagram showing 5 nodes connected
+- Short explanatory text: "These dimensions operate interdependently."
+- Narrative chain: Source shapes Transfer, Transfer determines Signal, Signal influences Integrity, Integrity affects Risk
+- Built with inline SVG for full brand control
 
-### CTA Row
-- Primary button: "Run the Full Trust Architecture Review ($9)" (accent gradient style)
-- Secondary button: "Book a 15-Minute Diagnostic Call" (outline style)
-- Reassurance text below
+### Module 5 -- Why It Matters (Consequences)
+- 5-row grid, each row showing: "When [Dimension] is weak" followed by the consequence
+- Uses the accent em-dash pattern from TransformationSection
+- Adds tension without rhetorical tricks
 
-### Default State
-All boxes unchecked, showing "Reputation-dependent" result on load.
+### Module 6 -- Application Contexts
+- Numbered editorial list (matching WhoThisIsFor pattern with serif-numbered prefixes)
+- 5 contexts: Practitioner Methodologies, Professional Credentials, Organizational Brands, Standards Bodies, Expert-Led Businesses
+- 2-3 line description each
 
-## Layout Changes in Index.tsx
+### Module 7 -- Translation Into Our Work
+- Headline: "Applying Systems of Trust"
+- Short framing paragraph
+- Structured list tying offers to pillars with parenthetical dimension references
+- Uses accent bullet pattern
 
-- Remove the `MethodLifecycle` component definition and its `lifecyclePhases`/`stepLabels` data arrays
-- Import `TrustDiagnosticSection` and render it in place of `MethodLifecycle` at the same position in the page layout (inside `bg-surface` wrapper)
+### Module 8 -- Pathways / Entry Points
+- Minimal navigation list with arrow indicators
+- 5 entry points linking to assessment modal or scroll targets
+- Restrained -- navigation, not persuasion
+
+### Module 9 -- Close
+- Single calm statement: "Trust compounds when its structure is deliberate."
+- Primary CTA button (Request a Method Audit -- opens AssessmentModal)
+- Footer with logo and tagline (matching Index closing)
+
+---
 
 ## Technical Details
 
-**New file: `src/components/TrustDiagnosticSection.tsx`**
-- Uses `useState` with a `boolean[10]` array to track checkbox states
-- Derives `checkedCount` and `uncheckedCount` via `.filter()`
-- Result state determined by simple conditional on unchecked count
-- Uses existing `Checkbox` from `@/components/ui/checkbox` (Radix-based, accessible)
-- Uses existing `Button` component for CTAs
-- Uses existing `Progress` component (restyled monochrome) for the bar
-- Responsive: single column layout with clear dimension grouping via subtle border-bottom rules
-- Styling: black/white, no gradients on the module itself, thin borders, generous whitespace
-- The primary CTA opens the assessment modal (passed as prop), secondary can link externally or also open the modal
+### Routing
+```text
+App.tsx: Add <Route path="/systems-of-trust" element={<SystemsOfTrust />} />
+```
 
-**Modified file: `src/pages/Index.tsx`**
-- Remove `lifecyclePhases` array (~lines 94-127), `stepLabels` array, and `MethodLifecycle` component (~lines 129-185)
-- Add import for `TrustDiagnosticSection`
-- Replace `<MethodLifecycle />` with `<TrustDiagnosticSection onRequestAssessment={() => setAssessmentOpen(true)} />` at line 395
-- Update section numeral references if needed (downstream sections keep their current numerals)
+### Navigation
+- Add a text link in the existing Nav bar (on both pages) pointing to `/systems-of-trust`
+- Nav becomes a shared component or is duplicated with minor additions
+- The new page reuses the same Nav with the same "Request a Method Audit" CTA
 
+### Shared Components
+- `FadeIn` -- reused for all module animations
+- `Button` -- reused for CTAs
+- `AssessmentModal` -- reused for the closing CTA
+- `Divider` and `SectionMarker` -- extracted or duplicated from Index
+
+### SVG Diagram (Module 4)
+- Custom inline SVG pentagon with 5 labeled nodes
+- Gold accent stroke for connections, muted foreground for node borders
+- Responsive sizing with viewBox
+
+### Responsive Behavior
+- Module 3 pillars: horizontal scroll on mobile (same as engagement phases)
+- Module 2: two-column on desktop, stacked on mobile
+- Module 5: single column on all viewports
+- Module 6: two-column grid on desktop
+
+### Styling
+- All existing CSS variables, no new colors or fonts
+- `bg-surface` alternation between modules (matching Index pattern)
+- Thin `Divider` rules between sections
+- `noise-overlay` on select surface sections
