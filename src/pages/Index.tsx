@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Check } from "lucide-react";
@@ -24,7 +25,12 @@ const SectionMarker = ({ numeral, className = "" }: {numeral: string;className?:
 /* ─── NAV ─── */
 const Nav = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <img src={certainlyLogo} alt="Certainly" className="h-8" />
+    <div className="flex items-center gap-8">
+      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
+      <Link to="/systems-of-trust" className="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
+        Framework
+      </Link>
+    </div>
     <Button
     onClick={onRequestAssessment}
     size="sm"
