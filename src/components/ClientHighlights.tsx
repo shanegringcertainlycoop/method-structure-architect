@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import badgeWellAp from "@/assets/badge-wellap.svg";
 
 interface CaseStudy {
   id: string;
@@ -74,7 +75,10 @@ const ClientHighlights = () => {
       <FadeIn key={study.id}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image slot */}
-          <div className="w-full aspect-[4/3] rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden">
+          <div className="w-full aspect-[4/3] rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden relative">
+            {study.id === "well-ap" && (
+              <img src={badgeWellAp} alt="WELL AP Badge" className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-20 z-10" />
+            )}
             <span className="text-muted-foreground text-sm tracking-wide">Image Placeholder</span>
           </div>
 
