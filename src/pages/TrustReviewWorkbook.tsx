@@ -1009,47 +1009,39 @@ const TrustReviewWorkbook = () => {
                   Score by dimension
                 </p>
 
-                {/* Radar + scores side-by-side */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center mb-8">
+                {/* Radar chart — full width */}
+                <div className="mb-10">
                   <RadarChart scores={SECTIONS.map((s) => getSectionScore(s.number, answers))} />
-
-                  <div className="space-y-4">
-                    {SECTIONS.map((s) => {
-                      const sScore = getSectionScore(s.number, answers);
-                      let barClass = "bg-foreground/20";
-                      if (sScore >= 65) barClass = "bg-accent";
-                      else if (sScore >= 35) barClass = "bg-accent/50";
-                      return (
-                        <div key={s.number}>
-                          <div className="flex items-baseline justify-between mb-1.5">
-                            <div className="flex items-center gap-2">
-                              <span className="font-serif text-accent/50 text-[10px] w-4 shrink-0">{s.numeral}</span>
-                              <span className="text-xs text-foreground tracking-wide">{s.title}</span>
-                            </div>
-                            <span className="font-serif text-xl text-foreground leading-none">{sScore}</span>
-                          </div>
-                          <div className="w-full h-0.5 bg-border rounded-full">
-                            <div
-                              className={`h-0.5 rounded-full transition-all duration-700 ${barClass}`}
-                              style={{ width: `${sScore}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
                 </div>
 
-                {/* Section insights */}
-                <div className="space-y-3 pt-2 border-t border-border/50">
-                  {SECTIONS.map((s) => (
-                    <div key={s.number} className="flex gap-3 pt-3">
-                      <span className="font-serif text-accent/40 text-[10px] shrink-0 w-4 mt-0.5">{s.numeral}</span>
-                      <p className="text-[11px] text-muted-foreground leading-relaxed">
-                        {getSectionInsight(s.number, getSectionScore(s.number, answers))}
-                      </p>
-                    </div>
-                  ))}
+                {/* Dimension scores with inline feedback */}
+                <div className="space-y-6">
+                  {SECTIONS.map((s) => {
+                    const sScore = getSectionScore(s.number, answers);
+                    let barClass = "bg-foreground/20";
+                    if (sScore >= 65) barClass = "bg-accent";
+                    else if (sScore >= 35) barClass = "bg-accent/50";
+                    return (
+                      <div key={s.number}>
+                        <div className="flex items-baseline justify-between mb-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-serif text-accent/50 text-[10px] w-4 shrink-0">{s.numeral}</span>
+                            <span className="text-xs text-foreground tracking-wide">{s.title}</span>
+                          </div>
+                          <span className="font-serif text-xl text-foreground leading-none">{sScore}</span>
+                        </div>
+                        <div className="w-full h-0.5 bg-border rounded-full mb-2">
+                          <div
+                            className={`h-0.5 rounded-full transition-all duration-700 ${barClass}`}
+                            style={{ width: `${sScore}%` }}
+                          />
+                        </div>
+                        <p className="text-[11px] text-muted-foreground leading-relaxed pl-6">
+                          {getSectionInsight(s.number, sScore)}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
