@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import certainlyLogo from "@/assets/certainly-logo.png";
+import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 /* ─── SHARED HELPERS ─── */
 const Divider = () => <div className="w-full h-px bg-border" />;
@@ -22,6 +23,7 @@ const Nav = ({ onStrategyCall }: { onStrategyCall: () => void }) => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
     <div className="flex items-center gap-8">
       <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
+      <ProgramsDropdown />
       <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
     </div>
     <Button

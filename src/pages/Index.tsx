@@ -15,6 +15,7 @@ import FAQSection from "@/components/FAQSection";
 import BentoSection from "@/components/BentoSection";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
+import ProgramsDropdown from "@/components/ProgramsDropdown";
 import structuralPartner from "@/assets/structural-partner.avif";
 import romanColumns from "@/assets/roman-columns.png";
 import closingBg from "@/assets/closing-bg.avif";
@@ -30,6 +31,7 @@ const Nav = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
     <div className="flex items-center gap-8">
       <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
+      <ProgramsDropdown />
       <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
     </div>
     <Button
