@@ -24,26 +24,40 @@ const ProgramsDropdown = () => {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
       >
         Programs & Services
-        <ChevronDown className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
-      {open && (
-        <div className="absolute top-full left-0 mt-2 w-60 rounded-md border border-border bg-background shadow-lg z-50 py-1">
-          {programs.map((p) => (
-            <Link
-              key={p.to}
-              to={p.to}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-surface hover:text-foreground transition-colors"
-            >
+      <div
+        className={`absolute top-full left-0 mt-3 w-72 rounded-md border border-border/60 shadow-xl z-[100] py-2 transition-all duration-200 origin-top ${
+          open
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-95 pointer-events-none"
+        }`}
+        style={{ backgroundColor: "#141414" }}
+      >
+        <p className="px-4 pt-1 pb-2.5 text-[10px] tracking-[0.2em] uppercase text-muted-foreground/60 border-b border-border/40 mb-1">
+          Engagement Levels
+        </p>
+        {programs.map((p, i) => (
+          <Link
+            key={p.to}
+            to={p.to}
+            onClick={() => setOpen(false)}
+            className="group flex items-center gap-3 px-4 py-3 text-sm text-foreground/70 hover:text-foreground hover:bg-white/[0.04] transition-colors"
+          >
+            <span
+              className="w-1 h-1 rounded-full shrink-0 transition-colors"
+              style={{ backgroundColor: i === 0 ? "hsl(43 47% 54%)" : "rgba(255,255,255,0.2)" }}
+            />
+            <span className="group-hover:translate-x-0.5 transition-transform duration-150">
               {p.label}
-            </Link>
-          ))}
-        </div>
-      )}
+            </span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
