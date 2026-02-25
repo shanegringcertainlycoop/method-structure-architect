@@ -114,16 +114,34 @@ const DriftProblem = () => (
               { label: "Instructor B", note: "improvised" },
               { label: "Client Outcomes", note: "variance" },
             ].map((item, i) => (
-              <div key={item.label}>
+              <div
+                key={item.label}
+                className="animate-fade-in"
+                style={{
+                  animationDelay: `${400 + i * 350}ms`,
+                  animationFillMode: "both",
+                  animationDuration: "0.6s",
+                  filter: `blur(${i * 1.2}px)`,
+                  opacity: 1 - i * 0.12,
+                }}
+              >
                 <div className="flex items-center gap-3 py-3">
-                  <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
+                  <div
+                    className="w-2 h-2 rounded-full shrink-0"
+                    style={{
+                      backgroundColor: `hsl(43 47% ${54 - i * 6}%)`,
+                    }}
+                  />
                   <span className="text-foreground">{item.label}</span>
                   {item.note && (
                     <span className="text-muted-foreground text-xs italic">({item.note})</span>
                   )}
                 </div>
                 {i < 3 && (
-                  <div className="ml-[3px] w-px h-6 bg-border" />
+                  <div
+                    className="ml-[3px] w-px h-6"
+                    style={{ backgroundColor: `rgba(255,255,255,${0.12 - i * 0.02})` }}
+                  />
                 )}
               </div>
             ))}
