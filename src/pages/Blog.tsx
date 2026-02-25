@@ -36,7 +36,7 @@ const Blog = () => {
           </FadeIn>
           <FadeIn delay={200}>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-8">
-              On Certification.<br />On Method.<br />On Authority.
+              On Trust.<br />On Method.<br />On Authority.
             </h1>
           </FadeIn>
           <FadeIn delay={400}>
