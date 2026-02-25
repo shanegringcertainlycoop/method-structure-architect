@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
 import AssessmentModal from "@/components/AssessmentModal";
@@ -194,39 +194,43 @@ const WhoThisIsFor = () =>
 const engagementPhases = [
 {
   numeral: "I",
-  title: "Diagnose",
-  subtitle: "(1–2 weeks)",
-  intro: "Understand how trust works in your business.",
-  bulletIntro: "Support could include a:",
-  bullets: ["Trust Architecture Review", "Method Audit", "Strategy Sprint"],
-  closing: "Clarity saves months of misdirected build effort."
+  title: "Method Capture™",
+  level: "Level 1",
+  subtitle: "(4–8 weeks)",
+  intro: "Preserve and formalize the method that makes your business defensible.",
+  bullets: ["Deep method extraction", "Curriculum architecture", "Competence definition", "Transferability framework"],
+  closing: "Your expertise becomes structured and portable.",
+  to: "/method-capture",
 },
 {
   numeral: "II",
-  title: "Preserve",
-  subtitle: "(4–8 weeks)",
-  intro: "Capture and formalize what makes your method effective.",
-  bulletIntro: "Support could include:",
-  bullets: ["Method Capture", "Curriculum Architecture", "Competence Definition"],
-  closing: "Your expertise becomes transferable."
+  title: "Strategy Sprint™",
+  level: "Level 2",
+  subtitle: "(2–3 weeks)",
+  intro: "Determine the right trust mechanism — before you build the wrong one.",
+  bullets: ["Five-dimension structural audit", "Mechanism recommendation", "Investment roadmap", "Executive decision brief"],
+  closing: "Clarity prevents years of misallocation.",
+  to: "/strategy-sprint",
 },
 {
   numeral: "III",
-  title: "Build",
+  title: "Trust Mechanism Modules™",
+  level: "Level 3",
   subtitle: "(8–12 weeks or 120-day pilot)",
-  intro: "Design the right trust mechanism.",
-  bulletIntro: "Support could include:",
-  bullets: ["Licensing Frameworks", "Assessment Systems", "Brand and Messaging", "Digital Infrastructure", "120-Day Certification Pilot Launch"],
-  closing: "This is where structure enters the market."
+  intro: "Install the structural components that make trust durable.",
+  bullets: ["Benchmark Audit", "Curriculum & Assessment Architecture", "Credential Signal Infrastructure", "120-Day Pilot Installation"],
+  closing: "This is institutional construction.",
+  to: "/trust-mechanism-modules",
 },
 {
   numeral: "IV",
-  title: "Steward",
+  title: "Fractional Credential Operations™",
+  level: "Level 4",
   subtitle: "(Ongoing)",
-  intro: "Operational ownership of certification systems.",
-  bulletIntro: "Support could include:",
-  bullets: ["Governance", "Vendor coordination", "Renewal standards", "Version control", "Quality assurance"],
-  closing: "Structure must be maintained."
+  intro: "Steward the credential as a durable business unit — not a side project.",
+  bullets: ["Operational health monitoring", "Governance & renewal stewardship", "Vendor coordination", "Revenue tracking", "Policy maintenance"],
+  closing: "Durable systems require stewardship.",
+  to: "/fractional-credential-operations",
 }];
 
 const EngagementModel = () =>
@@ -234,20 +238,18 @@ const EngagementModel = () =>
     <FadeIn>
       <SectionMarker numeral="VII" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
-      <p className="text-lg text-muted-foreground mb-16">Our engagements follow four structural movements.</p>
+      <p className="text-lg text-muted-foreground mb-16">Four structured levels. Engage only what your stage requires.</p>
     </FadeIn>
     <div className="relative">
       <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mr-6 pr-6">
         {engagementPhases.map((phase, i) =>
       <FadeIn key={phase.numeral} delay={150 * i}>
             <div className="border border-border rounded-sm bg-card p-8 flex flex-col h-full min-w-[300px] w-[300px] snap-start">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-accent/70 mb-1 font-sans">{phase.level}</p>
               <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
               <h3 className="font-serif text-2xl mb-1 text-foreground">{phase.title}</h3>
               <p className="text-xs text-muted-foreground mb-4">{phase.subtitle}</p>
               <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
-              {"bulletIntro" in phase && phase.bulletIntro &&
-            <p className="text-sm text-muted-foreground mb-3">{phase.bulletIntro}</p>
-            }
               <ul className="space-y-3 mb-6 flex-1">
                 {phase.bullets.map((b) =>
             <li key={b} className="flex items-start gap-3 text-base text-foreground/80">
@@ -256,7 +258,12 @@ const EngagementModel = () =>
                   </li>
             )}
               </ul>
-              <p className="text-base text-foreground font-serif italic">{phase.closing}</p>
+              <p className="text-base text-foreground font-serif italic mb-5">{phase.closing}</p>
+              <Button asChild variant="outline" size="sm" className="rounded-sm border-border text-foreground hover:bg-surface w-full">
+                <Link to={phase.to}>
+                  Explore {phase.level} <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                </Link>
+              </Button>
             </div>
           </FadeIn>
       )}
