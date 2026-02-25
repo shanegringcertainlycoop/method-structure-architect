@@ -1,34 +1,37 @@
 
 
-# Level 3 — Trust Mechanism Modules Page
+# Level 4 — Fractional Credential Operations Page
 
 ## Overview
-Create `src/pages/TrustMechanismModules.tsx` following the exact template of MethodCapture and StrategySprint pages (same shared helpers, Nav, FadeIn, AssessmentModal, Button imports). Add route and update the Programs dropdown.
+Create `src/pages/FractionalCredentialOperations.tsx` following the exact template established by TrustMechanismModules and StrategySprint. Add route and update the Programs dropdown.
 
 ## File Changes
 
-### 1. Create `src/pages/TrustMechanismModules.tsx`
-9 modules mirroring the existing page structure:
+### 1. Create `src/pages/FractionalCredentialOperations.tsx`
+9 modules matching existing page patterns (same imports, Nav, FadeIn, AssessmentModal, SectionMarker, Divider, lightBg/lightMuted/lightBorder helpers):
 
-| Module | Section | Background | Key Elements |
-|--------|---------|-----------|-------------|
-| 1 Hero | Off-white with grid | "Level 3" marker, "Trust Mechanism Modules" headline, compressed subhead, two CTAs |
-| 2 From Decision to Installation | Dark (bg-surface noise-overlay) | Split layout: left SVG vertical flow (Method > Defined Standards > Assessment Logic > Verification Infrastructure > Market Signal), right editorial copy |
-| 3 Modular Architecture Overview | Dark #111111 | Four equal columns (Module A-D) as blueprint blocks with details, timelines, investment info. Collapses to single column on mobile |
-| 4 Decision Path Matrix | Off-white | Clean bordered grid table mapping situations to recommended modules |
-| 5 What Makes This Different | Dark bg-surface | Centered headline "Most credentials fail after launch", lists of failure reasons and what Trust Mechanism Modules build |
-| 6 Qualification Filter | Off-white | Two-column checklist with filled/empty square indicators (same pattern as other pages) |
-| 7 Position in the System | Dark bg-surface | Horizontal level bar highlighting Level 3 with structural role descriptions |
-| 8 Investment Positioning | Dark | Centered institutional copy about engagement scope and pricing |
-| 9 Final CTA | Dark #111111 | "Build what can endure." headline, two CTAs, footer |
+| Module | Background | Key Elements |
+|--------|-----------|-------------|
+| 1 Hero | Off-white grid | "Level 4" marker, "Fractional Credential Operations" headline, subhead about stewardship not side project, two CTAs |
+| 2 Quiet Failure Pattern | Dark bg-surface noise-overlay | Split: left SVG timeline (Launch > 6 Months > 12 Months > Drift with sub-items), right editorial copy about quiet degradation |
+| 3 What Fractional Ops Means | Dark #111111 | Centered layout with list of 8 operational areas, "You retain strategic authority / We steward operational integrity" |
+| 4 Three Engagement Levels | Off-white lightBg | Three vertical cards (Steward $4k, Builder $6.5k, Architect $10k+) with focus items and "best for" lines |
+| 5 What Changes Over Time | Dark bg-surface | Horizontal 3-stage timeline (60 Days, 90 Days, 12 Months) with bullet items under each |
+| 6 Who This Is For | Off-white lightBg | Two-column checklist (filled/empty squares) matching existing pattern |
+| 7 Position in the System | Dark bg-surface | Horizontal level bar highlighting Level 4, structural role descriptions |
+| 8 Investment Framing | Dark | Centered copy about what fractional ops replaces, starting at $4k/month |
+| 9 Final CTA | Dark #111111 | "Durable systems require stewardship." headline, single primary CTA, footer |
 
-Nav button: "Discuss Your Build Path"
-Primary CTAs open AssessmentModal.
-Secondary CTAs: Hero links to `/levels`, Final CTA links to Level 4 (placeholder `/levels` for now).
+- Nav CTA button: "Schedule an Operations Conversation"
+- Primary CTAs open AssessmentModal
+- Secondary CTA in hero: "Compare All Levels" linking to `/levels`
 
 ### 2. Modify `src/App.tsx`
-Add route: `<Route path="/trust-mechanism-modules" element={<TrustMechanismModules />} />`
+Add route: `<Route path="/fractional-credential-operations" element={<FractionalCredentialOperations />} />`
 
 ### 3. Update `src/components/ProgramsDropdown.tsx`
-Add Level 3 item: `{ label: "Level 3 — Trust Mechanism Modules", to: "/trust-mechanism-modules" }`
+Add Level 4 item: `{ label: "Level 4 — Fractional Credential Operations™", to: "/fractional-credential-operations" }`
+
+### 4. Update Level 3 Final CTA
+In `src/pages/TrustMechanismModules.tsx`, change the "Explore Level 4" secondary CTA link from `/levels` to `/fractional-credential-operations`.
 
