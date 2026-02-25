@@ -193,6 +193,16 @@ const WhoThisIsFor = () =>
 /* ─── SECTION VI — ENGAGEMENT MODEL ─── */
 const engagementPhases = [
 {
+  numeral: "0",
+  title: "Trust Architecture™ Review",
+  level: "Level 0",
+  subtitle: "$9 Workbook · Self-guided · 30–45 min",
+  intro: "Before you invest in certification or scaling delivery — understand how trust actually works in your business.",
+  bullets: ["Five-dimension trust diagnostic", "Scoring & interpretation", "Recommended path forward", "Mini-guide on trust mechanisms"],
+  closing: "That realization changes what you build next.",
+  to: "/trust-architecture-review",
+},
+{
   numeral: "I",
   title: "Method Capture™",
   level: "Level 1",
@@ -238,7 +248,7 @@ const EngagementModel = () =>
     <FadeIn>
       <SectionMarker numeral="VII" />
       <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-4">How We Work</h2>
-      <p className="text-lg text-muted-foreground mb-16">Four structured levels. Engage only what your stage requires.</p>
+      <p className="text-lg text-muted-foreground mb-16">Five structured levels. Engage only what your stage requires.</p>
     </FadeIn>
     <div className="relative">
       <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mr-6 pr-6">
