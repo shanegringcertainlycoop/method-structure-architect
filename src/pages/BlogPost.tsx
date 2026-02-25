@@ -147,6 +147,19 @@ const BlogPost = () => {
 
       <Divider />
 
+      {/* Hero image */}
+      {post.image && (
+        <FadeIn>
+          <div className="max-w-2xl mx-auto px-6 pt-10">
+            <img
+              src={post.image}
+              alt={post.imageAlt || post.title}
+              className="w-full aspect-[16/9] object-cover rounded-sm"
+            />
+          </div>
+        </FadeIn>
+      )}
+
       {/* Article body */}
       <article className="px-6 py-16 max-w-2xl mx-auto">
         {post.sections.map((section, i) => renderSection(section, i))}

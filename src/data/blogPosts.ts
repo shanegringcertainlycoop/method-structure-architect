@@ -16,6 +16,8 @@ export interface BlogPost {
   readTime: string;
   category: string;
   excerpt: string;
+  image?: string;
+  imageAlt?: string;
   sections: BlogSection[];
 }
 
@@ -29,6 +31,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "Certification and licensing are both ways to scale a proprietary method — but they solve different problems, require different infrastructure, and carry different risks. Choosing the wrong one doesn't just slow you down. It can undermine the method itself.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Person reviewing documents at a desk",
     sections: [
       {
         type: "paragraph",
@@ -257,6 +261,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     category: "Certification Design",
     excerpt: "If you've built a methodology that produces consistent results, you've already done the hard part. The question isn't whether your work is worth certifying — it's whether you've built the structure that makes certification possible.",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Structured architectural grid viewed from above",
     sections: [
       {
         type: "paragraph",
