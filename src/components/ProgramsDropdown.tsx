@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 const programs = [
   { label: "Level 1 — Method Capture™", to: "/method-capture" },
   { label: "Level 2 — Strategy Sprint™", to: "/strategy-sprint" },
+  { label: "Level 3 — Trust Mechanism Modules™", to: "/trust-mechanism-modules" },
 ];
 
 const ProgramsDropdown = () => {

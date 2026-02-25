@@ -10,6 +10,7 @@ import Glossary from "./pages/Glossary";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import StrategySprint from "./pages/StrategySprint";
+import TrustMechanismModules from "./pages/TrustMechanismModules";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/strategy-sprint" element={<StrategySprint />} />
+          <Route path="/trust-mechanism-modules" element={<TrustMechanismModules />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
