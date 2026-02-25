@@ -17,6 +17,7 @@ import TrustReviewWorkbook from "./pages/TrustReviewWorkbook";
 import BenchmarkAudit from "./pages/BenchmarkAudit";
 import CurriculumAssessmentDesign from "./pages/CurriculumAssessmentDesign";
 import BrandInfrastructure from "./pages/BrandInfrastructure";
+import PilotCertification from "./pages/PilotCertification";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/benchmark-audit" element={<BenchmarkAudit />} />
           <Route path="/curriculum-assessment-design" element={<CurriculumAssessmentDesign />} />
           <Route path="/brand-infrastructure" element={<BrandInfrastructure />} />
+          <Route path="/120-day-pilot" element={<PilotCertification />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
