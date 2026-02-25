@@ -348,7 +348,7 @@ const DeliverablesGrid = () => (
       <div className="grid grid-cols-1 md:grid-cols-2">
         {deliverables.map((d, i) => (
           <FadeIn key={d.title} delay={100 * i}>
-            <div className={`p-8 border ${lightBorder} ${i < deliverables.length - 1 ? "" : ""}`}>
+            <div className={`p-8 border ${lightBorder} h-full`}>
               <h3 className="text-xs tracking-[0.2em] uppercase font-sans font-medium mb-4" style={{ color: "#1A1A1A" }}>
                 {d.title}
               </h3>
