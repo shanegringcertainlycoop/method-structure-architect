@@ -21,6 +21,9 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
       <Link to="/systems-of-trust" className="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
         Framework
       </Link>
+      <Link to="/glossary" className="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
+        Glossary
+      </Link>
     </div>
     <Button
       onClick={onRequestAssessment}
