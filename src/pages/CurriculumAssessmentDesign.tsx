@@ -159,7 +159,7 @@ const CoreProblem = () => (
 /* ─── MODULE 3 — WHY THIS MATTERS FOR TRUST ─── */
 const WhyThisMatters = () => (
   <section className="px-6 py-24" style={{ backgroundColor: "#111111" }}>
-    <div className="max-w-3xl mx-auto text-center">
+    <div className="max-w-3xl mx-auto text-left">
       <FadeIn>
         <SectionMarker numeral="III" />
         <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-10 text-foreground">
