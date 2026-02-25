@@ -57,12 +57,20 @@ const TrustArchitectureReview = () => {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
               Before you invest in certification, partnerships, or scaling delivery — understand how trust actually works in your business.
             </p>
-            <Button
-              onClick={() => setAssessmentOpen(true)}
-              className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
-            >
-              Get the Workbook — $9
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+              <Button
+                onClick={() => setAssessmentOpen(true)}
+                className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
+              >
+                Get the PDF Workbook — $9
+              </Button>
+              <Link
+                to="/trust-review-workbook"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors tracking-wide underline underline-offset-4"
+              >
+                Try the free digital version →
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -142,12 +150,20 @@ const TrustArchitectureReview = () => {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-6">Start with structure.</h2>
-            <Button
-              onClick={() => setAssessmentOpen(true)}
-              className="btn-accent-gradient text-accent-foreground rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
-            >
-              Get the Workbook — $9
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+              <Button
+                onClick={() => setAssessmentOpen(true)}
+                className="btn-accent-gradient text-accent-foreground rounded-sm px-12 py-5 text-lg tracking-wide font-medium h-auto"
+              >
+                Get the PDF Workbook — $9
+              </Button>
+              <Link
+                to="/trust-review-workbook"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors tracking-wide underline underline-offset-4"
+              >
+                Try the free digital version →
+              </Link>
+            </div>
           </FadeIn>
           <FadeIn delay={400}>
             <Divider />

@@ -1,0 +1,716 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { ArrowRight, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import FadeIn from "@/components/FadeIn";
+import certainlyLogo from "@/assets/certainly-logo.png";
+
+// ─── Types ───────────────────────────────────────────────────────────────────
+
+interface Question {
+  id: number;
+  section: number;
+  text: string;
+  lowLabel: string;
+  highLabel: string;
+}
+
+interface SectionConfig {
+  number: number;
+  numeral: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+// ─── Data ────────────────────────────────────────────────────────────────────
+
+const SECTIONS: SectionConfig[] = [
+  {
+    number: 1,
+    numeral: "I",
+    title: "Trust Sources",
+    subtitle: "Where your credibility comes from today",
+    description:
+      "These questions examine the foundations of your professional authority — who or what the market is actually trusting when they engage with your work.",
+  },
+  {
+    number: 2,
+    numeral: "II",
+    title: "Trust Transfer",
+    subtitle: "How trust moves — or fails to — beyond you",
+    description:
+      "These questions reveal how effectively your expertise travels to other practitioners and whether your methodology can be delivered consistently without you.",
+  },
+  {
+    number: 3,
+    numeral: "III",
+    title: "Trust Signals",
+    subtitle: "What the market sees and can verify",
+    description:
+      "These questions examine the external signals your market can use to evaluate your work — independently of your personal explanation or presence.",
+  },
+  {
+    number: 4,
+    numeral: "IV",
+    title: "Trust Under Pressure",
+    subtitle: "What happens when something goes wrong",
+    description:
+      "These questions probe the resilience of your trust architecture — what breaks first when quality slips, a key person leaves, or your methodology is challenged.",
+  },
+  {
+    number: 5,
+    numeral: "V",
+    title: "Trust at Scale",
+    subtitle: "Where risk increases as you grow",
+    description:
+      "These questions examine how your trust infrastructure holds up — or doesn't — as you add practitioners, clients, and complexity.",
+  },
+];
+
+const QUESTIONS: Question[] = [
+  // Section 1: Trust Sources
+  {
+    id: 1,
+    section: 1,
+    text: "When a prospective client decides to hire you, what primarily drives that decision?",
+    lowLabel: "My personal reputation or a referral from someone who knows me",
+    highLabel: "The firm's documented track record, methodology, or institutional credentials",
+  },
+  {
+    id: 2,
+    section: 1,
+    text: "If you stepped away from the business for six months, how would your market credibility be affected?",
+    lowLabel: "Significantly — my personal presence sustains the firm's standing",
+    highLabel: "Minimally — credibility exists at an institutional level independent of me",
+  },
+  {
+    id: 3,
+    section: 1,
+    text: "How would you characterize the primary source of your professional authority?",
+    lowLabel: "My personal experience, relationships, and track record",
+    highLabel: "A documented, governed methodology with external recognition",
+  },
+  // Section 2: Trust Transfer
+  {
+    id: 4,
+    section: 2,
+    text: "When a team member (not you) delivers your methodology, how consistent is client satisfaction?",
+    lowLabel: "Noticeably lower — quality depends on my personal involvement",
+    highLabel: "Consistently comparable — the method holds regardless of who delivers it",
+  },
+  {
+    id: 5,
+    section: 2,
+    text: "Do you have documentation that tells a practitioner how to make the key judgment calls in your methodology?",
+    lowLabel: "No — it lives in my head and transfers through conversation and example",
+    highLabel: "Yes — judgment criteria are written down and tested against real delivery",
+  },
+  {
+    id: 6,
+    section: 2,
+    text: "When a client asks 'how do I know this person is qualified?', you answer:",
+    lowLabel: "I vouch for them personally",
+    highLabel: "They've been assessed against our documented competence standard",
+  },
+  // Section 3: Trust Signals
+  {
+    id: 7,
+    section: 3,
+    text: "Does your methodology have a name, defined structure, and publicly documented description?",
+    lowLabel: "No — it's described informally in proposals and conversations",
+    highLabel: "Yes — defined name, documented structure, publicly accessible description",
+  },
+  {
+    id: 8,
+    section: 3,
+    text: "Can a third party independently verify that one of your practitioners is qualified?",
+    lowLabel: "No — they must rely on my word or a reference",
+    highLabel: "Yes — we have a verifiable credential, registry, or certified practitioner list",
+  },
+  {
+    id: 9,
+    section: 3,
+    text: "How much documented evidence of outcomes exists independently of your personal explanation?",
+    lowLabel: "Very little — outcomes are communicated through conversation",
+    highLabel: "Substantial — systematically documented and publicly accessible",
+  },
+  // Section 4: Trust Under Pressure
+  {
+    id: 10,
+    section: 4,
+    text: "If a practitioner delivered poor work that harmed a client, your response process would be:",
+    lowLabel: "Informal — handled case by case with no defined procedure",
+    highLabel: "Formal — documented complaints procedure with defined consequences",
+  },
+  {
+    id: 11,
+    section: 4,
+    text: "If a key practitioner left and took several client relationships, the impact would be:",
+    lowLabel: "Significant damage to market position",
+    highLabel: "Operationally manageable — relationships exist at the firm level",
+  },
+  {
+    id: 12,
+    section: 4,
+    text: "If your methodology were publicly challenged, your defense would rely on:",
+    lowLabel: "My personal credibility and explanation",
+    highLabel: "Documented evidence, published standards, or standards body backing",
+  },
+  // Section 5: Trust at Scale
+  {
+    id: 13,
+    section: 5,
+    text: "If you needed to onboard five new practitioners in the next ninety days, how confident are you in quality consistency?",
+    lowLabel: "Not confident — quality would drop without close personal oversight",
+    highLabel: "Very confident — documented onboarding standards and assessment processes exist",
+  },
+  {
+    id: 14,
+    section: 5,
+    text: "Your methodology's long-term market value depends primarily on:",
+    lowLabel: "My continued personal involvement and reputation",
+    highLabel: "An institutional framework — documentation, governance, and credential infrastructure",
+  },
+  {
+    id: 15,
+    section: 5,
+    text: "In ten years, your business's credibility will be:",
+    lowLabel: "Still largely dependent on my personal relationships and delivery",
+    highLabel: "Institutional — operating with its own authority, independent of me",
+  },
+];
+
+// ─── Scoring ─────────────────────────────────────────────────────────────────
+
+function getSectionScore(sectionNum: number, answers: Record<number, number>): number {
+  const qs = QUESTIONS.filter((q) => q.section === sectionNum);
+  const answered = qs.filter((q) => answers[q.id] !== undefined);
+  if (answered.length === 0) return 0;
+  const avg = answered.reduce((sum, q) => sum + (answers[q.id] || 0), 0) / answered.length;
+  return Math.round((avg - 1) * 25); // 1–5 → 0–100
+}
+
+function getOverallScore(answers: Record<number, number>): number {
+  const scores = [1, 2, 3, 4, 5].map((s) => getSectionScore(s, answers));
+  return Math.round(scores.reduce((a, b) => a + b, 0) / 5);
+}
+
+// ─── Interpretations ─────────────────────────────────────────────────────────
+
+const STAGES = [
+  {
+    min: 0,
+    max: 30,
+    stage: "Stage 1",
+    title: "Personality-Dependent Trust",
+    color: "text-orange-400",
+    bar: "bg-orange-400",
+    summary:
+      "Your credibility is real — but it lives primarily in you. The market trusts you, not yet the institution you've built. This is a natural starting point, but it creates a ceiling: you can only scale what you can personally oversee.",
+    implications: [
+      "Client relationships depend on your direct involvement",
+      "Quality variation is high when you step back",
+      "Growth adds complexity without reducing founder-dependence",
+      "Market exits, licensing, and partnerships are structurally difficult",
+    ],
+    recommendation:
+      "The highest-leverage investment at this stage is methodology documentation — making the implicit explicit. Until the method exists outside your head, nothing else in the trust architecture can be built on it.",
+    cta: "Start with a Method Capture engagement",
+  },
+  {
+    min: 31,
+    max: 55,
+    stage: "Stage 2",
+    title: "Trust in Transition",
+    color: "text-yellow-400",
+    bar: "bg-yellow-400",
+    summary:
+      "You have meaningful expertise and some institutional elements — but trust is inconsistently distributed between you and your firm. Some clients trust the method; most still trust you. The foundation exists but isn't yet load-bearing.",
+    implications: [
+      "Scaling is possible but uneven — quality depends on which practitioner is involved",
+      "Documentation or structure exists in some areas; gaps remain in others",
+      "Certification is becoming viable, but premature without addressing foundation gaps",
+      "Trust signals are present but not yet independently verifiable",
+    ],
+    recommendation:
+      "The priority is closing the documentation gaps and formalizing your competence standard. The raw material is there — it needs to be made explicit and testable before you invest in credentialing infrastructure.",
+    cta: "Book a Trust Architecture™ Review",
+  },
+  {
+    min: 56,
+    max: 75,
+    stage: "Stage 3",
+    title: "Emerging Structure",
+    color: "text-blue-400",
+    bar: "bg-blue-400",
+    summary:
+      "You've built meaningful institutional infrastructure. The method is documented. Practitioners can deliver it reasonably consistently. The market is starting to recognize signals beyond your personal reputation. The foundation is solid enough to build a certification or licensing program on.",
+    implications: [
+      "Your method is transferable — onboarding new practitioners is a process, not an art",
+      "The market can partially evaluate practitioners without your personal endorsement",
+      "Quality governance exists but may still have gaps in enforcement",
+      "You're ready to formalize the credential — the substance is there",
+    ],
+    recommendation:
+      "This is the right moment to invest in certification program design or licensing infrastructure. The foundation is solid. The next step is building the governance and assessment systems that make the credential defensible at scale.",
+    cta: "Start your Certification Program Design",
+  },
+  {
+    min: 76,
+    max: 100,
+    stage: "Stage 4",
+    title: "Structural Trust",
+    color: "text-green-400",
+    bar: "bg-green-400",
+    summary:
+      "Your trust architecture is genuinely institutional. Credibility exists at the firm level. The method is documented and governed. Practitioners are assessed against a defined standard. The market can verify qualifications independently. This is a strong, defensible position.",
+    implications: [
+      "The firm operates largely independent of your personal involvement",
+      "Scaling adds capacity without proportionally increasing quality risk",
+      "Partnerships, licensing, and eventual exit are structurally supported",
+      "The primary work is evolution, expansion, and strategic positioning",
+    ],
+    recommendation:
+      "The strategic questions at this stage are directional: new markets, new credential tiers, licensing expansion, or standards organization development. The infrastructure is built. The next chapter is about where to deploy it.",
+    cta: "Request a Method Audit to map what's next",
+  },
+];
+
+function getStage(score: number) {
+  return STAGES.find((s) => score >= s.min && score <= s.max) || STAGES[STAGES.length - 1];
+}
+
+const SECTION_INSIGHTS: Record<number, [string, string, string]> = {
+  1: [
+    "Trust is primarily personal — the market trusts you as an individual rather than your firm or method.",
+    "Trust is partly personal, partly institutional — a transitional position with vulnerabilities on both sides.",
+    "Trust is primarily institutional — your credibility is durable and not dependent on your direct presence.",
+  ],
+  2: [
+    "Your method isn't yet transferable — quality depends on your personal judgment and involvement.",
+    "Transfer is possible but inconsistent — the method moves, but not reliably enough to scale confidently.",
+    "Your method transfers reliably — other practitioners can deliver it to your standard.",
+  ],
+  3: [
+    "The market has few independent signals to evaluate your work without your personal explanation.",
+    "Some signals exist — but they aren't yet comprehensive or independently verifiable.",
+    "The market can verify your practitioners' qualifications without relying on your endorsement.",
+  ],
+  4: [
+    "Your trust architecture is brittle under pressure — vulnerabilities that scale will expose.",
+    "Some resilience exists, but gaps in enforcement or governance create exposure.",
+    "Your trust architecture holds under pressure — processes exist to manage violations and challenges.",
+  ],
+  5: [
+    "Scaling will amplify your current vulnerabilities — the architecture isn't built for growth.",
+    "You can scale modestly, but the architecture will need investment to hold at larger size.",
+    "Your infrastructure is built for scale — growth adds capacity without proportionally increasing risk.",
+  ],
+};
+
+function getSectionInsight(sectionNum: number, score: number): string {
+  const insights = SECTION_INSIGHTS[sectionNum];
+  if (score < 35) return insights[0];
+  if (score < 65) return insights[1];
+  return insights[2];
+}
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+const Divider = () => <div className="w-full h-px bg-border" />;
+
+const Nav = () => (
+  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
+    <div className="flex items-center gap-8">
+      <Link to="/">
+        <img src={certainlyLogo} alt="Certainly" className="h-8" />
+      </Link>
+      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">
+        Writings
+      </Link>
+    </div>
+    <Link to="/trust-architecture-review">
+      <Button size="sm" className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide">
+        About this Review
+      </Button>
+    </Link>
+  </nav>
+);
+
+// Progress bar at top (5 pips)
+const ProgressBar = ({ current }: { current: number }) => (
+  <div className="flex items-center gap-2">
+    {SECTIONS.map((s) => (
+      <div key={s.number} className="flex items-center gap-2">
+        <div
+          className={`h-1 w-8 rounded-full transition-all duration-500 ${
+            s.number < current ? "bg-accent" : s.number === current ? "bg-accent/60" : "bg-border"
+          }`}
+        />
+      </div>
+    ))}
+  </div>
+);
+
+// Scale input (1–5)
+const ScaleInput = ({
+  questionId,
+  value,
+  lowLabel,
+  highLabel,
+  onChange,
+}: {
+  questionId: number;
+  value: number | undefined;
+  lowLabel: string;
+  highLabel: string;
+  onChange: (v: number) => void;
+}) => (
+  <div className="mt-4">
+    <div className="flex items-center justify-between gap-2">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <button
+          key={n}
+          onClick={() => onChange(n)}
+          className={`w-10 h-10 rounded-sm border text-sm font-serif transition-all duration-150 flex items-center justify-center
+            ${value === n
+              ? "border-accent bg-accent/10 text-accent"
+              : "border-border text-muted-foreground hover:border-accent/40 hover:text-foreground"
+            }`}
+        >
+          {n}
+        </button>
+      ))}
+    </div>
+    <div className="flex justify-between mt-2">
+      <p className="text-[10px] text-muted-foreground leading-tight max-w-[42%]">{lowLabel}</p>
+      <p className="text-[10px] text-muted-foreground leading-tight max-w-[42%] text-right">{highLabel}</p>
+    </div>
+  </div>
+);
+
+// Score bar for results
+const ScoreBar = ({ score, label, barClass }: { score: number; label: string; barClass: string }) => (
+  <div>
+    <div className="flex justify-between items-baseline mb-1.5">
+      <span className="text-xs text-muted-foreground tracking-wide">{label}</span>
+      <span className="text-xs text-foreground font-serif">{score}</span>
+    </div>
+    <div className="w-full h-1 bg-border rounded-full">
+      <div
+        className={`h-1 rounded-full transition-all duration-700 ${barClass}`}
+        style={{ width: `${score}%` }}
+      />
+    </div>
+  </div>
+);
+
+// ─── Main Component ───────────────────────────────────────────────────────────
+
+type Phase = "landing" | "section" | "results";
+
+const TrustReviewWorkbook = () => {
+  const [phase, setPhase] = useState<Phase>("landing");
+  const [currentSection, setCurrentSection] = useState(1);
+  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [sectionError, setSectionError] = useState(false);
+
+  const currentSectionConfig = SECTIONS.find((s) => s.number === currentSection)!;
+  const currentQuestions = QUESTIONS.filter((q) => q.section === currentSection);
+  const allCurrentAnswered = currentQuestions.every((q) => answers[q.id] !== undefined);
+
+  const handleAnswer = (questionId: number, value: number) => {
+    setAnswers((prev) => ({ ...prev, [questionId]: value }));
+    setSectionError(false);
+  };
+
+  const handleNext = () => {
+    if (!allCurrentAnswered) {
+      setSectionError(true);
+      return;
+    }
+    if (currentSection < 5) {
+      setCurrentSection((s) => s + 1);
+      setSectionError(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setPhase("results");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleBack = () => {
+    if (currentSection > 1) {
+      setCurrentSection((s) => s - 1);
+      setSectionError(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setPhase("landing");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const overallScore = getOverallScore(answers);
+  const stage = getStage(overallScore);
+
+  return (
+    <div className="bg-background text-foreground min-h-screen">
+      <Helmet>
+        <title>Trust Architecture Review™ Workbook | Certainly</title>
+        <meta
+          name="description"
+          content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage."
+        />
+        <link rel="canonical" href="https://method.certainly.coop/trust-review-workbook" />
+      </Helmet>
+
+      <Nav />
+
+      {/* ── Landing ── */}
+      {phase === "landing" && (
+        <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
+          <div className="max-w-2xl mx-auto">
+            <FadeIn>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-accent/70 mb-4 font-sans">
+                Self-Guided Diagnostic · 30–45 minutes
+              </p>
+              <h1 className="font-serif text-4xl sm:text-5xl font-normal leading-tight mb-4">
+                Trust Architecture Review™
+              </h1>
+              <p className="font-serif italic text-xl text-muted-foreground mb-10">
+                A Self-Guided Diagnostic for Expert-Led Businesses
+              </p>
+              <Divider />
+              <div className="py-10 space-y-4 text-base text-muted-foreground leading-relaxed">
+                <p>
+                  Before you invest in certification, partnerships, or scaling delivery — understand how trust
+                  actually works in your business.
+                </p>
+                <p>
+                  This diagnostic reveals where your credibility comes from (and where it's fragile), how trust
+                  transfers when others deliver your work, what breaks first as you scale, and which trust
+                  mechanism is right for your stage.
+                </p>
+              </div>
+              <Divider />
+              <div className="py-10">
+                <p className="text-xs text-muted-foreground tracking-widest uppercase mb-6">
+                  Five sections · Fifteen questions
+                </p>
+                <div className="space-y-3">
+                  {SECTIONS.map((s) => (
+                    <div key={s.number} className="flex items-start gap-4">
+                      <span className="font-serif text-accent text-xs mt-0.5 w-5 shrink-0">{s.numeral}</span>
+                      <div>
+                        <span className="text-sm text-foreground">{s.title}</span>
+                        <span className="text-sm text-muted-foreground"> — {s.subtitle}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Divider />
+              <div className="pt-10">
+                <Button
+                  onClick={() => { setPhase("section"); window.scrollTo({ top: 0 }); }}
+                  className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
+                >
+                  Begin the Review <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* ── Section Questions ── */}
+      {phase === "section" && (
+        <section className="min-h-screen px-6 pt-28 pb-24">
+          <div className="max-w-2xl mx-auto">
+            {/* Progress */}
+            <div className="flex items-center justify-between mb-12">
+              <ProgressBar current={currentSection} />
+              <span className="text-xs text-muted-foreground tracking-wide">
+                {currentSection} of 5
+              </span>
+            </div>
+
+            {/* Section header */}
+            <FadeIn key={currentSection}>
+              <p className="font-serif text-accent text-sm tracking-widest mb-3">
+                {currentSectionConfig.numeral}
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-2">
+                {currentSectionConfig.title}
+              </h2>
+              <p className="text-base text-muted-foreground italic mb-3">
+                {currentSectionConfig.subtitle}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-10">
+                {currentSectionConfig.description}
+              </p>
+
+              <Divider />
+
+              {/* Questions */}
+              <div className="space-y-10 py-10">
+                {currentQuestions.map((q, i) => (
+                  <div key={q.id}>
+                    <div className="flex gap-4 items-start">
+                      <span className="font-serif text-accent text-xs mt-1 shrink-0 w-5">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex-1">
+                        <p className="text-base text-foreground leading-relaxed mb-1">{q.text}</p>
+                        <ScaleInput
+                          questionId={q.id}
+                          value={answers[q.id]}
+                          lowLabel={q.lowLabel}
+                          highLabel={q.highLabel}
+                          onChange={(v) => handleAnswer(q.id, v)}
+                        />
+                      </div>
+                    </div>
+                    {i < currentQuestions.length - 1 && <div className="mt-10 w-full h-px bg-border/50" />}
+                  </div>
+                ))}
+              </div>
+
+              {sectionError && (
+                <p className="text-xs text-orange-400 mb-4">
+                  Please answer all three questions before continuing.
+                </p>
+              )}
+
+              <Divider />
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between pt-8">
+                <button
+                  onClick={handleBack}
+                  className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+                >
+                  <ArrowLeft className="h-3 w-3" />
+                  {currentSection === 1 ? "Back to start" : "Previous section"}
+                </button>
+                <Button
+                  onClick={handleNext}
+                  className="btn-accent-gradient text-accent-foreground rounded-sm px-8 py-3 text-sm tracking-wide h-auto"
+                >
+                  {currentSection < 5 ? (
+                    <>Next section <ArrowRight className="ml-2 h-4 w-4" /></>
+                  ) : (
+                    <>See your results <ArrowRight className="ml-2 h-4 w-4" /></>
+                  )}
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* ── Results ── */}
+      {phase === "results" && (
+        <section className="min-h-screen px-6 pt-28 pb-24">
+          <div className="max-w-2xl mx-auto">
+            <FadeIn>
+              {/* Score */}
+              <p className="text-[10px] tracking-[0.3em] uppercase text-accent/70 mb-4">Your Results</p>
+              <div className="flex items-baseline gap-4 mb-2">
+                <span className="font-serif text-6xl text-foreground">{overallScore}</span>
+                <span className="text-muted-foreground text-sm">/ 100</span>
+              </div>
+              <p className={`font-serif text-2xl mb-1 ${stage.color}`}>{stage.stage}</p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-8">{stage.title}</h2>
+
+              <Divider />
+
+              {/* Summary */}
+              <div className="py-8">
+                <p className="text-base text-muted-foreground leading-relaxed">{stage.summary}</p>
+              </div>
+
+              <Divider />
+
+              {/* Section breakdown */}
+              <div className="py-8">
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-6">
+                  Score by dimension
+                </p>
+                <div className="space-y-5">
+                  {SECTIONS.map((s) => {
+                    const score = getSectionScore(s.number, answers);
+                    let barClass = "bg-orange-400";
+                    if (score >= 65) barClass = "bg-green-400";
+                    else if (score >= 35) barClass = "bg-yellow-400";
+                    return (
+                      <div key={s.number}>
+                        <ScoreBar score={score} label={s.title} barClass={barClass} />
+                        <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                          {getSectionInsight(s.number, score)}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <Divider />
+
+              {/* Implications */}
+              <div className="py-8">
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-5">
+                  What this means
+                </p>
+                <ul className="space-y-3">
+                  {stage.implications.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
+                      <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Divider />
+
+              {/* Recommendation */}
+              <div className="py-8 bg-surface rounded-sm px-6 -mx-2">
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-4">
+                  Recommended path forward
+                </p>
+                <p className="text-sm text-foreground leading-relaxed">{stage.recommendation}</p>
+              </div>
+
+              {/* CTA */}
+              <div className="pt-10 space-y-4">
+                <Link to="/">
+                  <Button className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto w-full sm:w-auto">
+                    {stage.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <div className="pt-2">
+                  <button
+                    onClick={() => {
+                      setPhase("landing");
+                      setAnswers({});
+                      setCurrentSection(1);
+                      window.scrollTo({ top: 0 });
+                    }}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide underline underline-offset-4"
+                  >
+                    Start over
+                  </button>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+    </div>
+  );
+};
+
+export default TrustReviewWorkbook;

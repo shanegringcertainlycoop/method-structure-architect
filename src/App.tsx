@@ -13,6 +13,7 @@ import StrategySprint from "./pages/StrategySprint";
 import TrustMechanismModules from "./pages/TrustMechanismModules";
 import FractionalCredentialOperations from "./pages/FractionalCredentialOperations";
 import TrustArchitectureReview from "./pages/TrustArchitectureReview";
+import TrustReviewWorkbook from "./pages/TrustReviewWorkbook";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/trust-mechanism-modules" element={<TrustMechanismModules />} />
           <Route path="/fractional-credential-operations" element={<FractionalCredentialOperations />} />
           <Route path="/trust-architecture-review" element={<TrustArchitectureReview />} />
+          <Route path="/trust-review-workbook" element={<TrustReviewWorkbook />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
