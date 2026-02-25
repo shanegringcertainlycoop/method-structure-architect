@@ -1,72 +1,73 @@
 
-# New Page: SYSTEMS OF TRUST
+
+# Glossary Page
 
 ## Overview
-Create a dedicated `/systems-of-trust` page that presents the Systems of Trust framework as an institutional position paper. The page follows 9 modules as specified, reusing the existing design system (Playfair Display headings, Inter body, black/white palette, gold accent, thin rules, FadeIn animations).
+Create a new `/glossary` page presenting certification and trust terminology as a structured reference document. The page groups terms into four categories matching the provided content. It follows the same institutional design system (Playfair Display headings, Inter body, black/white/gold palette, thin rules, FadeIn animations). Terms will have stable anchor IDs so they can be referenced from other pages later.
 
-## Architecture
+## New File
+- `src/pages/Glossary.tsx` -- full glossary page with all terms
 
-**New files to create:**
-- `src/pages/SystemsOfTrust.tsx` -- the full page with all 9 modules
-
-**Files to modify:**
-- `src/App.tsx` -- add route `/systems-of-trust`
-- `src/pages/Index.tsx` -- update Nav to include a link to the new page; extract Nav into a shared component or keep inline with a link added
+## Files to Modify
+- `src/App.tsx` -- add route `/glossary`
+- `src/pages/Index.tsx` -- add "Glossary" nav link
+- `src/pages/SystemsOfTrust.tsx` -- add "Glossary" nav link (matching Index nav)
 
 ---
 
-## Module Breakdown
+## Page Structure
 
-### Module 1 -- Hero
-- Eyebrow: "Systems of Trust" (trademark symbol)
-- Headline: "A Framework for Designing Durable Authority" (serif, large)
-- 4-line opening block (hiring manager / client / regulator / board reliance statements)
-- Thesis line: "Trust in professional contexts follows structure."
-- Clean, centered layout. No CTA. No selling.
+### Nav
+Reuse the same nav pattern from SystemsOfTrust / Index, adding a "Glossary" link alongside the existing "Framework" link. Both pages' navs will be updated to include this link.
 
-### Module 2 -- Core Definition
-- Two-column layout (stacks on mobile)
-- Left: declarative definition block ("A System of Trust is the architecture that makes credibility transferable, legible, defensible, and sustainable under scale.")
-- Right: bullet list with accent-colored dots (Where authority is grounded, How credibility moves, How competence becomes visible, What preserves standards, Where vulnerability concentrates)
+### Hero
+- Eyebrow: "Reference"
+- Headline: "Glossary" (serif, large, centered)
+- One-line description: "Definitions for the language of certification, credentialing, and trust architecture."
+- Restrained. No CTA.
 
-### Module 3 -- The Five Dimensions (Primary Framework)
-- Horizontal row of 5 pillars (matching the engagement cards pattern from Index)
-- Each pillar: single-word title, subtitle, 3-4 lines of explanation
-- Source | Transfer | Signal | Integrity | Risk
-- Horizontal scroll on mobile with "Scroll" indicator (reusing existing pattern)
-- Click-to-expand optional detail text per pillar
+### Category Sections (4 groups)
+Each category gets a section marker numeral, a category heading, and its terms listed sequentially.
 
-### Module 4 -- System Interaction (Diagram)
-- SVG pentagon/ring diagram showing 5 nodes connected
-- Short explanatory text: "These dimensions operate interdependently."
-- Narrative chain: Source shapes Transfer, Transfer determines Signal, Signal influences Integrity, Integrity affects Risk
-- Built with inline SVG for full brand control
+**I. Core Concepts**
+- System of Trust
+- Certification
+- Certificate
+- Credential
+- Standards
 
-### Module 5 -- Why It Matters (Consequences)
-- 5-row grid, each row showing: "When [Dimension] is weak" followed by the consequence
-- Uses the accent em-dash pattern from TransformationSection
-- Adds tension without rhetorical tricks
+**II. Operational Components**
+- Assessment / Evaluation
+- Governance
+- Issuance
+- Renewal
+- Continuing Education (CE)
+- Revocation
 
-### Module 6 -- Application Contexts
-- Numbered editorial list (matching WhoThisIsFor pattern with serif-numbered prefixes)
-- 5 contexts: Practitioner Methodologies, Professional Credentials, Organizational Brands, Standards Bodies, Expert-Led Businesses
-- 2-3 line description each
+**III. Certification Models**
+- First-Party Certification
+- Second-Party Certification
+- Third-Party Certification
+- Pilot Certification
 
-### Module 7 -- Translation Into Our Work
-- Headline: "Applying Systems of Trust"
-- Short framing paragraph
-- Structured list tying offers to pillars with parenthetical dimension references
-- Uses accent bullet pattern
+**IV. Ecosystem and Strategy**
+- Certification Ecosystem
+- Stewardship
+- Certification Readiness
 
-### Module 8 -- Pathways / Entry Points
-- Minimal navigation list with arrow indicators
-- 5 entry points linking to assessment modal or scroll targets
-- Restrained -- navigation, not persuasion
+### Term Layout
+Each term rendered as:
+- **Term title** (serif, anchor ID derived from slug, e.g. `id="certification"`)
+- **Definition line** (bold/declarative first sentence)
+- **Body paragraphs** (remaining explanation)
+- **Bullet lists** where present in the content (accent dot pattern)
+- **Examples** where provided (muted text, indented)
+- Thin border-bottom divider between terms
 
-### Module 9 -- Close
-- Single calm statement: "Trust compounds when its structure is deliberate."
-- Primary CTA button (Request a Method Audit -- opens AssessmentModal)
-- Footer with logo and tagline (matching Index closing)
+### Close
+- Single line: "Language shapes structure. Structure shapes trust."
+- CTA: "Request a Method Audit" (opens AssessmentModal)
+- Footer matching other pages
 
 ---
 
@@ -74,33 +75,25 @@ Create a dedicated `/systems-of-trust` page that presents the Systems of Trust f
 
 ### Routing
 ```text
-App.tsx: Add <Route path="/systems-of-trust" element={<SystemsOfTrust />} />
+App.tsx: <Route path="/glossary" element={<Glossary />} />
 ```
 
-### Navigation
-- Add a text link in the existing Nav bar (on both pages) pointing to `/systems-of-trust`
-- Nav becomes a shared component or is duplicated with minor additions
-- The new page reuses the same Nav with the same "Request a Method Audit" CTA
+### Anchor IDs
+Each term gets an `id` attribute (e.g., `id="system-of-trust"`, `id="certification"`, `id="credential"`) so other pages can link to `/glossary#certification`.
 
-### Shared Components
-- `FadeIn` -- reused for all module animations
-- `Button` -- reused for CTAs
-- `AssessmentModal` -- reused for the closing CTA
-- `Divider` and `SectionMarker` -- extracted or duplicated from Index
-
-### SVG Diagram (Module 4)
-- Custom inline SVG pentagon with 5 labeled nodes
-- Gold accent stroke for connections, muted foreground for node borders
-- Responsive sizing with viewBox
-
-### Responsive Behavior
-- Module 3 pillars: horizontal scroll on mobile (same as engagement phases)
-- Module 2: two-column on desktop, stacked on mobile
-- Module 5: single column on all viewports
-- Module 6: two-column grid on desktop
+### Navigation Updates
+Both Index.tsx and SystemsOfTrust.tsx nav components get a second link:
+```text
+Framework | Glossary
+```
 
 ### Styling
-- All existing CSS variables, no new colors or fonts
-- `bg-surface` alternation between modules (matching Index pattern)
-- Thin `Divider` rules between sections
-- `noise-overlay` on select surface sections
+- Same CSS variables, no new colors or fonts
+- `bg-surface` alternation between category sections
+- Thin `Divider` rules between categories
+- FadeIn animations on each term block
+
+### Responsive
+- Single column layout throughout
+- Comfortable reading width (max-w-3xl for term content)
+
