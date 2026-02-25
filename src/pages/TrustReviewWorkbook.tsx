@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -506,6 +506,158 @@ const ScoreBar = ({ score, label, barClass }: { score: number; label: string; ba
   </div>
 );
 
+// ─── Visual Components ────────────────────────────────────────────────────────
+
+// Semicircle arc gauge
+const ArcGauge = ({ score }: { score: number }) => {
+  const cx = 100, cy = 90, r = 72;
+
+  // Background: two quarter-arcs to safely render a full semicircle
+  const bgD = `M ${cx - r} ${cy} A ${r} ${r} 0 0 0 ${cx} ${cy - r} A ${r} ${r} 0 0 0 ${cx + r} ${cy}`;
+
+  const θ = Math.PI * (1 - score / 100);
+  const ex = +(cx + r * Math.cos(θ)).toFixed(2);
+  const ey = +(cy - r * Math.sin(θ)).toFixed(2);
+
+  const scoreD =
+    score <= 0
+      ? ""
+      : score >= 100
+      ? bgD
+      : `M ${cx - r} ${cy} A ${r} ${r} 0 0 0 ${ex} ${ey}`;
+
+  const ticks = [25, 50, 75].map((tick) => {
+    const tθ = Math.PI * (1 - tick / 100);
+    return {
+      tick,
+      x1: +(cx + (r - 7) * Math.cos(tθ)).toFixed(2),
+      y1: +(cy - (r - 7) * Math.sin(tθ)).toFixed(2),
+      x2: +(cx + (r + 3) * Math.cos(tθ)).toFixed(2),
+      y2: +(cy - (r + 3) * Math.sin(tθ)).toFixed(2),
+    };
+  });
+
+  return (
+    <svg viewBox="0 0 200 106" className="w-full max-w-[280px] mx-auto" aria-hidden>
+      {ticks.map(({ tick, x1, y1, x2, y2 }) => (
+        <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="hsl(var(--border))" strokeWidth="1.5" />
+      ))}
+      <path d={bgD} fill="none" stroke="hsl(var(--border))" strokeWidth="6" strokeLinecap="round" />
+      {score > 0 && (
+        <path d={scoreD} fill="none" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" />
+      )}
+      {score > 0 && score < 100 && (
+        <circle cx={ex} cy={ey} r="5" fill="hsl(var(--background))" stroke="hsl(var(--accent))" strokeWidth="2.5" />
+      )}
+      <text x={cx} y={cy - 14} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="36" fontFamily="Georgia,serif">{score}</text>
+      <text x={cx} y={cy + 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="8" letterSpacing="2">/ 100</text>
+    </svg>
+  );
+};
+
+// Pentagon radar chart
+const RadarChart = ({ scores }: { scores: number[] }) => {
+  const cx = 110, cy = 118, r = 68;
+  const angles = Array.from({ length: 5 }, (_, i) => ((-90 + i * 72) * Math.PI) / 180);
+  const pt = (a: number, radius: number): [number, number] => [
+    +(cx + radius * Math.cos(a)).toFixed(2),
+    +(cy + radius * Math.sin(a)).toFixed(2),
+  ];
+  const pStr = (pts: [number, number][]) => pts.map(([x, y]) => `${x},${y}`).join(" ");
+
+  const scorePts = angles.map((a, i) => pt(a, r * Math.max(scores[i] / 100, 0.04)));
+  const gridLevels = [0.33, 0.66, 1];
+  const labelR = r + 22;
+  const labels = ["Sources", "Transfer", "Signals", "Resilience", "Scale"];
+
+  return (
+    <svg viewBox="0 0 240 240" className="w-full max-w-[300px] mx-auto" aria-hidden>
+      {/* Grid pentagons */}
+      {gridLevels.map((level) => (
+        <polygon
+          key={level}
+          points={pStr(angles.map((a) => pt(a, r * level)))}
+          fill="none"
+          stroke="hsl(var(--border))"
+          strokeWidth={level === 1 ? "1" : "0.75"}
+          strokeDasharray={level < 1 ? "3 3" : "0"}
+        />
+      ))}
+      {/* Axes */}
+      {angles.map((a, i) => {
+        const [x, y] = pt(a, r);
+        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="hsl(var(--border))" strokeWidth="0.75" />;
+      })}
+      {/* Score shape */}
+      <polygon
+        points={pStr(scorePts)}
+        fill="hsl(var(--accent))"
+        fillOpacity="0.12"
+        stroke="hsl(var(--accent))"
+        strokeWidth="1.5"
+        strokeOpacity="0.75"
+      />
+      {/* Score dots */}
+      {scorePts.map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="3" fill="hsl(var(--accent))" />
+      ))}
+      {/* Labels */}
+      {angles.map((a, i) => {
+        const [lx, ly] = pt(a, labelR);
+        const anchor = Math.abs(lx - cx) < 5 ? "middle" : lx > cx ? "start" : "end";
+        return (
+          <text
+            key={i}
+            x={lx}
+            y={ly}
+            textAnchor={anchor}
+            dominantBaseline="middle"
+            fill="hsl(var(--muted-foreground))"
+            fontSize="8.5"
+            letterSpacing="0.5"
+          >
+            {labels[i]}
+          </text>
+        );
+      })}
+    </svg>
+  );
+};
+
+// 4-node stage progression rail
+const StageRail = ({ score }: { score: number }) => {
+  const currentIdx = STAGES.findIndex((s) => score >= s.min && score <= s.max);
+  return (
+    <div className="flex items-center w-full max-w-xs">
+      {STAGES.map((s, i) => (
+        <Fragment key={i}>
+          <div className="flex flex-col items-center gap-1.5">
+            <div
+              className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                i <= currentIdx ? "bg-accent" : "bg-border"
+              }`}
+            />
+            <span
+              className={`text-[8px] tracking-widest uppercase transition-colors ${
+                i === currentIdx ? "text-accent" : "text-muted-foreground/35"
+              }`}
+            >
+              {s.stage}
+            </span>
+          </div>
+          {i < STAGES.length - 1 && (
+            <div
+              className={`h-px flex-1 mx-2 mb-3 transition-all duration-500 ${
+                i < currentIdx ? "bg-accent" : "bg-border"
+              }`}
+            />
+          )}
+        </Fragment>
+      ))}
+    </div>
+  );
+};
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 type Phase = "landing" | "section" | "results";
@@ -817,14 +969,25 @@ const TrustReviewWorkbook = () => {
         <section className="min-h-screen px-6 pt-28 pb-24">
           <div className="max-w-2xl mx-auto">
             <FadeIn>
-              {/* Score */}
-              <p className="text-[10px] tracking-[0.3em] uppercase text-accent/70 mb-4">Your Results</p>
-              <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-serif text-6xl text-foreground">{overallScore}</span>
-                <span className="text-muted-foreground text-sm">/ 100</span>
+
+              {/* ── Score header ── */}
+              <p className="text-[10px] tracking-[0.3em] uppercase text-accent/70 mb-8 text-center">
+                Your Results
+              </p>
+
+              {/* Arc gauge */}
+              <ArcGauge score={overallScore} />
+
+              {/* Stage label + title */}
+              <div className="text-center mt-5 mb-5">
+                <p className={`font-serif text-lg mb-0.5 tracking-wide ${stage.color}`}>{stage.stage}</p>
+                <h2 className="font-serif text-3xl sm:text-4xl font-normal">{stage.title}</h2>
               </div>
-              <p className={`font-serif text-2xl mb-1 ${stage.color}`}>{stage.stage}</p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-8">{stage.title}</h2>
+
+              {/* Stage progression rail */}
+              <div className="flex justify-center mb-10">
+                <StageRail score={overallScore} />
+              </div>
 
               <Divider />
 
@@ -835,26 +998,53 @@ const TrustReviewWorkbook = () => {
 
               <Divider />
 
-              {/* Section breakdown */}
+              {/* ── Dimension breakdown ── */}
               <div className="py-8">
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-6">
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-8">
                   Score by dimension
                 </p>
-                <div className="space-y-5">
-                  {SECTIONS.map((s) => {
-                    const score = getSectionScore(s.number, answers);
-                    let barClass = "bg-foreground/25";
-                    if (score >= 65) barClass = "bg-accent";
-                    else if (score >= 35) barClass = "bg-accent/50";
-                    return (
-                      <div key={s.number}>
-                        <ScoreBar score={score} label={s.title} barClass={barClass} />
-                        <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
-                          {getSectionInsight(s.number, score)}
-                        </p>
-                      </div>
-                    );
-                  })}
+
+                {/* Radar + scores side-by-side */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center mb-8">
+                  <RadarChart scores={SECTIONS.map((s) => getSectionScore(s.number, answers))} />
+
+                  <div className="space-y-4">
+                    {SECTIONS.map((s) => {
+                      const sScore = getSectionScore(s.number, answers);
+                      let barClass = "bg-foreground/20";
+                      if (sScore >= 65) barClass = "bg-accent";
+                      else if (sScore >= 35) barClass = "bg-accent/50";
+                      return (
+                        <div key={s.number}>
+                          <div className="flex items-baseline justify-between mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="font-serif text-accent/50 text-[10px] w-4 shrink-0">{s.numeral}</span>
+                              <span className="text-xs text-foreground tracking-wide">{s.title}</span>
+                            </div>
+                            <span className="font-serif text-xl text-foreground leading-none">{sScore}</span>
+                          </div>
+                          <div className="w-full h-0.5 bg-border rounded-full">
+                            <div
+                              className={`h-0.5 rounded-full transition-all duration-700 ${barClass}`}
+                              style={{ width: `${sScore}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Section insights */}
+                <div className="space-y-3 pt-2 border-t border-border/50">
+                  {SECTIONS.map((s) => (
+                    <div key={s.number} className="flex gap-3 pt-3">
+                      <span className="font-serif text-accent/40 text-[10px] shrink-0 w-4 mt-0.5">{s.numeral}</span>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">
+                        {getSectionInsight(s.number, getSectionScore(s.number, answers))}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -928,6 +1118,7 @@ const TrustReviewWorkbook = () => {
                   </button>
                 </div>
               </div>
+
             </FadeIn>
           </div>
         </section>
