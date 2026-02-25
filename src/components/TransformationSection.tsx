@@ -54,7 +54,7 @@ const TransformationSection = () => {
                   {/* Before text — always visible */}
                   <div className="flex items-start gap-3">
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">—</span>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{row.before}</p>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{row.before}</p>
                   </div>
                   {/* After text — revealed by slider */}
                   <div
@@ -62,7 +62,7 @@ const TransformationSection = () => {
                     style={{ opacity: pct / 100 }}
                   >
                     <span className="text-accent font-serif text-lg leading-none mt-0.5 shrink-0">→</span>
-                    <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">{row.after}</p>
+                    <p className="text-base md:text-lg text-foreground leading-relaxed font-medium">{row.after}</p>
                   </div>
                 </div>
               </FadeIn>
