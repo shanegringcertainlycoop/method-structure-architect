@@ -222,133 +222,81 @@ const CaptureSection = () => (
       {/* Isometric Layer Diagram */}
       <FadeIn delay={200}>
         <div className="flex justify-center mb-16">
-          <div className="relative" style={{ width: 420, height: 380 }}>
+          <svg viewBox="0 0 520 380" className="w-full max-w-[520px]" style={{ overflow: "visible" }}>
+            <defs>
+              <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="rgba(200,165,75,0.7)" />
+                <stop offset="50%" stopColor="rgba(220,190,120,0.5)" />
+                <stop offset="100%" stopColor="rgba(180,150,80,0.4)" />
+              </linearGradient>
+            </defs>
             {layers.map((layer, i) => {
-              const baseY = 300 - i * 60;
-              const opacity = 0.12 + i * 0.06;
+              const baseY = 300 - i * 55;
+              const opacity = 0.10 + i * 0.05;
               const isTop = i === layers.length - 1;
-              const labelSide = i % 2 === 0 ? "right" : "left";
+              const cx = 260;
+              const hw = 130; // half-width
+              const hh = 36;  // half-height
 
               return (
-                <div key={layer} className="absolute" style={{ width: "100%", top: 0, left: 0 }}>
-                  {/* Isometric plate */}
-                  <svg
-                    viewBox="0 0 420 380"
-                    className="w-full h-full absolute inset-0"
-                    style={{ filter: isTop ? "drop-shadow(0 4px 20px rgba(200,165,75,0.15))" : undefined }}
-                  >
-                    {/* Plate face (isometric diamond) */}
-                    <polygon
-                      points={`210,${baseY - 40} 360,${baseY} 210,${baseY + 40} 60,${baseY}`}
-                      fill={isTop
-                        ? "url(#goldGradient)"
-                        : `rgba(255,255,255,${opacity})`
-                      }
-                      stroke={isTop ? "rgba(200,165,75,0.5)" : "rgba(255,255,255,0.12)"}
-                      strokeWidth="1"
+                <g key={layer}>
+                  {/* Plate face */}
+                  <polygon
+                    points={`${cx},${baseY - hh} ${cx + hw},${baseY} ${cx},${baseY + hh} ${cx - hw},${baseY}`}
+                    fill={isTop ? "url(#goldGradient)" : `rgba(255,255,255,${opacity})`}
+                    stroke={isTop ? "rgba(200,165,75,0.5)" : "rgba(255,255,255,0.12)"}
+                    strokeWidth="1"
+                  />
+                  {/* Left depth */}
+                  <polygon
+                    points={`${cx - hw},${baseY} ${cx},${baseY + hh} ${cx},${baseY + hh + 8} ${cx - hw},${baseY + 8}`}
+                    fill={isTop ? "rgba(160,130,50,0.6)" : `rgba(255,255,255,${opacity * 0.4})`}
+                    stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
+                    strokeWidth="0.5"
+                  />
+                  {/* Right depth */}
+                  <polygon
+                    points={`${cx},${baseY + hh} ${cx + hw},${baseY} ${cx + hw},${baseY + 8} ${cx},${baseY + hh + 8}`}
+                    fill={isTop ? "rgba(180,145,55,0.5)" : `rgba(255,255,255,${opacity * 0.3})`}
+                    stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
+                    strokeWidth="0.5"
+                  />
+                  {/* Corner dots */}
+                  {[
+                    [cx, baseY - hh],
+                    [cx + hw, baseY],
+                    [cx, baseY + hh],
+                    [cx - hw, baseY],
+                  ].map(([dotX, dotY], j) => (
+                    <circle key={j} cx={dotX} cy={dotY} r="2"
+                      fill={isTop ? "rgba(200,165,75,0.7)" : "rgba(255,255,255,0.2)"}
                     />
-                    {/* Left side depth */}
-                    <polygon
-                      points={`60,${baseY} 210,${baseY + 40} 210,${baseY + 50} 60,${baseY + 10}`}
-                      fill={isTop ? "rgba(160,130,50,0.6)" : `rgba(255,255,255,${opacity * 0.4})`}
-                      stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
-                      strokeWidth="0.5"
-                    />
-                    {/* Right side depth */}
-                    <polygon
-                      points={`210,${baseY + 40} 360,${baseY} 360,${baseY + 10} 210,${baseY + 50}`}
-                      fill={isTop ? "rgba(180,145,55,0.5)" : `rgba(255,255,255,${opacity * 0.3})`}
-                      stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
-                      strokeWidth="0.5"
-                    />
-                    {/* Corner dots */}
-                    {[
-                      [210, baseY - 40],
-                      [360, baseY],
-                      [210, baseY + 40],
-                      [60, baseY],
-                    ].map(([cx, cy], j) => (
-                      <circle
-                        key={j}
-                        cx={cx}
-                        cy={cy}
-                        r="2"
-                        fill={isTop ? "rgba(200,165,75,0.7)" : "rgba(255,255,255,0.2)"}
-                      />
-                    ))}
-                    {/* Label line + text */}
-                    {labelSide === "right" ? (
-                      <>
-                        <line
-                          x1="360" y1={baseY}
-                          x2="395" y2={baseY}
-                          stroke="rgba(255,255,255,0.25)"
-                          strokeWidth="1"
-                        />
-                        <rect
-                          x="370" y={baseY - 12}
-                          width={layer.length * 7.5 + 24}
-                          height="24"
-                          rx="2"
-                          fill="rgba(255,255,255,0.08)"
-                          stroke="rgba(255,255,255,0.1)"
-                          strokeWidth="0.5"
-                        />
-                        <text
-                          x="382" y={baseY + 4}
-                          fill="hsl(40 6% 96%)"
-                          fontSize="10"
-                          fontFamily="Inter, sans-serif"
-                          letterSpacing="0.05em"
-                        >
-                          {layer}
-                        </text>
-                      </>
-                    ) : (
-                      <>
-                        <line
-                          x1="60" y1={baseY}
-                          x2="25" y2={baseY}
-                          stroke="rgba(255,255,255,0.25)"
-                          strokeWidth="1"
-                        />
-                        <rect
-                          x={25 - layer.length * 7.5 - 24}
-                          y={baseY - 12}
-                          width={layer.length * 7.5 + 24}
-                          height="24"
-                          rx="2"
-                          fill="rgba(255,255,255,0.08)"
-                          stroke="rgba(255,255,255,0.1)"
-                          strokeWidth="0.5"
-                        />
-                        <text
-                          x={25 - layer.length * 7.5 - 12}
-                          y={baseY + 4}
-                          fill="hsl(40 6% 96%)"
-                          fontSize="10"
-                          fontFamily="Inter, sans-serif"
-                          letterSpacing="0.05em"
-                        >
-                          {layer}
-                        </text>
-                      </>
-                    )}
-                    {/* Gold gradient definition */}
-                    {isTop && (
-                      <defs>
-                        <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="rgba(200,165,75,0.7)" />
-                          <stop offset="50%" stopColor="rgba(220,190,120,0.5)" />
-                          <stop offset="100%" stopColor="rgba(180,150,80,0.4)" />
-                        </linearGradient>
-                      </defs>
-                    )}
-                  </svg>
-                </div>
+                  ))}
+                  {/* Label */}
+                  {i % 2 === 0 ? (
+                    <>
+                      <line x1={cx + hw} y1={baseY} x2={cx + hw + 20} y2={baseY}
+                        stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                      <rect x={cx + hw + 20} y={baseY - 11} width={layer.length * 7.2 + 16} height="22" rx="2"
+                        fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+                      <text x={cx + hw + 28} y={baseY + 4} fill="hsl(40 6% 96%)" fontSize="10"
+                        fontFamily="Inter, sans-serif" letterSpacing="0.05em">{layer}</text>
+                    </>
+                  ) : (
+                    <>
+                      <line x1={cx - hw} y1={baseY} x2={cx - hw - 20} y2={baseY}
+                        stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                      <rect x={cx - hw - 20 - layer.length * 7.2 - 16} y={baseY - 11}
+                        width={layer.length * 7.2 + 16} height="22" rx="2"
+                        fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+                      <text x={cx - hw - 20 - layer.length * 7.2 - 8} y={baseY + 4} fill="hsl(40 6% 96%)"
+                        fontSize="10" fontFamily="Inter, sans-serif" letterSpacing="0.05em">{layer}</text>
+                    </>
+                  )}
+                </g>
               );
             })}
-          </div>
+          </svg>
         </div>
       </FadeIn>
 
