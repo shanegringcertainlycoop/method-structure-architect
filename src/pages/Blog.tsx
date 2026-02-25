@@ -41,7 +41,7 @@ const Blog = () => {
           </FadeIn>
           <FadeIn delay={400}>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Practical guides for founders and institutions building certification programs, documenting proprietary methodologies, and designing the structures that let expertise scale.
+              Practical guides for founders and institutions building programs, documenting proprietary methodologies, and designing the structures that let expertise scale.
             </p>
           </FadeIn>
         </div>
@@ -52,12 +52,12 @@ const Blog = () => {
       {/* Post list */}
       <section className="px-6 py-20 max-w-5xl mx-auto">
         <div className="space-y-0">
-          {blogPosts.map((post, i) => (
-            <FadeIn key={post.slug} delay={100 * i}>
+          {blogPosts.map((post, i) =>
+          <FadeIn key={post.slug} delay={100 * i}>
               <Link
-                to={`/blog/${post.slug}`}
-                className="group flex flex-col sm:flex-row sm:items-start gap-6 py-10 border-b border-border hover:bg-surface/40 transition-colors px-4 -mx-4 rounded-sm"
-              >
+              to={`/blog/${post.slug}`}
+              className="group flex flex-col sm:flex-row sm:items-start gap-6 py-10 border-b border-border hover:bg-surface/40 transition-colors px-4 -mx-4 rounded-sm">
+
                 <div className="sm:w-32 shrink-0">
                   <p className="text-xs text-accent tracking-wide uppercase">{post.category}</p>
                   <p className="text-xs text-muted-foreground mt-1">{post.readTime}</p>
@@ -75,7 +75,7 @@ const Blog = () => {
                 </div>
               </Link>
             </FadeIn>
-          ))}
+          )}
         </div>
       </section>
 
@@ -88,8 +88,8 @@ const Blog = () => {
             </p>
             <Button
               asChild
-              className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
-            >
+              className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto">
+
               <Link to="/">Request a Method Audit</Link>
             </Button>
           </FadeIn>
@@ -106,8 +106,8 @@ const Blog = () => {
           </FadeIn>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Blog;
