@@ -53,6 +53,7 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 - [Knowledge Transfer: Why It Fails and How to Get It Right](https://method.certainly.coop/blog/knowledge-transfer-why-it-fails): Distinguishes explicit from tacit knowledge, identifies common transfer failure modes (documentation-only, shadow-only, over-reliance on social learning), and describes effective multi-mechanism transfer approaches.
 - [How to Run a Certification Pilot Program](https://method.certainly.coop/blog/how-to-run-a-certification-pilot): Defines what a pilot is and isn't, the four things it must test (validity, reliability, operational integrity, standard calibration), how to select the right cohort, and what to do with the data after.
 - [Certification Program Governance: A Practical Guide](https://method.certainly.coop/blog/certification-program-governance): Covers the four functions of governance (standard maintenance, quality assurance, enforcement, decision authority), required governance documents, three structural models, and the enforcement process.
+- [First, Second, and Third-Party Verification: What They Mean for Certification](https://method.certainly.coop/blog/first-second-third-party-verification): Explains the three levels of verification (self-declaration, stakeholder audit, independent certification), why independence is the critical variable for market credibility, how to diagnose where a program actually sits on the spectrum, and how to build toward genuine third-party structure.
 
 ## Contact
 
