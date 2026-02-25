@@ -10,6 +10,7 @@ import ProofSection from "@/components/ProofSection";
 import TrustDiagnosticSection from "@/components/TrustDiagnosticSection";
 import ClientHighlights from "@/components/ClientHighlights";
 import TransformationSection from "@/components/TransformationSection";
+import FAQSection from "@/components/FAQSection";
 import BentoSection from "@/components/BentoSection";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
@@ -64,7 +65,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
       </FadeIn>
       <FadeIn delay={400}>
         <p className="max-w-2xl text-muted-foreground leading-[1.9] text-lg sm:text-xl mb-14">
-          Certainly partners with founders and institutions to extract, document, and guide the evolution of their proprietary method — so it can scale through certification, technology, and/or disciplined growth.
+          Certainly designs certification programs, licensing frameworks, and governance systems for founders and institutions ready to scale their proprietary methodology — without losing what makes it work.
         </p>
       </FadeIn>
       <FadeIn delay={600}>
@@ -99,13 +100,14 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
 const engagementItems = [
-"Converting implicit judgment into documented decision logic",
-"Formalizing language into a canonical system others can deliver",
-"Designing curriculum and assessment architecture that defines real competence",
-"Building communication infrastructure that expresses standards publicly",
-"Defining governance and enforcement mechanisms that protect quality",
-"Engineering the appropriate trust mechanism — certification, licensing, or internal standards",
-"Establishing stewardship structures that prevent drift as you scale"];
+{ text: "Converting implicit judgment into documented decision logic", note: "methodology documentation and knowledge transfer" },
+{ text: "Formalizing language into a canonical system others can deliver", note: "curriculum architecture and competence definition" },
+{ text: "Designing curriculum and assessment architecture that defines real competence", note: "certification program design" },
+{ text: "Building communication infrastructure that expresses standards publicly", note: "credentialing and professional designation development" },
+{ text: "Defining governance and enforcement mechanisms that protect quality", note: "standards organization consulting" },
+{ text: "Engineering the appropriate trust mechanism — certification, licensing, or internal standards", note: "licensing framework design" },
+{ text: "Establishing stewardship structures that prevent drift as you scale", note: "quality assurance and governance for certification programs" },
+];
 
 
 const WhatWeDo = () =>
@@ -130,9 +132,9 @@ const WhatWeDo = () =>
         <p className="text-base text-foreground mb-4">Engagement could involve:</p>
         <ul className="space-y-3 mb-8">
           {engagementItems.map((item) =>
-        <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
+        <li key={item.text} className="flex items-start gap-3 text-base text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-              {item}
+              <span>{item.text} <span className="text-muted-foreground italic text-sm">({item.note})</span></span>
             </li>
         )}
         </ul>
@@ -328,6 +330,8 @@ const Index = () => {
       <EngagementModel />
       <Divider />
       <BentoSection />
+      <Divider />
+      <FAQSection />
       <Closing onRequestAssessment={() => setAssessmentOpen(true)} />
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>);
