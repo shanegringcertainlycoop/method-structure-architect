@@ -25,8 +25,11 @@ const TransformationSection = () => {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-4 mb-4 text-foreground">
             Your Method Works.<br />Now Make It Transferable.
           </h2>
-          <p className="text-lg text-muted-foreground mb-12 max-w-3xl">
+          <p className="text-lg text-muted-foreground mb-4 max-w-3xl">
             We design the structure that lets your expertise scale through certification, technology, or institutional governance — without dilution.
+          </p>
+          <p className="text-base text-muted-foreground mb-12 max-w-3xl">
+            Whether the right mechanism is a professional certification, a licensing framework, or an internal credentialing system — we design the structure that fits your method and your market.
           </p>
 
           {/* Slider with logo */}
