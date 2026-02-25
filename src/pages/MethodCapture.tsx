@@ -211,7 +211,7 @@ const captureItems = [
 
 const CaptureSection = () => (
   <section className="px-6 py-28" style={{ backgroundColor: "#111111" }}>
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <FadeIn>
         <SectionMarker numeral="III" />
         <h2 className="font-serif text-3xl sm:text-4xl font-normal mt-4 mb-14 text-foreground">
@@ -219,10 +219,29 @@ const CaptureSection = () => (
         </h2>
       </FadeIn>
 
-      {/* Isometric Layer Diagram */}
-      <FadeIn delay={200}>
-        <div className="flex justify-center mb-16">
-          <svg viewBox="0 0 520 380" className="w-full max-w-[520px]" style={{ overflow: "visible" }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Left — Text */}
+        <FadeIn delay={200}>
+          <div>
+            <p className="text-base text-muted-foreground mb-6">
+              Method Capture embeds inside one live program cycle and extracts:
+            </p>
+            <ul className="space-y-3 mb-10">
+              {captureItems.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="text-foreground font-medium">You continue delivering.</p>
+            <p className="font-serif italic text-muted-foreground mt-2">We preserve the architecture.</p>
+          </div>
+        </FadeIn>
+
+        {/* Right — Isometric Layer Diagram */}
+        <FadeIn delay={400}>
+          <svg viewBox="0 0 520 380" className="w-full" style={{ overflow: "visible" }}>
             <defs>
               <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stopColor="rgba(200,165,75,0.7)" />
@@ -235,44 +254,33 @@ const CaptureSection = () => (
               const opacity = 0.10 + i * 0.05;
               const isTop = i === layers.length - 1;
               const cx = 260;
-              const hw = 130; // half-width
-              const hh = 36;  // half-height
+              const hw = 130;
+              const hh = 36;
 
               return (
                 <g key={layer}>
-                  {/* Plate face */}
                   <polygon
                     points={`${cx},${baseY - hh} ${cx + hw},${baseY} ${cx},${baseY + hh} ${cx - hw},${baseY}`}
                     fill={isTop ? "url(#goldGradient)" : `rgba(255,255,255,${opacity})`}
                     stroke={isTop ? "rgba(200,165,75,0.5)" : "rgba(255,255,255,0.12)"}
                     strokeWidth="1"
                   />
-                  {/* Left depth */}
                   <polygon
                     points={`${cx - hw},${baseY} ${cx},${baseY + hh} ${cx},${baseY + hh + 8} ${cx - hw},${baseY + 8}`}
                     fill={isTop ? "rgba(160,130,50,0.6)" : `rgba(255,255,255,${opacity * 0.4})`}
                     stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
                     strokeWidth="0.5"
                   />
-                  {/* Right depth */}
                   <polygon
                     points={`${cx},${baseY + hh} ${cx + hw},${baseY} ${cx + hw},${baseY + 8} ${cx},${baseY + hh + 8}`}
                     fill={isTop ? "rgba(180,145,55,0.5)" : `rgba(255,255,255,${opacity * 0.3})`}
                     stroke={isTop ? "rgba(200,165,75,0.3)" : "rgba(255,255,255,0.06)"}
                     strokeWidth="0.5"
                   />
-                  {/* Corner dots */}
-                  {[
-                    [cx, baseY - hh],
-                    [cx + hw, baseY],
-                    [cx, baseY + hh],
-                    [cx - hw, baseY],
-                  ].map(([dotX, dotY], j) => (
+                  {[[cx, baseY - hh], [cx + hw, baseY], [cx, baseY + hh], [cx - hw, baseY]].map(([dotX, dotY], j) => (
                     <circle key={j} cx={dotX} cy={dotY} r="2"
-                      fill={isTop ? "rgba(200,165,75,0.7)" : "rgba(255,255,255,0.2)"}
-                    />
+                      fill={isTop ? "rgba(200,165,75,0.7)" : "rgba(255,255,255,0.2)"} />
                   ))}
-                  {/* Label */}
                   {i % 2 === 0 ? (
                     <>
                       <line x1={cx + hw} y1={baseY} x2={cx + hw + 20} y2={baseY}
@@ -297,24 +305,8 @@ const CaptureSection = () => (
               );
             })}
           </svg>
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={400}>
-        <p className="text-base text-muted-foreground mb-6">
-          Method Capture embeds inside one live program cycle and extracts:
-        </p>
-        <ul className="space-y-3 mb-10">
-          {captureItems.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-base text-foreground/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="text-foreground font-medium">You continue delivering.</p>
-        <p className="font-serif italic text-muted-foreground mt-2">We preserve the architecture.</p>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </div>
   </section>
 );
