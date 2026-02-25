@@ -121,8 +121,8 @@ const DriftProblem = () => (
                   animationDelay: `${400 + i * 350}ms`,
                   animationFillMode: "both",
                   animationDuration: "0.6s",
-                  filter: `blur(${i * 1.2}px)`,
-                  opacity: 1 - i * 0.12,
+                  filter: `blur(${i * 0.4}px)`,
+                  opacity: 1 - i * 0.08,
                 }}
               >
                 <div className="flex items-center gap-3 py-3">
