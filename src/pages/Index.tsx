@@ -10,6 +10,7 @@ import ProofSection from "@/components/ProofSection";
 import TrustDiagnosticSection from "@/components/TrustDiagnosticSection";
 import ClientHighlights from "@/components/ClientHighlights";
 import TransformationSection from "@/components/TransformationSection";
+import BentoSection from "@/components/BentoSection";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
 import structuralPartner from "@/assets/structural-partner.avif";
@@ -325,6 +326,8 @@ const Index = () => {
       </div>
       <Divider />
       <EngagementModel />
+      <Divider />
+      <BentoSection />
       <Closing onRequestAssessment={() => setAssessmentOpen(true)} />
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>);
