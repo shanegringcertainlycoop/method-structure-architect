@@ -90,13 +90,13 @@ const WhyAPilot = () => (
       {/* Left — Risk Diagram SVG */}
       <FadeIn delay={200}>
         <div className="pr-0 md:pr-12 md:border-r border-border pb-12 md:pb-0">
-          <svg viewBox="0 0 360 380" className="w-full max-w-sm mx-auto" style={{ overflow: "visible" }}>
+          <svg viewBox="0 0 360 420" className="w-full max-w-sm mx-auto" style={{ overflow: "visible" }}>
             {/* Big Launch path (left) */}
             {[
               { label: "Big Launch", y: 20 },
-              { label: "High Exposure", y: 95 },
-              { label: "Unproven Systems", y: 170 },
-              { label: "Reputational Risk", y: 245 },
+              { label: "High Exposure", y: 110 },
+              { label: "Unproven Systems", y: 200 },
+              { label: "Reputational Risk", y: 290 },
             ].map((item, i) => {
               const w = item.label.length * 8 + 32;
               const cx = 100;
@@ -111,9 +111,9 @@ const WhyAPilot = () => (
                   </text>
                   {i < 3 && (
                     <>
-                      <line x1={cx} y1={item.y + 36} x2={cx} y2={item.y + 75 + 20}
+                      <line x1={cx} y1={item.y + 36} x2={cx} y2={item.y + 86}
                         stroke="rgba(220,80,60,0.20)" strokeWidth="1" />
-                      <polygon points={`${cx - 4},${item.y + 91} ${cx},${item.y + 97} ${cx + 4},${item.y + 91}`}
+                      <polygon points={`${cx - 4},${item.y + 86} ${cx},${item.y + 92} ${cx + 4},${item.y + 86}`}
                         fill="rgba(220,80,60,0.20)" />
                     </>
                   )}
@@ -122,7 +122,7 @@ const WhyAPilot = () => (
             })}
 
             {/* vs. label */}
-            <text x="180" y="165" textAnchor="middle"
+            <text x="180" y="195" textAnchor="middle"
               fill="rgba(255,255,255,0.35)" fontSize="13" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.1em">
               vs.
             </text>
@@ -130,9 +130,9 @@ const WhyAPilot = () => (
             {/* Pilot path (right) */}
             {[
               { label: "Pilot", y: 20 },
-              { label: "Controlled Scope", y: 95 },
-              { label: "Measured Exposure", y: 170 },
-              { label: "Validated Signal", y: 245 },
+              { label: "Controlled Scope", y: 110 },
+              { label: "Measured Exposure", y: 200 },
+              { label: "Validated Signal", y: 290 },
             ].map((item, i) => {
               const w = item.label.length * 8 + 32;
               const cx = 260;
@@ -147,9 +147,9 @@ const WhyAPilot = () => (
                   </text>
                   {i < 3 && (
                     <>
-                      <line x1={cx} y1={item.y + 36} x2={cx} y2={item.y + 75 + 20}
+                      <line x1={cx} y1={item.y + 36} x2={cx} y2={item.y + 86}
                         stroke="rgba(200,165,75,0.25)" strokeWidth="1" />
-                      <polygon points={`${cx - 4},${item.y + 91} ${cx},${item.y + 97} ${cx + 4},${item.y + 91}`}
+                      <polygon points={`${cx - 4},${item.y + 86} ${cx},${item.y + 92} ${cx + 4},${item.y + 86}`}
                         fill="rgba(200,165,75,0.25)" />
                     </>
                   )}
