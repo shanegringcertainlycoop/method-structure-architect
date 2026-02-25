@@ -427,7 +427,7 @@ const TwoPaths = ({ onClarityCall }: { onClarityCall: () => void }) => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
         {/* Path A */}
         <FadeIn delay={200}>
-          <div className="border border-border p-10 bg-surface">
+          <div className="border border-border p-10 bg-surface h-full flex flex-col">
             <p className="text-xs tracking-[0.2em] uppercase text-accent mb-2">Path A</p>
             <h3 className="font-serif text-2xl text-foreground mb-2">Method Capture Service</h3>
             <p className="text-sm text-muted-foreground mb-6 font-serif italic">
@@ -451,7 +451,7 @@ const TwoPaths = ({ onClarityCall }: { onClarityCall: () => void }) => (
             </div>
             <Button
               onClick={onClarityCall}
-              className="btn-accent-gradient text-accent-foreground rounded-sm px-6 py-3 text-sm tracking-wide h-auto w-full"
+              className="btn-accent-gradient text-accent-foreground rounded-sm px-6 py-3 text-sm tracking-wide h-auto w-full mt-auto"
             >
               Request a Proposal <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
@@ -460,7 +460,7 @@ const TwoPaths = ({ onClarityCall }: { onClarityCall: () => void }) => (
 
         {/* Path B */}
         <FadeIn delay={400}>
-          <div className="border border-border p-10">
+          <div className="border border-border p-10 h-full flex flex-col">
             <p className="text-xs tracking-[0.2em] uppercase text-accent mb-2">Path B</p>
             <h3 className="font-serif text-2xl text-foreground mb-2">Method Capture Course</h3>
             <p className="text-sm text-muted-foreground mb-6 font-serif italic">
@@ -481,7 +481,7 @@ const TwoPaths = ({ onClarityCall }: { onClarityCall: () => void }) => (
             <p className="text-sm text-muted-foreground mb-8 font-serif italic">Join the waitlist.</p>
             <Button
               variant="outline"
-              className="rounded-sm px-6 py-3 text-sm tracking-wide h-auto w-full border-border text-foreground hover:bg-surface"
+              className="rounded-sm px-6 py-3 text-sm tracking-wide h-auto w-full border-border text-foreground hover:bg-surface mt-auto"
             >
               Join the Waitlist <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
