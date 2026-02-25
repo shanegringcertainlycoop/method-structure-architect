@@ -516,6 +516,7 @@ const TrustReviewWorkbook = () => {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [openAnswers, setOpenAnswers] = useState<Record<number, string>>({});
   const [sectionError, setSectionError] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const currentSectionConfig = SECTIONS.find((s) => s.number === currentSection)!;
   const currentQuestions = QUESTIONS.filter((q) => q.section === currentSection);
@@ -561,6 +562,55 @@ const TrustReviewWorkbook = () => {
   const overallScore = getOverallScore(answers);
   const stage = getStage(overallScore);
 
+  const handleCopy = () => {
+    const sectionLines = SECTIONS.map((s) => {
+      const score = getSectionScore(s.number, answers);
+      const bar = "▓".repeat(Math.round(score / 10)) + "░".repeat(10 - Math.round(score / 10));
+      return `  ${s.title.padEnd(22)} ${bar}  ${score}/100`;
+    }).join("\n");
+
+    const reflectionLines = SECTIONS.flatMap((s) => {
+      const qs = OPEN_QUESTIONS.filter((q) => q.section === s.number);
+      const answered = qs.filter((q) => openAnswers[q.id]?.trim());
+      if (answered.length === 0) return [];
+      return [
+        `\n[${s.numeral}. ${s.title}]`,
+        ...answered.map((q, i) =>
+          `${String.fromCharCode(65 + i)}. ${q.prompt}\n   ${openAnswers[q.id].trim()}`
+        ),
+      ];
+    });
+
+    const lines = [
+      "Trust Architecture Review™",
+      "─".repeat(40),
+      `Overall Score: ${overallScore} / 100`,
+      `${stage.stage}: ${stage.title}`,
+      "",
+      stage.summary,
+      "",
+      "Score by Dimension:",
+      sectionLines,
+      "",
+      "What This Means:",
+      ...stage.implications.map((i) => `  · ${i}`),
+      "",
+      "Recommended Path Forward:",
+      stage.recommendation,
+      ...(reflectionLines.length > 0
+        ? ["", "─".repeat(40), "Written Reflections:", ...reflectionLines]
+        : []),
+      "",
+      "─".repeat(40),
+      "certainly.coop/trust-architecture-review",
+    ];
+
+    navigator.clipboard.writeText(lines.join("\n")).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  };
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
@@ -570,6 +620,21 @@ const TrustReviewWorkbook = () => {
           content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage."
         />
         <link rel="canonical" href="https://method.certainly.coop/trust-review-workbook" />
+        <style>{`
+          @media print {
+            .no-print { display: none !important; }
+            nav { display: none !important; }
+            body, #root { background: #fff !important; color: #1a1a1a !important; }
+            .bg-surface { background: #f5f5f3 !important; }
+            .bg-border, .h-px { background: #e0e0e0 !important; }
+            .text-muted-foreground { color: #555 !important; }
+            .text-foreground { color: #1a1a1a !important; }
+            .text-accent { color: #b8882a !important; }
+            .border-border { border-color: #e0e0e0 !important; }
+            section { padding-top: 1rem !important; }
+            @page { margin: 1.5cm; }
+          }
+        `}</style>
       </Helmet>
 
       <Nav />
@@ -820,15 +885,30 @@ const TrustReviewWorkbook = () => {
                 <p className="text-sm text-foreground leading-relaxed">{stage.recommendation}</p>
               </div>
 
-              {/* Reflection note */}
-              <div className="py-6 border-t border-border">
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Your written reflections stay in your browser — they're not sent anywhere. If you want to keep them, copy them before closing this tab.
+              {/* Save / Share */}
+              <div className="py-6 border-t border-border no-print">
+                <p className="text-xs text-muted-foreground leading-relaxed mb-5">
+                  Your written reflections stay in your browser — they're not sent anywhere.
+                  Save or copy your results before closing this tab.
                 </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
+                  <button
+                    onClick={handleCopy}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide underline underline-offset-4"
+                  >
+                    {copied ? "✓ Copied to clipboard" : "Copy results"}
+                  </button>
+                  <button
+                    onClick={() => window.print()}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide underline underline-offset-4"
+                  >
+                    Save as PDF
+                  </button>
+                </div>
               </div>
 
               {/* CTA */}
-              <div className="pt-4 space-y-4">
+              <div className="pt-4 space-y-4 no-print">
                 <Link to="/">
                   <Button className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto w-full sm:w-auto">
                     {stage.cta} <ArrowRight className="ml-2 h-4 w-4" />
