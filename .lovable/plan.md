@@ -1,36 +1,44 @@
 
 
-# Add Level 0 — Trust Architecture Review
+# Build Module A — Benchmark Audit Page
 
 ## Overview
-Add a new "Level 0" entry across the homepage engagement cards, the Programs dropdown, and create a dedicated page for the Trust Architecture Review workbook product.
+Create a dedicated deep-dive page for **Module A — Benchmark Audit** at `/benchmark-audit`. This page follows the same structural conventions as other Level pages (shared nav, FadeIn, SectionMarker, Divider, light/dark alternating sections, AssessmentModal) but with a distinct analytical feel per the content brief — slightly compressed spacing, spec-sheet styling, and a diagnostic tone.
 
-## Changes
+## New File
 
-### 1. Create `src/pages/TrustArchitectureReview.tsx`
-A simpler, product-focused page (not a full 9-module service page). Sections:
+### `src/pages/BenchmarkAudit.tsx`
+A 10-module page mirroring the architecture of `MethodCapture.tsx` and `TrustMechanismModules.tsx`:
 
-| Section | Content |
-|---------|---------|
-| Hero | "Level 0" marker, "Trust Architecture Review" headline, "$9 Workbook / Self-guided / 30-45 minutes" subtitle, brief intro paragraph, single CTA button |
-| Five Dimensions | The five diagnostic dimensions listed with descriptions (where trust comes from, transfers, signals, breaks, scales) |
-| What You Get | 12-15 page fillable PDF details, scoring, interpretation, recommended path forward, mini-guide on trust mechanisms |
-| Realization | "Most founders discover..." editorial copy about the real scaling challenge |
-| CTA + Footer | "Start with structure." closing, purchase/download CTA, standard footer links |
+| Module | Section | Visual Treatment |
+|--------|---------|-----------------|
+| 1 | Hero | Light bg with faint grid lines, "Benchmark Audit" headline, subhead, two CTAs |
+| 2 | The Cost of Skipping Diagnosis | Dark bg, split layout — left: SVG risk-stack diagram (downward arrows), right: editorial copy with bullet lists |
+| 3 | What We Examine | Dark bg (#111), five vertical columns with thin dividers, each listing 4 diagnostic questions |
+| 4 | Deliverables | Light bg, two-column bordered grid (spec-sheet style), five deliverable items |
+| 5 | How It Works | Dark bg, horizontal two-week timeline, role/commitment breakdown |
+| 6 | Common Paths After Audit | Light bg, four path cards in a grid, neutral tone |
+| 7 | What Makes This Different | Dark bg, centered text, structured check-mark list |
+| 8 | Executive Outcomes | Light bg, checklist grid + business impact list |
+| 9 | Investment and Credit Policy | Dark bg, centered institutional copy |
+| 10 | Final CTA | Full charcoal bg, strong centered type, single CTA button |
 
-Follows the same design system (Nav, FadeIn, SectionMarker, Divider, dark/light alternating sections, AssessmentModal). The primary CTA will be a "Get the Workbook — $9" button (links to external purchase or opens modal -- will use the AssessmentModal as placeholder for now since no payment is set up).
+Design system elements reused: `SiteNav`, `FadeIn`, `SectionMarker`, `AssessmentModal`, `btn-accent-gradient`, light/dark section alternation (`lightBg`, dark `#111`), gold accent color for markers and indicators.
 
-### 2. Update `src/App.tsx`
-Add route: `<Route path="/trust-architecture-review" element={<TrustArchitectureReview />} />`
+## Route and Navigation Updates
 
-### 3. Update `src/components/ProgramsDropdown.tsx`
-Insert Level 0 as the first item:
-```
-{ label: "Level 0 — Trust Architecture™ Review", to: "/trust-architecture-review" }
-```
+### `src/App.tsx`
+Add route: `<Route path="/benchmark-audit" element={<BenchmarkAudit />} />`
 
-### 4. Update `src/pages/Index.tsx`
-- Add Level 0 as the first entry in the `engagementPhases` array with the workbook details
-- Update subtitle from "Four structured levels" to "Five structured levels"
-- The card will have a distinct feel -- "$9 Workbook" subtitle, shorter bullet list, and an "Explore Level 0" button linking to the new page
+### `src/components/ProgramsDropdown.tsx`
+No changes needed — the existing "Level 3 — Trust Mechanism Modules" entry already covers the parent level. The Benchmark Audit page will be linked from within the Level 3 page and from CTAs, not as a separate dropdown entry.
+
+## Technical Notes
+
+- The risk-stack diagram in Module 2 will be an inline SVG with five labeled boxes connected by downward arrows, similar to the architectural diagrams in `MethodCapture.tsx` and `TrustMechanismModules.tsx`.
+- The five-column layout in Module 3 will use a responsive grid (`grid-cols-1 md:grid-cols-5`) with thin vertical dividers on desktop.
+- The timeline in Module 5 will use a horizontal layout with two week markers and connector lines.
+- The four path cards in Module 6 will follow the same card pattern used in Module 3 of `TrustMechanismModules.tsx`.
+- All CTAs labeled "Request Benchmark Audit" will trigger the `AssessmentModal`.
+- Check marks in Modules 7 and 8 will use the accent gold color for consistency.
 
