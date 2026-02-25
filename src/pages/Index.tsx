@@ -293,6 +293,7 @@ const Closing = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
+            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
             <span>Method architecture for disciplined growth.</span>
           </div>
         </footer>

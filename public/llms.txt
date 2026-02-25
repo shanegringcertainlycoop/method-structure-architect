@@ -31,6 +31,11 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 - [Home](https://method.certainly.coop/): Overview of services, transformation model, trust diagnostic, engagement model, and FAQ.
 - [Systems of Trust™](https://method.certainly.coop/systems-of-trust): The proprietary framework governing Certainly's advisory work.
 - [Glossary](https://method.certainly.coop/glossary): Definitions of key terms used in method architecture and certification design.
+- [Blog](https://method.certainly.coop/blog): Practical guides on certification program design, methodology documentation, and scaling expert-led businesses.
+
+## Blog Articles
+
+- [How to Build a Certification Program Around Your Methodology](https://method.certainly.coop/blog/how-to-build-a-certification-program): A step-by-step guide covering methodology documentation, competence standards, assessment design, governance, and pilot launch.
 
 ## Contact
 

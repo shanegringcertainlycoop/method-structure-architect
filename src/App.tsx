@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import SystemsOfTrust from "./pages/SystemsOfTrust";
 import MethodCapture from "./pages/MethodCapture";
 import Glossary from "./pages/Glossary";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/systems-of-trust" element={<SystemsOfTrust />} />
           <Route path="/method-capture" element={<MethodCapture />} />
           <Route path="/glossary" element={<Glossary />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
