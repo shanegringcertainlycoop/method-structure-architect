@@ -1,0 +1,37 @@
+# Certainly
+
+> Certainly is a method architecture and certification advisory. We help founders and institutions extract, document, and scale their proprietary methods through certification programs, licensing frameworks, and governance systems — without dilution.
+
+## About
+
+Certainly works with founder-led consulting firms, standards organizations, advisory practices with proprietary frameworks, and institutional leaders stewarding intellectual capital. We do not work with early-stage creators. Clients must already have proof of results.
+
+Our work is structured around four phases: Diagnose, Preserve, Build, and Steward. We design the trust mechanism — certification, licensing, or internal credentialing — that fits the method and the market.
+
+## Services
+
+- Certification program design and launch
+- Methodology documentation and knowledge transfer
+- Curriculum architecture and competence definition
+- Assessment system design
+- Licensing framework development
+- Standards organization consulting
+- Governance for certification programs
+- Quality assurance and renewal standards
+
+## Key Concepts
+
+- **Method Architecture**: The discipline of structuring proprietary expertise so it can be delivered, assessed, and governed by others.
+- **Systems of Trust™**: The framework Certainly uses to evaluate whether an organization's credibility is structural or personality-dependent.
+- **Trust Architecture™ Review**: A diagnostic engagement that assesses trust across five dimensions: Authority, Scalability, Market Legibility, Structural Discipline, and Vulnerability Awareness.
+- **Certification Pilot**: A 120-day structured launch of a certification program, including assessment, governance, and market entry.
+
+## Pages
+
+- [Home](https://method.certainly.coop/): Overview of services, transformation model, trust diagnostic, engagement model, and FAQ.
+- [Systems of Trust™](https://method.certainly.coop/systems-of-trust): The proprietary framework governing Certainly's advisory work.
+- [Glossary](https://method.certainly.coop/glossary): Definitions of key terms used in method architecture and certification design.
+
+## Contact
+
+Engagements begin with a Method Audit or Trust Architecture™ Review. Inquiries can be initiated at: https://method.certainly.coop/
