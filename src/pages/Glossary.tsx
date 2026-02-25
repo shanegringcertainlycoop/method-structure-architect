@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
@@ -320,6 +321,17 @@ const Glossary = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
+      <Helmet>
+        <title>Certification &amp; Credentialing Glossary | Certainly</title>
+        <meta name="description" content="Definitions for the language of certification, credentialing, and trust architecture — including certification, credential, governance, assessment, stewardship, and more." />
+        <link rel="canonical" href="https://method.certainly.coop/glossary" />
+        <meta property="og:title" content="Certification &amp; Credentialing Glossary | Certainly" />
+        <meta property="og:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
+        <meta property="og:url" content="https://method.certainly.coop/glossary" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Certainly" />
+        <meta name="twitter:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
+      </Helmet>
       <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
 
       {/* Hero */}

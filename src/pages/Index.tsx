@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Check } from "lucide-react";
@@ -306,6 +307,17 @@ const Index = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
+      <Helmet>
+        <title>Certification Program Design &amp; Methodology Consulting | Certainly</title>
+        <meta name="description" content="Certainly helps founders and institutions design certification programs, licensing frameworks, and governance systems that make proprietary expertise scalable and transferable." />
+        <link rel="canonical" href="https://method.certainly.coop/" />
+        <meta property="og:title" content="Turn Your Expertise Into a Scalable Certification Program | Certainly" />
+        <meta property="og:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
+        <meta property="og:url" content="https://method.certainly.coop/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Turn Your Expertise Into a Scalable Certification Program | Certainly" />
+        <meta name="twitter:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
+      </Helmet>
       <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />

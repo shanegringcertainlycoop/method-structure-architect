@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -437,6 +438,17 @@ const SystemsOfTrust = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
+      <Helmet>
+        <title>Systems of Trust™ — A Framework for Designing Durable Authority | Certainly</title>
+        <meta name="description" content="Systems of Trust™ is Certainly's framework for evaluating and designing durable professional authority across five dimensions: Source, Transfer, Signal, Integrity, and Risk." />
+        <link rel="canonical" href="https://method.certainly.coop/systems-of-trust" />
+        <meta property="og:title" content="Systems of Trust™ — A Framework for Designing Durable Authority | Certainly" />
+        <meta property="og:description" content="A structured framework for understanding how professional trust works — and how to design it so it scales without dilution." />
+        <meta property="og:url" content="https://method.certainly.coop/systems-of-trust" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Systems of Trust™ — A Framework for Designing Durable Authority | Certainly" />
+        <meta name="twitter:description" content="A structured framework for understanding how professional trust works — and how to design it so it scales without dilution." />
+      </Helmet>
       <Nav onRequestAssessment={openAssessment} />
       <HeroModule />
       <Divider />
