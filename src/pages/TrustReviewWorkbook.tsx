@@ -282,8 +282,8 @@ const STAGES = [
     max: 30,
     stage: "Stage 1",
     title: "Personality-Dependent Trust",
-    color: "text-orange-400",
-    bar: "bg-orange-400",
+    color: "text-muted-foreground",
+    bar: "bg-foreground/25",
     summary:
       "Your credibility is real — but it lives primarily in you. The market trusts you, not yet the institution you've built. This is a natural starting point, but it creates a ceiling: you can only scale what you can personally oversee.",
     implications: [
@@ -301,8 +301,8 @@ const STAGES = [
     max: 55,
     stage: "Stage 2",
     title: "Trust in Transition",
-    color: "text-yellow-400",
-    bar: "bg-yellow-400",
+    color: "text-accent/70",
+    bar: "bg-accent/40",
     summary:
       "You have meaningful expertise and some institutional elements — but trust is inconsistently distributed between you and your firm. Some clients trust the method; most still trust you. The foundation exists but isn't yet load-bearing.",
     implications: [
@@ -320,8 +320,8 @@ const STAGES = [
     max: 75,
     stage: "Stage 3",
     title: "Emerging Structure",
-    color: "text-blue-400",
-    bar: "bg-blue-400",
+    color: "text-accent/85",
+    bar: "bg-accent/65",
     summary:
       "You've built meaningful institutional infrastructure. The method is documented. Practitioners can deliver it reasonably consistently. The market is starting to recognize signals beyond your personal reputation. The foundation is solid enough to build a certification or licensing program on.",
     implications: [
@@ -339,8 +339,8 @@ const STAGES = [
     max: 100,
     stage: "Stage 4",
     title: "Structural Trust",
-    color: "text-green-400",
-    bar: "bg-green-400",
+    color: "text-accent",
+    bar: "bg-accent",
     summary:
       "Your trust architecture is genuinely institutional. Credibility exists at the firm level. The method is documented and governed. Practitioners are assessed against a defined standard. The market can verify qualifications independently. This is a strong, defensible position.",
     implications: [
@@ -685,7 +685,7 @@ const TrustReviewWorkbook = () => {
               </div>
 
               {sectionError && (
-                <p className="text-xs text-orange-400 mb-4">
+                <p className="text-xs text-destructive mb-4">
                   Please answer all three questions before continuing.
                 </p>
               )}
@@ -778,9 +778,9 @@ const TrustReviewWorkbook = () => {
                 <div className="space-y-5">
                   {SECTIONS.map((s) => {
                     const score = getSectionScore(s.number, answers);
-                    let barClass = "bg-orange-400";
-                    if (score >= 65) barClass = "bg-green-400";
-                    else if (score >= 35) barClass = "bg-yellow-400";
+                    let barClass = "bg-foreground/25";
+                    if (score >= 65) barClass = "bg-accent";
+                    else if (score >= 35) barClass = "bg-accent/50";
                     return (
                       <div key={s.number}>
                         <ScoreBar score={score} label={s.title} barClass={barClass} />
