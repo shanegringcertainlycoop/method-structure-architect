@@ -16,6 +16,13 @@ interface Question {
   highLabel: string;
 }
 
+interface OpenQuestion {
+  id: number;
+  section: number;
+  prompt: string;
+  placeholder: string;
+}
+
 interface SectionConfig {
   number: number;
   numeral: string;
@@ -182,6 +189,76 @@ const QUESTIONS: Question[] = [
   },
 ];
 
+// ─── Open-Ended Questions ─────────────────────────────────────────────────────
+
+const OPEN_QUESTIONS: OpenQuestion[] = [
+  // Section 1: Trust Sources
+  {
+    id: 101,
+    section: 1,
+    prompt: "If a prospective client asked a current client why they hired you — not the polished answer, but the honest one — what would they say?",
+    placeholder: "Write what you think they'd actually say, not what you'd want them to say.",
+  },
+  {
+    id: 102,
+    section: 1,
+    prompt: "Which parts of your credibility would survive if you stopped working for a year? Which wouldn't?",
+    placeholder: "Be specific. What would still be there — and what would fade?",
+  },
+  // Section 2: Trust Transfer
+  {
+    id: 201,
+    section: 2,
+    prompt: "Describe the last time someone else delivered your methodology. What required your involvement that shouldn't have?",
+    placeholder: "Walk through what happened. What did they get right? Where did you have to step in?",
+  },
+  {
+    id: 202,
+    section: 2,
+    prompt: "If you had to write down the three things a new practitioner most needs to understand to do your work well — not the steps, but the underlying judgment — what would they be?",
+    placeholder: "Try to write them out. Notice where you get stuck.",
+  },
+  // Section 3: Trust Signals
+  {
+    id: 301,
+    section: 3,
+    prompt: "What would a client find if they searched for your methodology online, without you in the room to explain it? Is what they'd find accurate? Sufficient?",
+    placeholder: "Describe what exists — and what's missing.",
+  },
+  {
+    id: 302,
+    section: 3,
+    prompt: "What credential, document, or signal would you want your practitioners to be able to show a client that proves they're qualified? Does it exist?",
+    placeholder: "Describe what you wish existed — and what's actually available today.",
+  },
+  // Section 4: Trust Under Pressure
+  {
+    id: 401,
+    section: 4,
+    prompt: "What is the most likely thing to go seriously wrong as you grow — and what would you actually do about it if it happened tomorrow?",
+    placeholder: "Don't answer with what you should do. Answer with what you'd probably do.",
+  },
+  {
+    id: 402,
+    section: 4,
+    prompt: "Who in your business holds knowledge, relationships, or capabilities that no one else does? What happens to the business if that person leaves?",
+    placeholder: "Name the person or role. Be honest about the exposure.",
+  },
+  // Section 5: Trust at Scale
+  {
+    id: 501,
+    section: 5,
+    prompt: "What's the one part of your methodology that still depends entirely on your personal judgment — the part you haven't figured out how to transfer? What would it take to change that?",
+    placeholder: "Try to name it specifically. What makes it hard to document or teach?",
+  },
+  {
+    id: 502,
+    section: 5,
+    prompt: "In two years, if the business were twice its current size, what would break first? What are you not building today that you'll wish you had?",
+    placeholder: "Write what you actually believe — not the optimistic version.",
+  },
+];
+
 // ─── Scoring ─────────────────────────────────────────────────────────────────
 
 function getSectionScore(sectionNum: number, answers: Record<number, number>): number {
@@ -321,6 +398,28 @@ function getSectionInsight(sectionNum: number, score: number): string {
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
+// Open-ended textarea input
+const ReflectionInput = ({
+  question,
+  value,
+  onChange,
+}: {
+  question: OpenQuestion;
+  value: string;
+  onChange: (v: string) => void;
+}) => (
+  <div>
+    <p className="text-sm text-foreground leading-relaxed mb-3">{question.prompt}</p>
+    <textarea
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={question.placeholder}
+      rows={4}
+      className="w-full bg-surface border border-border rounded-sm px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 leading-relaxed resize-none focus:outline-none focus:border-accent/50 transition-colors"
+    />
+  </div>
+);
+
 const Nav = () => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
     <div className="flex items-center gap-8">
@@ -415,6 +514,7 @@ const TrustReviewWorkbook = () => {
   const [phase, setPhase] = useState<Phase>("landing");
   const [currentSection, setCurrentSection] = useState(1);
   const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [openAnswers, setOpenAnswers] = useState<Record<number, string>>({});
   const [sectionError, setSectionError] = useState(false);
 
   const currentSectionConfig = SECTIONS.find((s) => s.number === currentSection)!;
@@ -425,6 +525,12 @@ const TrustReviewWorkbook = () => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
     setSectionError(false);
   };
+
+  const handleOpenAnswer = (questionId: number, value: string) => {
+    setOpenAnswers((prev) => ({ ...prev, [questionId]: value }));
+  };
+
+  const currentOpenQuestions = OPEN_QUESTIONS.filter((q) => q.section === currentSection);
 
   const handleNext = () => {
     if (!allCurrentAnswered) {
@@ -497,7 +603,7 @@ const TrustReviewWorkbook = () => {
               <Divider />
               <div className="py-10">
                 <p className="text-xs text-muted-foreground tracking-widest uppercase mb-6">
-                  Five sections · Fifteen questions
+                  Five sections · Fifteen rated questions · Ten open-ended prompts
                 </p>
                 <div className="space-y-3">
                   {SECTIONS.map((s) => (
@@ -583,6 +689,36 @@ const TrustReviewWorkbook = () => {
                   Please answer all three questions before continuing.
                 </p>
               )}
+
+              {/* Reflection prompts */}
+              <div className="mt-4 mb-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px flex-1 bg-border" />
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60">Reflect & Write</span>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <p className="text-xs text-muted-foreground mb-6 leading-relaxed">
+                  These prompts don't affect your score — they're for your own clarity. Answer honestly, or skip them entirely.
+                </p>
+                <div className="space-y-8">
+                  {currentOpenQuestions.map((oq, i) => (
+                    <div key={oq.id}>
+                      <div className="flex gap-4 items-start">
+                        <span className="font-serif text-muted-foreground/40 text-xs mt-1 shrink-0 w-5">
+                          {String.fromCharCode(65 + i)}
+                        </span>
+                        <div className="flex-1">
+                          <ReflectionInput
+                            question={oq}
+                            value={openAnswers[oq.id] || ""}
+                            onChange={(v) => handleOpenAnswer(oq.id, v)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <Divider />
 
@@ -684,8 +820,15 @@ const TrustReviewWorkbook = () => {
                 <p className="text-sm text-foreground leading-relaxed">{stage.recommendation}</p>
               </div>
 
+              {/* Reflection note */}
+              <div className="py-6 border-t border-border">
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Your written reflections stay in your browser — they're not sent anywhere. If you want to keep them, copy them before closing this tab.
+                </p>
+              </div>
+
               {/* CTA */}
-              <div className="pt-10 space-y-4">
+              <div className="pt-4 space-y-4">
                 <Link to="/">
                   <Button className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto w-full sm:w-auto">
                     {stage.cta} <ArrowRight className="ml-2 h-4 w-4" />
