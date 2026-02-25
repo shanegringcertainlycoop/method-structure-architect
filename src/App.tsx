@@ -15,6 +15,7 @@ import FractionalCredentialOperations from "./pages/FractionalCredentialOperatio
 import TrustArchitectureReview from "./pages/TrustArchitectureReview";
 import TrustReviewWorkbook from "./pages/TrustReviewWorkbook";
 import BenchmarkAudit from "./pages/BenchmarkAudit";
+import CurriculumAssessmentDesign from "./pages/CurriculumAssessmentDesign";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/trust-architecture-review" element={<TrustArchitectureReview />} />
           <Route path="/trust-review-workbook" element={<TrustReviewWorkbook />} />
           <Route path="/benchmark-audit" element={<BenchmarkAudit />} />
+          <Route path="/curriculum-assessment-design" element={<CurriculumAssessmentDesign />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
