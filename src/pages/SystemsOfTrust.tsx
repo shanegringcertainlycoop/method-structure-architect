@@ -18,12 +18,6 @@ const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
     <div className="flex items-center gap-8">
       <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-      <Link to="/systems-of-trust" className="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
-        Framework
-      </Link>
-      <Link to="/glossary" className="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
-        Glossary
-      </Link>
     </div>
     <Button
       onClick={onRequestAssessment}
@@ -425,7 +419,11 @@ const ClosingModule = ({ onRequestAssessment }: { onRequestAssessment: () => voi
         <Divider />
         <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
           <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
-          <p className="mt-4 sm:mt-0">Method architecture for disciplined growth.</p>
+          <div className="flex items-center gap-6 mt-4 sm:mt-0">
+            <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
+            <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
+            <span>Method architecture for disciplined growth.</span>
+          </div>
         </footer>
       </FadeIn>
     </div>
