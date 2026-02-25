@@ -587,7 +587,7 @@ const FinalCTA = ({ onBuildPath }: { onBuildPath: () => void }) => (
             variant="outline"
             className="rounded-sm px-10 py-5 text-lg tracking-wide font-medium h-auto border-border text-foreground hover:bg-surface"
           >
-            <Link to="/levels">
+            <Link to="/fractional-credential-operations">
               Explore Level 4 <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>
