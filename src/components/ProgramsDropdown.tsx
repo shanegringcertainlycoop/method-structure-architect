@@ -27,7 +27,7 @@ const ProgramsDropdown = () => {
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
       >
-        Programs & Services
+        How We Work
         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
