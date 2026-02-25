@@ -1,30 +1,15 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import { blogPosts, BlogSection } from "@/data/blogPosts";
+import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
-import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
-
-const Nav = () => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-      <ProgramsDropdown />
-      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
-    </div>
-    <Button
-      asChild
-      size="sm"
-      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-    >
-      <Link to="/">Request a Method Audit</Link>
-    </Button>
-  </nav>
-);
 
 const renderSection = (section: BlogSection, i: number) => {
   switch (section.type) {
@@ -99,6 +84,7 @@ const renderSection = (section: BlogSection, i: number) => {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [assessmentOpen, setAssessmentOpen] = useState(false);
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -124,7 +110,7 @@ const BlogPost = () => {
         <meta name="twitter:description" content={post.metaDescription} />
       </Helmet>
 
-      <Nav />
+      <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
 
       {/* Article header */}
       <section className="pt-32 pb-12 px-6">

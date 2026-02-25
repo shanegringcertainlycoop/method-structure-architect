@@ -4,36 +4,20 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
-import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
-
-const SectionMarker = ({ numeral, className = "" }: { numeral: string; className?: string }) => (
-  <span className={`font-serif text-accent text-sm tracking-widest ${className}`}>{numeral}</span>
+const SectionMarker = ({ numeral }: { numeral: string }) => (
+  <span className="font-serif text-accent text-sm tracking-widest">{numeral}</span>
 );
 
 const dimensions = [
-  {
-    title: "Where trust comes from",
-    description: "Founder reputation, outcomes, method, or brand? Identify the actual source — not the assumed one.",
-  },
-  {
-    title: "How trust transfers",
-    description: "What happens when others deliver your work? Does quality hold, or does it depend on you?",
-  },
-  {
-    title: "How trust is signaled",
-    description: "What does the market actually see and recognize? Credentials, results, associations, or nothing at all?",
-  },
-  {
-    title: "What breaks under pressure",
-    description: "Where does quality slip first? Hiring, onboarding, delivery, or communication?",
-  },
-  {
-    title: "Where risk scales",
-    description: "What gets more fragile as you grow? The answer determines what you should build next.",
-  },
+  { title: "Where trust comes from", description: "Founder reputation, outcomes, method, or brand? Identify the actual source — not the assumed one." },
+  { title: "How trust transfers", description: "What happens when others deliver your work? Does quality hold, or does it depend on you?" },
+  { title: "How trust is signaled", description: "What does the market actually see and recognize? Credentials, results, associations, or nothing at all?" },
+  { title: "What breaks under pressure", description: "Where does quality slip first? Hiring, onboarding, delivery, or communication?" },
+  { title: "Where risk scales", description: "What gets more fragile as you grow? The answer determines what you should build next." },
 ];
 
 const deliverables = [
@@ -42,29 +26,6 @@ const deliverables = [
   "Recommended path forward based on your results",
   "Mini-guide on trust mechanisms beyond certification",
 ];
-
-const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/">
-        <img src={certainlyLogo} alt="Certainly" className="h-8" />
-      </Link>
-    </div>
-    <div className="flex items-center gap-6">
-      <ProgramsDropdown />
-      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">
-        Musings
-      </Link>
-      <Button
-        onClick={onRequestAssessment}
-        size="sm"
-        className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-      >
-        Request a Method Audit
-      </Button>
-    </div>
-  </nav>
-);
 
 const TrustArchitectureReview = () => {
   const [assessmentOpen, setAssessmentOpen] = useState(false);
@@ -80,7 +41,7 @@ const TrustArchitectureReview = () => {
         <link rel="canonical" href="https://method.certainly.coop/trust-architecture-review" />
       </Helmet>
 
-      <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
+      <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
 
       {/* Hero */}
       <section className="min-h-[70vh] flex items-center justify-center px-6 pt-24 pb-20">

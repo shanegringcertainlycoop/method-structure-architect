@@ -6,6 +6,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { ArrowRight, ChevronDown } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
 
 /* ─── SHARED HELPERS ─── */
@@ -14,21 +15,7 @@ const SectionMarker = ({ numeral }: { numeral: string }) => (
   <span className="font-serif text-accent text-sm tracking-widest">{numeral}</span>
 );
 
-/* ─── NAV ─── */
-const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-    </div>
-    <Button
-      onClick={onRequestAssessment}
-      size="sm"
-      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-    >
-      Request a Method Audit
-    </Button>
-  </nav>
-);
+/* Nav is now shared via SiteNav */
 
 /* ─── MODULE 1 — HERO ─── */
 const HeroModule = () => (
@@ -449,7 +436,7 @@ const SystemsOfTrust = () => {
         <meta name="twitter:title" content="Systems of Trust™ — A Framework for Designing Durable Authority | Certainly" />
         <meta name="twitter:description" content="A structured framework for understanding how professional trust works — and how to design it so it scales without dilution." />
       </Helmet>
-      <Nav onRequestAssessment={openAssessment} />
+      <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule />
       <Divider />
       <div className="bg-surface noise-overlay">

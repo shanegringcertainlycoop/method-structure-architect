@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
 import ProgramsDropdown from "@/components/ProgramsDropdown";
 
@@ -18,22 +19,7 @@ const lightBg = { backgroundColor: "#F5F4F1", color: "#1A1A1A" };
 const lightMuted = "text-[#666]";
 const lightBorder = "border-[#D4D0C8]";
 
-/* ─── NAV ─── */
-const Nav = ({ onClarityCall }: { onClarityCall: () => void }) => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-      <ProgramsDropdown />
-    </div>
-    <Button
-      onClick={onClarityCall}
-      size="sm"
-      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-    >
-      Book a Clarity Call
-    </Button>
-  </nav>
-);
+/* Nav is now shared via SiteNav */
 
 /* ─── MODULE 1 — HERO ─── */
 const HeroModule = ({ onClarityCall }: { onClarityCall: () => void }) => (
@@ -662,7 +648,7 @@ const MethodCapture = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
-      <Nav onClarityCall={openAssessment} />
+      <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule onClarityCall={openAssessment} />
       <Divider />
       <div className="bg-surface noise-overlay">
