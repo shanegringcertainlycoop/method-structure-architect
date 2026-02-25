@@ -510,9 +510,8 @@ const ScoreBar = ({ score, label, barClass }: { score: number; label: string; ba
 
 // Semicircle arc gauge
 const ArcGauge = ({ score }: { score: number }) => {
-  const cx = 100, cy = 90, r = 72;
+  const cx = 100, cy = 95, r = 64;
 
-  // Background: two quarter-arcs to safely render a full semicircle
   const bgD = `M ${cx - r} ${cy} A ${r} ${r} 0 0 0 ${cx} ${cy - r} A ${r} ${r} 0 0 0 ${cx + r} ${cy}`;
 
   const θ = Math.PI * (1 - score / 100);
@@ -530,27 +529,33 @@ const ArcGauge = ({ score }: { score: number }) => {
     const tθ = Math.PI * (1 - tick / 100);
     return {
       tick,
-      x1: +(cx + (r - 7) * Math.cos(tθ)).toFixed(2),
-      y1: +(cy - (r - 7) * Math.sin(tθ)).toFixed(2),
-      x2: +(cx + (r + 3) * Math.cos(tθ)).toFixed(2),
-      y2: +(cy - (r + 3) * Math.sin(tθ)).toFixed(2),
+      x1: +(cx + (r - 5) * Math.cos(tθ)).toFixed(2),
+      y1: +(cy - (r - 5) * Math.sin(tθ)).toFixed(2),
+      x2: +(cx + (r + 5) * Math.cos(tθ)).toFixed(2),
+      y2: +(cy - (r + 5) * Math.sin(tθ)).toFixed(2),
     };
   });
 
   return (
-    <svg viewBox="0 0 200 106" className="w-full max-w-[280px] mx-auto" aria-hidden>
+    <svg viewBox="0 0 200 120" className="w-full max-w-[240px] mx-auto" aria-hidden>
+      {/* Background arc */}
+      <path d={bgD} fill="none" stroke="hsl(var(--border))" strokeWidth="8" strokeLinecap="round" />
+      {/* Tick marks */}
       {ticks.map(({ tick, x1, y1, x2, y2 }) => (
-        <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="hsl(var(--border))" strokeWidth="1.5" />
+        <line key={tick} x1={x1} y1={y1} x2={x2} y2={y2} stroke="hsl(var(--muted-foreground))" strokeWidth="1" opacity="0.4" />
       ))}
-      <path d={bgD} fill="none" stroke="hsl(var(--border))" strokeWidth="6" strokeLinecap="round" />
+      {/* Score arc */}
       {score > 0 && (
-        <path d={scoreD} fill="none" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" />
+        <path d={scoreD} fill="none" stroke="hsl(var(--accent))" strokeWidth="8" strokeLinecap="round" />
       )}
+      {/* Endpoint dot */}
       {score > 0 && score < 100 && (
-        <circle cx={ex} cy={ey} r="5" fill="hsl(var(--background))" stroke="hsl(var(--accent))" strokeWidth="2.5" />
+        <circle cx={ex} cy={ey} r="5" fill="hsl(var(--background))" stroke="hsl(var(--accent))" strokeWidth="2" />
       )}
-      <text x={cx} y={cy - 14} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="36" fontFamily="Georgia,serif">{score}</text>
-      <text x={cx} y={cy + 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="8" letterSpacing="2">/ 100</text>
+      {/* Score number */}
+      <text x={cx} y={cy - 8} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="28" fontFamily="Georgia,serif" fontWeight="400">{score}</text>
+      {/* Denominator */}
+      <text x={cx} y={cy + 10} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="9" letterSpacing="1.5" fontFamily="sans-serif">/ 100</text>
     </svg>
   );
 };
