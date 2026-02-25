@@ -1,99 +1,35 @@
 
 
-# Glossary Page
+# Update Bento Section with Five Truths
 
-## Overview
-Create a new `/glossary` page presenting certification and trust terminology as a structured reference document. The page groups terms into four categories matching the provided content. It follows the same institutional design system (Playfair Display headings, Inter body, black/white/gold palette, thin rules, FadeIn animations). Terms will have stable anchor IDs so they can be referenced from other pages later.
+## Content
+Replace the current 3 placeholder cards with 5 "Truth" cards containing the provided content.
 
-## New File
-- `src/pages/Glossary.tsx` -- full glossary page with all terms
+## Layout
+Redesign the grid to accommodate 5 cards in a visually interesting bento arrangement:
 
-## Files to Modify
-- `src/App.tsx` -- add route `/glossary`
-- `src/pages/Index.tsx` -- add "Glossary" nav link
-- `src/pages/SystemsOfTrust.tsx` -- add "Glossary" nav link (matching Index nav)
-
----
-
-## Page Structure
-
-### Nav
-Reuse the same nav pattern from SystemsOfTrust / Index, adding a "Glossary" link alongside the existing "Framework" link. Both pages' navs will be updated to include this link.
-
-### Hero
-- Eyebrow: "Reference"
-- Headline: "Glossary" (serif, large, centered)
-- One-line description: "Definitions for the language of certification, credentialing, and trust architecture."
-- Restrained. No CTA.
-
-### Category Sections (4 groups)
-Each category gets a section marker numeral, a category heading, and its terms listed sequentially.
-
-**I. Core Concepts**
-- System of Trust
-- Certification
-- Certificate
-- Credential
-- Standards
-
-**II. Operational Components**
-- Assessment / Evaluation
-- Governance
-- Issuance
-- Renewal
-- Continuing Education (CE)
-- Revocation
-
-**III. Certification Models**
-- First-Party Certification
-- Second-Party Certification
-- Third-Party Certification
-- Pilot Certification
-
-**IV. Ecosystem and Strategy**
-- Certification Ecosystem
-- Stewardship
-- Certification Readiness
-
-### Term Layout
-Each term rendered as:
-- **Term title** (serif, anchor ID derived from slug, e.g. `id="certification"`)
-- **Definition line** (bold/declarative first sentence)
-- **Body paragraphs** (remaining explanation)
-- **Bullet lists** where present in the content (accent dot pattern)
-- **Examples** where provided (muted text, indented)
-- Thin border-bottom divider between terms
-
-### Close
-- Single line: "Language shapes structure. Structure shapes trust."
-- CTA: "Request a Method Audit" (opens AssessmentModal)
-- Footer matching other pages
-
----
-
-## Technical Details
-
-### Routing
 ```text
-App.tsx: <Route path="/glossary" element={<Glossary />} />
+Row 1:  [ Truth I  (7 cols) ] [ Truth II  (5 cols) ]
+Row 2:  [ Truth III (4 cols)] [ Truth IV  (4 cols) ] [ Truth V (4 cols) ]
 ```
 
-### Anchor IDs
-Each term gets an `id` attribute (e.g., `id="system-of-trust"`, `id="certification"`, `id="credential"`) so other pages can link to `/glossary#certification`.
+- Top row: asymmetric pair (matching current pattern)
+- Bottom row: three equal-width cards
 
-### Navigation Updates
-Both Index.tsx and SystemsOfTrust.tsx nav components get a second link:
-```text
-Framework | Glossary
-```
+## Section Header
+Update to match the tone:
+- Numeral: VIII
+- Headline: "Five Truths."
+- Subline: remove or replace with something minimal like "The premises that govern this work."
 
-### Styling
-- Same CSS variables, no new colors or fonts
-- `bg-surface` alternation between category sections
-- Thin `Divider` rules between categories
-- FadeIn animations on each term block
+## Card Design
+Each card:
+- Roman numeral label (small, accent color, tracked)
+- Title (serif, declarative)
+- Body text (muted, relaxed leading)
+- Remove placeholder illustration blocks (content is text-only)
+- Keep border, bg-card, padding, min-height styling
 
-### Responsive
-- Single column layout throughout
-- Comfortable reading width (max-w-3xl for term content)
+## File Changed
+- `src/components/BentoSection.tsx` -- replace content and adjust grid
 
