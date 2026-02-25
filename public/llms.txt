@@ -35,6 +35,7 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 
 ## Blog Articles
 
+- [Certification vs. Licensing: Which Is Right for Your Method?](https://method.certainly.coop/blog/certification-vs-licensing): Explains the difference between certification (competence verification) and licensing (permission grant), when to use each, and how to decide which fits your method and market.
 - [How to Build a Certification Program Around Your Methodology](https://method.certainly.coop/blog/how-to-build-a-certification-program): A step-by-step guide covering methodology documentation, competence standards, assessment design, governance, and pilot launch.
 
 ## Contact
