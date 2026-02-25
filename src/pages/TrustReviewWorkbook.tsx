@@ -280,7 +280,7 @@ const STAGES = [
   {
     min: 0,
     max: 30,
-    stage: "Stage 1",
+    stage: "Level 1",
     title: "Personality-Dependent Trust",
     color: "text-muted-foreground",
     bar: "bg-foreground/25",
@@ -299,7 +299,7 @@ const STAGES = [
   {
     min: 31,
     max: 55,
-    stage: "Stage 2",
+    stage: "Level 2",
     title: "Trust in Transition",
     color: "text-accent/70",
     bar: "bg-accent/40",
@@ -318,7 +318,7 @@ const STAGES = [
   {
     min: 56,
     max: 75,
-    stage: "Stage 3",
+    stage: "Level 3",
     title: "Emerging Structure",
     color: "text-accent/85",
     bar: "bg-accent/65",
@@ -337,7 +337,7 @@ const STAGES = [
   {
     min: 76,
     max: 100,
-    stage: "Stage 4",
+    stage: "Level 4",
     title: "Structural Trust",
     color: "text-accent",
     bar: "bg-accent",
