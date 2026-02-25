@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import SystemsOfTrust from "./pages/SystemsOfTrust";
+import MethodCapture from "./pages/MethodCapture";
 import Glossary from "./pages/Glossary";
 import NotFound from "./pages/NotFound";
 
@@ -19,6 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/systems-of-trust" element={<SystemsOfTrust />} />
+          <Route path="/method-capture" element={<MethodCapture />} />
           <Route path="/glossary" element={<Glossary />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
