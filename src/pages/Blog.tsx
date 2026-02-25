@@ -1,32 +1,19 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import { blogPosts } from "@/data/blogPosts";
+import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
-import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 
-const Nav = () => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-      <ProgramsDropdown />
-      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
-    </div>
-    <Button
-      asChild
-      size="sm"
-      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-    >
-      <Link to="/">Request a Method Audit</Link>
-    </Button>
-  </nav>
-);
-
 const Blog = () => {
+  const [assessmentOpen, setAssessmentOpen] = useState(false);
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
@@ -39,7 +26,7 @@ const Blog = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <Nav />
+      <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">

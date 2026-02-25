@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
 
 /* ─── SHARED HELPERS ─── */
@@ -12,21 +13,7 @@ const SectionMarker = ({ numeral }: { numeral: string }) => (
   <span className="font-serif text-accent text-sm tracking-widest">{numeral}</span>
 );
 
-/* ─── NAV ─── */
-const Nav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-    </div>
-    <Button
-      onClick={onRequestAssessment}
-      size="sm"
-      className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-    >
-      Request a Method Audit
-    </Button>
-  </nav>
-);
+/* Nav is now shared via SiteNav */
 
 /* ─── TERM DATA ─── */
 interface Term {
@@ -332,7 +319,7 @@ const Glossary = () => {
         <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Certainly" />
         <meta name="twitter:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
       </Helmet>
-      <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
+      <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-6 text-center">

@@ -15,7 +15,7 @@ import FAQSection from "@/components/FAQSection";
 import BentoSection from "@/components/BentoSection";
 // romanBust is now served from public folder
 import certainlyLogo from "@/assets/certainly-logo.png";
-import ProgramsDropdown from "@/components/ProgramsDropdown";
+import SiteNav from "@/components/SiteNav";
 import structuralPartner from "@/assets/structural-partner.avif";
 import romanColumns from "@/assets/roman-columns.png";
 import closingBg from "@/assets/closing-bg.avif";
@@ -26,24 +26,6 @@ const SectionMarker = ({ numeral, className = "" }: {numeral: string;className?:
 <span className={`font-serif text-accent text-sm tracking-widest ${className}`}>{numeral}</span>;
 
 
-/* ─── NAV ─── */
-const Nav = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
-<nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-    </div>
-    <div className="flex items-center gap-6">
-      <ProgramsDropdown />
-      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
-      <Button
-        onClick={onRequestAssessment}
-        size="sm"
-        className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-      >
-        Request a Method Audit
-      </Button>
-    </div>
-  </nav>;
 
 
 /* ─── HERO ─── */
@@ -341,7 +323,7 @@ const Index = () => {
         <meta name="twitter:title" content="Turn Your Expertise Into a Scalable Certification Program | Certainly" />
         <meta name="twitter:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
       </Helmet>
-      <Nav onRequestAssessment={() => setAssessmentOpen(true)} />
+      <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
       <Hero onRequestAssessment={() => setAssessmentOpen(true)} />
       <Divider />
       <div className="bg-surface noise-overlay">

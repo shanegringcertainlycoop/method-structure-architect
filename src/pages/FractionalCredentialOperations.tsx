@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
+import SiteNav from "@/components/SiteNav";
 import certainlyLogo from "@/assets/certainly-logo.png";
 import ProgramsDropdown from "@/components/ProgramsDropdown";
 
@@ -18,25 +19,7 @@ const lightBg = { backgroundColor: "#F5F4F1", color: "#1A1A1A" };
 const lightMuted = "text-[#666]";
 const lightBorder = "border-[#D4D0C8]";
 
-/* ─── NAV ─── */
-const Nav = ({ onCTA }: { onCTA: () => void }) => (
-  <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
-    <div className="flex items-center gap-8">
-      <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-8" /></Link>
-    </div>
-    <div className="flex items-center gap-6">
-      <ProgramsDropdown />
-      <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">Musings</Link>
-      <Button
-        onClick={onCTA}
-        size="sm"
-        className="btn-accent-gradient text-accent-foreground rounded-sm text-xs tracking-wide"
-      >
-        Schedule an Operations Conversation
-      </Button>
-    </div>
-  </nav>
-);
+/* Nav is now shared via SiteNav */
 
 /* ─── MODULE 1 — HERO ─── */
 const HeroModule = ({ onCTA }: { onCTA: () => void }) => (
@@ -545,7 +528,7 @@ const FractionalCredentialOperations = () => {
         <link rel="canonical" href="https://method.certainly.coop/fractional-credential-operations" />
       </Helmet>
 
-      <Nav onCTA={openAssessment} />
+      <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule onCTA={openAssessment} />
       <Divider />
       <div className="bg-surface noise-overlay">
