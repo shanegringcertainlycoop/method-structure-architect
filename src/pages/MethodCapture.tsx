@@ -462,7 +462,7 @@ const TwoPaths = ({ onClarityCall }: { onClarityCall: () => void }) => (
         <FadeIn delay={400}>
           <div className="border border-border p-10 h-full flex flex-col">
             <p className="text-xs tracking-[0.2em] uppercase text-accent mb-2">Path B</p>
-            <h3 className="font-serif text-2xl text-foreground mb-2">Method Capture Course</h3>
+            <h3 className="font-serif text-2xl text-foreground mb-2">Method Capture Lab</h3>
             <p className="text-sm text-muted-foreground mb-6 font-serif italic">
               Self-Guided. Structured. Controlled.
             </p>
