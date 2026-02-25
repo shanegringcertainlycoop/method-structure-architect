@@ -246,7 +246,7 @@ const EngagementModel = () =>
       <FadeIn key={phase.numeral} delay={150 * i}>
             <div className="border border-border rounded-sm bg-card p-8 flex flex-col h-full min-w-[300px] w-[300px] snap-start">
               <p className="text-[10px] tracking-[0.25em] uppercase text-accent/70 mb-1 font-sans">{phase.level}</p>
-              <p className="text-xs tracking-[0.2em] text-accent mb-3 font-sans">{phase.numeral}.</p>
+              
               <h3 className="font-serif text-2xl mb-1 text-foreground">{phase.title}</h3>
               <p className="text-xs text-muted-foreground mb-4">{phase.subtitle}</p>
               <p className="text-base text-muted-foreground leading-relaxed mb-6">{phase.intro}</p>
