@@ -31,8 +31,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "Certification and licensing are both ways to scale a proprietary method — but they solve different problems, require different infrastructure, and carry different risks. Choosing the wrong one doesn't just slow you down. It can undermine the method itself.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Person reviewing documents at a desk",
+    image: "https://images.unsplash.com/photo-mXGU_BxNp40?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "The ancient Roman Pantheon with its grand columned facade",
     sections: [
       {
         type: "paragraph",
@@ -261,8 +261,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     category: "Certification Design",
     excerpt: "If you've built a methodology that produces consistent results, you've already done the hard part. The question isn't whether your work is worth certifying — it's whether you've built the structure that makes certification possible.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Structured architectural grid viewed from above",
+    image: "https://images.unsplash.com/photo-_TA9AoKd2j4?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "The Colosseum in Rome — architecture built to endure",
     sections: [
       {
         type: "paragraph",
@@ -527,6 +527,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Certification Design",
     excerpt: "The words look similar. Professionals use them interchangeably. And every time they do, the value of the distinction erodes a little more. Certificate and certification are not the same thing — and building the wrong one has real consequences.",
+    image: "https://images.unsplash.com/photo-LEPmKgi8qNo?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Ancient temple columns standing tall against a clear sky",
     sections: [
       {
         type: "paragraph",
@@ -666,6 +668,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Methodology",
     excerpt: "The hardest part of scaling expert work isn't packaging it or marketing it. It's capturing it. Most methodologies live in the practitioner's judgment — and converting that judgment into explicit, transferable knowledge is where most documentation efforts stall.",
+    image: "https://images.unsplash.com/photo-eWRMiEEChpg?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Light streaming through the oculus of the Pantheon dome",
     sections: [
       {
         type: "paragraph",
@@ -826,6 +830,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Business Strategy",
     excerpt: "Most consulting firms don't have a growth problem. They have a replication problem. The work is good when the founder is in the room — and inconsistent when they're not. Scaling without addressing that problem doesn't solve it. It amplifies it.",
+    image: "https://images.unsplash.com/photo-VFRTXGw1VjU?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "The vast interior arena of the Colosseum, Rome",
     sections: [
       {
         type: "paragraph",
@@ -985,6 +991,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "If you're building a certification program, at some point you'll face a more fundamental question: who owns the standard? A standards organization is how mature fields answer that — and building one is one of the most defensible strategic moves a methodology founder can make.",
+    image: "https://images.unsplash.com/photo-k9lKtGpXutA?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Orderly columns lining an ancient Roman courtyard in Pompeii",
     sections: [
       {
         type: "paragraph",
@@ -1133,6 +1141,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     category: "Certification Design",
     excerpt: "Most certification programs don't fail at launch. They fail slowly — as the credential loses meaning, operations become unsustainable, or the market stops trusting the signal. Understanding why they fail is the fastest path to building one that doesn't.",
+    image: "https://images.unsplash.com/photo-hVsibD2tSro?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Ruins of the ancient city of Rome",
     sections: [
       {
         type: "paragraph",
@@ -1284,6 +1294,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Methodology",
     excerpt: "Most founders treat methodology documentation as a writing project — something to do when there's time. It isn't. Documentation is the infrastructure that makes everything else possible: delegation, certification, licensing, and eventual sale.",
+    image: "https://images.unsplash.com/photo-nAb-SFzL1GM?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Inside the Colosseum — Rome's most enduring structure",
     sections: [
       {
         type: "paragraph",
@@ -1444,6 +1456,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "The assessment is the part of a certification program that most organizations design last and get wrong most often. The result: credentials that measure familiarity with content rather than ability to apply it — and a market that eventually notices the difference.",
+    image: "https://images.unsplash.com/photo-NfICoMQZXjc?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Ancient Roman amphitheater at sunrise with mountain backdrop",
     sections: [
       {
         type: "paragraph",
@@ -1600,6 +1614,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Certification Design",
     excerpt: "Competence standards are the foundation of every credible certification program. They define what qualified actually means — and they make assessment, governance, and market credibility possible. Most programs either skip them or write standards so vague they're meaningless.",
+    image: "https://images.unsplash.com/photo-C_QAc_bfea8?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Marble bust of Marcus Aurelius, Stoic Emperor of Rome",
     sections: [
       {
         type: "paragraph",
@@ -1727,6 +1743,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Certification Design",
     excerpt: "A competence framework is the structured architecture that defines what practitioners must know, do, and judge at each level of professional development. It is the foundation of every credible certification program — and one of the most commonly skipped steps in building one.",
+    image: "https://images.unsplash.com/photo-ZmcYuTDMyBs?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Roman columns rising above the ruins of an ancient city",
     sections: [
       {
         type: "paragraph",
@@ -1852,6 +1870,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Business Strategy",
     excerpt: "Certification pricing affects more than revenue. It signals the credential's value to the market, determines who can access it, and directly impacts whether the program can sustain the governance infrastructure that makes the credential worth having.",
+    image: "https://images.unsplash.com/photo-FreWh7sbhfs?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "The Bridge of Hadrian — Ponte Sant'Angelo — in Rome",
     sections: [
       {
         type: "paragraph",
@@ -1978,6 +1998,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Certification Design",
     excerpt: "Accreditation is the process by which an external body validates that a certification program meets defined standards of quality, governance, and rigor. It is not required for every certification program — but understanding when it adds value changes how you think about building one.",
+    image: "https://images.unsplash.com/photo-3foZeS6B_q8?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "A Roman bust in profile against a dark backdrop",
     sections: [
       {
         type: "paragraph",
@@ -2075,6 +2097,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Methodology",
     excerpt: "Most consultants underestimate how exposed their intellectual property is — and overestimate how much legal protection they actually have. The most effective IP protection isn't primarily legal. It's structural.",
+    image: "https://images.unsplash.com/photo-Xkkf88pGPTA?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Low angle view of the triumphal Arch of Titus in Rome",
     sections: [
       {
         type: "paragraph",
@@ -2207,6 +2231,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "A Body of Knowledge is the structured map of what practitioners in a field must know. It is the intellectual foundation on which competence standards, assessments, and curricula are built — and one of the clearest signals that a certification program is professionally serious.",
+    image: "https://images.unsplash.com/photo-xJJQ5W1j9ms?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Interior of the Pantheon with its great coffered dome, Rome",
     sections: [
       {
         type: "paragraph",
@@ -2319,6 +2345,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Methodology",
     excerpt: "Knowledge transfer sounds straightforward: take what someone knows and get it into someone else. In practice, it fails more often than it succeeds — because most organizations confuse information sharing with actual transfer of the capability to apply expert judgment.",
+    image: "https://images.unsplash.com/photo-cLSSPR5mGXE?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Ruins of an ancient classical city, reclaimed by time",
     sections: [
       {
         type: "paragraph",
@@ -2438,6 +2466,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Certification Design",
     excerpt: "The certification pilot is the most important step most programs skip. It is not a soft launch or an early adopter program. It is a structured test of whether the assessment works, the operations hold up, and the credential is ready to make the promises it will need to keep.",
+    image: "https://images.unsplash.com/photo-IfZZ_JEe4JQ?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "A stone road leads through an old Italian town",
     sections: [
       {
         type: "paragraph",
@@ -2557,6 +2587,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "Governance is the least visible and most important part of a certification program. It's the infrastructure that maintains the credential's meaning over time — and the part that most programs build last, under-resource, or design to fail.",
+    image: "https://images.unsplash.com/photo-MwO3bJbGY4g?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "The Grand Theatre of Ephesus — ancient tiered seating on a hillside",
     sections: [
       {
         type: "paragraph",
@@ -2691,6 +2723,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     category: "Certification Design",
     excerpt: "When someone says their program is 'certified,' they may mean very different things. First, second, and third-party verification are three structurally distinct mechanisms — with different levels of independence, different market credibility, and different infrastructure requirements.",
+    image: "https://images.unsplash.com/photo-j9mQgELHvHY?auto=format&fit=crop&w=1400&q=80",
+    imageAlt: "Marble bust of Roman General Agrippa",
     sections: [
       {
         type: "paragraph",
