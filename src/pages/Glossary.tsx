@@ -316,8 +316,25 @@ const Glossary = () => {
         <meta property="og:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
         <meta property="og:url" content="https://method.certainly.coop/glossary" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Certainly" />
         <meta name="twitter:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTermSet",
+          "name": "Certification & Credentialing Glossary",
+          "description": "Definitions for the language of certification, credentialing, and trust architecture.",
+          "url": "https://method.certainly.coop/glossary",
+          "hasDefinedTerm": glossaryData.flatMap(cat =>
+            cat.terms.map(term => ({
+              "@type": "DefinedTerm",
+              "name": term.title,
+              "description": term.definition,
+              "url": `https://method.certainly.coop/glossary#${term.id}`,
+              "inDefinedTermSet": "https://method.certainly.coop/glossary"
+            }))
+          )
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
 

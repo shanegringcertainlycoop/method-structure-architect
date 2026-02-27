@@ -95,6 +95,27 @@ const BlogPost = () => {
     day: "numeric",
   });
 
+  // Derive HowTo steps from h2 headings + the first paragraph that follows each
+  const isHowTo = post.slug.startsWith("how-to");
+  const howToSteps = isHowTo
+    ? post.sections.reduce<{ name: string; text: string }[]>((acc, section, i) => {
+        if (section.type === "h2") {
+          const following = post.sections.slice(i + 1);
+          const next = following.find(
+            (s) => s.type === "paragraph" || s.type === "numbered-list"
+          );
+          const text =
+            next?.type === "paragraph"
+              ? next.content
+              : next?.type === "numbered-list"
+              ? next.items.join(". ")
+              : "";
+          if (text) acc.push({ name: section.content, text });
+        }
+        return acc;
+      }, [])
+    : [];
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
@@ -131,6 +152,29 @@ const BlogPost = () => {
             "url": "https://method.certainly.coop"
           }
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://method.certainly.coop/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://method.certainly.coop/blog" },
+            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://method.certainly.coop/blog/${post.slug}` }
+          ]
+        })}</script>
+        {isHowTo && howToSteps.length >= 2 && (
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": post.title,
+            "description": post.metaDescription,
+            "step": howToSteps.map((step, i) => ({
+              "@type": "HowToStep",
+              "position": i + 1,
+              "name": step.name,
+              "text": step.text
+            }))
+          })}</script>
+        )}
       </Helmet>
 
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />

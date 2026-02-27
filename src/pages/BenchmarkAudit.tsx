@@ -555,6 +555,16 @@ const BenchmarkAudit = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Benchmark Audit™ — Diagnostic Before Capital Deployment | Certainly" />
         <meta name="twitter:description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Certainly." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Benchmark Audit™",
+          "description": "Structured readiness assessment across five dimensions before committing resources to a credential.",
+          "url": "https://method.certainly.coop/benchmark-audit",
+          "serviceType": "Certification Readiness Assessment",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

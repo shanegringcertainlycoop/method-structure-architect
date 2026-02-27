@@ -8,16 +8,34 @@ Certainly works with founder-led consulting firms, standards organizations, advi
 
 Our work is structured around four phases: Diagnose, Preserve, Build, and Steward. We design the trust mechanism — certification, licensing, or internal credentialing — that fits the method and the market.
 
+## Target Audience
+
+- Founder-led consulting and advisory firms with a proprietary methodology
+- Standards organizations and professional associations
+- Institutional leaders and IP holders seeking to scale without founder dependency
+- Organizations preparing to license, certify, or franchise their intellectual capital
+- Firms that have delivered results and now need structural infrastructure to support growth
+
+## Engagement Model
+
+Certainly's engagements follow a four-level progression:
+
+1. **Level 0 — Diagnose**: Trust Architecture Review ($9 workbook) or Strategy Sprint™ (consulting engagement). Establishes whether and what to build.
+2. **Level 1 — Preserve**: Method Capture™. Extracts, documents, and structures the proprietary method.
+3. **Level 2 — Build**: Trust Mechanism Modules™. Modular installation of assessment architecture, curriculum design, brand infrastructure, governance, and pilot launch.
+4. **Level 3 — Steward**: Fractional Credential Operations™. Ongoing operational ownership of the credential as a business unit.
+
 ## Services
 
-- Certification program design and launch
-- Methodology documentation and knowledge transfer
-- Curriculum architecture and competence definition
-- Assessment system design
-- Licensing framework development
-- Standards organization consulting
-- Governance for certification programs
-- Quality assurance and renewal standards
+- [Trust Architecture Review](https://method.certainly.coop/trust-architecture-review): $9 self-guided diagnostic workbook. Covers five dimensions of trust — where trust comes from, how it transfers, how it signals, what breaks under pressure, and where risk scales. 30–45 minutes.
+- [Strategy Sprint™](https://method.certainly.coop/strategy-sprint): 2–3 week structured consulting engagement. Determines the right trust mechanism before building the wrong one.
+- [Method Capture™](https://method.certainly.coop/method-capture): Extracts, structures, and protects a proprietary methodology so it can be taught, licensed, and scaled beyond the founder.
+- [Benchmark Audit™](https://method.certainly.coop/benchmark-audit): Structured readiness assessment across five dimensions before committing resources to a credential.
+- [Curriculum & Assessment Design™](https://method.certainly.coop/curriculum-assessment-design): Designs how competence is defined, taught, and verified — including competence frameworks, assessment architecture, rubrics, and pass/fail logic.
+- [Brand Infrastructure™](https://method.certainly.coop/brand-infrastructure): Builds the identity, narrative, verification systems, and market legibility infrastructure that allow a credential to carry weight.
+- [120-Day Pilot Certification™](https://method.certainly.coop/120-day-pilot): Structured launch of a first public credential — deliberately, credibly, and without overbuilding.
+- [Trust Mechanism Modules™](https://method.certainly.coop/trust-mechanism-modules): Modular installation of individual trust infrastructure components (audit, assessment, curriculum, brand, governance, pilot).
+- [Fractional Credential Operations™](https://method.certainly.coop/fractional-credential-operations): Ongoing operational stewardship of a credential program — intake, assessment, governance, and revenue systems.
 
 ## Key Concepts
 
@@ -25,13 +43,17 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 - **Systems of Trust™**: The framework Certainly uses to evaluate whether an organization's credibility is structural or personality-dependent.
 - **Trust Architecture™ Review**: A diagnostic engagement that assesses trust across five dimensions: Authority, Scalability, Market Legibility, Structural Discipline, and Vulnerability Awareness.
 - **Certification Pilot**: A 120-day structured launch of a certification program, including assessment, governance, and market entry.
+- **Certification vs. Licensing**: Certification verifies competence and grants permission to represent a method. Licensing grants use rights without necessarily assessing competence.
+- **First-Party Certification**: Issued and governed by the IP holder. Most certifications begin here.
+- **Third-Party Certification**: Issued by an independent body. Adds neutrality and external validation.
+- **Competence Framework**: The structured definition of what a certified practitioner must know, do, and judge — the foundation of any defensible assessment system.
 
 ## Pages
 
 - [Home](https://method.certainly.coop/): Overview of services, transformation model, trust diagnostic, engagement model, and FAQ.
 - [Systems of Trust™](https://method.certainly.coop/systems-of-trust): The proprietary framework governing Certainly's advisory work.
-- [Glossary](https://method.certainly.coop/glossary): Definitions of key terms used in method architecture and certification design.
-- [Blog](https://method.certainly.coop/blog): Practical guides on certification program design, methodology documentation, and scaling expert-led businesses.
+- [Glossary](https://method.certainly.coop/glossary): Definitions of 16 key terms across four categories: Core Concepts, Operational Components, Certification Models, and Ecosystem & Strategy.
+- [Blog](https://method.certainly.coop/blog): 19 practical guides on certification program design, methodology documentation, and scaling expert-led businesses.
 
 ## Blog Articles
 
@@ -57,4 +79,4 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 
 ## Contact
 
-Engagements begin with a Method Audit or Trust Architecture™ Review. Inquiries can be initiated at: https://method.certainly.coop/
+Engagements begin with a Trust Architecture Review ($9 workbook) or a Method Audit conversation. Inquiries: https://method.certainly.coop/

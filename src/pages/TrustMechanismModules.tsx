@@ -602,6 +602,23 @@ const TrustMechanismModules = () => {
         <title>Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly</title>
         <meta name="description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
         <link rel="canonical" href="https://method.certainly.coop/trust-mechanism-modules" />
+        <meta property="og:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly" />
+        <meta property="og:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
+        <meta property="og:url" content="https://method.certainly.coop/trust-mechanism-modules" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly" />
+        <meta name="twitter:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Trust Mechanism Modules™",
+          "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
+          "url": "https://method.certainly.coop/trust-mechanism-modules",
+          "serviceType": "Certification Infrastructure Consulting",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />

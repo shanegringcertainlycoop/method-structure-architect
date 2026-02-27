@@ -526,6 +526,23 @@ const FractionalCredentialOperations = () => {
         <title>Fractional Credential Operations™ — Durable Operational Stewardship | Certainly</title>
         <meta name="description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
         <link rel="canonical" href="https://method.certainly.coop/fractional-credential-operations" />
+        <meta property="og:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Certainly" />
+        <meta property="og:description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
+        <meta property="og:url" content="https://method.certainly.coop/fractional-credential-operations" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Certainly" />
+        <meta name="twitter:description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Fractional Credential Operations™",
+          "description": "Steward your credential as a durable business unit. Accountable ownership of intake, assessment, governance, and revenue systems.",
+          "url": "https://method.certainly.coop/fractional-credential-operations",
+          "serviceType": "Credential Operations & Stewardship",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />

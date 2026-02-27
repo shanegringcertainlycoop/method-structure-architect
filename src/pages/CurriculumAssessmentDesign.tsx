@@ -605,6 +605,16 @@ const CurriculumAssessmentDesign = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly" />
         <meta name="twitter:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Curriculum & Assessment Design™",
+          "description": "Design how competence is defined, taught, and verified — so your credential means something real.",
+          "url": "https://method.certainly.coop/curriculum-assessment-design",
+          "serviceType": "Curriculum Architecture & Assessment Design",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

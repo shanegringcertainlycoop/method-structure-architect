@@ -618,6 +618,16 @@ const PilotCertification = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Certainly" />
         <meta name="twitter:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "120-Day Pilot Certification™",
+          "description": "Launch a public, first-party credential deliberately, credibly, and without overbuilding.",
+          "url": "https://method.certainly.coop/120-day-pilot",
+          "serviceType": "Certification Program Launch",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

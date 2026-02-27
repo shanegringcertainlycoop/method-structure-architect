@@ -660,6 +660,16 @@ const MethodCapture = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Certainly" />
         <meta name="twitter:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Method Capture™",
+          "description": "Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder.",
+          "url": "https://method.certainly.coop/method-capture",
+          "serviceType": "Methodology Documentation & Knowledge Architecture",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule onClarityCall={openAssessment} />

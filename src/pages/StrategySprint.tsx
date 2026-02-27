@@ -568,6 +568,23 @@ const StrategySprint = () => {
         <title>Strategy Sprint™ — Certification Readiness Assessment | Certainly</title>
         <meta name="description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
         <link rel="canonical" href="https://method.certainly.coop/strategy-sprint" />
+        <meta property="og:title" content="Strategy Sprint™ — Certification Readiness Assessment | Certainly" />
+        <meta property="og:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
+        <meta property="og:url" content="https://method.certainly.coop/strategy-sprint" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Strategy Sprint™ — Certification Readiness Assessment | Certainly" />
+        <meta name="twitter:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Strategy Sprint™",
+          "description": "Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions.",
+          "url": "https://method.certainly.coop/strategy-sprint",
+          "serviceType": "Certification Strategy Consulting",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />

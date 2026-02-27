@@ -633,6 +633,16 @@ const BrandInfrastructure = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Certainly" />
         <meta name="twitter:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Certainly." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Brand Infrastructure™",
+          "description": "Build the identity, narrative, and verification systems that allow your credential to carry weight in the market.",
+          "url": "https://method.certainly.coop/brand-infrastructure",
+          "serviceType": "Credential Brand & Verification Infrastructure",
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

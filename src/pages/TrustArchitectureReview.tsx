@@ -34,11 +34,26 @@ const TrustArchitectureReview = () => {
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
         <title>Trust Architecture Review — $9 Diagnostic Workbook | Certainly</title>
-        <meta
-          name="description"
-          content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust."
-        />
+        <meta name="description" content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust." />
         <link rel="canonical" href="https://method.certainly.coop/trust-architecture-review" />
+        <meta property="og:title" content="Trust Architecture Review — $9 Diagnostic Workbook | Certainly" />
+        <meta property="og:description" content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust." />
+        <meta property="og:url" content="https://method.certainly.coop/trust-architecture-review" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trust Architecture Review — $9 Diagnostic Workbook | Certainly" />
+        <meta name="twitter:description" content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Trust Architecture Review",
+          "description": "A self-guided diagnostic workbook covering five dimensions of trust — before you invest in certification or scaling.",
+          "url": "https://method.certainly.coop/trust-architecture-review",
+          "serviceType": "Certification Readiness Diagnostic",
+          "offers": { "@type": "Offer", "price": "9", "priceCurrency": "USD" },
+          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "areaServed": "Worldwide"
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
