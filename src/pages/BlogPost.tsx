@@ -105,9 +105,32 @@ const BlogPost = () => {
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:url" content={`https://method.certainly.coop/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
+        {post.image && <meta property="og:image" content={post.image} />}
+        {post.imageAlt && <meta property="og:image:alt" content={post.imageAlt} />}
         <meta property="article:published_time" content={post.publishedAt} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.metaTitle} />
         <meta name="twitter:description" content={post.metaDescription} />
+        {post.image && <meta name="twitter:image" content={post.image} />}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.metaTitle,
+          "description": post.metaDescription,
+          "datePublished": post.publishedAt,
+          "url": `https://method.certainly.coop/blog/${post.slug}`,
+          ...(post.image ? { "image": post.image } : {}),
+          "author": {
+            "@type": "Organization",
+            "name": "Certainly",
+            "url": "https://method.certainly.coop"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Certainly",
+            "url": "https://method.certainly.coop"
+          }
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />

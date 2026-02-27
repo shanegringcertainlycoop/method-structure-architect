@@ -547,6 +547,14 @@ const BenchmarkAudit = () => {
       <Helmet>
         <title>Benchmark Audit™ — Diagnostic Before Capital Deployment | Certainly</title>
         <meta name="description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Certainly." />
+        <link rel="canonical" href="https://method.certainly.coop/benchmark-audit" />
+        <meta property="og:title" content="Benchmark Audit™ — Diagnostic Before Capital Deployment | Certainly" />
+        <meta property="og:description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Certainly." />
+        <meta property="og:url" content="https://method.certainly.coop/benchmark-audit" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Benchmark Audit™ — Diagnostic Before Capital Deployment | Certainly" />
+        <meta name="twitter:description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Certainly." />
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

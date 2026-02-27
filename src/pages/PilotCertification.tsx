@@ -610,6 +610,14 @@ const PilotCertification = () => {
       <Helmet>
         <title>120-Day Pilot Certification™ — Launch a Public Credential | Certainly</title>
         <meta name="description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
+        <link rel="canonical" href="https://method.certainly.coop/120-day-pilot" />
+        <meta property="og:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Certainly" />
+        <meta property="og:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
+        <meta property="og:url" content="https://method.certainly.coop/120-day-pilot" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Certainly" />
+        <meta name="twitter:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

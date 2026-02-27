@@ -597,6 +597,14 @@ const CurriculumAssessmentDesign = () => {
       <Helmet>
         <title>Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly</title>
         <meta name="description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
+        <link rel="canonical" href="https://method.certainly.coop/curriculum-assessment-design" />
+        <meta property="og:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly" />
+        <meta property="og:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
+        <meta property="og:url" content="https://method.certainly.coop/curriculum-assessment-design" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly" />
+        <meta name="twitter:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>

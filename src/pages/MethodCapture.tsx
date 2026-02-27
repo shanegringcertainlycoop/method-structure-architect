@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
@@ -648,6 +649,18 @@ const MethodCapture = () => {
 
   return (
     <div className="bg-background text-foreground min-h-screen">
+      <Helmet>
+        <title>Method Capture™ — Document & Systematize Your Proprietary Method | Certainly</title>
+        <meta name="description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
+        <link rel="canonical" href="https://method.certainly.coop/method-capture" />
+        <meta property="og:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Certainly" />
+        <meta property="og:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
+        <meta property="og:url" content="https://method.certainly.coop/method-capture" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Certainly" />
+        <meta name="twitter:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
+      </Helmet>
       <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule onClarityCall={openAssessment} />
       <Divider />
