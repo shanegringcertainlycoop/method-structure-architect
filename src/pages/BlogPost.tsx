@@ -252,7 +252,7 @@ const BlogPost = () => {
             <img
               src={post.image}
               alt={post.imageAlt || post.title}
-              className="w-full aspect-[16/9] object-cover rounded-sm"
+              className="w-full aspect-[16/9] object-cover rounded-sm grayscale"
             />
           </div>
         </FadeIn>
@@ -332,7 +332,7 @@ const BlogPost = () => {
                       <img
                         src={related.image}
                         alt={related.imageAlt || related.title}
-                        className="w-full aspect-[16/9] object-cover rounded-sm"
+                        className="w-full aspect-[16/9] object-cover rounded-sm grayscale"
                       />
                     )}
                     <div className="flex items-center gap-3">
