@@ -35,7 +35,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
       <img
       src="/images/roman-bust-hero.jpg"
       alt=""
-      className="absolute inset-0 w-full h-full object-cover object-[55%_35%] opacity-40 scale-105 blur-[1px]" />
+      className="absolute inset-0 w-full h-full object-cover object-[55%_35%] opacity-40 scale-105 blur-[1px] grayscale" />
       <div className="absolute inset-0 bg-background/30" />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
     </div>
