@@ -33,9 +33,9 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-16">
     <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
       <img
-      src="/images/roman-bust-hero.png"
+      src="/images/roman-bust-hero.jpg"
       alt=""
-      className="absolute right-0 bottom-0 w-[85%] h-[110%] object-contain object-right-bottom grayscale brightness-150 opacity-25" />
+      className="absolute right-0 bottom-0 w-[85%] h-[110%] object-cover object-right-bottom opacity-40" />
 
     </div>
     <div className="relative z-10 text-center flex flex-col items-center">
