@@ -249,11 +249,14 @@ const BlogPost = () => {
       {post.image && (
         <FadeIn>
           <div className="max-w-2xl mx-auto px-6 pt-10">
-            <img
-              src={post.image}
-              alt={post.imageAlt || post.title}
-              className="w-full aspect-[16/9] object-cover rounded-sm"
-            />
+            <div className="relative rounded-sm overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.imageAlt || post.title}
+                className="w-full aspect-[16/9] object-cover grayscale"
+              />
+              <div className="absolute inset-0 bg-accent/10 mix-blend-overlay" />
+            </div>
           </div>
         </FadeIn>
       )}
@@ -329,11 +332,14 @@ const BlogPost = () => {
                     className="group flex flex-col gap-4 p-6 border border-border rounded-sm hover:bg-surface/40 transition-colors h-full"
                   >
                     {related.image && (
-                      <img
-                        src={related.image}
-                        alt={related.imageAlt || related.title}
-                        className="w-full aspect-[16/9] object-cover rounded-sm"
-                      />
+                      <div className="relative rounded-sm overflow-hidden">
+                        <img
+                          src={related.image}
+                          alt={related.imageAlt || related.title}
+                          className="w-full aspect-[16/9] object-cover grayscale"
+                        />
+                        <div className="absolute inset-0 bg-accent/10 mix-blend-overlay" />
+                      </div>
                     )}
                     <div className="flex items-center gap-3">
                       <span className="text-xs text-accent tracking-wide uppercase">{related.category}</span>
