@@ -619,6 +619,16 @@ const TrustMechanismModules = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What are Trust Mechanism Modules?", "acceptedAnswer": { "@type": "Answer", "text": "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." } },
+            { "@type": "Question", "name": "How do I know which modules to select?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." } },
+            { "@type": "Question", "name": "Can I buy individual modules without doing the Strategy Sprint first?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." } },
+            { "@type": "Question", "name": "How long does a module typically take to deliver?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." } }
+          ]
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />
@@ -645,6 +655,26 @@ const TrustMechanismModules = () => {
       <InvestmentSection />
       <Divider />
       <FinalCTA onBuildPath={openAssessment} />
+      <Divider />
+      {/* FAQ Section */}
+      <section className="px-6 py-20 max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+          <div className="divide-y divide-border">
+            {[
+              { q: "What are Trust Mechanism Modules?", a: "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." },
+              { q: "How do I know which modules to select?", a: "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." },
+              { q: "Can I buy individual modules without doing the Strategy Sprint first?", a: "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." },
+              { q: "How long does a module typically take to deliver?", a: "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." },
+            ].map((item, i) => (
+              <div key={i} className="py-8">
+                <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );

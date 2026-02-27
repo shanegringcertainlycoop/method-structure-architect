@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import { blogPosts, BlogSection } from "@/data/blogPosts";
@@ -94,6 +94,37 @@ const BlogPost = () => {
     month: "long",
     day: "numeric",
   });
+
+  // Glossary term cross-links by category
+  const glossaryTermsByCategory: Record<string, { id: string; label: string }[]> = {
+    "Certification Design": [
+      { id: "certification", label: "Certification" },
+      { id: "credential", label: "Credential" },
+      { id: "standards", label: "Standards" },
+      { id: "assessment-evaluation", label: "Assessment" },
+      { id: "governance", label: "Governance" },
+    ],
+    "Methodology": [
+      { id: "system-of-trust", label: "System of Trust" },
+      { id: "certification", label: "Certification" },
+      { id: "credential", label: "Credential" },
+      { id: "stewardship", label: "Stewardship" },
+      { id: "certification-readiness", label: "Certification Readiness" },
+    ],
+    "Business Strategy": [
+      { id: "system-of-trust", label: "System of Trust" },
+      { id: "certification-readiness", label: "Certification Readiness" },
+      { id: "certification-ecosystem", label: "Certification Ecosystem" },
+      { id: "stewardship", label: "Stewardship" },
+      { id: "governance", label: "Governance" },
+    ],
+  };
+  const keyTerms = glossaryTermsByCategory[post.category] ?? [];
+
+  // Related posts: same category, excluding current, max 3
+  const relatedPosts = blogPosts
+    .filter((p) => p.slug !== post.slug && p.category === post.category)
+    .slice(0, 3);
 
   // Derive HowTo steps from h2 headings + the first paragraph that follows each
   const isHowTo = post.slug.startsWith("how-to");
@@ -234,6 +265,26 @@ const BlogPost = () => {
 
       <Divider />
 
+      {/* Key Terms */}
+      {keyTerms.length > 0 && (
+        <FadeIn>
+          <section className="px-6 py-10 max-w-2xl mx-auto">
+            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Key Terms</p>
+            <div className="flex flex-wrap gap-2">
+              {keyTerms.map((term) => (
+                <Link
+                  key={term.id}
+                  to={`/glossary#${term.id}`}
+                  className="px-3 py-1.5 text-xs border border-border rounded-sm text-muted-foreground hover:text-accent hover:border-accent transition-colors tracking-wide"
+                >
+                  {term.label}
+                </Link>
+              ))}
+            </div>
+          </section>
+        </FadeIn>
+      )}
+
       {/* CTA */}
       <section className="px-6 py-24 max-w-2xl mx-auto text-center">
         <FadeIn>
@@ -261,6 +312,50 @@ const BlogPost = () => {
           </div>
         </FadeIn>
       </section>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <>
+          <Divider />
+          <section className="px-6 py-20 max-w-5xl mx-auto">
+            <FadeIn>
+              <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Related Articles</p>
+            </FadeIn>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {relatedPosts.map((related, i) => (
+                <FadeIn key={related.slug} delay={100 * i}>
+                  <Link
+                    to={`/blog/${related.slug}`}
+                    className="group flex flex-col gap-4 p-6 border border-border rounded-sm hover:bg-surface/40 transition-colors h-full"
+                  >
+                    {related.image && (
+                      <img
+                        src={related.image}
+                        alt={related.imageAlt || related.title}
+                        className="w-full aspect-[16/9] object-cover rounded-sm"
+                      />
+                    )}
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs text-accent tracking-wide uppercase">{related.category}</span>
+                      <span className="text-xs text-muted-foreground">·</span>
+                      <span className="text-xs text-muted-foreground">{related.readTime}</span>
+                    </div>
+                    <h3 className="font-serif text-lg font-normal text-foreground group-hover:text-accent transition-colors leading-snug">
+                      {related.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-3">
+                      {related.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-sm text-accent group-hover:gap-3 transition-all mt-auto">
+                      Read article <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Footer */}
       <div className="border-t border-border">

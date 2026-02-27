@@ -565,6 +565,16 @@ const BenchmarkAudit = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is a Benchmark Audit?", "acceptedAnswer": { "@type": "Answer", "text": "A formal evaluation of your certification program against professional standards for design, assessment integrity, and governance — before you commit resources to a full build or launch." } },
+            { "@type": "Question", "name": "What standards do you benchmark against?", "acceptedAnswer": { "@type": "Answer", "text": "Primarily ISO/IEC 17024 and related ANSI/ISO accreditation criteria, adapted to your program type and maturity level." } },
+            { "@type": "Question", "name": "What do we get at the end of a Benchmark Audit?", "acceptedAnswer": { "@type": "Answer", "text": "A structured audit report with gap analysis, risk identification, and a prioritized remediation roadmap." } },
+            { "@type": "Question", "name": "Who should commission a Benchmark Audit?", "acceptedAnswer": { "@type": "Answer", "text": "Organizations considering third-party accreditation, or those that want to ensure their program meets defensible credentialing standards before scaling or marketing it." } }
+          ]
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>
@@ -582,6 +592,26 @@ const BenchmarkAudit = () => {
         <ExecutiveOutcomes />
         <InvestmentPolicy />
         <FinalCTA onRequestAudit={openModal} />
+        <div className="w-full h-px bg-border" />
+        {/* FAQ Section */}
+        <section className="px-6 py-20 max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+            <div className="divide-y divide-border">
+              {[
+                { q: "What is a Benchmark Audit?", a: "A formal evaluation of your certification program against professional standards for design, assessment integrity, and governance — before you commit resources to a full build or launch." },
+                { q: "What standards do you benchmark against?", a: "Primarily ISO/IEC 17024 and related ANSI/ISO accreditation criteria, adapted to your program type and maturity level." },
+                { q: "What do we get at the end?", a: "A structured audit report with gap analysis, risk identification, and a prioritized remediation roadmap." },
+                { q: "Who should commission a Benchmark Audit?", a: "Organizations considering third-party accreditation, or those that want to ensure their program meets defensible credentialing standards before scaling or marketing it." },
+              ].map((item, i) => (
+                <div key={i} className="py-8">
+                  <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
       </main>
       <AssessmentModal open={modalOpen} onOpenChange={setModalOpen} />
     </>

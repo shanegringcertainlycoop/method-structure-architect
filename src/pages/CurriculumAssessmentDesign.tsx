@@ -615,6 +615,16 @@ const CurriculumAssessmentDesign = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What does Curriculum & Assessment Design include?", "acceptedAnswer": { "@type": "Answer", "text": "Structured learning architecture, competence-based assessment design, item development guidance, and evaluation frameworks — built to support a defensible, verifiable credential." } },
+            { "@type": "Question", "name": "Do I need a curriculum already?", "acceptedAnswer": { "@type": "Answer", "text": "No. This engagement works from competence standards and method documentation. If those don't exist yet, that work typically precedes this engagement." } },
+            { "@type": "Question", "name": "What is the difference between curriculum design and content development?", "acceptedAnswer": { "@type": "Answer", "text": "Curriculum design defines the structure, sequencing, learning objectives, and assessment strategy. Content development fills that structure with learning material. Design must precede content." } },
+            { "@type": "Question", "name": "What assessment formats do you support?", "acceptedAnswer": { "@type": "Answer", "text": "Written examination, portfolio assessment, practical demonstration, structured observation, and multi-stage assessments for complex or advanced credentials." } }
+          ]
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>
@@ -634,6 +644,26 @@ const CurriculumAssessmentDesign = () => {
         <Divider />
         <InvestmentPositioning />
         <FinalCTA onRequest={openModal} />
+        <div className="w-full h-px bg-border" />
+        {/* FAQ Section */}
+        <section className="px-6 py-20 max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+            <div className="divide-y divide-border">
+              {[
+                { q: "What does Curriculum & Assessment Design include?", a: "Structured learning architecture, competence-based assessment design, item development guidance, and evaluation frameworks — built to support a defensible, verifiable credential." },
+                { q: "Do I need a curriculum already?", a: "No. This engagement works from competence standards and method documentation. If those don't exist yet, that work typically precedes this engagement." },
+                { q: "What is the difference between curriculum design and content development?", a: "Curriculum design defines the structure, sequencing, learning objectives, and assessment strategy. Content development fills that structure with learning material. Design must precede content." },
+                { q: "What assessment formats do you support?", a: "Written examination, portfolio assessment, practical demonstration, structured observation, and multi-stage assessments for complex or advanced credentials." },
+              ].map((item, i) => (
+                <div key={i} className="py-8">
+                  <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
       </main>
       <AssessmentModal open={modalOpen} onOpenChange={setModalOpen} />
     </>

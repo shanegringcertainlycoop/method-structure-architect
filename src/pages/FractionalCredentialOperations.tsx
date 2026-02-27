@@ -543,6 +543,16 @@ const FractionalCredentialOperations = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is Fractional Credential Operations?", "acceptedAnswer": { "@type": "Answer", "text": "Accountable operational stewardship of your credential program — intake, assessment, governance, and revenue systems — on a fractional basis, without hiring a full-time operations team." } },
+            { "@type": "Question", "name": "Who is this service designed for?", "acceptedAnswer": { "@type": "Answer", "text": "Organizations that have built or are actively building a certification program and need experienced operational leadership to run it sustainably." } },
+            { "@type": "Question", "name": "What does an engagement include?", "acceptedAnswer": { "@type": "Answer", "text": "Structured accountability across your program's operational functions: intake management, assessment coordination, governance oversight, and revenue operations. Typical engagements run 6–12 months." } },
+            { "@type": "Question", "name": "Do we need a fully built credential before starting?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Some organizations engage fractional operations while the credential is still being built, to ensure it's operationally viable from the start." } }
+          ]
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />
@@ -569,6 +579,26 @@ const FractionalCredentialOperations = () => {
       <InvestmentSection />
       <Divider />
       <FinalCTA onCTA={openAssessment} />
+      <Divider />
+      {/* FAQ Section */}
+      <section className="px-6 py-20 max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+          <div className="divide-y divide-border">
+            {[
+              { q: "What is Fractional Credential Operations?", a: "Accountable operational stewardship of your credential program — intake, assessment, governance, and revenue systems — on a fractional basis, without hiring a full-time operations team." },
+              { q: "Who is this service designed for?", a: "Organizations that have built or are actively building a certification program and need experienced operational leadership to run it sustainably." },
+              { q: "What does an engagement include?", a: "Structured accountability across your program's operational functions: intake management, assessment coordination, governance oversight, and revenue operations. Typical engagements run 6–12 months." },
+              { q: "Do we need a fully built credential before starting?", a: "Not necessarily. Some organizations engage fractional operations while the credential is still being built, to ensure it's operationally viable from the start." },
+            ].map((item, i) => (
+              <div key={i} className="py-8">
+                <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );

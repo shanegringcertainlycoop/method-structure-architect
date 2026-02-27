@@ -13,6 +13,13 @@ const Divider = () => <div className="w-full h-px bg-border" />;
 
 const Blog = () => {
   const [assessmentOpen, setAssessmentOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  // Build sorted unique category list from posts
+  const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category))).sort()];
+  const filteredPosts = activeCategory === "All"
+    ? blogPosts
+    : blogPosts.filter((p) => p.category === activeCategory);
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -49,10 +56,29 @@ const Blog = () => {
 
       <Divider />
 
+      {/* Category filter */}
+      <section className="px-6 pt-10 pb-0 max-w-5xl mx-auto">
+        <div className="flex flex-wrap gap-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-1.5 text-xs tracking-wide uppercase rounded-sm border transition-colors ${
+                activeCategory === cat
+                  ? "bg-foreground text-background border-foreground"
+                  : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </section>
+
       {/* Post list */}
       <section className="px-6 py-20 max-w-5xl mx-auto">
         <div className="space-y-0">
-          {blogPosts.map((post, i) =>
+          {filteredPosts.map((post, i) =>
           <FadeIn key={post.slug} delay={100 * i}>
               <Link
               to={`/blog/${post.slug}`}

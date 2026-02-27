@@ -628,6 +628,16 @@ const PilotCertification = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is the 120-Day Pilot Certification?", "acceptedAnswer": { "@type": "Answer", "text": "A structured live launch of your certification program with a defined cohort — designed to produce a defensible public credential without overbuilding before you have market signal." } },
+            { "@type": "Question", "name": "Who is the pilot cohort?", "acceptedAnswer": { "@type": "Answer", "text": "Typically 8–20 participants drawn from your network, alumni, or professional community. Cohort size depends on assessment format and program structure." } },
+            { "@type": "Question", "name": "What happens after the pilot?", "acceptedAnswer": { "@type": "Answer", "text": "A formal debrief, pilot report, and specific recommendations for program revision. Some programs move directly to public launch; others use pilot data to refine before scaling." } },
+            { "@type": "Question", "name": "Do we need a fully built certification program before starting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The pilot requires completed assessment instruments, a delivery infrastructure, and a defined evaluation process. If those aren't in place, the build must come first." } }
+          ]
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>
@@ -645,6 +655,26 @@ const PilotCertification = () => {
         <Divider />
         <StrategicPositioning />
         <FinalCTA onRequest={openModal} />
+        <div className="w-full h-px bg-border" />
+        {/* FAQ Section */}
+        <section className="px-6 py-20 max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+            <div className="divide-y divide-border">
+              {[
+                { q: "What is the 120-Day Pilot Certification?", a: "A structured live launch of your certification program with a defined cohort — designed to produce a defensible public credential without overbuilding before you have market signal." },
+                { q: "Who is the pilot cohort?", a: "Typically 8–20 participants drawn from your network, alumni, or professional community. Cohort size depends on assessment format and program structure." },
+                { q: "What happens after the pilot?", a: "A formal debrief, pilot report, and specific recommendations for program revision. Some programs move directly to public launch; others use pilot data to refine before scaling." },
+                { q: "Do we need a fully built certification program before starting?", a: "Yes. The pilot requires completed assessment instruments, a delivery infrastructure, and a defined evaluation process. If those aren't in place, the build must come first." },
+              ].map((item, i) => (
+                <div key={i} className="py-8">
+                  <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
       </main>
       <AssessmentModal open={modalOpen} onOpenChange={setModalOpen} />
     </>

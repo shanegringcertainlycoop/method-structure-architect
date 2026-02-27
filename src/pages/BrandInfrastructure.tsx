@@ -643,6 +643,16 @@ const BrandInfrastructure = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is Brand Infrastructure for a credential?", "acceptedAnswer": { "@type": "Answer", "text": "The naming systems, mark design, designation architecture, and usage governance that make a credential legible, defensible, and consistently signaled in the market." } },
+            { "@type": "Question", "name": "Does this include general logo or brand design?", "acceptedAnswer": { "@type": "Answer", "text": "Brand Infrastructure includes mark design scoped to credential architecture — not general branding or marketing. Everything is designed for credential legibility and governance." } },
+            { "@type": "Question", "name": "What do we produce?", "acceptedAnswer": { "@type": "Answer", "text": "A credential naming system, mark specifications, designation style guide, and usage governance documentation." } },
+            { "@type": "Question", "name": "Why does a certification need its own brand infrastructure?", "acceptedAnswer": { "@type": "Answer", "text": "A credential that isn't clearly identified, correctly attributed, and consistently applied erodes trust over time. Brand infrastructure is how you protect the signal the credential is supposed to carry." } }
+          ]
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openModal} />
       <main>
@@ -661,6 +671,26 @@ const BrandInfrastructure = () => {
         <Divider />
         <InvestmentPositioning />
         <FinalCTA onRequest={openModal} />
+        <div className="w-full h-px bg-border" />
+        {/* FAQ Section */}
+        <section className="px-6 py-20 max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+            <div className="divide-y divide-border">
+              {[
+                { q: "What is Brand Infrastructure for a credential?", a: "The naming systems, mark design, designation architecture, and usage governance that make a credential legible, defensible, and consistently signaled in the market." },
+                { q: "Does this include general logo or brand design?", a: "Brand Infrastructure includes mark design scoped to credential architecture — not general branding or marketing. Everything is designed for credential legibility and governance." },
+                { q: "What do we produce?", a: "A credential naming system, mark specifications, designation style guide, and usage governance documentation." },
+                { q: "Why does a certification need its own brand infrastructure?", a: "A credential that isn't clearly identified, correctly attributed, and consistently applied erodes trust over time. Brand infrastructure is how you protect the signal the credential is supposed to carry." },
+              ].map((item, i) => (
+                <div key={i} className="py-8">
+                  <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
       </main>
       <AssessmentModal open={modalOpen} onOpenChange={setModalOpen} />
     </>

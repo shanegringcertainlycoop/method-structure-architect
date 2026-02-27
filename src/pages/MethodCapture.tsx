@@ -670,6 +670,16 @@ const MethodCapture = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is Method Capture?", "acceptedAnswer": { "@type": "Answer", "text": "A structured engagement to extract, document, and systematize a proprietary methodology so it can be taught, licensed, and scaled — independent of the founder." } },
+            { "@type": "Question", "name": "What do we produce at the end?", "acceptedAnswer": { "@type": "Answer", "text": "A Method Architecture Document — a structured representation of the methodology including its principles, stages, decision logic, and application framework, designed for downstream licensing and certification use." } },
+            { "@type": "Question", "name": "How long does a Method Capture engagement take?", "acceptedAnswer": { "@type": "Answer", "text": "A typical engagement runs 6–10 weeks, depending on methodology complexity and the availability of the method holder for structured interviews." } },
+            { "@type": "Question", "name": "Is this just documentation, or does it include strategic work?", "acceptedAnswer": { "@type": "Answer", "text": "Both. Method Capture includes structured elicitation, analysis, and editorial shaping — not just transcription. The output is designed for practical downstream licensing and certification use." } }
+          ]
+        })}</script>
       </Helmet>
       <SiteNav onRequestAssessment={openAssessment} />
       <HeroModule onClarityCall={openAssessment} />
@@ -695,6 +705,26 @@ const MethodCapture = () => {
       </div>
       <Divider />
       <FinalCTA onClarityCall={openAssessment} />
+      <Divider />
+      {/* FAQ Section */}
+      <section className="px-6 py-20 max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+          <div className="divide-y divide-border">
+            {[
+              { q: "What is Method Capture?", a: "A structured engagement to extract, document, and systematize a proprietary methodology so it can be taught, licensed, and scaled — independent of the founder." },
+              { q: "What do we produce at the end?", a: "A Method Architecture Document — a structured representation of the methodology including its principles, stages, decision logic, and application framework, designed for downstream licensing and certification use." },
+              { q: "How long does a Method Capture engagement take?", a: "A typical engagement runs 6–10 weeks, depending on methodology complexity and the availability of the method holder for structured interviews." },
+              { q: "Is this just documentation, or does it include strategic work?", a: "Both. Method Capture includes structured elicitation, analysis, and editorial shaping — not just transcription. The output is designed for practical downstream licensing and certification use." },
+            ].map((item, i) => (
+              <div key={i} className="py-8">
+                <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );

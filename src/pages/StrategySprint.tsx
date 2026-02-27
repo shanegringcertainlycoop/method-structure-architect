@@ -585,6 +585,17 @@ const StrategySprint = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is a Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." } },
+            { "@type": "Question", "name": "Who is the Strategy Sprint for?", "acceptedAnswer": { "@type": "Answer", "text": "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." } },
+            { "@type": "Question", "name": "What do we get at the end?", "acceptedAnswer": { "@type": "Answer", "text": "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." } },
+            { "@type": "Question", "name": "Do we need an existing certification program to participate?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." } },
+            { "@type": "Question", "name": "What happens after the Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "If the recommendation is to build, you move to Trust Mechanism Modules or a full architecture engagement. You'll know exactly what to prioritize and why." } }
+          ]
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={openAssessment} />
@@ -613,6 +624,27 @@ const StrategySprint = () => {
       <InvestmentSection />
       <Divider />
       <FinalCTA onStrategyCall={openAssessment} />
+      <Divider />
+      {/* FAQ Section */}
+      <section className="px-6 py-20 max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+          <div className="divide-y divide-border">
+            {[
+              { q: "What is a Strategy Sprint?", a: "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." },
+              { q: "Who is the Strategy Sprint for?", a: "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." },
+              { q: "What do we get at the end?", a: "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." },
+              { q: "Do we need an existing certification program to participate?", a: "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." },
+              { q: "What happens after the Strategy Sprint?", a: "If the recommendation is to build, you move to Trust Mechanism Modules or a full architecture engagement. You'll know exactly what to prioritize and why." },
+            ].map((item, i) => (
+              <div key={i} className="py-8">
+                <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );

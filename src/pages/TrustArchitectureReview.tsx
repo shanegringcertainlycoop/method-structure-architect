@@ -54,6 +54,17 @@ const TrustArchitectureReview = () => {
           "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
           "areaServed": "Worldwide"
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is the Trust Architecture Review?", "acceptedAnswer": { "@type": "Answer", "text": "A $9 self-guided diagnostic workbook that maps how trust actually works in your business across five dimensions — where it comes from, how it transfers, how it's signaled, what breaks under pressure, and where risk scales." } },
+            { "@type": "Question", "name": "Who should work through this workbook?", "acceptedAnswer": { "@type": "Answer", "text": "Founders and operators who are growing and want to understand their trust architecture before investing in certification, partnerships, or scaling delivery." } },
+            { "@type": "Question", "name": "What's included in the workbook?", "acceptedAnswer": { "@type": "Answer", "text": "A 12–15 page fillable PDF with diagnostic questions, a scoring framework with interpretation guide, and a recommended path forward based on your results." } },
+            { "@type": "Question", "name": "How is the PDF different from the free digital version?", "acceptedAnswer": { "@type": "Answer", "text": "The PDF is a downloadable, fillable document you work through offline. The free digital version is an interactive web-based tool. Both cover the same five dimensions of trust." } },
+            { "@type": "Question", "name": "Will this tell me whether I need certification?", "acceptedAnswer": { "@type": "Answer", "text": "Not directly. It reveals how trust behaves in your business. That understanding informs whether certification is the right mechanism — or whether something else should come first." } }
+          ]
+        })}</script>
       </Helmet>
 
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />
@@ -195,6 +206,27 @@ const TrustArchitectureReview = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <Divider />
+      <section className="px-6 py-20 max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
+          <div className="divide-y divide-border">
+            {[
+              { q: "What is the Trust Architecture Review?", a: "A $9 self-guided diagnostic workbook that maps how trust actually works in your business across five dimensions — where it comes from, how it transfers, how it's signaled, what breaks under pressure, and where risk scales." },
+              { q: "Who should work through this workbook?", a: "Founders and operators who are growing and want to understand their trust architecture before investing in certification, partnerships, or scaling delivery." },
+              { q: "What's included in the workbook?", a: "A 12–15 page fillable PDF with diagnostic questions, a scoring framework with interpretation guide, and a recommended path forward based on your results." },
+              { q: "How is the PDF different from the free digital version?", a: "The PDF is a downloadable, fillable document you work through offline. The free digital version is an interactive web-based tool. Both cover the same five dimensions of trust." },
+              { q: "Will this tell me whether I need certification?", a: "Not directly. It reveals how trust behaves in your business. That understanding informs whether certification is the right mechanism — or whether something else should come first." },
+            ].map((item, i) => (
+              <div key={i} className="py-8">
+                <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
       <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );
