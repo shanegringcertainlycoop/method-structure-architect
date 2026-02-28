@@ -100,7 +100,12 @@
       "/blog/knowledge-transfer-why-it-fails",
       "/blog/how-to-run-a-certification-pilot",
       "/blog/certification-program-governance",
-      "/blog/first-second-third-party-verification"
+      "/blog/first-second-third-party-verification",
+      "/blog/how-to-set-up-a-certification-body",
+      "/blog/what-is-iso-17024",
+      "/blog/how-to-turn-training-into-certification",
+      "/blog/how-to-certify-practitioners-in-your-method",
+      "/blog/certification-program-design-for-coaches"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,
