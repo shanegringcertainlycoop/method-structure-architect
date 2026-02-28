@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,25 @@ const Divider = () => <div className="w-full h-px bg-border" />;
 
 const Blog = () => {
   const [assessmentOpen, setAssessmentOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState<string>(
+    searchParams.get("category") ?? "All"
+  );
+
+  // Sync active category if URL param changes (e.g. browser back/forward)
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    setActiveCategory(cat ?? "All");
+  }, [searchParams]);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    if (cat === "All") {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category: cat });
+    }
+  };
 
   // Build sorted unique category list from posts
   const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category))).sort()];
@@ -62,7 +80,7 @@ const Blog = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-4 py-1.5 text-xs tracking-wide uppercase rounded-sm border transition-colors ${
                 activeCategory === cat
                   ? "bg-foreground text-background border-foreground"
@@ -85,7 +103,12 @@ const Blog = () => {
               className="group flex flex-col sm:flex-row sm:items-start gap-6 py-10 border-b border-border hover:bg-surface/40 transition-colors px-4 -mx-4 rounded-sm">
 
                 <div className="sm:w-32 shrink-0">
-                  <p className="text-xs text-accent tracking-wide uppercase">{post.category}</p>
+                  <button
+                    onClick={(e) => { e.preventDefault(); handleCategoryChange(post.category); }}
+                    className="text-xs text-accent tracking-wide uppercase hover:underline text-left"
+                  >
+                    {post.category}
+                  </button>
                   <p className="text-xs text-muted-foreground mt-1">{post.readTime}</p>
                 </div>
                 <div className="flex-1">

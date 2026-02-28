@@ -223,7 +223,12 @@ const BlogPost = () => {
           </FadeIn>
           <FadeIn delay={100}>
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-xs text-accent tracking-wide uppercase">{post.category}</span>
+              <Link
+                to={`/blog?category=${encodeURIComponent(post.category)}`}
+                className="text-xs text-accent tracking-wide uppercase hover:underline"
+              >
+                {post.category}
+              </Link>
               <span className="text-xs text-muted-foreground">·</span>
               <span className="text-xs text-muted-foreground">{post.readTime}</span>
               <span className="text-xs text-muted-foreground">·</span>
