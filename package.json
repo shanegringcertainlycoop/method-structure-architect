@@ -105,7 +105,12 @@
       "/blog/what-is-iso-17024",
       "/blog/how-to-turn-training-into-certification",
       "/blog/how-to-certify-practitioners-in-your-method",
-      "/blog/certification-program-design-for-coaches"
+      "/blog/certification-program-design-for-coaches",
+      "/blog/what-makes-a-certification-credible",
+      "/blog/how-to-write-a-certification-exam",
+      "/blog/train-the-trainer-program-design",
+      "/blog/what-is-a-professional-designation",
+      "/blog/how-to-scale-a-certification-program"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,
