@@ -110,7 +110,12 @@
       "/blog/how-to-write-a-certification-exam",
       "/blog/train-the-trainer-program-design",
       "/blog/what-is-a-professional-designation",
-      "/blog/how-to-scale-a-certification-program"
+      "/blog/how-to-scale-a-certification-program",
+      "/blog/how-to-license-your-framework-to-other-practitioners",
+      "/blog/how-to-build-a-micro-credential-program",
+      "/blog/how-to-add-ceus-to-your-certification-program",
+      "/blog/how-to-issue-digital-badges-for-your-certification",
+      "/blog/certification-maintenance-and-recertification"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,
