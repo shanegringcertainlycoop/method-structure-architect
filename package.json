@@ -115,7 +115,12 @@
       "/blog/how-to-build-a-micro-credential-program",
       "/blog/how-to-add-ceus-to-your-certification-program",
       "/blog/how-to-issue-digital-badges-for-your-certification",
-      "/blog/certification-maintenance-and-recertification"
+      "/blog/certification-maintenance-and-recertification",
+      "/blog/how-to-choose-a-certification-exam-platform",
+      "/blog/what-is-a-job-task-analysis",
+      "/blog/how-to-get-employers-to-recognize-your-certification",
+      "/blog/how-to-set-a-passing-score-for-your-certification-exam",
+      "/blog/how-to-market-a-certification-program"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,

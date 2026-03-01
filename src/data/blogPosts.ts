@@ -5236,4 +5236,601 @@ export const blogPosts: BlogPost[] = [
       },
     },
   },
+  {
+    slug: "how-to-choose-a-certification-exam-platform",
+    title: "How to Choose a Certification Exam Delivery Platform: Build, Buy, or Both?",
+    excerpt: "The platform you use to deliver your certification exam shapes candidate experience, exam security, and your operational overhead. Here's how to evaluate your options — from purpose-built exam systems to LMS workarounds.",
+    category: "Certification Design",
+    date: "March 1, 2026",
+    readTime: "9 min read",
+    image: "premium_photo-1720503242835-b537741c9736",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "The exam delivery platform is one of the most consequential technology decisions a certification program makes — and one of the most frequently underestimated. Many programs launch on whatever platform their founders are already familiar with (a coaching platform, an LMS, a simple quiz builder) and then spend years managing workarounds as the gaps between what they need and what the platform provides become harder to ignore.",
+      },
+      {
+        type: "paragraph",
+        content: "The right question is not 'what can I use to deliver a quiz?' It is 'what do I need a certification exam platform to do, and which tool does that best at the scale I am operating at now and will be operating at in three years?'",
+      },
+      {
+        type: "h2",
+        content: "What a Certification Exam Platform Actually Needs to Do",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "Item bank management: storing, categorizing, and version-controlling your question pool by domain and difficulty level",
+          "Randomized exam assembly: drawing questions from the bank according to a blueprint, so no two candidates receive the same exam in the same order",
+          "Timed, proctored delivery: enforcing time limits, and optionally supporting remote or in-person proctoring integrations",
+          "Secure delivery: preventing question capture, browser lockdown, copy-paste blocking",
+          "Score calculation and reporting: applying your cut score, generating pass/fail results, producing candidate score reports",
+          "Candidate identity verification: confirming who is sitting the exam",
+          "Audit trail: maintaining a record of exam sessions, scores, and any security flags for appeals or disputes",
+        ],
+      },
+      {
+        type: "h2",
+        content: "Three Categories of Platform",
+      },
+      {
+        type: "h3",
+        content: "1. General LMS and Course Platforms",
+      },
+      {
+        type: "paragraph",
+        content: "Platforms like Teachable, Thinkific, Kajabi, and Moodle offer built-in quiz and assessment tools. They are adequate for knowledge checks and low-stakes assessments. For a genuine certification exam, they typically fall short on item bank management, randomization sophistication, secure delivery, and proctoring. They also lack the audit trail and score reporting infrastructure that defensible certification requires. If you are early-stage and testing your program at very low volume, these platforms can work temporarily — with the understanding that you will likely outgrow them.",
+      },
+      {
+        type: "h3",
+        content: "2. Purpose-Built Exam Delivery Platforms",
+      },
+      {
+        type: "paragraph",
+        content: "Platforms like Questionmark, ExamBuilder, and ProProfs Quiz Maker (enterprise tier) are built specifically for assessments rather than course delivery. They offer stronger item bank management, exam blueprint assembly, detailed score reporting, and more robust security features than general LMS tools. These are appropriate for programs with moderate volume (dozens to hundreds of candidates per year) that need genuine certification-grade functionality without the cost of enterprise infrastructure.",
+      },
+      {
+        type: "h3",
+        content: "3. Enterprise Certification Management Systems",
+      },
+      {
+        type: "paragraph",
+        content: "Platforms like Meazure Learning, Pearson VUE, Prometric, and PSI handle the full certification lifecycle — application management, scheduling, exam delivery, remote proctoring, score reporting, and credential registry integration. These are the platforms used by SHRM, PMI, and CompTIA. They are built for security, defensibility, and scale — and priced accordingly. For most independent certification programs at early or mid stage, enterprise platforms are premature.",
+      },
+      {
+        type: "h2",
+        content: "The Remote Proctoring Decision",
+      },
+      {
+        type: "paragraph",
+        content: "Remote proctoring — software that monitors candidates via webcam, microphone, and screen recording — addresses exam security concerns when candidates are not physically supervised. Services like ProctorU, Honorlock, and Proctorio integrate with exam delivery platforms to provide varying levels of monitoring.",
+      },
+      {
+        type: "paragraph",
+        content: "The decision to require remote proctoring depends on the stakes of your certification and the integrity requirements of your field. For certifications where fraud would cause serious professional or client harm, proctoring is worth the cost and candidate friction. For lower-stakes programs with a relatively trustworthy candidate population, lighter-touch security (timed exams, randomized item banks, no candidate feedback) may be sufficient.",
+      },
+      {
+        type: "callout",
+        content: "Remote proctoring adds friction that reduces exam completion rates. Candidates who were ready to test sometimes abandon the process when confronted with equipment checks, identity verification, and webcam requirements. If you adopt proctoring, invest in a clear candidate-facing setup guide. Friction from unfamiliarity is friction you can eliminate.",
+      },
+      {
+        type: "h2",
+        content: "Key Questions for Platform Evaluation",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "Can it manage an item bank with categories, difficulty tags, and version control?",
+          "Does it support blueprint-based exam assembly (drawing a defined number of questions per domain)?",
+          "What security features are built in, and what proctoring integrations are available?",
+          "How does it generate and deliver score reports to candidates?",
+          "What does the audit trail look like — can you retrieve session data for an appeals process?",
+          "Does it integrate with your candidate management system or credential registry?",
+          "What is the pricing model — per-exam, per-candidate, or flat subscription?",
+          "What support is available when something goes wrong during a live exam session?",
+        ],
+      },
+      {
+        type: "h2",
+        content: "The Build Option",
+      },
+      {
+        type: "paragraph",
+        content: "Some certification programs with technical resources choose to build custom exam delivery infrastructure. This is almost always more expensive and time-consuming than anticipated, and creates ongoing maintenance obligations that compete with program development. For most independent certification bodies, the right answer is to start with a capable off-the-shelf platform at the right tier for your current volume and migrate as the program grows. The migration cost is real but manageable. The cost of under-investing in platform capability — in candidate experience, security incidents, and audit failures — is typically higher.",
+      },
+    ],
+    metaTitle: "How to Choose a Certification Exam Delivery Platform | Build vs Buy Guide",
+    metaDescription: "Compare LMS tools, purpose-built exam platforms, and enterprise systems for certification delivery. Key features, proctoring options, and selection criteria.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "How to Choose a Certification Exam Delivery Platform: Build, Buy, or Both?",
+      description: "Compare LMS tools, purpose-built exam platforms, and enterprise systems. Key features, proctoring options, and selection criteria for certification programs.",
+      datePublished: "2026-03-01",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Choose a Certification Exam Platform", item: "https://method.certainly.coop/blog/how-to-choose-a-certification-exam-platform" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "what-is-a-job-task-analysis",
+    title: "What Is a Job Task Analysis — and Does Your Certification Program Need One?",
+    excerpt: "A Job Task Analysis is the research process that anchors your certification to the actual work of the profession. Without one, your exam measures what you think practitioners need to know — not what they actually do.",
+    category: "Methodology",
+    date: "March 1, 2026",
+    readTime: "9 min read",
+    image: "premium_photo-1661274122102-3bd72b4c4430",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "A Job Task Analysis — sometimes called a practice analysis, role delineation study, or occupational analysis — is the foundational research that answers a simple but critical question: what does a competent practitioner in this field actually do?",
+      },
+      {
+        type: "paragraph",
+        content: "The answer to that question is what your certification should measure. Without it, your exam measures what you believe practitioners need to know — which may or may not align with the realities of professional practice. For small, early-stage programs, that gap is often tolerable. For programs seeking accreditation, market credibility, or regulatory standing, it is not.",
+      },
+      {
+        type: "h2",
+        content: "What a JTA Produces",
+      },
+      {
+        type: "numbered-list",
+        items: [
+          "A task inventory: a structured list of the tasks, duties, and responsibilities that define competent practice in the role — organized by domain, weighted by frequency and criticality",
+          "A knowledge and skill map: the specific knowledge areas and skills required to perform those tasks at a competent level",
+          "An exam blueprint: a content outline showing which domains should be represented on the exam, and in what proportions — derived directly from the task weights",
+        ],
+      },
+      {
+        type: "paragraph",
+        content: "The exam blueprint is the practical output designers use most directly. It specifies '25% of exam items should address Domain 1: Assessment; 20% should address Domain 2: Planning' — based on data about frequency and criticality in practice, not on the program designer's intuitions.",
+      },
+      {
+        type: "h2",
+        content: "How a JTA Is Conducted",
+      },
+      {
+        type: "h3",
+        content: "Stage 1: SME Panel Development",
+      },
+      {
+        type: "paragraph",
+        content: "A panel of Subject Matter Experts — typically 8–15 people who are active, competent practitioners — is convened to develop the initial task inventory. The panel should represent diversity in geography, practice setting, years of experience, and specialization. Their job is to articulate what the role actually involves, not what it theoretically should involve.",
+      },
+      {
+        type: "h3",
+        content: "Stage 2: Task Inventory Construction",
+      },
+      {
+        type: "paragraph",
+        content: "The SME panel produces a structured list of tasks organized into domains. Each task is written as an observable, specific action (e.g., 'Conduct an initial needs assessment with the client to identify performance gaps') rather than a general description. The specificity matters — it anchors the exam to real practice behaviors.",
+      },
+      {
+        type: "h3",
+        content: "Stage 3: Practitioner Survey",
+      },
+      {
+        type: "paragraph",
+        content: "The task inventory is distributed as a survey to a representative sample of practitioners — ideally several hundred. Practitioners rate each task on two dimensions: how frequently they perform it, and how critical it is to competent practice. These ratings generate the data that determines domain weights.",
+      },
+      {
+        type: "h3",
+        content: "Stage 4: Analysis and Blueprint Development",
+      },
+      {
+        type: "paragraph",
+        content: "Survey results are analyzed to produce weighted domain scores. Tasks that are performed frequently and are highly critical receive higher weights. These weights are then translated into an exam blueprint specifying the number of items per domain.",
+      },
+      {
+        type: "h2",
+        content: "When You Actually Need a JTA",
+      },
+      {
+        type: "paragraph",
+        content: "A rigorous JTA — with a full practitioner survey and statistical analysis — is required for programs pursuing NCCA accreditation, ANSI/ASTM accreditation, or recognition by regulatory bodies. It is also expected by any sophisticated employer or professional association evaluating whether to endorse your credential.",
+      },
+      {
+        type: "paragraph",
+        content: "For programs at an earlier stage, a lighter-touch approach is defensible: a structured SME panel review, documented in writing, that produces a task inventory and exam blueprint without a full practitioner survey. This is not as rigorous as a full JTA, but it is significantly better than no validation at all — and it creates a documented basis for your exam content that can be built on as the program grows.",
+      },
+      {
+        type: "callout",
+        content: "The JTA is not a one-time exercise. As professions evolve, the tasks that define competent practice change. Best practice is to conduct a formal JTA review every 5–7 years, or sooner if there are significant changes in technology, regulation, or professional standards. An outdated JTA is almost as problematic as no JTA — it anchors your exam to a version of the profession that no longer exists.",
+      },
+      {
+        type: "h2",
+        content: "The JTA as a Credibility Signal",
+      },
+      {
+        type: "paragraph",
+        content: "Beyond its technical function, the JTA is a credibility signal. Being able to tell employers, accreditors, and candidates that your exam content is derived from research into actual professional practice — not from the opinions of your founding team — is a meaningful differentiator. Publishing a summary of your JTA methodology and the resulting blueprint adds significant perceived legitimacy to your program at no cost.",
+      },
+    ],
+    metaTitle: "What Is a Job Task Analysis for Certification Programs? | JTA Guide",
+    metaDescription: "Learn what a Job Task Analysis is, how it's conducted, and when your certification program needs one. Covers SME panels, practitioner surveys, and exam blueprints.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "What Is a Job Task Analysis — and Does Your Certification Program Need One?",
+      description: "What a Job Task Analysis is, how it's conducted, and when your certification program needs one. SME panels, practitioner surveys, and exam blueprints.",
+      datePublished: "2026-03-01",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "What Is a Job Task Analysis", item: "https://method.certainly.coop/blog/what-is-a-job-task-analysis" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "how-to-get-employers-to-recognize-your-certification",
+    title: "Getting Employers to Value Your Credential: How to Build Workplace Recognition for a Proprietary Certification",
+    excerpt: "A certification that practitioners want but employers ignore is a credential with a ceiling. Here's how to build the employer-side recognition that turns your credential into a genuine career asset.",
+    category: "Business Strategy",
+    date: "March 1, 2026",
+    readTime: "10 min read",
+    image: "premium_photo-1661499238118-ff6da7249db2",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "Most certification programs are built with one audience in mind: the practitioners who will pursue and display the credential. Fewer are built with serious thought about the second audience — the employers, clients, and procurement decision-makers who will encounter the credential and decide what to do with it.",
+      },
+      {
+        type: "paragraph",
+        content: "A certification that practitioners value but employers ignore has a ceiling. Practitioners will stop pursuing it — or stop renewing it — when they discover that the credential does not improve their professional outcomes. Employer recognition is not a nice-to-have; it is one of the primary mechanisms by which a certification creates value for the people who earn it.",
+      },
+      {
+        type: "h2",
+        content: "Why Employer Recognition Is Hard to Build",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "Employers encounter dozens of credentials from unfamiliar organizations. Without active outreach, your certification is invisible in their decision-making processes.",
+          "HR teams and hiring managers use existing frameworks (job descriptions, competency models, salary bands) built before your certification existed. Getting into those frameworks requires direct engagement.",
+          "Procurement and client-side buyers — who influence whether certified practitioners are preferred or required — are even harder to reach than internal HR teams.",
+          "Recognition compounds slowly: each employer that references your credential makes it easier to convince the next one, but early adopters require the most persuasion.",
+        ],
+      },
+      {
+        type: "h2",
+        content: "The Employer Recognition Toolkit",
+      },
+      {
+        type: "h3",
+        content: "1. The Employer Brief",
+      },
+      {
+        type: "paragraph",
+        content: "Create a one-page employer-facing document that answers the questions a hiring manager or HR leader would ask: What does the credential certify? How is competence assessed? Who issues it? How is the standard set? Where can it be verified? This document is the first thing you send to any employer you are engaging — and it should be publicly available so certified practitioners can share it with their own employers.",
+      },
+      {
+        type: "h3",
+        content: "2. Job Description Language",
+      },
+      {
+        type: "paragraph",
+        content: "Draft specific, ready-to-use language for employers to include in job postings: '[Your Credential Name] or equivalent certification preferred.' When you give employers pre-written language, you eliminate the friction of figuring out how to reference an unfamiliar credential. Distribute this language to your certified community so they can advocate for it internally.",
+      },
+      {
+        type: "h3",
+        content: "3. The Competency Map",
+      },
+      {
+        type: "paragraph",
+        content: "Produce a document showing how your certification's competency framework aligns with widely used professional standards — SHRM's competency model, PMI's talent triangle, ICF's core competencies. This allows employers who already use those frameworks to see how your credential fits into their existing vocabulary — particularly valuable for organizations with formal competency-based HR systems.",
+      },
+      {
+        type: "h3",
+        content: "4. Direct Employer Outreach",
+      },
+      {
+        type: "paragraph",
+        content: "Identify the organizations that employ the highest concentration of your certified practitioners and reach out directly to their HR or L&D leaders. Your certified practitioners are your best introduction — ask senior certificate-holders if they would facilitate a conversation with their employer's HR team. The goal is a relationship and an understanding of what it would take for the employer to formally recognize or sponsor the credential.",
+      },
+      {
+        type: "h2",
+        content: "Professional Association Partnerships",
+      },
+      {
+        type: "paragraph",
+        content: "Professional associations are trusted by employers as authoritative voices on professional standards, and they have direct relationships with the employers who hire their members. A formal partnership with a relevant association — where the association endorses or promotes your credential to its employer members — can accelerate employer recognition significantly. These partnerships typically require demonstrating that your credential meets a meaningful standard.",
+      },
+      {
+        type: "h2",
+        content: "The Digital Badge Loop",
+      },
+      {
+        type: "paragraph",
+        content: "Every time a certified practitioner adds your badge to their LinkedIn profile, they create a touchpoint with every hiring manager or client who views that profile. At low certification volume, this effect is small. As your certified community grows, it compounds: employers who encounter your badge repeatedly across multiple candidate profiles begin to register it as a meaningful signal rather than an unknown quantity.",
+      },
+      {
+        type: "callout",
+        content: "Track which companies your certified practitioners work at, and prioritize outreach to employers with the highest concentration of certificate-holders. A company where 10 employees are certified has likely already heard of your credential through internal conversations — and is far more receptive to a formal recognition conversation than a company where you are starting from zero.",
+      },
+      {
+        type: "h2",
+        content: "The Long Game",
+      },
+      {
+        type: "paragraph",
+        content: "Employer recognition is an ongoing investment in the credential's market position. Programs that treat it as a launch activity and then deprioritize it almost always find that employer recognition stagnates and practitioner renewal rates decline. The programs that build durable recognition maintain a consistent employer-facing presence: regular updates, outreach that connects credential value to employers' talent challenges, and a clear mechanism for employers to signal their recognition publicly.",
+      },
+    ],
+    metaTitle: "How to Get Employers to Recognize Your Certification | Credential Market Strategy",
+    metaDescription: "Build employer-side recognition for your certification. Covers employer briefs, job description language, competency mapping, association partnerships, and outreach.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "Getting Employers to Value Your Credential: How to Build Workplace Recognition",
+      description: "Build employer-side recognition for your certification. Employer briefs, job description language, association partnerships, and direct outreach.",
+      datePublished: "2026-03-01",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Get Employers to Recognize Your Certification", item: "https://method.certainly.coop/blog/how-to-get-employers-to-recognize-your-certification" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "how-to-set-a-passing-score-for-your-certification-exam",
+    title: "How to Set a Defensible Passing Score for Your Certification Exam (Without a PhD in Psychometrics)",
+    excerpt: "The cut score is one of the most consequential decisions in certification design — and one of the most commonly set by gut feel. Here's how to use a structured, documented process that produces a defensible passing standard.",
+    category: "Certification Design",
+    date: "March 1, 2026",
+    readTime: "9 min read",
+    image: "photo-1560785496-321917f24016",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "Every certification exam has a passing score — a threshold below which a candidate is deemed not yet competent. The question is how that threshold was determined. 'We felt 70% was reasonable' is the most common answer in independent certification programs. It is also one of the weakest possible defenses of a cut score, particularly in a dispute.",
+      },
+      {
+        type: "paragraph",
+        content: "Setting a defensible passing score — one derived from a structured, documented process grounded in professional judgment — is not as technically demanding as most program operators assume. It requires a clear process, a panel of qualified subject matter experts, and careful documentation. It does not require a psychometrician.",
+      },
+      {
+        type: "h2",
+        content: "Why the Cut Score Matters",
+      },
+      {
+        type: "paragraph",
+        content: "The cut score is the line between 'certified' and 'not yet certified.' Set it too low, and you certify people who have not met the standard — undermining the credential's credibility and potentially exposing the certification body to liability. Set it too high, and you create an unnecessarily exclusionary barrier that reduces your certified community without improving its quality.",
+      },
+      {
+        type: "paragraph",
+        content: "The cut score is also the primary target in exam appeals. When a candidate challenges a fail result, the first questions are: what was the passing standard, how was it set, and can you demonstrate it reflects a genuine competency threshold rather than an arbitrary number? A documented standard-setting process answers these questions directly.",
+      },
+      {
+        type: "h2",
+        content: "The Modified Angoff Method",
+      },
+      {
+        type: "paragraph",
+        content: "The Modified Angoff method is the most widely used standard-setting approach in professional certification. It is comprehensible to non-specialists, produces defensible results, and can be conducted by a small SME panel without expensive external consultants.",
+      },
+      {
+        type: "numbered-list",
+        items: [
+          "Assemble a panel of 6–12 subject matter experts who are competent practitioners in the certified domain. They should represent the diversity of the field and should not be the exam developers.",
+          "Define the 'minimally competent candidate': a practitioner who has just enough knowledge and skill to meet the competency standard — not a beginner, but not an expert. Ask panelists to hold this imagined candidate in mind throughout the exercise.",
+          "For each exam item, each panelist independently estimates what percentage of minimally competent candidates would answer that item correctly.",
+          "Collect all estimates, share them with the panel, and allow discussion. Panelists who are outliers are invited to explain their reasoning.",
+          "After discussion, each panelist provides a final estimate for each item. Average the estimates across all panelists and all items to produce the recommended passing score.",
+          "Apply a policy adjustment if appropriate: the panel's output is a starting point. The certification body may adjust slightly based on program goals, candidate demographics, and standard error considerations.",
+        ],
+      },
+      {
+        type: "h2",
+        content: "Other Standard-Setting Methods",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "Bookmark method: panelists review exam items ordered by difficulty and mark the point where minimally competent candidates transition from likely-correct to likely-incorrect. More efficient for large item banks but requires item difficulty data from prior administrations.",
+          "Contrasting groups method: a sample of candidates is classified by experts as clearly competent or clearly not-yet-competent, and the cut score is set at the score that best separates the two groups. Requires a large enough candidate sample.",
+          "Borderline group method: SMEs identify candidates they consider borderline, and the median score of this group becomes the passing standard.",
+        ],
+      },
+      {
+        type: "paragraph",
+        content: "For most independent certification programs conducting their first standard-setting exercise, the Modified Angoff is the right starting point: the most established, the most defensible, and the most accessible to practitioners without psychometric training.",
+      },
+      {
+        type: "h2",
+        content: "Documenting the Process",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "The date of the standard-setting study",
+          "The panel composition: number of panelists, their qualifications, how they were selected",
+          "The method used and a description of the process",
+          "Individual and aggregate panelist ratings for each item",
+          "The statistical result and any policy adjustments applied, with rationale",
+          "The final adopted cut score",
+          "Signatures or acknowledgment from panelists confirming the process",
+        ],
+      },
+      {
+        type: "callout",
+        content: "Standard-setting studies should be repeated on a regular cycle — typically every 5 years — or when there is a significant change in the profession. A cut score derived from a panel review several years ago may not reflect current professional standards. Document the date of your study prominently, and build a review cadence into your program governance.",
+      },
+    ],
+    metaTitle: "How to Set a Defensible Passing Score for Your Certification Exam | Cut Score Guide",
+    metaDescription: "Set a defensible cut score using the Modified Angoff method. Covers SME panels, Bookmark method, documentation requirements, and standard-setting best practices.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "How to Set a Defensible Passing Score for Your Certification Exam",
+      description: "Set a defensible cut score using the Modified Angoff method. SME panels, documentation, and standard-setting best practices.",
+      datePublished: "2026-03-01",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Set a Passing Score", item: "https://method.certainly.coop/blog/how-to-set-a-passing-score-for-your-certification-exam" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "how-to-market-a-certification-program",
+    title: "How to Market Your Certification Program: Getting Practitioners to Enroll and Employers to Care",
+    excerpt: "A certification program is a two-sided market — and most programs only market to one side. Here's a practical strategy for building practitioner demand and employer recognition simultaneously.",
+    category: "Business Strategy",
+    date: "March 1, 2026",
+    readTime: "10 min read",
+    image: "premium_photo-1726804880693-8fcdd773ce80",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "A certification program is a two-sided market. On one side are the practitioners who might pursue the credential. On the other are the employers, clients, and gatekeepers who will decide whether holding that credential changes what happens in a practitioner's career.",
+      },
+      {
+        type: "paragraph",
+        content: "Most certification marketing focuses almost entirely on the first side — reaching candidates and persuading them to enroll. The second side — employer and client recognition — is treated as something that will develop on its own as the certified community grows. It almost never does. Programs that neglect it find that practitioner demand eventually stagnates, because candidates eventually notice that their credential is not improving their professional outcomes.",
+      },
+      {
+        type: "h2",
+        content: "Marketing to Practitioners: The Enrollment Side",
+      },
+      {
+        type: "h3",
+        content: "Define Your Ideal Candidate Precisely",
+      },
+      {
+        type: "paragraph",
+        content: "The sharpest certification marketing is targeted at a specific type of practitioner at a specific career stage — not 'anyone who works in this field.' Who is this credential for? What problem does it solve for them right now? What does holding it allow them to do, say, or charge that they cannot without it? Programs that cannot answer these questions produce marketing copy that sounds like every other credential in the field.",
+      },
+      {
+        type: "h3",
+        content: "Content Marketing as Candidate Education",
+      },
+      {
+        type: "paragraph",
+        content: "Most practitioners who become certified first encountered the credential through content — an article, a podcast episode, a LinkedIn post — that addressed a problem they were already thinking about. Content marketing for a certification program is not primarily about the certification itself. It is about demonstrating, repeatedly and publicly, the depth of knowledge and professional standards that underlie the credential. The blog posts, guides, and frameworks you publish attract candidates already interested in the subject and build perceived authority among employers evaluating whether the credential is worth caring about.",
+      },
+      {
+        type: "h3",
+        content: "Certified Practitioner Advocacy",
+      },
+      {
+        type: "paragraph",
+        content: "Your certified community is your most credible marketing channel. A practitioner saying 'getting certified changed how I work and how clients perceive me' is more persuasive to a potential candidate than any marketing copy you write. Invest in mechanisms that surface these stories: case studies, testimonials, practitioner spotlights, LinkedIn posts your certified community can reshare.",
+      },
+      {
+        type: "h3",
+        content: "Association and Community Partnerships",
+      },
+      {
+        type: "paragraph",
+        content: "Professional associations, coaching communities, and consulting networks have existing relationships with your target candidates. A partnership that allows you to present your certification to their community — through webinars, conference presence, newsletter features, or member discounts — accelerates candidate reach significantly compared to building a direct marketing channel from scratch.",
+      },
+      {
+        type: "h2",
+        content: "Marketing to Employers: The Recognition Side",
+      },
+      {
+        type: "h3",
+        content: "The Employer Value Proposition",
+      },
+      {
+        type: "paragraph",
+        content: "Employers are not interested in your certification program's design quality. They are interested in what it means for their talent decisions: is a certified practitioner better at the job? Is the standard rigorous enough to be a useful hiring filter? Your employer-facing materials should speak to these concerns — with outcome data if you have it, a clear description of the competency standard and how it was set, and a verifiable credential registry.",
+      },
+      {
+        type: "h3",
+        content: "Getting Into Job Postings",
+      },
+      {
+        type: "paragraph",
+        content: "The most tangible form of employer recognition is appearing in job postings. When employers list your credential as 'preferred' or 'required,' they signal to the entire candidate market that the credential has professional value — driving enrollment far more effectively than your own marketing. Produce ready-to-use job description language and make it easy for your certified practitioners to share it with their employers' HR teams.",
+      },
+      {
+        type: "h3",
+        content: "Corporate Sponsorship Programs",
+      },
+      {
+        type: "paragraph",
+        content: "Some of the fastest-growing certification programs have built formal corporate sponsorship arrangements: an employer commits to funding certification for a cohort of employees, in exchange for recognition as a 'certification partner.' This creates a direct revenue stream from the employer side, aligns their talent development interests with your credential, and provides a pipeline of candidates without individual marketing spend.",
+      },
+      {
+        type: "h2",
+        content: "The Metrics That Matter",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "Candidate pipeline: how many qualified candidates are entering your enrollment process each quarter?",
+          "Conversion rate: what percentage of candidates who start the process complete certification?",
+          "Renewal rate: what percentage of certified practitioners renew at their cycle deadline? (The most reliable proxy for whether the credential generates professional value)",
+          "Employer mentions: how many job postings reference your credential?",
+          "Referral source: where are new candidates hearing about the credential?",
+        ],
+      },
+      {
+        type: "callout",
+        content: "Renewal rate is the single most important marketing metric for a mature certification program. A candidate who does not renew has decided the credential is no longer worth maintaining — almost always because it is not generating the professional outcomes they expected. Low renewal rates are a marketing signal, not just an operations problem.",
+      },
+    ],
+    metaTitle: "How to Market Your Certification Program | Enrollment and Employer Recognition",
+    metaDescription: "A two-sided marketing strategy for certification programs: candidate enrollment tactics, employer outreach, job posting mentions, corporate sponsorship, and key metrics.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "How to Market Your Certification Program: Getting Practitioners to Enroll and Employers to Care",
+      description: "A two-sided marketing strategy: candidate enrollment, employer outreach, job posting mentions, and the metrics that matter.",
+      datePublished: "2026-03-01",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Market Your Certification Program", item: "https://method.certainly.coop/blog/how-to-market-a-certification-program" },
+        ],
+      },
+    },
+  },
 ];
