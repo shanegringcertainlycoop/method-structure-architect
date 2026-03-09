@@ -5833,4 +5833,143 @@ export const blogPosts: BlogPost[] = [
       },
     },
   },
+  {
+    slug: "your-method-is-your-moat",
+    title: "Your Method Is Your Moat — And AI Can't Protect What Isn't Captured",
+    excerpt: "AI is an accelerant. It takes what exists and scales it. If your method is clear, documented, and distinctly yours, AI becomes a powerful distribution engine. If it isn't, AI produces volume without substance.",
+    category: "Methodology",
+    date: "March 9, 2026",
+    readTime: "6 min read",
+    image: "photo-1542744094-24638eff58bb",
+    author: {
+      name: "Method Team",
+      title: "Credentialing Strategists",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    },
+    sections: [
+      {
+        type: "paragraph",
+        content: "There's a version of the AI content conversation that consultants and coaches are having right now that goes roughly like this: How do I use AI to produce more content, faster, without it sounding generic?",
+      },
+      {
+        type: "paragraph",
+        content: "It's a reasonable question. But it's the second question. The first question — the one most people skip — is: What exactly am I asking AI to amplify?",
+      },
+      {
+        type: "paragraph",
+        content: "Because here's what's true: AI is an accelerant. It takes what exists and scales it. Which means if your method is clear, documented, and distinctly yours, AI becomes a powerful distribution engine. And if it isn't — if your expertise still lives mostly in your head, in the room, in the way you read a client — AI produces volume without substance. Polished. Competent-sounding. Indistinguishable.",
+      },
+      {
+        type: "paragraph",
+        content: "The moat disappears before you even knew you had one.",
+      },
+      {
+        type: "h2",
+        content: "The Problem With \"Just Start Prompting\"",
+      },
+      {
+        type: "paragraph",
+        content: "Most coaches and consultants who experiment with AI-assisted content hit the same wall around week three: the outputs feel hollow. Technically correct. Structurally fine. But missing the thing that makes their work theirs.",
+      },
+      {
+        type: "paragraph",
+        content: "They blame the prompts. They try better frameworks. They watch more YouTube tutorials.",
+      },
+      {
+        type: "paragraph",
+        content: "What's actually missing isn't prompt craft. It's source material. Specifically: a documented method with enough precision that someone else — human or AI — could understand not just what you do, but how you think, why you sequence things the way you do, and where you draw lines that others don't.",
+      },
+      {
+        type: "paragraph",
+        content: "AI can't extract that from you. It can only work with what you give it.",
+      },
+      {
+        type: "h2",
+        content: "What \"Captured\" Actually Means",
+      },
+      {
+        type: "paragraph",
+        content: "When we talk about capturing a method, we don't mean writing a process doc or summarizing your framework in a slide deck. Those are outputs. What needs to be captured is messier and more valuable:",
+      },
+      {
+        type: "bullet-list",
+        items: [
+          "The core distinctions — the concepts you've developed that reframe how clients see their situation",
+          "The decision logic — how you think through edge cases, exceptions, and judgment calls",
+          "The boundary conditions — what your method is not, and why that matters",
+          "The language — the specific words and phrases that carry your meaning, not generic synonyms",
+        ],
+      },
+      {
+        type: "paragraph",
+        content: "This is the difference between a consultant whose AI content reads like them — specific, positioned, unmistakably theirs — and one whose AI content reads like a competent stranger wrote it.",
+      },
+      {
+        type: "paragraph",
+        content: "The former has institutional memory. The latter has a subscription.",
+      },
+      {
+        type: "h2",
+        content: "Trust Doesn't Scale on Content Alone",
+      },
+      {
+        type: "paragraph",
+        content: "Here's the harder truth: even if you nail the content, there's a deeper question about what content is actually doing for your business.",
+      },
+      {
+        type: "paragraph",
+        content: "For consultants and coaches, content isn't just marketing. It's a trust signal. It's how prospective clients decide whether you understand their world, whether your thinking is sophisticated, whether you're someone worth hiring.",
+      },
+      {
+        type: "paragraph",
+        content: "And trust — real trust, the kind that converts — comes from specificity. From a point of view. From a method that has enough precision that someone reading your content thinks: this person has actually worked this out.",
+      },
+      {
+        type: "paragraph",
+        content: "Generic content, even at high volume, doesn't create that. It creates familiarity without conviction.",
+      },
+      {
+        type: "paragraph",
+        content: "The consultants who will benefit most from AI are the ones who've done the harder upstream work: understanding where their credibility actually comes from, documenting what makes their method transferable, and building the kind of institutional clarity that holds up when others — tools, team members, AI — start carrying the work forward.",
+      },
+      {
+        type: "h2",
+        content: "Before You Optimize the Engine, Build the Fuel",
+      },
+      {
+        type: "paragraph",
+        content: "If you're preparing to use AI seriously in your content strategy, the most valuable thing you can do first isn't find a better prompt template. It's spend time understanding how trust works in your business — where it comes from, how it transfers, what breaks under pressure.",
+      },
+      {
+        type: "paragraph",
+        content: "Then document your method with enough precision that it becomes real source material: not a summary, but a working capture of how you actually think and teach.",
+      },
+      {
+        type: "paragraph",
+        content: "AI can take it from there. But it can't do that part for you.",
+      },
+      {
+        type: "callout",
+        content: "Your method is your moat. The question is whether it's been built yet — or whether it's still entirely inside your head, one lost client call away from being lost.",
+      },
+    ],
+    metaTitle: "Your Method Is Your Moat — And AI Can't Protect What Isn't Captured",
+    metaDescription: "AI amplifies what exists. If your consulting method isn't documented with precision, AI produces volume without substance. Here's what needs to be captured first.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "Your Method Is Your Moat — And AI Can't Protect What Isn't Captured",
+      description: "AI amplifies what exists. If your consulting method isn't documented with precision, AI produces volume without substance. Here's what needs to be captured first.",
+      datePublished: "2026-03-09",
+      author: { "@type": "Organization", name: "Certainly" },
+      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
+          { "@type": "ListItem", position: 2, name: "Your Method Is Your Moat", item: "https://method.certainly.coop/blog/your-method-is-your-moat" },
+        ],
+      },
+    },
+  },
 ];

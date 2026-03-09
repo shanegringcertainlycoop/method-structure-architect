@@ -3,14 +3,12 @@
  * Run after deploying new or updated content:
  *   node scripts/indexnow-submit.mjs
  *
- * Submits all blog post URLs + core pages to IndexNow.
+ * Submits all blog post URLs + core pages to IndexNow via GET requests.
  * IndexNow distributes to Bing, Yandex, and other participating engines.
- * Google accepts IndexNow submissions too (via api.indexnow.org).
  */
 
 const HOST = "method.certainly.coop";
 const KEY = "de537b2c69054fce9e368994b13a3f90";
-const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 // Core pages
 const STATIC_URLS = [
@@ -69,38 +67,39 @@ const BLOG_SLUGS = [
   "how-to-get-employers-to-recognize-your-certification",
   "how-to-set-a-passing-score-for-your-certification-exam",
   "how-to-market-a-certification-program",
+  "your-method-is-your-moat",
 ];
 
 const BLOG_URLS = BLOG_SLUGS.map((slug) => `https://${HOST}/blog/${slug}`);
 const ALL_URLS = [...STATIC_URLS, ...BLOG_URLS];
 
+// Small delay between requests to avoid rate limiting
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function submit() {
   console.log(`Submitting ${ALL_URLS.length} URLs to IndexNow…\n`);
 
-  const body = JSON.stringify({
-    host: HOST,
-    key: KEY,
-    keyLocation: KEY_LOCATION,
-    urlList: ALL_URLS,
-  });
+  let ok = 0;
+  let failed = 0;
 
-  const res = await fetch("https://api.indexnow.org/indexnow", {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-    body,
-  });
+  for (const url of ALL_URLS) {
+    const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${KEY}`;
+    const res = await fetch(endpoint);
 
-  console.log(`Status: ${res.status} ${res.statusText}`);
+    if (res.status === 200 || res.status === 202) {
+      console.log(`  ✓ ${res.status}  ${url}`);
+      ok++;
+    } else {
+      const text = await res.text().catch(() => "");
+      console.error(`  ✗ ${res.status}  ${url}  ${text}`);
+      failed++;
+    }
 
-  if (res.status === 200 || res.status === 202) {
-    console.log(`✓ Accepted — ${ALL_URLS.length} URLs submitted successfully.`);
-    console.log("\nURLs submitted:");
-    ALL_URLS.forEach((url) => console.log(`  ${url}`));
-  } else {
-    const text = await res.text();
-    console.error(`✗ Error response: ${text}`);
-    process.exit(1);
+    await delay(100); // 100ms between requests
   }
+
+  console.log(`\n${ok} submitted, ${failed} failed.`);
+  if (failed > 0) process.exit(1);
 }
 
 submit().catch((err) => {
