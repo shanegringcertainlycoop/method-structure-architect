@@ -13,6 +13,7 @@ const mobileLinks = [
   { label: "Fractional Credential Operations™", to: "/fractional-credential-operations" },
   { label: "Systems of Trust™", to: "/systems-of-trust" },
   { label: "Musings", to: "/blog" },
+  { label: "Case Studies", to: "/case-studies" },
   { label: "Glossary", to: "/glossary" },
 ];
 
@@ -23,17 +24,29 @@ const SiteNav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
     <>
       <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
         <Link to="/">
-          <img src={certainlyLogo} alt="Certainly" className="h-8" />
+          <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-12" />
         </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           <ProgramsDropdown />
           <Link
+            to="/systems-of-trust"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+          >
+            Framework
+          </Link>
+          <Link
             to="/blog"
             className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
           >
             Musings
+          </Link>
+          <Link
+            to="/case-studies"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+          >
+            Case Studies
           </Link>
           <Button
             onClick={onRequestAssessment}

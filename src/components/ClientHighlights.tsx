@@ -1,38 +1,58 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import badgeWellAp from "@/assets/badge-wellap.svg";
+import wellApLogo from "@/assets/well-ap-logo.webp";
+import iwbiLogo from "@/assets/iwbi-logo.png";
+import usgbcLogo from "@/assets/usgbc-logo.svg";
+import drvnLogo from "@/assets/drvn-logo.svg";
 
 interface CaseStudy {
   id: string;
+  slug: string;
   label: string;
   headline: string;
   body: string;
+  logo: string;
+  logoAlt: string;
 }
 
 const caseStudies: CaseStudy[] = [
   {
     id: "drvn",
+    slug: "drvn",
     label: "DRVN",
     headline: "From Founder-Led App to Governed Professional Ecosystem",
     body: "A high-performing training methodology serving hundreds of thousands of app users risked dilution beyond the founder. We engineered a certified operating system — governance, assessment, and business infrastructure — launching with 70+ professional waitlist and formalizing a 12-unit curriculum within the first year. The result: a scalable professional network built on structure, not personality.",
+    logo: drvnLogo,
+    logoAlt: "DRVN Golf",
   },
   {
     id: "well-ap",
+    slug: "well-ap",
     label: "WELL AP",
     headline: "From Building Standard to Global Workforce Engine",
     body: "A 400-page health standard had surging demand but no delivery infrastructure. We helped architected the credential system — assessment, renewal, governance, and global distribution — enabling 20,000+ credentialed professionals across 120+ countries and generating recurring renewal revenue with 200–300 credential sales per month at scale. The standard became a labor market.",
+    logo: wellApLogo,
+    logoAlt: "WELL Accredited Professional (WELL AP)",
   },
   {
     id: "iwbi",
+    slug: "iwbi-digital-standard",
     label: "International WELL Building Institute",
     headline: "From Static PDF to Global Certification Operating System",
     body: "A 1,000+ page building standard constrained by manual workflows was transformed into a governed digital platform. The infrastructure now supports 26,000+ projects, 131 countries, 300,000+ users, and $5.1B+ square feet certified — replacing fragmented review processes with a scalable certification OS.",
+    logo: iwbiLogo,
+    logoAlt: "International WELL Building Institute (IWBI)",
   },
   {
     id: "usgbc",
+    slug: "advance",
     label: "USGBC ADVANCE",
     headline: "From Social Equity Vision to National Delivery Infrastructure",
     body: "An aspirational equity initiative reliant on staff-led workshops became a governed national program. We built a 100+ asset toolkit, trained 424+ community leaders, engaged 2,000+ residents, and supported 8.5M+ square feet of real-world building impact — transforming vision into repeatable infrastructure.",
+    logo: usgbcLogo,
+    logoAlt: "U.S. Green Building Council — ADVANCE™",
   },
 ];
 
@@ -74,19 +94,28 @@ const ClientHighlights = () => {
       {/* Active study */}
       <FadeIn key={study.id}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image slot */}
-          <div className="w-full aspect-[4/3] rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden relative">
-            {study.id === "well-ap" && (
-              <img src={badgeWellAp} alt="WELL AP Badge" className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-20 z-10" />
-            )}
-            <span className="text-muted-foreground text-sm tracking-wide">Image Placeholder</span>
+          {/* Logo slot */}
+          <div className="w-full aspect-[4/3] rounded-lg bg-card border border-border flex items-center justify-center overflow-hidden relative p-10">
+            <img
+              src={study.logo}
+              alt={study.logoAlt}
+              className="max-w-[180px] max-h-[180px] object-contain"
+            />
           </div>
 
           {/* Copy */}
           <div>
             <h3 className="font-serif text-2xl mb-4 text-foreground">{study.headline}</h3>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">{study.body}</p>
-            <p className="text-xs tracking-widest text-accent uppercase">{study.label}</p>
+            <div className="flex items-center justify-between">
+              <p className="text-xs tracking-widest text-accent uppercase">{study.label}</p>
+              <Link
+                to={`/case-studies/${study.slug}`}
+                className="inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all"
+              >
+                Read case study <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </div>
       </FadeIn>

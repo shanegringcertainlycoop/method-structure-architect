@@ -18,6 +18,8 @@ import BenchmarkAudit from "./pages/BenchmarkAudit";
 import CurriculumAssessmentDesign from "./pages/CurriculumAssessmentDesign";
 import BrandInfrastructure from "./pages/BrandInfrastructure";
 import PilotCertification from "./pages/PilotCertification";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudy from "./pages/CaseStudy";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/curriculum-assessment-design" element={<CurriculumAssessmentDesign />} />
           <Route path="/brand-infrastructure" element={<BrandInfrastructure />} />
           <Route path="/120-day-pilot" element={<PilotCertification />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:slug" element={<CaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
