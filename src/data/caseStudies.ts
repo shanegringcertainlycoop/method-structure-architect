@@ -42,6 +42,11 @@ export interface CaseStudyTimelineStep {
   description: string;
 }
 
+export interface CaseStudyImage {
+  src: string;
+  alt: string;
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
@@ -63,6 +68,13 @@ export interface CaseStudy {
   comparison: CaseStudyComparison[];
   timeline: CaseStudyTimelineStep[];
   biggerPictureQuote: string;
+  images?: {
+    hero?: CaseStudyImage;
+    challenge?: CaseStudyImage;
+    solution?: CaseStudyImage;
+    impact?: CaseStudyImage;
+    gallery?: CaseStudyImage[];
+  };
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -290,6 +302,12 @@ export const caseStudies: CaseStudy[] = [
     ],
     biggerPictureQuote:
       "The credential didn't just scale knowledge -- it created a self-sustaining movement. Every WELL AP represents the standard to their employer, their clients, and their network. That's the difference between training and infrastructure.",
+    images: {
+      hero: { src: "/images/case-studies/well-ap-platform.png", alt: "IWBI membership platform on tablet" },
+      challenge: { src: "/images/case-studies/well-ap-practitioners.jpg", alt: "Diverse professionals and practitioners" },
+      solution: { src: "/images/case-studies/well-ap-at-scale.png", alt: "WELL AP credential network at scale" },
+      impact: { src: "/images/case-studies/well-ap-industry.png", alt: "Average WELL score by region worldwide" },
+    },
   },
   {
     slug: "iwbi-digital-standard",
@@ -520,6 +538,17 @@ export const caseStudies: CaseStudy[] = [
     ],
     biggerPictureQuote:
       "The WELL Building Standard didn't just get digitized -- it got infrastructure. And that infrastructure is what turned a standard into a global movement.",
+    images: {
+      hero: { src: "/images/case-studies/iwbi-platform.png", alt: "WELL AP credential and digital platform" },
+      challenge: { src: "/images/case-studies/iwbi-practitioners.png", alt: "WELL AP professional with credential" },
+      solution: { src: "/images/case-studies/iwbi-industry.png", alt: "IWBI industry impact and diversity metrics" },
+      impact: { src: "/images/case-studies/iwbi-well-seal.png", alt: "WELL Certification Seal" },
+      gallery: [
+        { src: "/images/case-studies/iwbi-slide-1.png", alt: "IWBI Partnership overview" },
+        { src: "/images/case-studies/iwbi-slide-2.png", alt: "IWBI system architecture" },
+        { src: "/images/case-studies/iwbi-slide-3.png", alt: "IWBI global reach" },
+      ],
+    },
   },
   {
     slug: "advance",
@@ -745,6 +774,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     biggerPictureQuote:
       "ADVANCE proved something important: that mission-driven programs don't have to choose between impact and structure. The System of Trust gave USGBC both -- a way to scale equity programming without sacrificing quality, consistency, or community connection.",
+    images: {},
   },
   {
     slug: "drvn",
@@ -965,5 +995,15 @@ export const caseStudies: CaseStudy[] = [
     ],
     biggerPictureQuote:
       "We can now scale our impact exponentially. Every DRVN Certified Pro represents our methodology, uses our systems, and helps golfers transform their game and stay fit for decades. And they're not just representing us -- they're building businesses that depend on us maintaining quality. That's why the System of Trust matters so much.",
+    images: {
+      hero: { src: "/images/case-studies/drvn-coach-levels.png", alt: "DRVN Pro Certification course levels and training modules" },
+      challenge: { src: "/images/case-studies/drvn-method-practice.png", alt: "Golfer swing analysis showing power and speed metrics" },
+      solution: { src: "/images/case-studies/drvn-certificate.png", alt: "DRVN Pro Certification certificate" },
+      impact: { src: "/images/case-studies/drvn-audience-growth.png", alt: "DRVN Sales, Marketing & Business Development training" },
+      gallery: [
+        { src: "/images/case-studies/drvn-carousel-homepage.png", alt: "DRVN app homepage" },
+        { src: "/images/case-studies/drvn-carousel-fitness.png", alt: "DRVN fitness training" },
+      ],
+    },
   },
 ];

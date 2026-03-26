@@ -99,6 +99,20 @@ const CaseStudy = () => {
               </div>
             </FadeIn>
           )}
+
+          {/* Hero image */}
+          {cs.images?.hero && (
+            <FadeIn delay={500}>
+              <div className="mt-16 rounded-lg overflow-hidden border border-border">
+                <img
+                  src={cs.images.hero.src}
+                  alt={cs.images.hero.alt}
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+              </div>
+            </FadeIn>
+          )}
         </div>
       </section>
 
@@ -148,6 +162,19 @@ const CaseStudy = () => {
               ))}
             </ul>
           </FadeIn>
+
+          {cs.images?.challenge && (
+            <FadeIn>
+              <div className="mt-10 rounded-lg overflow-hidden border border-border">
+                <img
+                  src={cs.images.challenge.src}
+                  alt={cs.images.challenge.alt}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+            </FadeIn>
+          )}
         </div>
       </section>
 
@@ -189,6 +216,19 @@ const CaseStudy = () => {
               </FadeIn>
             </div>
           ))}
+
+          {cs.images?.solution && (
+            <FadeIn>
+              <div className="mt-14 rounded-lg overflow-hidden border border-border">
+                <img
+                  src={cs.images.solution.src}
+                  alt={cs.images.solution.alt}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+            </FadeIn>
+          )}
         </div>
       </section>
 
@@ -250,6 +290,19 @@ const CaseStudy = () => {
             ))}
           </div>
 
+          {cs.images?.impact && (
+            <FadeIn>
+              <div className="mb-16 rounded-lg overflow-hidden border border-border">
+                <img
+                  src={cs.images.impact.src}
+                  alt={cs.images.impact.alt}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+            </FadeIn>
+          )}
+
           {/* What Changed */}
           <FadeIn>
             <h3 className="font-serif text-xl font-normal mb-8 text-foreground">What Changed</h3>
@@ -292,6 +345,31 @@ const CaseStudy = () => {
       </section>
 
       <Divider />
+
+      {/* Gallery */}
+      {cs.images?.gallery && cs.images.gallery.length > 0 && (
+        <>
+          <section className="px-6 py-20">
+            <div className="max-w-5xl mx-auto">
+              <div className={`grid gap-6 ${cs.images.gallery.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' : cs.images.gallery.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
+                {cs.images.gallery.map((img, i) => (
+                  <FadeIn key={i} delay={i * 100}>
+                    <div className="rounded-lg overflow-hidden border border-border">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-auto"
+                        loading="lazy"
+                      />
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </section>
+          <Divider />
+        </>
+      )}
 
       {/* The Difference - comparison table */}
       <section className="px-6 py-20">
