@@ -424,7 +424,7 @@ const Nav = () => (
   <nav className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center border-b border-border bg-background/80 backdrop-blur-sm">
     <div className="flex items-center gap-8">
       <Link to="/">
-        <img src={certainlyLogo} alt="Certainly" className="h-8" />
+        <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-8" />
       </Link>
       <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide">
         Writings
@@ -771,12 +771,12 @@ const TrustReviewWorkbook = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Trust Architecture Review™ Workbook | Certainly</title>
+        <title>Trust Architecture Review™ Workbook | Method Lab by Certainly</title>
         <meta
           name="description"
           content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage."
         />
-        <link rel="canonical" href="https://method.certainly.coop/trust-review-workbook" />
+        <link rel="canonical" href="https://method-lab.ai/trust-review-workbook" />
         <style>{`
           @media print {
             .no-print { display: none !important; }

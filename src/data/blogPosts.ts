@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "certification-vs-licensing",
     title: "Certification vs. Licensing: Which Is Right for Your Method?",
-    metaTitle: "Certification vs. Licensing: Which Is Right for Your Method? | Certainly",
+    metaTitle: "Certification vs. Licensing: Which Is Right for Your Method? | Method Lab by Certainly",
     metaDescription: "Certification and licensing are both ways to scale a proprietary method — but they solve different problems. Here's how to tell which one your business actually needs.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-build-a-certification-program",
     title: "How to Build a Certification Program Around Your Methodology",
-    metaTitle: "How to Build a Certification Program Around Your Methodology | Certainly",
+    metaTitle: "How to Build a Certification Program Around Your Methodology | Method Lab by Certainly",
     metaDescription: "A step-by-step guide to designing a certification program for your proprietary methodology — covering documentation, standards, assessment, governance, and launch.",
     publishedAt: "2026-02-25",
     readTime: "12 min read",
@@ -521,7 +521,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "certificate-vs-certification",
     title: "Certificate vs. Certification: What's the Difference and Why It Matters",
-    metaTitle: "Certificate vs. Certification: What's the Difference and Why It Matters | Certainly",
+    metaTitle: "Certificate vs. Certification: What's the Difference and Why It Matters | Method Lab by Certainly",
     metaDescription: "Certificate and certification are not the same thing — and conflating them erodes the value of both. Here's how to tell them apart and why the distinction matters for your program.",
     publishedAt: "2026-02-25",
     readTime: "7 min read",
@@ -662,7 +662,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-document-a-proprietary-methodology",
     title: "How to Document a Proprietary Methodology",
-    metaTitle: "How to Document a Proprietary Methodology | Certainly",
+    metaTitle: "How to Document a Proprietary Methodology | Method Lab by Certainly",
     metaDescription: "Your method exists in your head and in your results. Getting it out of both — into a form that others can learn, apply, and be assessed on — is the hardest part of scaling expert work.",
     publishedAt: "2026-02-25",
     readTime: "10 min read",
@@ -824,7 +824,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-scale-a-consulting-firm",
     title: "How to Scale a Consulting Firm Without Losing Quality",
-    metaTitle: "How to Scale a Consulting Firm Without Losing Quality | Certainly",
+    metaTitle: "How to Scale a Consulting Firm Without Losing Quality | Method Lab by Certainly",
     metaDescription: "The bottleneck in most consulting firms isn't marketing or capacity. It's the inability to deliver consistent quality without the founder in the room. Here's how to solve it structurally.",
     publishedAt: "2026-02-25",
     readTime: "10 min read",
@@ -985,7 +985,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-a-standards-organization",
     title: "What Is a Standards Organization — and Should You Build One?",
-    metaTitle: "What Is a Standards Organization — and Should You Build One? | Certainly",
+    metaTitle: "What Is a Standards Organization — and Should You Build One? | Method Lab by Certainly",
     metaDescription: "Standards organizations govern how professional practice is defined, credentialed, and enforced in a field. Here's what they are, how they work, and whether building one is right for your method.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -1135,7 +1135,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "why-certification-programs-fail",
     title: "Why Most Certification Programs Fail (and What the Ones That Work Have in Common)",
-    metaTitle: "Why Most Certification Programs Fail — and What Successful Ones Have in Common | Certainly",
+    metaTitle: "Why Most Certification Programs Fail — and What Successful Ones Have in Common | Method Lab by Certainly",
     metaDescription: "Most certification programs don't fail at launch. They fail slowly — as the credential loses meaning, governance collapses, or the market stops caring. Here's what distinguishes the ones that last.",
     publishedAt: "2026-02-25",
     readTime: "10 min read",
@@ -1288,7 +1288,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "business-case-for-methodology-documentation",
     title: "The Business Case for Methodology Documentation",
-    metaTitle: "The Business Case for Methodology Documentation | Certainly",
+    metaTitle: "The Business Case for Methodology Documentation | Method Lab by Certainly",
     metaDescription: "Documenting your methodology isn't a publishing project. It's a business infrastructure investment that unlocks certification, licensing, delegation, and eventual exit.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -1450,7 +1450,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-design-a-certification-assessment",
     title: "How to Design a Certification Assessment That Actually Measures Competence",
-    metaTitle: "How to Design a Certification Assessment That Actually Measures Competence | Certainly",
+    metaTitle: "How to Design a Certification Assessment That Actually Measures Competence | Method Lab by Certainly",
     metaDescription: "Most certification assessments measure familiarity with content, not ability to apply it. Here's how to design an assessment that actually verifies the competence your credential claims to certify.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -1608,7 +1608,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-write-competence-standards",
     title: "How to Write Competence Standards for a Certification Program",
-    metaTitle: "How to Write Competence Standards for a Certification Program | Certainly",
+    metaTitle: "How to Write Competence Standards for a Certification Program | Method Lab by Certainly",
     metaDescription: "Competence standards define what 'qualified' actually means in a certification program. Most programs skip this step or rush through it. Here's how to do it right.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -1737,7 +1737,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-a-competence-framework",
     title: "What Is a Competence Framework? A Practical Guide for Certification Designers",
-    metaTitle: "What Is a Competence Framework? A Practical Guide | Certainly",
+    metaTitle: "What Is a Competence Framework? A Practical Guide | Method Lab by Certainly",
     metaDescription: "A competence framework defines the knowledge, skills, and judgment required for professional practice at defined levels. Here's what they are, how they work, and when you need one.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -1864,7 +1864,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-price-a-certification-program",
     title: "How to Price a Certification Program",
-    metaTitle: "How to Price a Certification Program | Certainly",
+    metaTitle: "How to Price a Certification Program | Method Lab by Certainly",
     metaDescription: "Certification pricing is a strategic decision that affects program sustainability, credential perception, and market positioning. Here's how to think through it systematically.",
     publishedAt: "2026-02-25",
     readTime: "7 min read",
@@ -1992,7 +1992,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-accreditation",
     title: "What Is Accreditation — and Does Your Certification Program Need It?",
-    metaTitle: "What Is Accreditation — and Does Your Certification Program Need It? | Certainly",
+    metaTitle: "What Is Accreditation — and Does Your Certification Program Need It? | Method Lab by Certainly",
     metaDescription: "Accreditation is the external validation of a certification program's quality and governance. Here's what it is, when it adds value, and when it's not worth pursuing.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -2091,7 +2091,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-protect-intellectual-property-consulting",
     title: "How to Protect Your Intellectual Property as a Consultant",
-    metaTitle: "How to Protect Your Intellectual Property as a Consultant | Certainly",
+    metaTitle: "How to Protect Your Intellectual Property as a Consultant | Method Lab by Certainly",
     metaDescription: "Your methodology is your most valuable business asset — and the most vulnerable. Here's how to protect it through documentation, legal structure, and strategic design.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -2225,7 +2225,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-build-a-body-of-knowledge",
     title: "How to Build a Body of Knowledge for Your Certification Program",
-    metaTitle: "How to Build a Body of Knowledge for Your Certification Program | Certainly",
+    metaTitle: "How to Build a Body of Knowledge for Your Certification Program | Method Lab by Certainly",
     metaDescription: "A Body of Knowledge defines the domain a certification program covers and anchors its standards in a defensible intellectual foundation. Here's what it is and how to build one.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -2339,7 +2339,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "knowledge-transfer-why-it-fails",
     title: "Knowledge Transfer: Why It Fails and How to Get It Right",
-    metaTitle: "Knowledge Transfer: Why It Fails and How to Get It Right | Certainly",
+    metaTitle: "Knowledge Transfer: Why It Fails and How to Get It Right | Method Lab by Certainly",
     metaDescription: "Most knowledge transfer efforts fail — not because the knowledge isn't there, but because it's transferred in the wrong form. Here's what gets in the way and how to do it effectively.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -2460,7 +2460,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-run-a-certification-pilot",
     title: "How to Run a Certification Pilot Program",
-    metaTitle: "How to Run a Certification Pilot Program | Certainly",
+    metaTitle: "How to Run a Certification Pilot Program | Method Lab by Certainly",
     metaDescription: "A certification pilot is the structured launch of a credential with a small cohort before full-scale rollout. Here's how to design one that actually tests what needs to be tested.",
     publishedAt: "2026-02-25",
     readTime: "8 min read",
@@ -2581,7 +2581,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "certification-program-governance",
     title: "Certification Program Governance: A Practical Guide",
-    metaTitle: "Certification Program Governance: A Practical Guide | Certainly",
+    metaTitle: "Certification Program Governance: A Practical Guide | Method Lab by Certainly",
     metaDescription: "Governance is the infrastructure that keeps a certification program's credential meaningful over time. Here's what it requires, how to structure it, and why most programs get it wrong.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -2717,7 +2717,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "first-second-third-party-verification",
     title: "First, Second, and Third-Party Verification: What They Mean for Certification",
-    metaTitle: "First, Second, and Third-Party Verification: What They Mean for Certification | Certainly",
+    metaTitle: "First, Second, and Third-Party Verification: What They Mean for Certification | Method Lab by Certainly",
     metaDescription: "Not all certification is the same. First, second, and third-party verification represent fundamentally different levels of independence — and the market treats them differently. Here's what each means and when each is appropriate.",
     publishedAt: "2026-02-25",
     readTime: "9 min read",
@@ -2875,7 +2875,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-set-up-a-certification-body",
     title: "How to Set Up a Certification Body: Structure, Governance, and What to Build First",
-    metaTitle: "How to Set Up a Certification Body | Certainly",
+    metaTitle: "How to Set Up a Certification Body | Method Lab by Certainly",
     metaDescription: "Setting up a certification body requires more than a credential — it requires legal structure, governance, assessment systems, and operational infrastructure. Here's what to build and in what order.",
     publishedAt: "2026-02-27",
     readTime: "11 min read",
@@ -3083,7 +3083,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-iso-17024",
     title: "What Is ISO 17024? The Standard Behind Professional Certification Programs",
-    metaTitle: "What Is ISO 17024? The Standard Behind Professional Certification Programs | Certainly",
+    metaTitle: "What Is ISO 17024? The Standard Behind Professional Certification Programs | Method Lab by Certainly",
     metaDescription: "ISO/IEC 17024 is the international standard for organizations that certify people. Here's what it requires, why it matters, and how to know if your certification program should be built to it.",
     publishedAt: "2026-02-27",
     readTime: "8 min read",
@@ -3261,7 +3261,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-turn-training-into-certification",
     title: "How to Turn Training Into Certification: The Structural Difference That Changes Everything",
-    metaTitle: "How to Turn Training Into Certification | Certainly",
+    metaTitle: "How to Turn Training Into Certification | Method Lab by Certainly",
     metaDescription: "Training and certification are not the same thing — and the gap between them is structural, not cosmetic. Here's what has to change when you move from delivering training to operating a certification program.",
     publishedAt: "2026-02-27",
     readTime: "9 min read",
@@ -3435,7 +3435,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-certify-practitioners-in-your-method",
     title: "How to Certify Practitioners in Your Method",
-    metaTitle: "How to Certify Practitioners in Your Method | Certainly",
+    metaTitle: "How to Certify Practitioners in Your Method | Method Lab by Certainly",
     metaDescription: "Certifying others in your proprietary method requires more than training them. It requires standards, assessment, governance, and a clear answer to what 'qualified' actually means.",
     publishedAt: "2026-02-27",
     readTime: "10 min read",
@@ -3614,7 +3614,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "certification-program-design-for-coaches",
     title: "Certification Program Design for Coaches: What's Different, What's the Same, and Where Most Go Wrong",
-    metaTitle: "Certification Program Design for Coaches | Certainly",
+    metaTitle: "Certification Program Design for Coaches | Method Lab by Certainly",
     metaDescription: "Designing a certification program for a coaching methodology has specific challenges. Here's what distinguishes a credible coach certification from a glorified training program — and how to build the former.",
     publishedAt: "2026-02-27",
     readTime: "10 min read",
@@ -3783,7 +3783,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-makes-a-certification-credible",
     title: "What Makes a Certification Credible: The Five Structural Signals the Market Reads",
-    metaTitle: "What Makes a Certification Credible | Certainly",
+    metaTitle: "What Makes a Certification Credible | Method Lab by Certainly",
     metaDescription: "Credibility in certification isn't about reputation or history — it's about structure. Here are the five signals that tell the market whether a credential is worth trusting.",
     publishedAt: "2026-02-28",
     readTime: "8 min read",
@@ -3910,7 +3910,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-write-a-certification-exam",
     title: "How to Write a Certification Exam: Item Development for Practitioner Credentials",
-    metaTitle: "How to Write a Certification Exam | Certainly",
+    metaTitle: "How to Write a Certification Exam | Method Lab by Certainly",
     metaDescription: "Writing a certification exam is a technical skill — and one of the most commonly underinvested areas in practitioner credentialing. Here's how to do it right.",
     publishedAt: "2026-02-28",
     readTime: "10 min read",
@@ -4045,7 +4045,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "train-the-trainer-program-design",
     title: "Train the Trainer Program Design: How to Scale Your Method Without Losing Quality",
-    metaTitle: "Train the Trainer Program Design | Certainly",
+    metaTitle: "Train the Trainer Program Design | Method Lab by Certainly",
     metaDescription: "A train the trainer program lets your method scale through others — but only if it's designed to transfer the right things. Here's how to build one that actually works.",
     publishedAt: "2026-02-28",
     readTime: "9 min read",
@@ -4202,7 +4202,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-a-professional-designation",
     title: "What Is a Professional Designation? How Designations Work and When to Create One",
-    metaTitle: "What Is a Professional Designation? | Certainly",
+    metaTitle: "What Is a Professional Designation? | Method Lab by Certainly",
     metaDescription: "A professional designation is a post-nominal credential that signals expertise and affiliation. Here's how they work, how they differ from certifications, and what it takes to create one that carries market weight.",
     publishedAt: "2026-02-28",
     readTime: "8 min read",
@@ -4362,7 +4362,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-scale-a-certification-program",
     title: "How to Scale a Certification Program: Growing Volume Without Losing Integrity",
-    metaTitle: "How to Scale a Certification Program | Certainly",
+    metaTitle: "How to Scale a Certification Program | Method Lab by Certainly",
     metaDescription: "Scaling a certification program is not just an operations problem — it is an integrity challenge. Here's how to grow candidate volume without compromising the standards that make your credential worth having.",
     publishedAt: "2026-02-28",
     readTime: "10 min read",
@@ -4689,13 +4689,13 @@ export const blogPosts: BlogPost[] = [
       headline: "The Licensed Practitioner Model: How to License Your Consulting Framework to Other Practitioners",
       description: "Learn how to design a licensed practitioner program that lets other consultants deliver your methodology, protects your IP, and generates recurring revenue.",
       datePublished: "2026-02-28",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "The Licensed Practitioner Model", item: "https://method.certainly.coop/blog/how-to-license-your-framework-to-other-practitioners" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "The Licensed Practitioner Model", item: "https://method-lab.ai/blog/how-to-license-your-framework-to-other-practitioners" },
         ],
       },
     },
@@ -4834,13 +4834,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Build a Micro-Credential Program: Stackable, Modular Certifications",
       description: "Design a stackable micro-credential program. Learn credential architecture, assessment design, digital badge issuance, and pathway mapping for consultants and coaches.",
       datePublished: "2026-02-28",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Build a Micro-Credential Program", item: "https://method.certainly.coop/blog/how-to-build-a-micro-credential-program" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Build a Micro-Credential Program", item: "https://method-lab.ai/blog/how-to-build-a-micro-credential-program" },
         ],
       },
     },
@@ -4956,13 +4956,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Add CEUs to Your Certification Program",
       description: "Design a CEU system for your certification program: renewal cycles, approved activities, tracking, auditing, and practitioner communication.",
       datePublished: "2026-02-28",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Add CEUs to Your Certification Program", item: "https://method.certainly.coop/blog/how-to-add-ceus-to-your-certification-program" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Add CEUs to Your Certification Program", item: "https://method-lab.ai/blog/how-to-add-ceus-to-your-certification-program" },
         ],
       },
     },
@@ -5091,13 +5091,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Issue Digital Badges for Your Certification Program",
       description: "Set up digital badge issuance for your certification program. Compare platforms, design badge criteria, and get your credentials on LinkedIn.",
       datePublished: "2026-02-28",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Issue Digital Badges", item: "https://method.certainly.coop/blog/how-to-issue-digital-badges-for-your-certification" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Issue Digital Badges", item: "https://method-lab.ai/blog/how-to-issue-digital-badges-for-your-certification" },
         ],
       },
     },
@@ -5225,13 +5225,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Design a Certification Maintenance and Recertification Program",
       description: "Learn how to design renewal cycles, CEU requirements, lapse policies, and a credential registry that keeps your certification credible over time.",
       datePublished: "2026-02-28",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "Certification Maintenance and Recertification", item: "https://method.certainly.coop/blog/certification-maintenance-and-recertification" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "Certification Maintenance and Recertification", item: "https://method-lab.ai/blog/certification-maintenance-and-recertification" },
         ],
       },
     },
@@ -5352,13 +5352,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Choose a Certification Exam Delivery Platform: Build, Buy, or Both?",
       description: "Compare LMS tools, purpose-built exam platforms, and enterprise systems. Key features, proctoring options, and selection criteria for certification programs.",
       datePublished: "2026-03-01",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Choose a Certification Exam Platform", item: "https://method.certainly.coop/blog/how-to-choose-a-certification-exam-platform" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Choose a Certification Exam Platform", item: "https://method-lab.ai/blog/how-to-choose-a-certification-exam-platform" },
         ],
       },
     },
@@ -5470,13 +5470,13 @@ export const blogPosts: BlogPost[] = [
       headline: "What Is a Job Task Analysis — and Does Your Certification Program Need One?",
       description: "What a Job Task Analysis is, how it's conducted, and when your certification program needs one. SME panels, practitioner surveys, and exam blueprints.",
       datePublished: "2026-03-01",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "What Is a Job Task Analysis", item: "https://method.certainly.coop/blog/what-is-a-job-task-analysis" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "What Is a Job Task Analysis", item: "https://method-lab.ai/blog/what-is-a-job-task-analysis" },
         ],
       },
     },
@@ -5589,13 +5589,13 @@ export const blogPosts: BlogPost[] = [
       headline: "Getting Employers to Value Your Credential: How to Build Workplace Recognition",
       description: "Build employer-side recognition for your certification. Employer briefs, job description language, association partnerships, and direct outreach.",
       datePublished: "2026-03-01",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Get Employers to Recognize Your Certification", item: "https://method.certainly.coop/blog/how-to-get-employers-to-recognize-your-certification" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Get Employers to Recognize Your Certification", item: "https://method-lab.ai/blog/how-to-get-employers-to-recognize-your-certification" },
         ],
       },
     },
@@ -5698,13 +5698,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Set a Defensible Passing Score for Your Certification Exam",
       description: "Set a defensible cut score using the Modified Angoff method. SME panels, documentation, and standard-setting best practices.",
       datePublished: "2026-03-01",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Set a Passing Score", item: "https://method.certainly.coop/blog/how-to-set-a-passing-score-for-your-certification-exam" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Set a Passing Score", item: "https://method-lab.ai/blog/how-to-set-a-passing-score-for-your-certification-exam" },
         ],
       },
     },
@@ -5822,13 +5822,13 @@ export const blogPosts: BlogPost[] = [
       headline: "How to Market Your Certification Program: Getting Practitioners to Enroll and Employers to Care",
       description: "A two-sided marketing strategy: candidate enrollment, employer outreach, job posting mentions, and the metrics that matter.",
       datePublished: "2026-03-01",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "How to Market Your Certification Program", item: "https://method.certainly.coop/blog/how-to-market-a-certification-program" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "How to Market Your Certification Program", item: "https://method-lab.ai/blog/how-to-market-a-certification-program" },
         ],
       },
     },
@@ -5961,13 +5961,13 @@ export const blogPosts: BlogPost[] = [
       headline: "Your Method Is Your Moat — And AI Can't Protect What Isn't Captured",
       description: "AI amplifies what exists. If your consulting method isn't documented with precision, AI produces volume without substance. Here's what needs to be captured first.",
       datePublished: "2026-03-09",
-      author: { "@type": "Organization", name: "Certainly" },
-      publisher: { "@type": "Organization", name: "Certainly", logo: { "@type": "ImageObject", url: "https://method.certainly.coop/logo.png" } },
+      author: { "@type": "Organization", name: "Method Lab by Certainly" },
+      publisher: { "@type": "Organization", name: "Method Lab by Certainly", logo: { "@type": "ImageObject", url: "https://method-lab.ai/logo.png" } },
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method.certainly.coop/blog" },
-          { "@type": "ListItem", position: 2, name: "Your Method Is Your Moat", item: "https://method.certainly.coop/blog/your-method-is-your-moat" },
+          { "@type": "ListItem", position: 1, name: "Blog", item: "https://method-lab.ai/blog" },
+          { "@type": "ListItem", position: 2, name: "Your Method Is Your Moat", item: "https://method-lab.ai/blog/your-method-is-your-moat" },
         ],
       },
     },

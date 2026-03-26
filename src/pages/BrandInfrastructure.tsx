@@ -623,24 +623,24 @@ const BrandInfrastructure = () => {
   return (
     <>
       <Helmet>
-        <title>Brand Infrastructure™ — Signaling, Verification & Market Legibility | Certainly</title>
-        <meta name="description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Certainly." />
-        <link rel="canonical" href="https://method.certainly.coop/brand-infrastructure" />
-        <meta property="og:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Certainly" />
-        <meta property="og:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Certainly." />
-        <meta property="og:url" content="https://method.certainly.coop/brand-infrastructure" />
+        <title>Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly</title>
+        <meta name="description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Method Lab by Certainly." />
+        <link rel="canonical" href="https://method-lab.ai/brand-infrastructure" />
+        <meta property="og:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly" />
+        <meta property="og:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Method Lab by Certainly." />
+        <meta property="og:url" content="https://method-lab.ai/brand-infrastructure" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Certainly" />
-        <meta name="twitter:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Certainly." />
+        <meta name="twitter:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly" />
+        <meta name="twitter:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Method Lab by Certainly." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Brand Infrastructure™",
           "description": "Build the identity, narrative, and verification systems that allow your credential to carry weight in the market.",
-          "url": "https://method.certainly.coop/brand-infrastructure",
+          "url": "https://method-lab.ai/brand-infrastructure",
           "serviceType": "Credential Brand & Verification Infrastructure",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

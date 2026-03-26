@@ -169,7 +169,7 @@ const operationalAreas = [
   "Assessment coordination",
   "Renewal cycles",
   "Governance cadence",
-  "Digital ecosystem health",
+  "AI-monitored digital ecosystem health",
   "Vendor alignment",
   "Policy maintenance",
   "Revenue tracking",
@@ -503,7 +503,7 @@ const FinalCTA = ({ onCTA }: { onCTA: () => void }) => (
       <FadeIn delay={400}>
         <Divider />
         <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -523,24 +523,24 @@ const FractionalCredentialOperations = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Fractional Credential Operations™ — Durable Operational Stewardship | Certainly</title>
+        <title>Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly</title>
         <meta name="description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
-        <link rel="canonical" href="https://method.certainly.coop/fractional-credential-operations" />
-        <meta property="og:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/fractional-credential-operations" />
+        <meta property="og:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly" />
         <meta property="og:description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
-        <meta property="og:url" content="https://method.certainly.coop/fractional-credential-operations" />
+        <meta property="og:url" content="https://method-lab.ai/fractional-credential-operations" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Certainly" />
+        <meta name="twitter:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly" />
         <meta name="twitter:description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Fractional Credential Operations™",
           "description": "Steward your credential as a durable business unit. Accountable ownership of intake, assessment, governance, and revenue systems.",
-          "url": "https://method.certainly.coop/fractional-credential-operations",
+          "url": "https://method-lab.ai/fractional-credential-operations",
           "serviceType": "Credential Operations & Stewardship",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

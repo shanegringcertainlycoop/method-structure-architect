@@ -31,4 +31,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://method.certainly.coop/sitemap.xml
+Sitemap: https://method-lab.ai/sitemap.xml

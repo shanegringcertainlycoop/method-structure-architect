@@ -167,7 +167,7 @@ const modules = [
     id: "B",
     title: "Curriculum & Assessment Architecture™",
     objective: "Define and verify competence.",
-    weBuild: ["Competence frameworks", "Observable performance criteria", "Rubrics & scoring guides", "Pass/fail thresholds", "Appeals and remediation processes", "Instructor calibration systems"],
+    weBuild: ["Competence frameworks", "Observable performance criteria", "AI-calibrated rubrics & scoring guides", "Pass/fail thresholds", "Appeals and remediation processes", "Instructor calibration systems"],
     note: "This separates completion from qualification.",
     timeline: "4–8 weeks",
     investment: "Custom",
@@ -579,7 +579,7 @@ const FinalCTA = ({ onBuildPath }: { onBuildPath: () => void }) => (
       <FadeIn delay={400}>
         <Divider />
         <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -599,24 +599,24 @@ const TrustMechanismModules = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly</title>
+        <title>Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly</title>
         <meta name="description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <link rel="canonical" href="https://method.certainly.coop/trust-mechanism-modules" />
-        <meta property="og:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/trust-mechanism-modules" />
+        <meta property="og:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
         <meta property="og:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <meta property="og:url" content="https://method.certainly.coop/trust-mechanism-modules" />
+        <meta property="og:url" content="https://method-lab.ai/trust-mechanism-modules" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Certainly" />
+        <meta name="twitter:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
         <meta name="twitter:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Trust Mechanism Modules™",
           "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
-          "url": "https://method.certainly.coop/trust-mechanism-modules",
+          "url": "https://method-lab.ai/trust-mechanism-modules",
           "serviceType": "Certification Infrastructure Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

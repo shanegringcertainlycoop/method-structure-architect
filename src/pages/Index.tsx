@@ -42,7 +42,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
     <div className="relative z-10 text-center flex flex-col items-center">
       <FadeIn>
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-12">
-          Method Architecture & Certification Advisory
+          Method Architecture, AI Integration & Certification Advisory
         </p>
       </FadeIn>
       <FadeIn delay={200}>
@@ -54,7 +54,7 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
       </FadeIn>
       <FadeIn delay={400}>
         <p className="max-w-2xl text-muted-foreground leading-[1.9] text-lg sm:text-xl mb-14">
-          Certainly designs certification programs, licensing frameworks, and governance systems for founders and institutions ready to scale their proprietary methodology — without losing what makes it work.
+          Method Lab by Certainly designs certification programs, licensing frameworks, and AI-integrated governance systems for founders and institutions ready to scale their proprietary methodology — without losing what makes it work.
         </p>
       </FadeIn>
       <FadeIn delay={600}>
@@ -89,13 +89,13 @@ const Hero = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
 
 /* ─── SECTION III — WHAT WE ACTUALLY DO ─── */
 const engagementItems = [
-{ text: "Converting implicit judgment into documented decision logic", note: "methodology documentation and knowledge transfer" },
-{ text: "Formalizing language into a canonical system others can deliver", note: "curriculum architecture and competence definition" },
-{ text: "Designing curriculum and assessment architecture that defines real competence", note: "certification program design" },
-{ text: "Building communication infrastructure that expresses standards publicly", note: "credentialing and professional designation development" },
-{ text: "Defining governance and enforcement mechanisms that protect quality", note: "standards organization consulting" },
-{ text: "Engineering the appropriate trust mechanism — certification, licensing, or internal standards", note: "licensing framework design" },
-{ text: "Establishing stewardship structures that prevent drift as you scale", note: "quality assurance and governance for certification programs" },
+  "Converting implicit judgment into documented decision logic — accelerated by AI",
+  "Formalizing language into a canonical system others can deliver",
+  "Designing curriculum and assessment architecture that defines real competence",
+  "Building communication infrastructure that expresses standards publicly",
+  "Defining governance and enforcement mechanisms that protect quality",
+  "Engineering the appropriate trust mechanism — certification, licensing, or internal standards",
+  "Establishing AI-monitored stewardship structures that prevent drift as you scale",
 ];
 
 
@@ -116,14 +116,14 @@ const WhatWeDo = () =>
         </h2>
         <p className="text-base text-muted-foreground mb-2">Not through templates.</p>
         <p className="text-base text-muted-foreground mb-8">Not through generic deliverables.</p>
-        <p className="text-lg text-foreground mb-2">Through architecture.</p>
-        <p className="text-base text-muted-foreground mb-8">The structure that makes your expertise transferable — and durable.</p>
+        <p className="text-lg text-foreground mb-2">Through architecture — and intelligent systems.</p>
+        <p className="text-base text-muted-foreground mb-8">The structure that makes your expertise transferable, durable, and scalable with AI.</p>
         <p className="text-base text-foreground mb-4">Engagement could involve:</p>
         <ul className="space-y-3 mb-8">
-          {engagementItems.map((item) =>
-        <li key={item.text} className="flex items-start gap-3 text-base text-foreground/80">
+          {engagementItems.map((item, i) =>
+        <li key={i} className="flex items-start gap-3 text-base text-foreground/80">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-              <span>{item.text} <span className="text-muted-foreground italic text-sm">({item.note})</span></span>
+              {item}
             </li>
         )}
         </ul>
@@ -291,10 +291,11 @@ const Closing = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
           Request a Method Audit
         </Button>
       </FadeIn>
-      <FadeIn delay={400}>
-        <Divider />
-        <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <img src={certainlyLogo} alt="Certainly" className="h-4" />
+    </div>
+    <FadeIn delay={400}>
+      <div className="relative z-10 border-t border-border mx-6 mt-20">
+        <footer className="mt-10 pb-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground max-w-7xl mx-auto">
+          <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-8" />
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -302,8 +303,8 @@ const Closing = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
             <span>Method architecture for disciplined growth.</span>
           </div>
         </footer>
-      </FadeIn>
-    </div>
+      </div>
+    </FadeIn>
   </section>;
 
 
@@ -314,14 +315,14 @@ const Index = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Certification Program Design &amp; Methodology Consulting | Certainly</title>
-        <meta name="description" content="Certainly helps founders and institutions design certification programs, licensing frameworks, and governance systems that make proprietary expertise scalable and transferable." />
-        <link rel="canonical" href="https://method.certainly.coop/" />
-        <meta property="og:title" content="Turn Your Expertise Into a Scalable Certification Program | Certainly" />
+        <title>Certification Program Design &amp; Methodology Consulting | Method Lab by Certainly</title>
+        <meta name="description" content="Method Lab by Certainly helps founders and institutions design certification programs, licensing frameworks, and governance systems that make proprietary expertise scalable and transferable." />
+        <link rel="canonical" href="https://method-lab.ai/" />
+        <meta property="og:title" content="Turn Your Expertise Into a Scalable Certification Program | Method Lab by Certainly" />
         <meta property="og:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
-        <meta property="og:url" content="https://method.certainly.coop/" />
+        <meta property="og:url" content="https://method-lab.ai/" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Turn Your Expertise Into a Scalable Certification Program | Certainly" />
+        <meta name="twitter:title" content="Turn Your Expertise Into a Scalable Certification Program | Method Lab by Certainly" />
         <meta name="twitter:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
       </Helmet>
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />

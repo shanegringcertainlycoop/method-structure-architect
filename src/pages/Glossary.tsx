@@ -309,29 +309,29 @@ const Glossary = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Certification &amp; Credentialing Glossary | Certainly</title>
+        <title>Certification &amp; Credentialing Glossary | Method Lab by Certainly</title>
         <meta name="description" content="Definitions for the language of certification, credentialing, and trust architecture — including certification, credential, governance, assessment, stewardship, and more." />
-        <link rel="canonical" href="https://method.certainly.coop/glossary" />
-        <meta property="og:title" content="Certification &amp; Credentialing Glossary | Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/glossary" />
+        <meta property="og:title" content="Certification &amp; Credentialing Glossary | Method Lab by Certainly" />
         <meta property="og:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
-        <meta property="og:url" content="https://method.certainly.coop/glossary" />
+        <meta property="og:url" content="https://method-lab.ai/glossary" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Certainly" />
+        <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Method Lab by Certainly" />
         <meta name="twitter:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "DefinedTermSet",
           "name": "Certification & Credentialing Glossary",
           "description": "Definitions for the language of certification, credentialing, and trust architecture.",
-          "url": "https://method.certainly.coop/glossary",
+          "url": "https://method-lab.ai/glossary",
           "hasDefinedTerm": glossaryData.flatMap(cat =>
             cat.terms.map(term => ({
               "@type": "DefinedTerm",
               "name": term.title,
               "description": term.definition,
-              "url": `https://method.certainly.coop/glossary#${term.id}`,
-              "inDefinedTermSet": "https://method.certainly.coop/glossary"
+              "url": `https://method-lab.ai/glossary#${term.id}`,
+              "inDefinedTermSet": "https://method-lab.ai/glossary"
             }))
           )
         })}</script>
@@ -384,7 +384,7 @@ const Glossary = () => {
           <FadeIn delay={400}>
             <Divider />
             <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-              <img src={certainlyLogo} alt="Certainly" className="h-4" />
+              <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" />
               <div className="flex items-center gap-6 mt-4 sm:mt-0">
                 <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
                 <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>

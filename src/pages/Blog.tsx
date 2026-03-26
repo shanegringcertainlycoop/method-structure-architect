@@ -42,12 +42,12 @@ const Blog = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Blog — Certification Design &amp; Methodology Consulting Insights | Certainly</title>
+        <title>Blog — Certification Design &amp; Methodology Consulting Insights | Method Lab by Certainly</title>
         <meta name="description" content="Practical guides on building certification programs, documenting proprietary methodologies, designing licensing frameworks, and scaling expert-led businesses." />
-        <link rel="canonical" href="https://method.certainly.coop/blog" />
-        <meta property="og:title" content="Blog | Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/blog" />
+        <meta property="og:title" content="Blog | Method Lab by Certainly" />
         <meta property="og:description" content="Practical guides on certification program design, methodology documentation, and scaling expert-led businesses." />
-        <meta property="og:url" content="https://method.certainly.coop/blog" />
+        <meta property="og:url" content="https://method-lab.ai/blog" />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -136,16 +136,15 @@ const Blog = () => {
               Structure precedes scale.
             </p>
             <Button
-              asChild
+              onClick={() => setAssessmentOpen(true)}
               className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto">
-
-              <Link to="/">Request a Method Audit</Link>
+              Request a Method Audit
             </Button>
           </FadeIn>
           <FadeIn delay={300}>
             <Divider />
             <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-              <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+              <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
               <div className="flex items-center gap-6 mt-4 sm:mt-0">
                 <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
                 <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -155,6 +154,8 @@ const Blog = () => {
           </FadeIn>
         </div>
       </section>
+
+      <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>);
 
 };

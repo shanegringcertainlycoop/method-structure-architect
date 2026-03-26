@@ -198,7 +198,7 @@ const ExaminesSection = () => (
       <FadeIn delay={400}>
         <div className="mt-14 max-w-2xl">
           <p className="text-foreground font-medium">This is not a brainstorming exercise.</p>
-          <p className="font-serif italic text-muted-foreground mt-2">It is a structured evaluation.</p>
+          <p className="font-serif italic text-muted-foreground mt-2">It is an AI-informed structural evaluation.</p>
         </div>
       </FadeIn>
     </div>
@@ -545,7 +545,7 @@ const FinalCTA = ({ onStrategyCall }: { onStrategyCall: () => void }) => (
       <FadeIn delay={400}>
         <Divider />
         <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -565,24 +565,24 @@ const StrategySprint = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Strategy Sprint™ — Certification Readiness Assessment | Certainly</title>
+        <title>Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly</title>
         <meta name="description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
-        <link rel="canonical" href="https://method.certainly.coop/strategy-sprint" />
-        <meta property="og:title" content="Strategy Sprint™ — Certification Readiness Assessment | Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/strategy-sprint" />
+        <meta property="og:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
         <meta property="og:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
-        <meta property="og:url" content="https://method.certainly.coop/strategy-sprint" />
+        <meta property="og:url" content="https://method-lab.ai/strategy-sprint" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Strategy Sprint™ — Certification Readiness Assessment | Certainly" />
+        <meta name="twitter:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
         <meta name="twitter:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Strategy Sprint™",
           "description": "Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions.",
-          "url": "https://method.certainly.coop/strategy-sprint",
+          "url": "https://method-lab.ai/strategy-sprint",
           "serviceType": "Certification Strategy Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

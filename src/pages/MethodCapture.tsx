@@ -55,7 +55,7 @@ const HeroModule = ({ onClarityCall }: { onClarityCall: () => void }) => (
             If your method lives in judgment, lived experience, and live delivery — not documentation — scale introduces drift.
           </p>
           <p>
-            Method Capture extracts the invisible structure of your work while you're actively delivering it. You don't pause revenue. You don't disappear into curriculum writing. You keep teaching. We capture the architecture.
+            Method Capture uses AI-assisted extraction to reveal the invisible structure of your work while you're actively delivering it. You don't pause revenue. You don't disappear into curriculum writing. You keep teaching. We capture the architecture.
           </p>
         </div>
       </FadeIn>
@@ -192,7 +192,7 @@ const layers = [
 
 const captureItems = [
   "Your framework and named distinctions",
-  "The decision logic behind your calls",
+  "The decision logic behind your calls — mapped through AI pattern analysis",
   "Where you override the script",
   "The boundary conditions where your method breaks",
   "The signals that tell you someone is ready",
@@ -630,7 +630,7 @@ const FinalCTA = ({ onClarityCall }: { onClarityCall: () => void }) => (
       <FadeIn delay={400}>
         <Divider />
         <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -650,24 +650,24 @@ const MethodCapture = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Method Capture™ — Document & Systematize Your Proprietary Method | Certainly</title>
-        <meta name="description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
-        <link rel="canonical" href="https://method.certainly.coop/method-capture" />
-        <meta property="og:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Certainly" />
-        <meta property="og:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
-        <meta property="og:url" content="https://method.certainly.coop/method-capture" />
+        <title>Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly</title>
+        <meta name="description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Method Lab by Certainly." />
+        <link rel="canonical" href="https://method-lab.ai/method-capture" />
+        <meta property="og:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly" />
+        <meta property="og:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Method Lab by Certainly." />
+        <meta property="og:url" content="https://method-lab.ai/method-capture" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Certainly" />
-        <meta name="twitter:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Certainly." />
+        <meta name="twitter:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly" />
+        <meta name="twitter:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Method Lab by Certainly." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Method Capture™",
           "description": "Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder.",
-          "url": "https://method.certainly.coop/method-capture",
+          "url": "https://method-lab.ai/method-capture",
           "serviceType": "Methodology Documentation & Knowledge Architecture",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

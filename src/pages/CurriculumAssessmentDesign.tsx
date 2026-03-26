@@ -595,24 +595,24 @@ const CurriculumAssessmentDesign = () => {
   return (
     <>
       <Helmet>
-        <title>Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly</title>
-        <meta name="description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
-        <link rel="canonical" href="https://method.certainly.coop/curriculum-assessment-design" />
-        <meta property="og:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly" />
-        <meta property="og:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
-        <meta property="og:url" content="https://method.certainly.coop/curriculum-assessment-design" />
+        <title>Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Method Lab by Certainly</title>
+        <meta name="description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Method Lab by Certainly." />
+        <link rel="canonical" href="https://method-lab.ai/curriculum-assessment-design" />
+        <meta property="og:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Method Lab by Certainly" />
+        <meta property="og:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Method Lab by Certainly." />
+        <meta property="og:url" content="https://method-lab.ai/curriculum-assessment-design" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Certainly" />
-        <meta name="twitter:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Certainly." />
+        <meta name="twitter:title" content="Curriculum & Assessment Design™ — Define Competence, Enforce Standards | Method Lab by Certainly" />
+        <meta name="twitter:description" content="Design how competence is defined, taught, and verified — so your credential means something real. Curriculum & Assessment Design by Method Lab by Certainly." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Curriculum & Assessment Design™",
           "description": "Design how competence is defined, taught, and verified — so your credential means something real.",
-          "url": "https://method.certainly.coop/curriculum-assessment-design",
+          "url": "https://method-lab.ai/curriculum-assessment-design",
           "serviceType": "Curriculum Architecture & Assessment Design",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

@@ -152,10 +152,10 @@ const BlogPost = () => {
       <Helmet>
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
-        <link rel="canonical" href={`https://method.certainly.coop/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://method-lab.ai/blog/${post.slug}`} />
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
-        <meta property="og:url" content={`https://method.certainly.coop/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://method-lab.ai/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         {post.image && <meta property="og:image" content={post.image} />}
         {post.imageAlt && <meta property="og:image:alt" content={post.imageAlt} />}
@@ -170,26 +170,26 @@ const BlogPost = () => {
           "headline": post.metaTitle,
           "description": post.metaDescription,
           "datePublished": post.publishedAt,
-          "url": `https://method.certainly.coop/blog/${post.slug}`,
+          "url": `https://method-lab.ai/blog/${post.slug}`,
           ...(post.image ? { "image": post.image } : {}),
           "author": {
             "@type": "Organization",
-            "name": "Certainly",
-            "url": "https://method.certainly.coop"
+            "name": "Method Lab by Certainly",
+            "url": "https://method-lab.ai"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Certainly",
-            "url": "https://method.certainly.coop"
+            "name": "Method Lab by Certainly",
+            "url": "https://method-lab.ai"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://method.certainly.coop/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://method.certainly.coop/blog" },
-            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://method.certainly.coop/blog/${post.slug}` }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://method-lab.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://method-lab.ai/blog" },
+            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://method-lab.ai/blog/${post.slug}` }
           ]
         })}</script>
         {isHowTo && howToSteps.length >= 2 && (
@@ -296,7 +296,7 @@ const BlogPost = () => {
       {/* CTA */}
       <section className="px-6 py-24 max-w-2xl mx-auto text-center">
         <FadeIn>
-          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-6">Work With Certainly</p>
+          <p className="text-xs tracking-[0.25em] uppercase text-accent mb-6">Work With Method Lab</p>
           <h2 className="font-serif text-3xl sm:text-4xl font-normal mb-6 text-foreground">
             Ready to build the structure?
           </h2>
@@ -305,10 +305,10 @@ const BlogPost = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              asChild
+              onClick={() => setAssessmentOpen(true)}
               className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-4 text-base tracking-wide h-auto"
             >
-              <Link to="/">Request a Method Audit</Link>
+              Request a Method Audit
             </Button>
             <Button
               asChild
@@ -371,7 +371,7 @@ const BlogPost = () => {
       {/* Footer */}
       <div className="border-t border-border">
         <footer className="px-6 py-10 max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Certainly" className="h-4" /></Link>
+          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
             <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
@@ -379,6 +379,8 @@ const BlogPost = () => {
           </div>
         </footer>
       </div>
+
+      <AssessmentModal open={assessmentOpen} onOpenChange={setAssessmentOpen} />
     </div>
   );
 };

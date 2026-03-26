@@ -608,24 +608,24 @@ const PilotCertification = () => {
   return (
     <>
       <Helmet>
-        <title>120-Day Pilot Certification™ — Launch a Public Credential | Certainly</title>
-        <meta name="description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
-        <link rel="canonical" href="https://method.certainly.coop/120-day-pilot" />
-        <meta property="og:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Certainly" />
-        <meta property="og:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
-        <meta property="og:url" content="https://method.certainly.coop/120-day-pilot" />
+        <title>120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly</title>
+        <meta name="description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Method Lab by Certainly." />
+        <link rel="canonical" href="https://method-lab.ai/120-day-pilot" />
+        <meta property="og:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly" />
+        <meta property="og:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Method Lab by Certainly." />
+        <meta property="og:url" content="https://method-lab.ai/120-day-pilot" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Certainly" />
-        <meta name="twitter:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Certainly." />
+        <meta name="twitter:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly" />
+        <meta name="twitter:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Method Lab by Certainly." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "120-Day Pilot Certification™",
           "description": "Launch a public, first-party credential deliberately, credibly, and without overbuilding.",
-          "url": "https://method.certainly.coop/120-day-pilot",
+          "url": "https://method-lab.ai/120-day-pilot",
           "serviceType": "Certification Program Launch",
-          "provider": { "@type": "ProfessionalService", "name": "Certainly", "url": "https://method.certainly.coop" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
