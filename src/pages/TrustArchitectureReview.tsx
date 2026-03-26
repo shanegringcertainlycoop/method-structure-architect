@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import SiteNav from "@/components/SiteNav";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import SiteFooter from "@/components/SiteFooter";
 
 const Divider = () => <div className="w-full h-px bg-border" />;
 const SectionMarker = ({ numeral }: { numeral: string }) => (
@@ -191,18 +191,7 @@ const TrustArchitectureReview = () => {
               </Link>
             </div>
           </FadeIn>
-          <FadeIn delay={400}>
-            <Divider />
-            <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-              <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" />
-              <div className="flex items-center gap-6 mt-4 sm:mt-0">
-                <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
-                <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
-                <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-                <span>Method architecture for disciplined growth.</span>
-              </div>
-            </footer>
-          </FadeIn>
+          <SiteFooter />
         </div>
       </section>
 

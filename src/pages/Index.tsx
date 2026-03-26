@@ -14,8 +14,8 @@ import TransformationSection from "@/components/TransformationSection";
 import FAQSection from "@/components/FAQSection";
 import BentoSection from "@/components/BentoSection";
 // romanBust is now served from public folder
-import certainlyLogo from "@/assets/certainly-logo.png";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import structuralPartner from "@/assets/structural-partner.avif";
 import romanColumns from "@/assets/roman-columns.png";
 import closingBg from "@/assets/closing-bg.avif";
@@ -292,19 +292,7 @@ const Closing = ({ onRequestAssessment }: {onRequestAssessment: () => void;}) =>
         </Button>
       </FadeIn>
     </div>
-    <FadeIn delay={400}>
-      <div className="relative z-10 border-t border-border mx-6 mt-20">
-        <footer className="mt-10 pb-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground max-w-7xl mx-auto">
-          <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-8" />
-          <div className="flex items-center gap-6 mt-4 sm:mt-0">
-            <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
-            <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
-            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-            <span>Method architecture for disciplined growth.</span>
-          </div>
-        </footer>
-      </div>
-    </FadeIn>
+    <SiteFooter />
   </section>;
 
 

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import SiteNav from "@/components/SiteNav";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import SiteFooter from "@/components/SiteFooter";
 import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 /* ─── SHARED HELPERS ─── */
@@ -576,17 +576,7 @@ const FinalCTA = ({ onBuildPath }: { onBuildPath: () => void }) => (
           </Button>
         </div>
       </FadeIn>
-      <FadeIn delay={400}>
-        <Divider />
-        <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground">
-          <Link to="/"><img src={certainlyLogo} alt="Method Lab by Certainly" className="h-4" /></Link>
-          <div className="flex items-center gap-6 mt-4 sm:mt-0">
-            <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
-            <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
-            <Link to="/blog" className="hover:text-foreground transition-colors">Musings</Link>
-          </div>
-        </footer>
-      </FadeIn>
+      <SiteFooter />
     </div>
   </section>
 );
