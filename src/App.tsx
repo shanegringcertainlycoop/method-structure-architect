@@ -20,6 +20,7 @@ import BrandInfrastructure from "./pages/BrandInfrastructure";
 import PilotCertification from "./pages/PilotCertification";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudy from "./pages/CaseStudy";
+import TrustDimension from "./pages/TrustDimension";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/120-day-pilot" element={<PilotCertification />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
+          <Route path="/systems-of-trust/:slug" element={<TrustDimension />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

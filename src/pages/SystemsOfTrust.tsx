@@ -95,30 +95,35 @@ const CoreDefinition = () => (
 const dimensions = [
   {
     title: "Source",
+    slug: "source",
     subtitle: "Where trust originates",
     body: "Authority derives from identifiable foundations: research and theory, demonstrated outcomes, institutional backing, market validation.",
     detail: "The nature of the source determines what can be credibly claimed.",
   },
   {
     title: "Transfer",
+    slug: "transfer",
     subtitle: "How trust moves",
     body: "Trust requires a pathway. Documentation, learning structures, assessment, and demonstrated outcomes allow credibility to move beyond the originator.",
     detail: "Strong transfer enables scale while preserving quality.",
   },
   {
     title: "Signal",
+    slug: "signal",
     subtitle: "How trust is recognized",
     body: "Trust must be legible to function. Language, positioning, designation systems, and verification tools allow others to interpret what competence represents.",
     detail: "Clarity in signal strengthens adoption and recognition.",
   },
   {
     title: "Integrity",
+    slug: "integrity",
     subtitle: "What protects trust",
     body: "Growth introduces operational and economic pressures. Governance structures, decision rights, and quality controls preserve coherence as demand increases.",
     detail: "Integrity sustains meaning over time.",
   },
   {
     title: "Risk",
+    slug: "risk",
     subtitle: "Where trust is vulnerable",
     body: "Every trust system carries exposure. Operational limits, reputational sensitivity, governance concentration, and economic alignment determine where fragility exists.",
     detail: "Mapping risk allows intentional mitigation.",
@@ -154,6 +159,12 @@ const FiveDimensions = () => (
                 <ChevronDown className="w-3 h-3" />
                 <span>More</span>
               </CollapsibleTrigger>
+              <Link
+                to={`/systems-of-trust/${dim.slug}`}
+                className="inline-flex items-center gap-1.5 text-xs text-accent mt-4 hover:gap-2.5 transition-all"
+              >
+                Explore <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
           </Collapsible>
         </FadeIn>
