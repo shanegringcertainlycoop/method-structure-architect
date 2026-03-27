@@ -21,7 +21,10 @@ export interface BlogPost {
   sections: BlogSection[];
 }
 
+import { dimensionBlogPosts } from "./dimensionBlogPosts";
+
 export const blogPosts: BlogPost[] = [
+  ...dimensionBlogPosts,
   {
     slug: "certification-vs-licensing",
     title: "Certification vs. Licensing: Which Is Right for Your Method?",
