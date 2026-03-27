@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import certainlyLogo from "@/assets/method-lab-logo.svg";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

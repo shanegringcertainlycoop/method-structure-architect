@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import certainlyLogo from "@/assets/method-lab-logo.svg";
 import ProgramsDropdown from "@/components/ProgramsDropdown";
 
 const mobileLinks = [

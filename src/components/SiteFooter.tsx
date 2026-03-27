@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import certainlyLogo from "@/assets/method-lab-logo.svg";
 
 const SiteFooter = ({ delay = 400 }: { delay?: number }) => (
   <FadeIn delay={delay}>

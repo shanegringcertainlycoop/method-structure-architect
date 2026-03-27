@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import FadeIn from "@/components/FadeIn";
-import certainlyLogo from "@/assets/certainly-logo.png";
+import certainlyLogo from "@/assets/method-lab-logo.svg";
 
 const transformations = [
   { before: "Framework in conversation.", after: "Framework in documented blueprint." },
