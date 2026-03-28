@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
+import SiteFooter from "@/components/SiteFooter";
 import FadeIn from "@/components/FadeIn";
 import AssessmentModal from "@/components/AssessmentModal";
 import SiteNav from "@/components/SiteNav";
@@ -666,6 +667,7 @@ const CurriculumAssessmentDesign = () => {
         </section>
       </main>
       <AssessmentModal open={modalOpen} onOpenChange={setModalOpen} />
+      <SiteFooter />
     </>
   );
 };

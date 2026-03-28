@@ -2,6 +2,7 @@ import { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import SiteFooter from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import certainlyLogo from "@/assets/method-lab-logo.svg";
@@ -1120,6 +1121,7 @@ const TrustReviewWorkbook = () => {
           </div>
         </section>
       )}
+      <SiteFooter />
     </div>
   );
 };
