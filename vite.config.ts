@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode, isSsrBuild }) => ({
+export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -20,14 +20,12 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
   },
   ssr: {
     // Bundle these into the SSR output to avoid CJS/ESM interop issues
-    noExternal: isSsrBuild
-      ? [
-          "react-helmet-async",
-          "lucide-react",
-          "class-variance-authority",
-          "clsx",
-          "tailwind-merge",
-        ]
-      : [],
+    noExternal: [
+      "react-helmet-async",
+      "lucide-react",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+    ],
   },
 }));
