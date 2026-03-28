@@ -130,7 +130,41 @@ console.log(
   `[prerender] Rendered ${rendered}/${prerenderRoutes.length} pages into dist/`
 );
 
-// ── 4. Clean up the server bundle (not needed at runtime) ───────────────────
+// ── 4. Generate sitemap.xml ──────────────────────────────────────────────────
+{
+  const { blogPosts } = await import(path.resolve(serverDir, "entry-server.js").replace("entry-server.js", "entry-server.js")).then(() => import(path.resolve(serverDir, "entry-server.js"))).catch(() => ({}));
+
+  const SITE = "https://method-lab.ai";
+  const today = new Date().toISOString().split("T")[0];
+
+  const urls = prerenderRoutes.map((route) => {
+    let priority = "0.7";
+    let changefreq = "monthly";
+    if (route === "/") { priority = "1.0"; }
+    else if (route === "/blog") { priority = "0.8"; changefreq = "weekly"; }
+    else if (["/systems-of-trust", "/case-studies", "/trust-architecture-review"].includes(route)) { priority = "0.9"; }
+    else if (route.startsWith("/case-studies/") || route.startsWith("/systems-of-trust/")) { priority = "0.8"; }
+    else if (!route.startsWith("/blog/")) { priority = "0.8"; }
+
+    return { loc: `${SITE}${route}`, lastmod: today, changefreq, priority };
+  });
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join("\n")}
+</urlset>
+`;
+
+  fs.writeFileSync(path.resolve(distDir, "sitemap.xml"), xml);
+  console.log(`[sitemap] Generated with ${urls.length} URLs`);
+}
+
+// ── 5. Clean up the server bundle (not needed at runtime) ───────────────────
 fs.rmSync(serverDir, { recursive: true, force: true });
 console.log("[prerender] Cleaned up server bundle.");
 
