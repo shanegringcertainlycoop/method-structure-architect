@@ -207,13 +207,13 @@ const engagementPhases = [
 },
 {
   numeral: "III",
-  title: "Trust Mechanism Modules™",
+  title: "Trust Building Artifacts™",
   level: "Level 3",
   subtitle: "(8–12 weeks or 120-day pilot)",
   intro: "Install the structural components that make trust durable.",
   bullets: ["Benchmark Audit", "Curriculum & Assessment Architecture", "Credential Signal Infrastructure", "120-Day Pilot Installation"],
   closing: "This is institutional construction.",
-  to: "/trust-mechanism-modules",
+  to: "/trust-building-artifacts",
 },
 {
   numeral: "IV",

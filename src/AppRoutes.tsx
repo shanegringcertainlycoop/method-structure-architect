@@ -6,7 +6,7 @@ import Glossary from "./pages/Glossary";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import StrategySprint from "./pages/StrategySprint";
-import TrustMechanismModules from "./pages/TrustMechanismModules";
+import TrustBuildingArtifacts from "./pages/TrustBuildingArtifacts";
 import FractionalCredentialOperations from "./pages/FractionalCredentialOperations";
 import TrustArchitectureReview from "./pages/TrustArchitectureReview";
 import TrustReviewWorkbook from "./pages/TrustReviewWorkbook";
@@ -28,7 +28,7 @@ const AppRoutes = () => (
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/strategy-sprint" element={<StrategySprint />} />
-    <Route path="/trust-mechanism-modules" element={<TrustMechanismModules />} />
+    <Route path="/trust-building-artifacts" element={<TrustBuildingArtifacts />} />
     <Route path="/fractional-credential-operations" element={<FractionalCredentialOperations />} />
     <Route path="/trust-architecture-review" element={<TrustArchitectureReview />} />
     <Route path="/trust-review-workbook" element={<TrustReviewWorkbook />} />

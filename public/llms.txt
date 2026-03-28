@@ -22,7 +22,7 @@ Certainly's engagements follow a four-level progression:
 
 1. **Level 0 — Diagnose**: Trust Architecture Review ($9 workbook) or Strategy Sprint™ (consulting engagement). Establishes whether and what to build.
 2. **Level 1 — Preserve**: Method Capture™. Extracts, documents, and structures the proprietary method.
-3. **Level 2 — Build**: Trust Mechanism Modules™. Modular installation of assessment architecture, curriculum design, brand infrastructure, governance, and pilot launch.
+3. **Level 2 — Build**: Trust Building Artifacts™. Modular installation of assessment architecture, curriculum design, brand infrastructure, governance, and pilot launch.
 4. **Level 3 — Steward**: Fractional Credential Operations™. Ongoing operational ownership of the credential as a business unit.
 
 ## Services
@@ -34,7 +34,7 @@ Certainly's engagements follow a four-level progression:
 - [Curriculum & Assessment Design™](https://method-lab.ai/curriculum-assessment-design): Designs how competence is defined, taught, and verified — including competence frameworks, assessment architecture, rubrics, and pass/fail logic.
 - [Brand Infrastructure™](https://method-lab.ai/brand-infrastructure): Builds the identity, narrative, verification systems, and market legibility infrastructure that allow a credential to carry weight.
 - [120-Day Pilot Certification™](https://method-lab.ai/120-day-pilot): Structured launch of a first public credential — deliberately, credibly, and without overbuilding.
-- [Trust Mechanism Modules™](https://method-lab.ai/trust-mechanism-modules): Modular installation of individual trust infrastructure components (audit, assessment, curriculum, brand, governance, pilot).
+- [Trust Building Artifacts™](https://method-lab.ai/trust-building-artifacts): Modular installation of individual trust infrastructure components (audit, assessment, curriculum, brand, governance, pilot).
 - [Fractional Credential Operations™](https://method-lab.ai/fractional-credential-operations): Ongoing operational stewardship of a credential program — intake, assessment, governance, and revenue systems.
 
 ## Key Concepts

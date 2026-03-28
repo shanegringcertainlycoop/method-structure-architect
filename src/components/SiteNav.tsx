@@ -9,7 +9,7 @@ const mobileLinks = [
   { label: "Trust Architecture™ Review", to: "/trust-architecture-review" },
   { label: "Method Capture™", to: "/method-capture" },
   { label: "Strategy Sprint™", to: "/strategy-sprint" },
-  { label: "Trust Mechanism Modules™", to: "/trust-mechanism-modules" },
+  { label: "Trust Building Artifacts™", to: "/trust-building-artifacts" },
   { label: "Fractional Credential Operations™", to: "/fractional-credential-operations" },
   { label: "Systems of Trust™", to: "/systems-of-trust" },
   { label: "Musings", to: "/blog" },
