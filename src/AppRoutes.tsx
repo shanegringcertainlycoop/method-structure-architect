@@ -17,6 +17,7 @@ import PilotCertification from "./pages/PilotCertification";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudy from "./pages/CaseStudy";
 import TrustDimension from "./pages/TrustDimension";
+import PromptKit from "./pages/PromptKit";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
@@ -39,6 +40,7 @@ const AppRoutes = () => (
     <Route path="/case-studies" element={<CaseStudies />} />
     <Route path="/case-studies/:slug" element={<CaseStudy />} />
     <Route path="/systems-of-trust/:slug" element={<TrustDimension />} />
+    <Route path="/prompt-kit" element={<PromptKit />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
