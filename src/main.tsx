@@ -1,19 +1,12 @@
-import { createRoot, hydrateRoot } from "react-dom/client";
+import { hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
-const rootElement = document.getElementById("root")!;
-const app = (
+// Every page is prerendered at build time, so hydrate the existing HTML.
+hydrateRoot(
+  document.getElementById("root")!,
   <HelmetProvider>
     <App />
   </HelmetProvider>
 );
-
-// If react-snap pre-rendered this page, hydrate the existing HTML.
-// Otherwise, do a fresh client-side render.
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, app);
-} else {
-  createRoot(rootElement).render(app);
-}

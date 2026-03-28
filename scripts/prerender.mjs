@@ -4,6 +4,9 @@
  * After `vite build` (client) and `vite build --ssr` (server), this script
  * imports the SSR bundle, renders every known route to HTML, and writes the
  * result into dist/ so each page is a standalone, crawler-friendly HTML file.
+ *
+ * Routes are derived from the data files (blogPosts, caseStudies,
+ * trustDimensions) — no hardcoded slug lists to keep in sync.
  */
 
 import fs from "node:fs";
@@ -28,105 +31,48 @@ if (!globalThis.navigator) {
 }
 globalThis.matchMedia =
   globalThis.matchMedia ||
-  (() => ({ matches: false, addListener: () => {}, removeListener: () => {}, addEventListener: () => {}, removeEventListener: () => {} }));
-globalThis.requestAnimationFrame = globalThis.requestAnimationFrame || ((cb) => setTimeout(cb, 0));
-globalThis.cancelAnimationFrame = globalThis.cancelAnimationFrame || clearTimeout;
-globalThis.ResizeObserver = globalThis.ResizeObserver || class { observe() {} unobserve() {} disconnect() {} };
-globalThis.IntersectionObserver = globalThis.IntersectionObserver || class { observe() {} unobserve() {} disconnect() {} };
+  (() => ({
+    matches: false,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+  }));
+globalThis.requestAnimationFrame =
+  globalThis.requestAnimationFrame || ((cb) => setTimeout(cb, 0));
+globalThis.cancelAnimationFrame =
+  globalThis.cancelAnimationFrame || clearTimeout;
+globalThis.ResizeObserver =
+  globalThis.ResizeObserver ||
+  class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+globalThis.IntersectionObserver =
+  globalThis.IntersectionObserver ||
+  class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(distDir, "server");
 
 // ── 1. Import the SSR bundle ────────────────────────────────────────────────
-const { render } = await import(path.resolve(serverDir, "entry-server.js"));
+const { render, prerenderRoutes } = await import(
+  path.resolve(serverDir, "entry-server.js")
+);
 
 // ── 2. Read the client-built index.html as the HTML shell ───────────────────
 const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");
 
-// ── 3. Every route that should become its own static HTML page ──────────────
-const staticRoutes = [
-  "/",
-  "/systems-of-trust",
-  "/method-capture",
-  "/glossary",
-  "/blog",
-  "/strategy-sprint",
-  "/trust-mechanism-modules",
-  "/fractional-credential-operations",
-  "/trust-architecture-review",
-  "/trust-review-workbook",
-  "/benchmark-audit",
-  "/curriculum-assessment-design",
-  "/brand-infrastructure",
-  "/120-day-pilot",
-  "/case-studies",
-];
-
-const blogSlugs = [
-  "certification-vs-licensing",
-  "how-to-build-a-certification-program",
-  "certificate-vs-certification",
-  "how-to-document-a-proprietary-methodology",
-  "how-to-scale-a-consulting-firm",
-  "what-is-a-standards-organization",
-  "why-certification-programs-fail",
-  "business-case-for-methodology-documentation",
-  "how-to-design-a-certification-assessment",
-  "how-to-write-competence-standards",
-  "what-is-a-competence-framework",
-  "how-to-price-a-certification-program",
-  "what-is-accreditation",
-  "how-to-protect-intellectual-property-consulting",
-  "how-to-build-a-body-of-knowledge",
-  "knowledge-transfer-why-it-fails",
-  "how-to-run-a-certification-pilot",
-  "certification-program-governance",
-  "first-second-third-party-verification",
-  "how-to-set-up-a-certification-body",
-  "what-is-iso-17024",
-  "how-to-turn-training-into-certification",
-  "how-to-certify-practitioners-in-your-method",
-  "certification-program-design-for-coaches",
-  "what-makes-a-certification-credible",
-  "how-to-write-a-certification-exam",
-  "train-the-trainer-program-design",
-  "what-is-a-professional-designation",
-  "how-to-scale-a-certification-program",
-  "how-to-license-your-framework-to-other-practitioners",
-  "how-to-build-a-micro-credential-program",
-  "how-to-add-ceus-to-your-certification-program",
-  "how-to-issue-digital-badges-for-your-certification",
-  "certification-maintenance-and-recertification",
-  "how-to-choose-a-certification-exam-platform",
-  "what-is-a-job-task-analysis",
-  "how-to-get-employers-to-recognize-your-certification",
-  "how-to-set-a-passing-score-for-your-certification-exam",
-  "how-to-market-a-certification-program",
-  "your-method-is-your-moat",
-];
-
-const caseStudySlugs = ["well-ap", "iwbi-digital-standard", "advance", "drvn"];
-
-const trustDimensionSlugs = [
-  "source",
-  "transfer",
-  "signal",
-  "integrity",
-  "risk",
-];
-
-const routes = [
-  ...staticRoutes,
-  ...blogSlugs.map((s) => `/blog/${s}`),
-  ...caseStudySlugs.map((s) => `/case-studies/${s}`),
-  ...trustDimensionSlugs.map((s) => `/systems-of-trust/${s}`),
-];
-
-// ── 4. Render each route and write the HTML ─────────────────────────────────
+// ── 3. Render each route and write the HTML ─────────────────────────────────
 let rendered = 0;
 
-for (const route of routes) {
+for (const route of prerenderRoutes) {
   try {
     const { html, helmet } = render(route);
 
@@ -139,13 +85,11 @@ for (const route of routes) {
     if (helmet) {
       const helmetTitle = helmet.title?.toString();
       if (helmetTitle) {
-        // Replace the default <title> with the page-specific one
         page = page.replace(/<title>[^<]*<\/title>/, helmetTitle);
       }
 
       const helmetMeta = helmet.meta?.toString();
       if (helmetMeta) {
-        // Replace default description and OG/twitter meta tags
         page = page.replace(/<meta name="description"[^>]*>/, "");
         page = page.replace(/<meta property="og:title"[^>]*>/, "");
         page = page.replace(/<meta property="og:description"[^>]*>/, "");
@@ -158,7 +102,6 @@ for (const route of routes) {
 
       const helmetLink = helmet.link?.toString();
       if (helmetLink) {
-        // Replace default canonical
         page = page.replace(/<link rel="canonical"[^>]*>/, "");
         page = page.replace("</head>", `    ${helmetLink}\n  </head>`);
       }
@@ -169,7 +112,7 @@ for (const route of routes) {
       }
     }
 
-    // Determine output file path: "/" → dist/index.html, "/blog" → dist/blog/index.html
+    // "/" → dist/index.html, "/blog/foo" → dist/blog/foo/index.html
     const outPath =
       route === "/"
         ? path.resolve(distDir, "index.html")
@@ -183,9 +126,11 @@ for (const route of routes) {
   }
 }
 
-console.log(`[prerender] Rendered ${rendered}/${routes.length} pages into dist/`);
+console.log(
+  `[prerender] Rendered ${rendered}/${prerenderRoutes.length} pages into dist/`
+);
 
-// ── 5. Clean up the server bundle (not needed at runtime) ───────────────────
+// ── 4. Clean up the server bundle (not needed at runtime) ───────────────────
 fs.rmSync(serverDir, { recursive: true, force: true });
 console.log("[prerender] Cleaned up server bundle.");
 
