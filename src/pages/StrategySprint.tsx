@@ -583,7 +583,7 @@ const StrategySprint = () => {
             { "@type": "Question", "name": "Who is the Strategy Sprint for?", "acceptedAnswer": { "@type": "Answer", "text": "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." } },
             { "@type": "Question", "name": "What do we get at the end?", "acceptedAnswer": { "@type": "Answer", "text": "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." } },
             { "@type": "Question", "name": "Do we need an existing certification program to participate?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." } },
-            { "@type": "Question", "name": "What happens after the Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "If the recommendation is to build, you move to Trust Mechanism Modules or a full architecture engagement. You'll know exactly what to prioritize and why." } }
+            { "@type": "Question", "name": "What happens after the Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." } }
           ]
         })}</script>
       </Helmet>
@@ -625,7 +625,7 @@ const StrategySprint = () => {
               { q: "Who is the Strategy Sprint for?", a: "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." },
               { q: "What do we get at the end?", a: "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." },
               { q: "Do we need an existing certification program to participate?", a: "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." },
-              { q: "What happens after the Strategy Sprint?", a: "If the recommendation is to build, you move to Trust Mechanism Modules or a full architecture engagement. You'll know exactly what to prioritize and why." },
+              { q: "What happens after the Strategy Sprint?", a: "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." },
             ].map((item, i) => (
               <div key={i} className="py-8">
                 <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>

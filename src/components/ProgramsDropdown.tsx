@@ -6,7 +6,7 @@ const programs = [
   { label: "Level 0 — Trust Architecture™ Review", to: "/trust-architecture-review" },
   { label: "Level 1 — Method Capture™", to: "/method-capture" },
   { label: "Level 2 — Strategy Sprint™", to: "/strategy-sprint" },
-  { label: "Level 3 — Trust Mechanism Modules™", to: "/trust-mechanism-modules" },
+  { label: "Level 3 — Trust Building Artifacts™", to: "/trust-building-artifacts" },
   { label: "Level 4 — Fractional Credential Operations™", to: "/fractional-credential-operations" },
 ];
 

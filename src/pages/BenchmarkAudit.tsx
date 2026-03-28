@@ -66,7 +66,7 @@ const HeroModule = ({ onRequestAudit }: { onRequestAudit: () => void }) => (
             className="rounded-sm px-8 py-5 text-base tracking-wide font-medium h-auto"
             style={{ borderColor: "#D4D0C8", color: "#1A1A1A", backgroundColor: "transparent" }}
           >
-            <Link to="/trust-mechanism-modules">
+            <Link to="/trust-building-artifacts">
               Compare Level 3 Modules <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>
@@ -255,7 +255,7 @@ const auditDeliverables = [
   { title: "Gap Analysis & Prioritized Recommendations", desc: "Clear identification of what's missing, what's at risk, and what matters most — sequenced logically." },
   { title: "Risk Assessment & Readiness Scoring", desc: "Evaluation of reputational, operational, and financial exposure prior to launch." },
   { title: "Executive Summary Brief", desc: "Board-ready memo for stakeholder alignment." },
-  { title: "Module Recommendation Map", desc: "Specific guidance on which Trust Mechanism Modules™ to engage next — and in what order." },
+  { title: "Module Recommendation Map", desc: "Specific guidance on which Trust Building Artifacts™ to engage next — and in what order." },
 ];
 
 const Deliverables = () => (

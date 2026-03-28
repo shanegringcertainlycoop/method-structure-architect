@@ -68,7 +68,7 @@ const HeroModule = ({ onRequest }: { onRequest: () => void }) => (
             className="rounded-sm px-8 py-5 text-base tracking-wide font-medium h-auto"
             style={{ borderColor: "#D4D0C8", color: "#1A1A1A", backgroundColor: "transparent" }}
           >
-            <Link to="/trust-mechanism-modules">
+            <Link to="/trust-building-artifacts">
               Compare Level 3 Modules <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>

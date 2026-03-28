@@ -16,7 +16,7 @@ const STATIC_URLS = [
   `https://${HOST}/blog`,
   `https://${HOST}/services/strategy-sprint`,
   `https://${HOST}/services/trust-architecture-review`,
-  `https://${HOST}/services/trust-mechanism-modules`,
+  `https://${HOST}/services/trust-building-artifacts`,
   `https://${HOST}/services/fractional-credential-operations`,
   `https://${HOST}/services/method-capture`,
   `https://${HOST}/services/benchmark-audit`,

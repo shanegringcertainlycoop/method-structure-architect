@@ -20,7 +20,7 @@ export const prerenderRoutes: string[] = [
   "/glossary",
   "/blog",
   "/strategy-sprint",
-  "/trust-mechanism-modules",
+  "/trust-building-artifacts",
   "/fractional-credential-operations",
   "/trust-architecture-review",
   "/trust-review-workbook",

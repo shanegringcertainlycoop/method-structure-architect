@@ -41,7 +41,7 @@ const HeroModule = ({ onBuildPath }: { onBuildPath: () => void }) => (
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight mb-6" style={{ color: "#1A1A1A" }}>
-          Trust Mechanism Modules™
+          Trust Building Artifacts™
         </h1>
         <div className="w-full h-px mb-8" style={{ backgroundColor: "#D4D0C8" }} />
       </FadeIn>
@@ -379,7 +379,7 @@ const WhatMakesThisDifferent = () => (
         </ul>
       </FadeIn>
       <FadeIn delay={400}>
-        <p className="text-base text-foreground font-medium mb-4">Trust Mechanism Modules™ build:</p>
+        <p className="text-base text-foreground font-medium mb-4">Trust Building Artifacts™ build:</p>
         <ul className="space-y-2 text-left max-w-md mx-auto mb-10">
           {[
             "Policy architecture",
@@ -582,29 +582,29 @@ const FinalCTA = ({ onBuildPath }: { onBuildPath: () => void }) => (
 );
 
 /* ─── PAGE ─── */
-const TrustMechanismModules = () => {
+const TrustBuildingArtifacts = () => {
   const [assessmentOpen, setAssessmentOpen] = useState(false);
   const openAssessment = () => setAssessmentOpen(true);
 
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly</title>
+        <title>Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly</title>
         <meta name="description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <link rel="canonical" href="https://method-lab.ai/trust-mechanism-modules" />
-        <meta property="og:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
+        <link rel="canonical" href="https://method-lab.ai/trust-building-artifacts" />
+        <meta property="og:title" content="Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
         <meta property="og:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <meta property="og:url" content="https://method-lab.ai/trust-mechanism-modules" />
+        <meta property="og:url" content="https://method-lab.ai/trust-building-artifacts" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trust Mechanism Modules™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
+        <meta name="twitter:title" content="Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
         <meta name="twitter:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Trust Mechanism Modules™",
+          "name": "Trust Building Artifacts™",
           "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
-          "url": "https://method-lab.ai/trust-mechanism-modules",
+          "url": "https://method-lab.ai/trust-building-artifacts",
           "serviceType": "Certification Infrastructure Consulting",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
@@ -613,7 +613,7 @@ const TrustMechanismModules = () => {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "What are Trust Mechanism Modules?", "acceptedAnswer": { "@type": "Answer", "text": "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." } },
+            { "@type": "Question", "name": "What are Trust Building Artifacts?", "acceptedAnswer": { "@type": "Answer", "text": "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." } },
             { "@type": "Question", "name": "How do I know which modules to select?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." } },
             { "@type": "Question", "name": "Can I buy individual modules without doing the Strategy Sprint first?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." } },
             { "@type": "Question", "name": "How long does a module typically take to deliver?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." } }
@@ -652,7 +652,7 @@ const TrustMechanismModules = () => {
           <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
           <div className="divide-y divide-border">
             {[
-              { q: "What are Trust Mechanism Modules?", a: "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." },
+              { q: "What are Trust Building Artifacts?", a: "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." },
               { q: "How do I know which modules to select?", a: "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." },
               { q: "Can I buy individual modules without doing the Strategy Sprint first?", a: "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." },
               { q: "How long does a module typically take to deliver?", a: "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." },
@@ -670,4 +670,4 @@ const TrustMechanismModules = () => {
   );
 };
 
-export default TrustMechanismModules;
+export default TrustBuildingArtifacts;
