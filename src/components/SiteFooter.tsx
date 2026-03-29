@@ -10,6 +10,7 @@ const SiteFooter = ({ delay = 400 }: { delay?: number }) => (
           <img src={certainlyLogo} alt="Method Lab by Certainly" className="h-8" />
         </Link>
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <Link to="/why" className="hover:text-foreground transition-colors">Why</Link>
           <Link to="/systems-of-trust" className="hover:text-foreground transition-colors">Framework</Link>
           <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
           <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>

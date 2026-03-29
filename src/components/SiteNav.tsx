@@ -7,6 +7,7 @@ import ProgramsDropdown from "@/components/ProgramsDropdown";
 import AudienceDropdown from "@/components/AudienceDropdown";
 
 const mobileLinks = [
+  { label: "Why This Matters", to: "/why" },
   { label: "Trust Architecture™ Review", to: "/trust-architecture-review" },
   { label: "Method Capture™", to: "/method-capture" },
   { label: "Strategy Sprint™", to: "/strategy-sprint" },
@@ -39,6 +40,12 @@ const SiteNav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
         <div className="hidden md:flex items-center gap-6">
           <ProgramsDropdown />
           <AudienceDropdown />
+          <Link
+            to="/why"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+          >
+            Why
+          </Link>
           <Link
             to="/systems-of-trust"
             className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
