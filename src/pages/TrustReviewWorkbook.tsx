@@ -777,7 +777,7 @@ const TrustReviewWorkbook = () => {
           name="description"
           content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage."
         />
-        <link rel="canonical" href="https://method-lab.ai/trust-review-workbook" />
+        <link rel="canonical" href="https://method-lab.ai/trust-review-workbook/" />
         <style>{`
           @media print {
             .no-print { display: none !important; }

@@ -35,10 +35,10 @@ const TrustArchitectureReview = () => {
       <Helmet>
         <title>Trust Architecture Review — $9 Diagnostic Workbook | Method Lab by Certainly</title>
         <meta name="description" content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust." />
-        <link rel="canonical" href="https://method-lab.ai/trust-architecture-review" />
+        <link rel="canonical" href="https://method-lab.ai/trust-architecture-review/" />
         <meta property="og:title" content="Trust Architecture Review — $9 Diagnostic Workbook | Method Lab by Certainly" />
         <meta property="og:description" content="Understand how trust actually works in your business before you invest in certification or scaling. A self-guided diagnostic workbook covering five dimensions of trust." />
-        <meta property="og:url" content="https://method-lab.ai/trust-architecture-review" />
+        <meta property="og:url" content="https://method-lab.ai/trust-architecture-review/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Trust Architecture Review — $9 Diagnostic Workbook | Method Lab by Certainly" />

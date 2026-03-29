@@ -642,10 +642,10 @@ const MethodCapture = () => {
       <Helmet>
         <title>Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly</title>
         <meta name="description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Method Lab by Certainly." />
-        <link rel="canonical" href="https://method-lab.ai/method-capture" />
+        <link rel="canonical" href="https://method-lab.ai/method-capture/" />
         <meta property="og:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly" />
         <meta property="og:description" content="Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder. Method Capture by Method Lab by Certainly." />
-        <meta property="og:url" content="https://method-lab.ai/method-capture" />
+        <meta property="og:url" content="https://method-lab.ai/method-capture/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Method Capture™ — Document & Systematize Your Proprietary Method | Method Lab by Certainly" />
@@ -655,7 +655,7 @@ const MethodCapture = () => {
           "@type": "Service",
           "name": "Method Capture™",
           "description": "Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder.",
-          "url": "https://method-lab.ai/method-capture",
+          "url": "https://method-lab.ai/method-capture/",
           "serviceType": "Methodology Documentation & Knowledge Architecture",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

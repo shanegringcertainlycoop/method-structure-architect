@@ -557,10 +557,10 @@ const StrategySprint = () => {
       <Helmet>
         <title>Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly</title>
         <meta name="description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
-        <link rel="canonical" href="https://method-lab.ai/strategy-sprint" />
+        <link rel="canonical" href="https://method-lab.ai/strategy-sprint/" />
         <meta property="og:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
         <meta property="og:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
-        <meta property="og:url" content="https://method-lab.ai/strategy-sprint" />
+        <meta property="og:url" content="https://method-lab.ai/strategy-sprint/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
@@ -570,7 +570,7 @@ const StrategySprint = () => {
           "@type": "Service",
           "name": "Strategy Sprint™",
           "description": "Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions.",
-          "url": "https://method-lab.ai/strategy-sprint",
+          "url": "https://method-lab.ai/strategy-sprint/",
           "serviceType": "Certification Strategy Consulting",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

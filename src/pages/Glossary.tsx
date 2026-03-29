@@ -310,10 +310,10 @@ const Glossary = () => {
       <Helmet>
         <title>Certification &amp; Credentialing Glossary | Method Lab by Certainly</title>
         <meta name="description" content="Definitions for the language of certification, credentialing, and trust architecture — including certification, credential, governance, assessment, stewardship, and more." />
-        <link rel="canonical" href="https://method-lab.ai/glossary" />
+        <link rel="canonical" href="https://method-lab.ai/glossary/" />
         <meta property="og:title" content="Certification &amp; Credentialing Glossary | Method Lab by Certainly" />
         <meta property="og:description" content="Clear definitions for the language of certification program design, credentialing, and trust architecture." />
-        <meta property="og:url" content="https://method-lab.ai/glossary" />
+        <meta property="og:url" content="https://method-lab.ai/glossary/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Certification &amp; Credentialing Glossary | Method Lab by Certainly" />
@@ -323,14 +323,14 @@ const Glossary = () => {
           "@type": "DefinedTermSet",
           "name": "Certification & Credentialing Glossary",
           "description": "Definitions for the language of certification, credentialing, and trust architecture.",
-          "url": "https://method-lab.ai/glossary",
+          "url": "https://method-lab.ai/glossary/",
           "hasDefinedTerm": glossaryData.flatMap(cat =>
             cat.terms.map(term => ({
               "@type": "DefinedTerm",
               "name": term.title,
               "description": term.definition,
-              "url": `https://method-lab.ai/glossary#${term.id}`,
-              "inDefinedTermSet": "https://method-lab.ai/glossary"
+              "url": `https://method-lab.ai/glossary/#${term.id}`,
+              "inDefinedTermSet": "https://method-lab.ai/glossary/"
             }))
           )
         })}</script>

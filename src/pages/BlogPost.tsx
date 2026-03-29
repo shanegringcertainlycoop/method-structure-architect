@@ -152,10 +152,10 @@ const BlogPost = () => {
       <Helmet>
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
-        <link rel="canonical" href={`https://method-lab.ai/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://method-lab.ai/blog/${post.slug}/`} />
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
-        <meta property="og:url" content={`https://method-lab.ai/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://method-lab.ai/blog/${post.slug}/`} />
         <meta property="og:type" content="article" />
         {post.image && <meta property="og:image" content={post.image} />}
         {post.imageAlt && <meta property="og:image:alt" content={post.imageAlt} />}
@@ -170,7 +170,7 @@ const BlogPost = () => {
           "headline": post.metaTitle,
           "description": post.metaDescription,
           "datePublished": post.publishedAt,
-          "url": `https://method-lab.ai/blog/${post.slug}`,
+          "url": `https://method-lab.ai/blog/${post.slug}/`,
           ...(post.image ? { "image": post.image } : {}),
           "author": {
             "@type": "Organization",
@@ -188,8 +188,8 @@ const BlogPost = () => {
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://method-lab.ai/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://method-lab.ai/blog" },
-            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://method-lab.ai/blog/${post.slug}` }
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://method-lab.ai/blog/" },
+            { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://method-lab.ai/blog/${post.slug}/` }
           ]
         })}</script>
         {isHowTo && howToSteps.length >= 2 && (

@@ -611,10 +611,10 @@ const PilotCertification = () => {
       <Helmet>
         <title>120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly</title>
         <meta name="description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Method Lab by Certainly." />
-        <link rel="canonical" href="https://method-lab.ai/120-day-pilot" />
+        <link rel="canonical" href="https://method-lab.ai/120-day-pilot/" />
         <meta property="og:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly" />
         <meta property="og:description" content="Launch a public, first-party credential deliberately, credibly, and without overbuilding. 120-Day Pilot Certification by Method Lab by Certainly." />
-        <meta property="og:url" content="https://method-lab.ai/120-day-pilot" />
+        <meta property="og:url" content="https://method-lab.ai/120-day-pilot/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="120-Day Pilot Certification™ — Launch a Public Credential | Method Lab by Certainly" />
@@ -624,7 +624,7 @@ const PilotCertification = () => {
           "@type": "Service",
           "name": "120-Day Pilot Certification™",
           "description": "Launch a public, first-party credential deliberately, credibly, and without overbuilding.",
-          "url": "https://method-lab.ai/120-day-pilot",
+          "url": "https://method-lab.ai/120-day-pilot/",
           "serviceType": "Certification Program Launch",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

@@ -29,6 +29,11 @@ const TrustDimension = () => {
       <Helmet>
         <title>{dim.metaTitle}</title>
         <meta name="description" content={dim.metaDescription} />
+        <link rel="canonical" href={`https://method-lab.ai/systems-of-trust/${dim.slug}/`} />
+        <meta property="og:title" content={dim.metaTitle} />
+        <meta property="og:description" content={dim.metaDescription} />
+        <meta property="og:url" content={`https://method-lab.ai/systems-of-trust/${dim.slug}/`} />
+        <meta property="og:type" content="article" />
       </Helmet>
 
       <SiteNav onRequestAssessment={() => setAssessmentOpen(true)} />

@@ -22,13 +22,13 @@ const CaseStudies = () => {
           name="description"
           content="See how Certainly has helped organizations build Systems of Trust -- from global credential programs to national equity initiatives. Real results, real infrastructure."
         />
-        <link rel="canonical" href="https://method-lab.ai/case-studies" />
+        <link rel="canonical" href="https://method-lab.ai/case-studies/" />
         <meta property="og:title" content="Case Studies | Method Lab by Certainly" />
         <meta
           property="og:description"
           content="See how Certainly has helped organizations build Systems of Trust -- from global credential programs to national equity initiatives."
         />
-        <meta property="og:url" content="https://method-lab.ai/case-studies" />
+        <meta property="og:url" content="https://method-lab.ai/case-studies/" />
         <meta property="og:type" content="website" />
       </Helmet>
 

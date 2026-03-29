@@ -626,10 +626,10 @@ const BrandInfrastructure = () => {
       <Helmet>
         <title>Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly</title>
         <meta name="description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Method Lab by Certainly." />
-        <link rel="canonical" href="https://method-lab.ai/brand-infrastructure" />
+        <link rel="canonical" href="https://method-lab.ai/brand-infrastructure/" />
         <meta property="og:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly" />
         <meta property="og:description" content="Build the identity, narrative, and verification systems that allow your credential to carry weight in the market. Brand Infrastructure by Method Lab by Certainly." />
-        <meta property="og:url" content="https://method-lab.ai/brand-infrastructure" />
+        <meta property="og:url" content="https://method-lab.ai/brand-infrastructure/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brand Infrastructure™ — Signaling, Verification & Market Legibility | Method Lab by Certainly" />
@@ -639,7 +639,7 @@ const BrandInfrastructure = () => {
           "@type": "Service",
           "name": "Brand Infrastructure™",
           "description": "Build the identity, narrative, and verification systems that allow your credential to carry weight in the market.",
-          "url": "https://method-lab.ai/brand-infrastructure",
+          "url": "https://method-lab.ai/brand-infrastructure/",
           "serviceType": "Credential Brand & Verification Infrastructure",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

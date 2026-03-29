@@ -44,10 +44,10 @@ const Blog = () => {
       <Helmet>
         <title>Blog — Certification Design &amp; Methodology Consulting Insights | Method Lab by Certainly</title>
         <meta name="description" content="Practical guides on building certification programs, documenting proprietary methodologies, designing licensing frameworks, and scaling expert-led businesses." />
-        <link rel="canonical" href="https://method-lab.ai/blog" />
+        <link rel="canonical" href="https://method-lab.ai/blog/" />
         <meta property="og:title" content="Blog | Method Lab by Certainly" />
         <meta property="og:description" content="Practical guides on certification program design, methodology documentation, and scaling expert-led businesses." />
-        <meta property="og:url" content="https://method-lab.ai/blog" />
+        <meta property="og:url" content="https://method-lab.ai/blog/" />
         <meta property="og:type" content="website" />
       </Helmet>
 

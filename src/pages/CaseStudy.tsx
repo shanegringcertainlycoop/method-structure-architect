@@ -26,10 +26,10 @@ const CaseStudy = () => {
       <Helmet>
         <title>{cs.metaTitle}</title>
         <meta name="description" content={cs.metaDescription} />
-        <link rel="canonical" href={`https://method-lab.ai/case-studies/${cs.slug}`} />
+        <link rel="canonical" href={`https://method-lab.ai/case-studies/${cs.slug}/`} />
         <meta property="og:title" content={cs.metaTitle} />
         <meta property="og:description" content={cs.metaDescription} />
-        <meta property="og:url" content={`https://method-lab.ai/case-studies/${cs.slug}`} />
+        <meta property="og:url" content={`https://method-lab.ai/case-studies/${cs.slug}/`} />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -37,7 +37,7 @@ const CaseStudy = () => {
             "@type": "Article",
             headline: cs.title,
             description: cs.metaDescription,
-            url: `https://method-lab.ai/case-studies/${cs.slug}`,
+            url: `https://method-lab.ai/case-studies/${cs.slug}/`,
             publisher: {
               "@type": "Organization",
               name: "Certainly",
@@ -50,8 +50,8 @@ const CaseStudy = () => {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://method-lab.ai/" },
-              { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://method-lab.ai/case-studies" },
-              { "@type": "ListItem", position: 3, name: cs.title, item: `https://method-lab.ai/case-studies/${cs.slug}` },
+              { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://method-lab.ai/case-studies/" },
+              { "@type": "ListItem", position: 3, name: cs.title, item: `https://method-lab.ai/case-studies/${cs.slug}/` },
             ],
           })}
         </script>

@@ -146,7 +146,9 @@ console.log(
     else if (route.startsWith("/case-studies/") || route.startsWith("/systems-of-trust/")) { priority = "0.8"; }
     else if (!route.startsWith("/blog/")) { priority = "0.8"; }
 
-    return { loc: `${SITE}${route}`, lastmod: today, changefreq, priority };
+    // Ensure all URLs end with trailing slash to match hosting platform behavior
+    const trailingRoute = route.endsWith("/") ? route : `${route}/`;
+    return { loc: `${SITE}${trailingRoute}`, lastmod: today, changefreq, priority };
   });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

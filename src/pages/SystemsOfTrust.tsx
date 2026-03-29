@@ -429,10 +429,10 @@ const SystemsOfTrust = () => {
       <Helmet>
         <title>Systems of Trust™ — A Framework for Designing Durable Authority | Method Lab by Certainly</title>
         <meta name="description" content="Systems of Trust™ is Method Lab by Certainly's framework for evaluating and designing durable professional authority across five dimensions: Source, Transfer, Signal, Integrity, and Risk." />
-        <link rel="canonical" href="https://method-lab.ai/systems-of-trust" />
+        <link rel="canonical" href="https://method-lab.ai/systems-of-trust/" />
         <meta property="og:title" content="Systems of Trust™ — A Framework for Designing Durable Authority | Method Lab by Certainly" />
         <meta property="og:description" content="A structured framework for understanding how professional trust works — and how to design it so it scales without dilution." />
-        <meta property="og:url" content="https://method-lab.ai/systems-of-trust" />
+        <meta property="og:url" content="https://method-lab.ai/systems-of-trust/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Systems of Trust™ — A Framework for Designing Durable Authority | Method Lab by Certainly" />
         <meta name="twitter:description" content="A structured framework for understanding how professional trust works — and how to design it so it scales without dilution." />

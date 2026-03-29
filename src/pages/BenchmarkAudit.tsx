@@ -548,10 +548,10 @@ const BenchmarkAudit = () => {
       <Helmet>
         <title>Benchmark Audit™ — Diagnostic Before Capital Deployment | Method Lab by Certainly</title>
         <meta name="description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Method Lab by Certainly." />
-        <link rel="canonical" href="https://method-lab.ai/benchmark-audit" />
+        <link rel="canonical" href="https://method-lab.ai/benchmark-audit/" />
         <meta property="og:title" content="Benchmark Audit™ — Diagnostic Before Capital Deployment | Method Lab by Certainly" />
         <meta property="og:description" content="Structured readiness assessment across five dimensions before committing resources to a credential. Benchmark Audit by Method Lab by Certainly." />
-        <meta property="og:url" content="https://method-lab.ai/benchmark-audit" />
+        <meta property="og:url" content="https://method-lab.ai/benchmark-audit/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Benchmark Audit™ — Diagnostic Before Capital Deployment | Method Lab by Certainly" />
@@ -561,7 +561,7 @@ const BenchmarkAudit = () => {
           "@type": "Service",
           "name": "Benchmark Audit™",
           "description": "Structured readiness assessment across five dimensions before committing resources to a credential.",
-          "url": "https://method-lab.ai/benchmark-audit",
+          "url": "https://method-lab.ai/benchmark-audit/",
           "serviceType": "Certification Readiness Assessment",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

@@ -591,10 +591,10 @@ const TrustBuildingArtifacts = () => {
       <Helmet>
         <title>Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly</title>
         <meta name="description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <link rel="canonical" href="https://method-lab.ai/trust-building-artifacts" />
+        <link rel="canonical" href="https://method-lab.ai/trust-building-artifacts/" />
         <meta property="og:title" content="Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
         <meta property="og:description" content="Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations." />
-        <meta property="og:url" content="https://method-lab.ai/trust-building-artifacts" />
+        <meta property="og:url" content="https://method-lab.ai/trust-building-artifacts/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Trust Building Artifacts™ — Install Durable Trust Infrastructure | Method Lab by Certainly" />
@@ -604,7 +604,7 @@ const TrustBuildingArtifacts = () => {
           "@type": "Service",
           "name": "Trust Building Artifacts™",
           "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
-          "url": "https://method-lab.ai/trust-building-artifacts",
+          "url": "https://method-lab.ai/trust-building-artifacts/",
           "serviceType": "Certification Infrastructure Consulting",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"

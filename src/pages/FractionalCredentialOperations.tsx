@@ -515,10 +515,10 @@ const FractionalCredentialOperations = () => {
       <Helmet>
         <title>Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly</title>
         <meta name="description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
-        <link rel="canonical" href="https://method-lab.ai/fractional-credential-operations" />
+        <link rel="canonical" href="https://method-lab.ai/fractional-credential-operations/" />
         <meta property="og:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly" />
         <meta property="og:description" content="Steward your credential as a durable business unit. Fractional operations provides accountable ownership of intake, assessment, governance, and revenue systems." />
-        <meta property="og:url" content="https://method-lab.ai/fractional-credential-operations" />
+        <meta property="og:url" content="https://method-lab.ai/fractional-credential-operations/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Fractional Credential Operations™ — Durable Operational Stewardship | Method Lab by Certainly" />
@@ -528,7 +528,7 @@ const FractionalCredentialOperations = () => {
           "@type": "Service",
           "name": "Fractional Credential Operations™",
           "description": "Steward your credential as a durable business unit. Accountable ownership of intake, assessment, governance, and revenue systems.",
-          "url": "https://method-lab.ai/fractional-credential-operations",
+          "url": "https://method-lab.ai/fractional-credential-operations/",
           "serviceType": "Credential Operations & Stewardship",
           "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
           "areaServed": "Worldwide"
