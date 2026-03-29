@@ -106,14 +106,14 @@ const PromptKit = () => {
           name="description"
           content="15 free, copy-paste AI prompts to help you extract your methodology, design curriculum, build governance, and launch a certification program. From Method Lab by Certainly."
         />
-        <link rel="canonical" href="https://method-lab.ai/prompt-kit" />
+        <link rel="canonical" href="https://method-lab.ai/prompt-kit/" />
         <meta property="og:title" content="Method Architecture Prompt Kit — Free AI Prompts for Certification Design" />
         <meta
           property="og:description"
           content="15 free AI prompts to turn your expertise into a structured certification program. Extract your method, design assessments, build governance, and plan your launch."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://method-lab.ai/prompt-kit" />
+        <meta property="og:url" content="https://method-lab.ai/prompt-kit/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Method Architecture Prompt Kit — Free AI Prompts for Certification Design" />
         <meta
@@ -311,7 +311,7 @@ const PromptKit = () => {
             name: "Method Architecture Prompt Kit",
             description:
               "15 free AI prompts to help consultants and founders extract their methodology, design curriculum, build governance, and launch a certification program.",
-            url: "https://method-lab.ai/prompt-kit",
+            url: "https://method-lab.ai/prompt-kit/",
             provider: {
               "@type": "Organization",
               name: "Method Lab by Certainly",

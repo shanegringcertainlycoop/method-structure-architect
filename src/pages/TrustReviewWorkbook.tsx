@@ -778,6 +778,10 @@ const TrustReviewWorkbook = () => {
           content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage."
         />
         <link rel="canonical" href="https://method-lab.ai/trust-review-workbook/" />
+        <meta property="og:title" content="Trust Review Workbook — Self-Guided Diagnostic | Method Lab by Certainly" />
+        <meta property="og:description" content="A self-guided diagnostic for expert-led businesses. Understand where your credibility comes from, how trust transfers beyond you, and which trust mechanism is right for your stage." />
+        <meta property="og:url" content="https://method-lab.ai/trust-review-workbook/" />
+        <meta property="og:type" content="website" />
         <style>{`
           @media print {
             .no-print { display: none !important; }

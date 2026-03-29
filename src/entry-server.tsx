@@ -29,6 +29,7 @@ export const prerenderRoutes: string[] = [
   "/brand-infrastructure",
   "/120-day-pilot",
   "/case-studies",
+  "/prompt-kit",
   ...blogPosts.map((p) => `/blog/${p.slug}`),
   ...caseStudies.map((c) => `/case-studies/${c.slug}`),
   ...trustDimensions.map((d) => `/systems-of-trust/${d.slug}`),
