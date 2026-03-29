@@ -139,11 +139,12 @@ const WhatWeDo = () =>
 
 /* ─── SECTION V — WHO THIS IS FOR ─── */
 const audienceItems = [
-"Founder-led consulting firms",
-"Standards organizations",
-"Advisory practices with proprietary frameworks",
-"Performance methodologies ready to scale",
-"Institutional leaders stewarding intellectual capital"];
+  { label: "Founder-led consulting firms", to: "/for/consultants" },
+  { label: "Standards organizations", to: "/for/credentialing-organizations" },
+  { label: "Advisory practices with proprietary frameworks", to: "/for/consultants" },
+  { label: "Performance methodologies ready to scale", to: "/for/coaches" },
+  { label: "Institutional leaders stewarding intellectual capital", to: "/for/organizations" },
+];
 
 
 const WhoThisIsFor = () =>
@@ -157,11 +158,11 @@ const WhoThisIsFor = () =>
     </FadeIn>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-0 mb-12">
       {audienceItems.map((item, i) =>
-    <FadeIn key={item} delay={100 * i}>
-          <div className="flex items-center gap-4 py-5 border-b border-border">
+    <FadeIn key={item.label} delay={100 * i}>
+          <Link to={item.to} className="flex items-center gap-4 py-5 border-b border-border group">
             <span className="text-accent font-serif text-sm tabular-nums">{String(i + 1).padStart(2, "0")}</span>
-            <p className="text-base text-foreground">{item}</p>
-          </div>
+            <p className="text-base text-foreground group-hover:text-accent transition-colors">{item.label}</p>
+          </Link>
         </FadeIn>
     )}
     </div>

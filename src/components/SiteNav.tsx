@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import certainlyLogo from "@/assets/method-lab-logo.svg";
 import ProgramsDropdown from "@/components/ProgramsDropdown";
+import AudienceDropdown from "@/components/AudienceDropdown";
 
 const mobileLinks = [
   { label: "Trust Architecture™ Review", to: "/trust-architecture-review" },
@@ -15,6 +16,13 @@ const mobileLinks = [
   { label: "Musings", to: "/blog" },
   { label: "Case Studies", to: "/case-studies" },
   { label: "Glossary", to: "/glossary" },
+];
+
+const mobileAudienceLinks = [
+  { label: "Consultants & Advisors", to: "/for/consultants" },
+  { label: "Credentialing Organizations", to: "/for/credentialing-organizations" },
+  { label: "Coaches & Trainers", to: "/for/coaches" },
+  { label: "Organizations & Institutions", to: "/for/organizations" },
 ];
 
 const SiteNav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) => {
@@ -30,6 +38,7 @@ const SiteNav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
           <ProgramsDropdown />
+          <AudienceDropdown />
           <Link
             to="/systems-of-trust"
             className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
@@ -81,6 +90,19 @@ const SiteNav = ({ onRequestAssessment }: { onRequestAssessment: () => void }) =
             Engagement Levels
           </p>
           {mobileLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setMobileOpen(false)}
+              className="py-3 text-base text-foreground/70 hover:text-foreground border-b border-border/30 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 mt-6 mb-4">
+            Who We Serve
+          </p>
+          {mobileAudienceLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}

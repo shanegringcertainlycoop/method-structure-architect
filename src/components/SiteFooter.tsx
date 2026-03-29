@@ -14,6 +14,10 @@ const SiteFooter = ({ delay = 400 }: { delay?: number }) => (
           <Link to="/glossary" className="hover:text-foreground transition-colors">Glossary</Link>
           <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
           <Link to="/case-studies" className="hover:text-foreground transition-colors">Case Studies</Link>
+          <Link to="/for/consultants" className="hover:text-foreground transition-colors">Consultants</Link>
+          <Link to="/for/credentialing-organizations" className="hover:text-foreground transition-colors">Credentialing Orgs</Link>
+          <Link to="/for/coaches" className="hover:text-foreground transition-colors">Coaches</Link>
+          <Link to="/for/organizations" className="hover:text-foreground transition-colors">Organizations</Link>
         </nav>
         <span className="text-center">Method architecture for disciplined growth.</span>
       </footer>

@@ -7,6 +7,7 @@ import AppRoutes from "./AppRoutes";
 import { blogPosts } from "./data/blogPosts";
 import { caseStudies } from "./data/caseStudies";
 import { trustDimensions } from "./data/trustDimensions";
+import { audiencePages } from "./data/audiencePages";
 
 // Force react-helmet-async into server mode so it populates the context
 // object instead of mutating the real DOM head.
@@ -33,6 +34,7 @@ export const prerenderRoutes: string[] = [
   ...blogPosts.map((p) => `/blog/${p.slug}`),
   ...caseStudies.map((c) => `/case-studies/${c.slug}`),
   ...trustDimensions.map((d) => `/systems-of-trust/${d.slug}`),
+  ...audiencePages.map((a) => `/for/${a.slug}`),
 ];
 
 export function render(url: string) {
