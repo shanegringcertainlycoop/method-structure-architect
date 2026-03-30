@@ -41,7 +41,7 @@ const HeroModule = ({ onStrategyCall }: { onStrategyCall: () => void }) => (
       </FadeIn>
       <FadeIn delay={200}>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight mb-6" style={{ color: "#1A1A1A" }}>
-          Strategy Sprint™
+          Systems Strategy Sprint™
         </h1>
         <div className="w-full h-px mb-8" style={{ backgroundColor: "#D4D0C8" }} />
       </FadeIn>
@@ -55,7 +55,7 @@ const HeroModule = ({ onStrategyCall }: { onStrategyCall: () => void }) => (
             What they actually need is structural clarity.
           </p>
           <p className="font-medium" style={{ color: "#1A1A1A" }}>
-            Strategy Sprint is the formal decision gate.
+            Systems Strategy Sprint is the formal decision gate.
           </p>
         </div>
       </FadeIn>
@@ -154,7 +154,7 @@ const FalseAssumption = () => (
               ))}
             </ul>
             <p className="font-serif italic text-muted-foreground pt-4">
-              Strategy Sprint exists to prevent that mistake.
+              Systems Strategy Sprint exists to prevent that mistake.
             </p>
           </div>
         </div>
@@ -401,7 +401,7 @@ const QualificationFilter = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
         <FadeIn delay={200}>
           <div>
-            <h3 className="font-serif text-2xl mb-8" style={{ color: "#1A1A1A" }}>Strategy Sprint is designed for:</h3>
+            <h3 className="font-serif text-2xl mb-8" style={{ color: "#1A1A1A" }}>Systems Strategy Sprint is designed for:</h3>
             <ul className="space-y-4">
               {forYou.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#444" }}>
@@ -529,7 +529,7 @@ const FinalCTA = ({ onStrategyCall }: { onStrategyCall: () => void }) => (
             onClick={onStrategyCall}
             className="btn-accent-gradient text-accent-foreground rounded-sm px-10 py-5 text-lg tracking-wide font-medium h-auto"
           >
-            Schedule Strategy Sprint Conversation
+            Schedule Systems Strategy Sprint Conversation
           </Button>
           <Button
             asChild
@@ -555,35 +555,35 @@ const StrategySprint = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly</title>
+        <title>Systems Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly</title>
         <meta name="description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
         <link rel="canonical" href="https://method-lab.ai/strategy-sprint/" />
-        <meta property="og:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
+        <meta property="og:title" content="Systems Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
         <meta property="og:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
         <meta property="og:url" content="https://method-lab.ai/strategy-sprint/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
+        <meta name="twitter:title" content="Systems Strategy Sprint™ — Certification Readiness Assessment | Method Lab by Certainly" />
         <meta name="twitter:description" content="Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Strategy Sprint™",
+          "name": "Systems Strategy Sprint™",
           "description": "Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions.",
           "url": "https://method-lab.ai/strategy-sprint/",
           "serviceType": "Certification Strategy Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "What is a Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." } },
-            { "@type": "Question", "name": "Who is the Strategy Sprint for?", "acceptedAnswer": { "@type": "Answer", "text": "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." } },
+            { "@type": "Question", "name": "What is a Systems Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." } },
+            { "@type": "Question", "name": "Who is the Systems Strategy Sprint for?", "acceptedAnswer": { "@type": "Answer", "text": "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." } },
             { "@type": "Question", "name": "What do we get at the end?", "acceptedAnswer": { "@type": "Answer", "text": "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." } },
             { "@type": "Question", "name": "Do we need an existing certification program to participate?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." } },
-            { "@type": "Question", "name": "What happens after the Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." } }
+            { "@type": "Question", "name": "What happens after the Systems Strategy Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." } }
           ]
         })}</script>
       </Helmet>
@@ -621,11 +621,11 @@ const StrategySprint = () => {
           <p className="text-xs tracking-[0.25em] uppercase text-accent mb-10">Frequently Asked Questions</p>
           <div className="divide-y divide-border">
             {[
-              { q: "What is a Strategy Sprint?", a: "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." },
-              { q: "Who is the Strategy Sprint for?", a: "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." },
+              { q: "What is a Systems Strategy Sprint?", a: "A 2–3 week structured evaluation that determines the right trust mechanism for your business — before you commit resources to building the wrong one." },
+              { q: "Who is the Systems Strategy Sprint for?", a: "Expert-led founders and institutions producing results who are ready to formalize their structure but haven't yet determined whether they need certification, licensing, or a different approach." },
               { q: "What do we get at the end?", a: "A formal recommendation document across five dimensions, with a clear rationale and defined next steps." },
               { q: "Do we need an existing certification program to participate?", a: "No. The Sprint is designed for organizations that haven't built yet and want to make the right structural decision before investing." },
-              { q: "What happens after the Strategy Sprint?", a: "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." },
+              { q: "What happens after the Systems Strategy Sprint?", a: "If the recommendation is to build, you move to Trust Building Artifacts or a full architecture engagement. You'll know exactly what to prioritize and why." },
             ].map((item, i) => (
               <div key={i} className="py-8">
                 <h3 className="font-serif text-xl font-normal text-foreground mb-3">{item.q}</h3>

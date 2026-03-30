@@ -51,7 +51,7 @@ const HeroModule = ({ onBuildPath }: { onBuildPath: () => void }) => (
             Install the structural components that make trust durable.
           </p>
           <p>
-            Once Strategy Sprint determines the right mechanism, Level 3 builds it — modularly, precisely, and without excess.
+            Once Systems Strategy Sprint determines the right mechanism, Level 3 builds it — modularly, precisely, and without excess.
           </p>
         </div>
       </FadeIn>
@@ -606,7 +606,7 @@ const TrustBuildingArtifacts = () => {
           "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
           "url": "https://method-lab.ai/trust-building-artifacts/",
           "serviceType": "Certification Infrastructure Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/" },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -614,8 +614,8 @@ const TrustBuildingArtifacts = () => {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "What are Trust Building Artifacts?", "acceptedAnswer": { "@type": "Answer", "text": "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." } },
-            { "@type": "Question", "name": "How do I know which modules to select?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." } },
-            { "@type": "Question", "name": "Can I buy individual modules without doing the Strategy Sprint first?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." } },
+            { "@type": "Question", "name": "How do I know which modules to select?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with the Systems Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." } },
+            { "@type": "Question", "name": "Can I buy individual modules without doing the Systems Strategy Sprint first?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Systems Strategy Sprint." } },
             { "@type": "Question", "name": "How long does a module typically take to deliver?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." } }
           ]
         })}</script>
@@ -653,8 +653,8 @@ const TrustBuildingArtifacts = () => {
           <div className="divide-y divide-border">
             {[
               { q: "What are Trust Building Artifacts?", a: "Standalone implementation builds — benchmark audits, assessment architecture, credential signals, governance frameworks, and pilot installations — selected based on what your program actually needs." },
-              { q: "How do I know which modules to select?", a: "Most clients start with the Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." },
-              { q: "Can I buy individual modules without doing the Strategy Sprint first?", a: "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Strategy Sprint." },
+              { q: "How do I know which modules to select?", a: "Most clients start with the Systems Strategy Sprint or Trust Architecture Review, which produces a recommendation pointing to specific modules. If you already have structural clarity, you can engage modules directly." },
+              { q: "Can I buy individual modules without doing the Systems Strategy Sprint first?", a: "Yes. If you've already determined what needs to be built, you can engage specific modules directly without completing the Systems Strategy Sprint." },
               { q: "How long does a module typically take to deliver?", a: "It depends on the module. Benchmark Audit typically runs 3–4 weeks. Assessment Architecture and Pilot Installation are longer engagements. Each module has defined scope and deliverables." },
             ].map((item, i) => (
               <div key={i} className="py-8">

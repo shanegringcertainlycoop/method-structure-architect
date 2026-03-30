@@ -198,7 +198,7 @@ const engagementPhases = [
 },
 {
   numeral: "II",
-  title: "Strategy Sprint™",
+  title: "Systems Strategy Sprint™",
   level: "Level 2",
   subtitle: "(2–3 weeks)",
   intro: "Determine the right trust mechanism — before you build the wrong one.",

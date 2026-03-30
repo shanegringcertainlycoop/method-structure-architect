@@ -20,7 +20,7 @@ Our work is structured around four phases: Diagnose, Preserve, Build, and Stewar
 
 Certainly's engagements follow a four-level progression:
 
-1. **Level 0 — Diagnose**: Trust Architecture Review ($9 workbook) or Strategy Sprint™ (consulting engagement). Establishes whether and what to build.
+1. **Level 0 — Diagnose**: Trust Architecture Review ($9 workbook) or Systems Strategy Sprint™ (consulting engagement). Establishes whether and what to build.
 2. **Level 1 — Preserve**: Method Capture™. Extracts, documents, and structures the proprietary method.
 3. **Level 2 — Build**: Trust Building Artifacts™. Modular installation of assessment architecture, curriculum design, brand infrastructure, governance, and pilot launch.
 4. **Level 3 — Steward**: Fractional Credential Operations™. Ongoing operational ownership of the credential as a business unit.
@@ -28,7 +28,7 @@ Certainly's engagements follow a four-level progression:
 ## Services
 
 - [Trust Architecture Review](https://method-lab.ai/trust-architecture-review): $9 self-guided diagnostic workbook. Covers five dimensions of trust — where trust comes from, how it transfers, how it signals, what breaks under pressure, and where risk scales. 30–45 minutes.
-- [Strategy Sprint™](https://method-lab.ai/strategy-sprint): 2–3 week structured consulting engagement. Determines the right trust mechanism before building the wrong one.
+- [Systems Strategy Sprint™](https://method-lab.ai/strategy-sprint): 2–3 week structured consulting engagement. Determines the right trust mechanism before building the wrong one.
 - [Method Capture™](https://method-lab.ai/method-capture): Extracts, structures, and protects a proprietary methodology so it can be taught, licensed, and scaled beyond the founder.
 - [Benchmark Audit™](https://method-lab.ai/benchmark-audit): Structured readiness assessment across five dimensions before committing resources to a credential.
 - [Curriculum & Assessment Design™](https://method-lab.ai/curriculum-assessment-design): Designs how competence is defined, taught, and verified — including competence frameworks, assessment architecture, rubrics, and pass/fail logic.

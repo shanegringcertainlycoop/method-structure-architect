@@ -89,7 +89,7 @@ export const audiencePages: AudiencePage[] = [
         to: "/method-capture",
       },
       {
-        title: "Strategy Sprint™",
+        title: "Systems Strategy Sprint™",
         level: "Level 2",
         description: "Design your certification architecture, governance model, and go-to-market strategy.",
         to: "/strategy-sprint",
@@ -203,7 +203,7 @@ export const audiencePages: AudiencePage[] = [
         to: "/trust-architecture-review",
       },
       {
-        title: "Strategy Sprint™",
+        title: "Systems Strategy Sprint™",
         level: "Level 2",
         description:
           "Redesign governance, assessment architecture, or market positioning.",
@@ -318,7 +318,7 @@ export const audiencePages: AudiencePage[] = [
         to: "/method-capture",
       },
       {
-        title: "Strategy Sprint™",
+        title: "Systems Strategy Sprint™",
         level: "Level 2",
         description:
           "Design the certification program, assessment criteria, and practitioner pathway.",

@@ -368,7 +368,7 @@ const TranslationModule = () => (
 const entryPoints = [
   { label: "Understand your existing trust architecture", dest: "Trust Architecture™ Review" },
   { label: "Document and preserve your method", dest: "Method Capture™" },
-  { label: "Determine the appropriate trust mechanism", dest: "Strategy Sprint™" },
+  { label: "Determine the appropriate trust mechanism", dest: "Systems Strategy Sprint™" },
   { label: "Design and pilot a credential", dest: "90-Day Pilot" },
   { label: "Install long-term operational stewardship", dest: "Fractional Credential Operations™" },
 ];
