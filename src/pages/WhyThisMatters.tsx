@@ -377,7 +377,7 @@ const WhyThisMatters = () => {
         "name": "Why Structured Methodology Matters",
         "description": "The data-backed business case for structured methodology — why AI, valuation, and knowledge preservation all depend on capturing and governing your method.",
         "url": "https://method-lab.ai/why/",
-        "publisher": { "@type": "Organization", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+        "publisher": { "@type": "Organization", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
       },
       {
         "@type": "BreadcrumbList",

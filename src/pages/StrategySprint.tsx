@@ -572,7 +572,7 @@ const StrategySprint = () => {
           "description": "Determine the right trust mechanism for your business before you build the wrong one. A 2–3 week structured evaluation across five dimensions.",
           "url": "https://method-lab.ai/strategy-sprint/",
           "serviceType": "Certification Strategy Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

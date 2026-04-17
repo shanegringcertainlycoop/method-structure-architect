@@ -167,10 +167,14 @@ const BlogPost = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "headline": post.metaTitle,
+          "headline": post.title,
           "description": post.metaDescription,
           "datePublished": post.publishedAt,
           "url": `https://method-lab.ai/blog/${post.slug}/`,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://method-lab.ai/blog/${post.slug}/`
+          },
           ...(post.image ? { "image": post.image } : {}),
           "author": {
             "@type": "Organization",
@@ -180,7 +184,11 @@ const BlogPost = () => {
           "publisher": {
             "@type": "Organization",
             "name": "Method Lab by Certainly",
-            "url": "https://method-lab.ai"
+            "url": "https://method-lab.ai",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://method-lab.ai/og-image.png"
+            }
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

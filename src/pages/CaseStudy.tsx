@@ -41,6 +41,7 @@ const CaseStudy = () => {
             publisher: {
               "@type": "Organization",
               name: "Certainly",
+              logo: { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" },
             },
           })}
         </script>

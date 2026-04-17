@@ -563,7 +563,7 @@ const BenchmarkAudit = () => {
           "description": "Structured readiness assessment across five dimensions before committing resources to a credential.",
           "url": "https://method-lab.ai/benchmark-audit/",
           "serviceType": "Certification Readiness Assessment",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
