@@ -110,7 +110,7 @@ const ClientHighlights = () => {
             <div className="flex items-center justify-between">
               <p className="text-xs tracking-widest text-accent uppercase">{study.label}</p>
               <Link
-                to={`/case-studies/${study.slug}`}
+                to={`/case-studies/${study.slug}/`}
                 className="inline-flex items-center gap-2 text-sm text-accent hover:gap-3 transition-all"
               >
                 Read case study <ArrowRight className="w-3.5 h-3.5" />

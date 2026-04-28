@@ -18,6 +18,7 @@ import CaseStudies from "./pages/CaseStudies";
 import CaseStudy from "./pages/CaseStudy";
 import TrustDimension from "./pages/TrustDimension";
 import PromptKit from "./pages/PromptKit";
+import Worksheet from "./pages/Worksheet";
 import AudiencePage from "./pages/AudiencePage";
 import WhyThisMatters from "./pages/WhyThisMatters";
 import NotFound from "./pages/NotFound";
@@ -43,6 +44,7 @@ const AppRoutes = () => (
     <Route path="/case-studies/:slug" element={<CaseStudy />} />
     <Route path="/systems-of-trust/:slug" element={<TrustDimension />} />
     <Route path="/prompt-kit" element={<PromptKit />} />
+    <Route path="/worksheet" element={<Worksheet />} />
     <Route path="/why" element={<WhyThisMatters />} />
     <Route path="/for/:slug" element={<AudiencePage />} />
     <Route path="*" element={<NotFound />} />

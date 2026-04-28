@@ -99,7 +99,7 @@ const Blog = () => {
           {filteredPosts.map((post, i) =>
           <FadeIn key={post.slug} delay={100 * i}>
               <Link
-              to={`/blog/${post.slug}`}
+              to={`/blog/${post.slug}/`}
               className="group flex flex-col sm:flex-row sm:items-start gap-6 py-10 border-b border-border hover:bg-surface/40 transition-colors px-4 -mx-4 rounded-sm">
 
                 <div className="sm:w-32 shrink-0">

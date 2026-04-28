@@ -195,7 +195,7 @@ const TrustDimension = () => {
               <div className="border border-border rounded-sm p-6 bg-card">
                 <p className="text-xs tracking-[0.2em] text-muted-foreground mb-3">RECEIVES FROM</p>
                 <Link
-                  to={`/systems-of-trust/${dim.connectionFrom.slug}`}
+                  to={`/systems-of-trust/${dim.connectionFrom.slug}/`}
                   className="font-serif text-xl text-accent hover:text-accent/80 transition-colors"
                 >
                   {dim.connectionFrom.dimension} →
@@ -209,7 +209,7 @@ const TrustDimension = () => {
               <div className="border border-border rounded-sm p-6 bg-card">
                 <p className="text-xs tracking-[0.2em] text-muted-foreground mb-3">FEEDS INTO</p>
                 <Link
-                  to={`/systems-of-trust/${dim.connectionTo.slug}`}
+                  to={`/systems-of-trust/${dim.connectionTo.slug}/`}
                   className="font-serif text-xl text-accent hover:text-accent/80 transition-colors"
                 >
                   {dim.connectionTo.dimension} →
@@ -228,7 +228,7 @@ const TrustDimension = () => {
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           {prev ? (
             <Link
-              to={`/systems-of-trust/${prev.slug}`}
+              to={`/systems-of-trust/${prev.slug}/`}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ const TrustDimension = () => {
           )}
           {next ? (
             <Link
-              to={`/systems-of-trust/${next.slug}`}
+              to={`/systems-of-trust/${next.slug}/`}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
             >
               {next.title}

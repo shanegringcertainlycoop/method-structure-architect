@@ -1,0 +1,25 @@
+# Trailing-slash canonicalization
+# Redirect non-trailing-slash blog URLs to trailing-slash versions
+# This prevents Google from indexing both /slug and /slug/ as separate pages
+/blog/*  /blog/:splat/  301
+/case-studies/*  /case-studies/:splat/  301
+/systems-of-trust/*  /systems-of-trust/:splat/  301
+/for/*  /for/:splat/  301
+
+# Static pages — redirect non-trailing-slash to trailing-slash
+/systems-of-trust  /systems-of-trust/  301
+/method-capture  /method-capture/  301
+/glossary  /glossary/  301
+/blog  /blog/  301
+/strategy-sprint  /strategy-sprint/  301
+/trust-building-artifacts  /trust-building-artifacts/  301
+/fractional-credential-operations  /fractional-credential-operations/  301
+/trust-architecture-review  /trust-architecture-review/  301
+/trust-review-workbook  /trust-review-workbook/  301
+/benchmark-audit  /benchmark-audit/  301
+/curriculum-assessment-design  /curriculum-assessment-design/  301
+/brand-infrastructure  /brand-infrastructure/  301
+/120-day-pilot  /120-day-pilot/  301
+/case-studies  /case-studies/  301
+/prompt-kit  /prompt-kit/  301
+/why  /why/  301

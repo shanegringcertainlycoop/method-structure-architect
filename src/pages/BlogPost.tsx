@@ -341,7 +341,7 @@ const BlogPost = () => {
               {relatedPosts.map((related, i) => (
                 <FadeIn key={related.slug} delay={100 * i}>
                   <Link
-                    to={`/blog/${related.slug}`}
+                    to={`/blog/${related.slug}/`}
                     className="group flex flex-col gap-4 p-6 border border-border rounded-sm hover:bg-surface/40 transition-colors h-full"
                   >
                     {related.image && (

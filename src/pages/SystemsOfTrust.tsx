@@ -160,7 +160,7 @@ const FiveDimensions = () => (
                 <span>More</span>
               </CollapsibleTrigger>
               <Link
-                to={`/systems-of-trust/${dim.slug}`}
+                to={`/systems-of-trust/${dim.slug}/`}
                 className="inline-flex items-center gap-1.5 text-xs text-accent mt-4 hover:gap-2.5 transition-all"
               >
                 Explore <ArrowRight className="w-3 h-3" />

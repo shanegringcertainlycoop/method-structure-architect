@@ -458,7 +458,7 @@ const CaseStudy = () => {
               {otherStudies.slice(0, 3).map((other, i) => (
                 <FadeIn key={other.slug} delay={i * 100}>
                   <Link
-                    to={`/case-studies/${other.slug}`}
+                    to={`/case-studies/${other.slug}/`}
                     className="group block border border-border rounded-sm p-6 hover:border-accent/40 transition-colors"
                   >
                     {other.heroStats && (
