@@ -165,7 +165,7 @@ const AudiencePage = () => {
             {page.trustDimensions.map((dim, i) => (
               <FadeIn key={dim.slug} delay={100 * i}>
                 <Link
-                  to={`/systems-of-trust/${dim.slug}`}
+                  to={`/systems-of-trust/${dim.slug}/`}
                   className="block border border-border rounded-sm p-6 bg-card hover:border-accent/40 transition-colors group"
                 >
                   <p className="text-xs tracking-[0.2em] text-accent mb-3">
@@ -233,7 +233,7 @@ const AudiencePage = () => {
           </FadeIn>
           <FadeIn delay={100}>
             <Link
-              to={`/case-studies/${page.caseStudy.slug}`}
+              to={`/case-studies/${page.caseStudy.slug}/`}
               className="block border border-border rounded-sm p-8 bg-card hover:border-accent/40 transition-colors group"
             >
               <p className="text-xs tracking-[0.2em] text-muted-foreground mb-4">

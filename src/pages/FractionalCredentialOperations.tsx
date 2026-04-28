@@ -530,7 +530,7 @@ const FractionalCredentialOperations = () => {
           "description": "Steward your credential as a durable business unit. Accountable ownership of intake, assessment, governance, and revenue systems.",
           "url": "https://method-lab.ai/fractional-credential-operations/",
           "serviceType": "Credential Operations & Stewardship",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

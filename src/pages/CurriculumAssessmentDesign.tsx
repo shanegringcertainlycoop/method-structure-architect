@@ -613,7 +613,7 @@ const CurriculumAssessmentDesign = () => {
           "description": "Design how competence is defined, taught, and verified — so your credential means something real.",
           "url": "https://method-lab.ai/curriculum-assessment-design/",
           "serviceType": "Curriculum Architecture & Assessment Design",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

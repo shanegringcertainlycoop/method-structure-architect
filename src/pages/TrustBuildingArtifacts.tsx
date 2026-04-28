@@ -606,7 +606,7 @@ const TrustBuildingArtifacts = () => {
           "description": "Install the structural components that make trust durable. Modular builds for benchmark audits, assessment architecture, credential signals, and pilot installations.",
           "url": "https://method-lab.ai/trust-building-artifacts/",
           "serviceType": "Certification Infrastructure Consulting",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

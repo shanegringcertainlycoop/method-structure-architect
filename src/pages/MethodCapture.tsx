@@ -657,7 +657,7 @@ const MethodCapture = () => {
           "description": "Extract, structure, and protect your methodology so it can be taught, licensed, and scaled beyond the founder.",
           "url": "https://method-lab.ai/method-capture/",
           "serviceType": "Methodology Documentation & Knowledge Architecture",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

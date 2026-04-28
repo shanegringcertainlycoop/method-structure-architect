@@ -48,10 +48,10 @@ const TrustArchitectureReview = () => {
           "@type": "Service",
           "name": "Trust Architecture Review",
           "description": "A self-guided diagnostic workbook covering five dimensions of trust — before you invest in certification or scaling.",
-          "url": "https://method-lab.ai/trust-architecture-review",
+          "url": "https://method-lab.ai/trust-architecture-review/",
           "serviceType": "Certification Readiness Diagnostic",
           "offers": { "@type": "Offer", "price": "9", "priceCurrency": "USD" },
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

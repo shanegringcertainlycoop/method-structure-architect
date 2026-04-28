@@ -63,7 +63,7 @@ const CaseStudies = () => {
           {caseStudies.map((cs, i) => (
             <FadeIn key={cs.slug} delay={100 * i}>
               <Link
-                to={`/case-studies/${cs.slug}`}
+                to={`/case-studies/${cs.slug}/`}
                 className="group flex flex-col gap-6 py-10 border-b border-border hover:bg-surface/40 transition-colors px-4 -mx-4 rounded-sm"
               >
                 {/* Stats row */}

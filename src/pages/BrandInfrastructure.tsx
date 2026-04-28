@@ -641,7 +641,7 @@ const BrandInfrastructure = () => {
           "description": "Build the identity, narrative, and verification systems that allow your credential to carry weight in the market.",
           "url": "https://method-lab.ai/brand-infrastructure/",
           "serviceType": "Credential Brand & Verification Infrastructure",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

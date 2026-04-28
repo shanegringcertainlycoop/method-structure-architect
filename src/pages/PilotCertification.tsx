@@ -626,7 +626,7 @@ const PilotCertification = () => {
           "description": "Launch a public, first-party credential deliberately, credibly, and without overbuilding.",
           "url": "https://method-lab.ai/120-day-pilot/",
           "serviceType": "Certification Program Launch",
-          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai" },
+          "provider": { "@type": "ProfessionalService", "name": "Method Lab by Certainly", "url": "https://method-lab.ai/", "logo": { "@type": "ImageObject", "url": "https://method-lab.ai/og-image.png" } },
           "areaServed": "Worldwide"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

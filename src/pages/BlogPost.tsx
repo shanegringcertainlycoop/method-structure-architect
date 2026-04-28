@@ -167,10 +167,14 @@ const BlogPost = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "headline": post.metaTitle,
+          "headline": post.title,
           "description": post.metaDescription,
           "datePublished": post.publishedAt,
           "url": `https://method-lab.ai/blog/${post.slug}/`,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://method-lab.ai/blog/${post.slug}/`
+          },
           ...(post.image ? { "image": post.image } : {}),
           "author": {
             "@type": "Organization",
@@ -180,7 +184,11 @@ const BlogPost = () => {
           "publisher": {
             "@type": "Organization",
             "name": "Method Lab by Certainly",
-            "url": "https://method-lab.ai"
+            "url": "https://method-lab.ai",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://method-lab.ai/og-image.png"
+            }
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -333,7 +341,7 @@ const BlogPost = () => {
               {relatedPosts.map((related, i) => (
                 <FadeIn key={related.slug} delay={100 * i}>
                   <Link
-                    to={`/blog/${related.slug}`}
+                    to={`/blog/${related.slug}/`}
                     className="group flex flex-col gap-4 p-6 border border-border rounded-sm hover:bg-surface/40 transition-colors h-full"
                   >
                     {related.image && (
