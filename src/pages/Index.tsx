@@ -304,15 +304,15 @@ const Index = () => {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Helmet>
-        <title>Certification Program Design &amp; Methodology Consulting | Method Lab by Certainly</title>
-        <meta name="description" content="Method Lab by Certainly helps founders and institutions design certification programs, licensing frameworks, and governance systems that make proprietary expertise scalable and transferable." />
+        <title>Certification Program Design for Founders | Method Lab</title>
+        <meta name="description" content="Method Lab helps founder-led firms and institutions document, structure, and certify their methodology — so it scales without dilution. Talk to us." />
         <link rel="canonical" href="https://method-lab.ai/" />
-        <meta property="og:title" content="Turn Your Expertise Into a Scalable Certification Program | Method Lab by Certainly" />
-        <meta property="og:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
+        <meta property="og:title" content="Certification Program Design for Founders | Method Lab" />
+        <meta property="og:description" content="Method Lab helps founder-led firms and institutions document, structure, and certify their methodology — so it scales without dilution. Talk to us." />
         <meta property="og:url" content="https://method-lab.ai/" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Turn Your Expertise Into a Scalable Certification Program | Method Lab by Certainly" />
-        <meta name="twitter:description" content="We help founder-led firms and standards organizations document, structure, and certify their proprietary methods — so they scale without dilution." />
+        <meta name="twitter:title" content="Certification Program Design for Founders | Method Lab" />
+        <meta name="twitter:description" content="Method Lab helps founder-led firms and institutions document, structure, and certify their methodology — so it scales without dilution. Talk to us." />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
